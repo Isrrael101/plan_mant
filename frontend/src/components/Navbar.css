@@ -1,0 +1,121 @@
+.navbar {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.brand-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-sm);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    z-index: -1;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+    opacity: 0.1;
+}
+
+.nav-link.active {
+    color: var(--text-primary);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+    border: 1px solid var(--primary);
+}
+
+.nav-link.active::before {
+    opacity: 0.2;
+}
+
+.nav-icon {
+    font-size: 1.25rem;
+}
+
+.nav-label {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-label {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 0.75rem;
+    }
+}

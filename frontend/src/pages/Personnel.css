@@ -1,0 +1,30 @@
+.personnel-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.personnel-stats {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    justify-content: center;
+}
+
+.personnel-stats .card {
+    text-align: center;
+    min-width: 300px;
+}
+
+.stat-large {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: var(--spacing-sm) 0;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}

@@ -1,0 +1,74 @@
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: var(--spacing-sm);
+}
+
+.machinery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.machinery-card {
+    padding: var(--spacing-lg);
+}
+
+.machinery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.machinery-icon {
+    font-size: 3rem;
+}
+
+.machinery-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.machinery-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.machinery-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.detail-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
