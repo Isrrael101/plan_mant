@@ -1,0 +1,133 @@
+services:
+  # ============================================
+  # MySQL Database
+  # ============================================
+  mysql:
+    image: mysql:8.0
+    container_name: mtto-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword123
+      MYSQL_DATABASE: mtto_db
+      MYSQL_USER: mtto_user
+      MYSQL_PASSWORD: mtto_password
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    networks:
+      - mtto-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ============================================
+  # Backend API (MySQL Version)
+  # ============================================
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile.mysql
+    container_name: mtto-backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: mtto_db
+      MYSQL_USER: mtto_user
+      MYSQL_PASSWORD: mtto_password
+    ports:
+      - "3001:3001"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - mtto-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ============================================
+  # Frontend (React + Nginx)
+  # ============================================
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    container_name: mtto-frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - mtto-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ============================================
+  # Adminer - Database Management UI
+  # ============================================
+  adminer:
+    image: adminer:latest
+    container_name: mtto-adminer
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql
+    networks:
+      - mtto-network
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+
+  # ============================================
+  # Migration Service (One-time)
+  # ============================================
+  migration:
+    build:
+      context: .
+      dockerfile: docker/migration/Dockerfile
+    container_name: mtto-migration
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: mtto_db
+      MYSQL_USER: mtto_user
+      MYSQL_PASSWORD: mtto_password
+      EXCEL_FILE: /data/Plan_Mant.xlsm
+    volumes:
+      - ./Plan_Mant.xlsm:/data/Plan_Mant.xlsm:ro
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - mtto-network
+    profiles:
+      - migration
+
+networks:
+  mtto-network:
+    driver: bridge
+    name: mtto-network
+
+volumes:
+  mysql_data:
+    name: mtto-mysql-data
+

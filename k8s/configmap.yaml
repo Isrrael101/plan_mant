@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mtto-config
+  namespace: mtto-system
+  labels:
+    app: mtto-pro
+data:
+  # MySQL Configuration
+  MYSQL_DATABASE: "mtto_db"
+  MYSQL_HOST: "mysql-service"
+  MYSQL_PORT: "3306"
+  
+  # Backend Configuration
+  NODE_ENV: "production"
+  API_PORT: "3001"
+  
+  # Frontend Configuration
+  VITE_API_URL: "http://backend-service:3001/api"
+

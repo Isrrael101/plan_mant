@@ -1,0 +1,610 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: data-generation
+  namespace: mtto-system
+  labels:
+    app: data-generation
+spec:
+  backoffLimit: 3
+  ttlSecondsAfterFinished: 600
+  template:
+    metadata:
+      labels:
+        app: data-generation
+    spec:
+      restartPolicy: OnFailure
+      initContainers:
+        # Init container para esperar a que MySQL esté listo
+        - name: wait-for-mysql
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - |
+              echo "Esperando a que MySQL esté listo..."
+              until nc -z mysql-service 3306; do
+                echo "MySQL no está listo - esperando..."
+                sleep 5
+              done
+              echo "MySQL está listo!"
+              sleep 10
+      containers:
+        - name: data-generator
+          image: python:3.11-slim
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              set -e
+              echo "=========================================="
+              echo "  Iniciando generación de datos profesionales"
+              echo "=========================================="
+              
+              # Instalar dependencias de MySQL
+              echo "📦 Instalando dependencias..."
+              apt-get update -qq
+              apt-get install -y --no-install-recommends \
+                default-libmysqlclient-dev \
+                build-essential \
+                netcat-traditional \
+                > /dev/null 2>&1
+              
+              pip install --no-cache-dir mysql-connector-python==8.2.0 --quiet
+              
+              echo "✅ Dependencias instaladas"
+              
+              # Ejecutar script de generación de datos
+              echo ""
+              echo "🚀 Ejecutando script de generación de datos..."
+              python /scripts/generate_sample_data.py
+              
+              echo ""
+              echo "=========================================="
+              echo "  ✅ Generación de datos completada"
+              echo "=========================================="
+          env:
+            - name: MYSQL_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: mtto-config
+                  key: MYSQL_HOST
+            - name: MYSQL_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: mtto-config
+                  key: MYSQL_PORT
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: mtto-config
+                  key: MYSQL_DATABASE
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mtto-secrets
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mtto-secrets
+                  key: MYSQL_PASSWORD
+          volumeMounts:
+            - name: data-generator-script
+              mountPath: /scripts
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+      volumes:
+        - name: data-generator-script
+          configMap:
+            name: data-generator-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-generator-config
+  namespace: mtto-system
+  labels:
+    app: data-generation
+data:
+  generate_sample_data.py: |
+    # -*- coding: utf-8 -*-
+    """
+    Script para generar datos de prueba profesionales para MTTO Pro
+    Genera aproximadamente 1000 registros distribuidos en todas las tablas
+    """
+    
+    import mysql.connector
+    from mysql.connector import Error
+    import random
+    from datetime import datetime, timedelta
+    import os
+    
+    # Configuración de conexión
+    DB_CONFIG = {
+        'host': os.getenv('MYSQL_HOST', 'localhost'),
+        'port': int(os.getenv('MYSQL_PORT', '3306')),
+        'user': os.getenv('MYSQL_USER', 'mtto_user'),
+        'password': os.getenv('MYSQL_PASSWORD', 'mtto_password'),
+        'database': os.getenv('MYSQL_DATABASE', 'mtto_db'),
+        'charset': 'utf8mb4'
+    }
+    
+    # ============================================
+    # DATOS DE REFERENCIA PROFESIONALES
+    # ============================================
+    
+    MARCAS_MAQUINARIA = [
+        'Caterpillar', 'Komatsu', 'Volvo', 'John Deere', 'Case', 'New Holland',
+        'Liebherr', 'JCB', 'Hitachi', 'Kobelco', 'Hyundai', 'Doosan', 'XCMG',
+        'Sany', 'Terex', 'Manitou', 'Bobcat', 'Takeuchi', 'Kubota', 'Deere'
+    ]
+    
+    TIPOS_MAQUINARIA = [
+        'Excavadora Hidráulica', 'Cargador Frontal', 'Retroexcavadora', 'Bulldozer',
+        'Motoniveladora', 'Rodillo Compactador', 'Camión Volquete', 'Grúa Móvil',
+        'Martillo Hidráulico', 'Cargador de Ruedas', 'Minicargador', 'Tractor',
+        'Pala Cargadora', 'Compactadora', 'Dumper', 'Zanjadora', 'Tuneladora',
+        'Fresadora', 'Reciclador de Asfalto', 'Planta de Asfalto'
+    ]
+    
+    MARCAS_HERRAMIENTAS = [
+        'Bosch', 'DeWalt', 'Milwaukee', 'Makita', 'Festool', 'Hilti', 'Snap-on',
+        'Ingersoll Rand', 'Atlas Copco', 'Chicago Pneumatic', 'Stanley', 'Black+Decker',
+        'Metabo', 'AEG', 'Einhell', 'Ryobi', 'Hitachi', 'Panasonic', 'Festool', 'Fein'
+    ]
+    
+    HERRAMIENTAS = [
+        # Eléctricas
+        ('Taladro Percutor', 'Herramientas Eléctricas'), ('Amoladora Angular', 'Herramientas Eléctricas'),
+        ('Sierra Circular', 'Herramientas Eléctricas'), ('Martillo Perforador', 'Herramientas Eléctricas'),
+        ('Atornillador Eléctrico', 'Herramientas Eléctricas'), ('Soldadora Inversora', 'Herramientas Eléctricas'),
+        ('Pulidora', 'Herramientas Eléctricas'), ('Cizalla Eléctrica', 'Herramientas Eléctricas'),
+        # Neumáticas
+        ('Llave de Impacto Neumática', 'Herramientas Neumáticas'), ('Martillo Neumático', 'Herramientas Neumáticas'),
+        ('Pistola de Pintura', 'Herramientas Neumáticas'), ('Llave de Torque', 'Herramientas Neumáticas'),
+        # Manuales
+        ('Juego de Llaves Allen', 'Herramientas Manuales'), ('Destornilladores Set', 'Herramientas Manuales'),
+        ('Martillo', 'Herramientas Manuales'), ('Alicates Varios', 'Herramientas Manuales'),
+        ('Llave Stillson', 'Herramientas Manuales'), ('Nivel de Burbuja', 'Herramientas Manuales'),
+        ('Multímetro Digital', 'Instrumentos'), ('Termómetro Infrarrojo', 'Instrumentos'),
+        ('Manómetro', 'Instrumentos'), ('Calibrador Digital', 'Instrumentos'),
+        # Especializadas
+        ('Gato Hidráulico 20T', 'Equipos de Elevación'), ('Polipasto Manual', 'Equipos de Elevación'),
+        ('Carretilla Hidráulica', 'Equipos de Elevación'), ('Transpaleta', 'Equipos de Elevación')
+    ]
+    
+    CATEGORIAS_INSUMOS = {
+        'Lubricantes': [
+            ('Aceite Hidráulico ISO 46', 'Litro', 15.50, 'Aceite de alta calidad'),
+            ('Aceite Motor 15W-40', 'Litro', 12.75, 'Aceite multigrado'),
+            ('Aceite Transmisión', 'Litro', 18.20, 'Aceite para transmisiones'),
+            ('Grasa Multipropósito', 'Kg', 8.50, 'Grasa de uso general'),
+            ('Grasa de Rodamientos', 'Kg', 9.75, 'Grasa especializada'),
+            ('Aceite de Reductor', 'Litro', 16.80, 'Aceite para reductores')
+        ],
+        'Filtros': [
+            ('Filtro de Aceite Motor', 'Unidad', 25.00, 'Filtro estándar'),
+            ('Filtro de Aire Primario', 'Unidad', 35.50, 'Filtro de alta eficiencia'),
+            ('Filtro de Aire Secundario', 'Unidad', 28.75, 'Filtro secundario'),
+            ('Filtro Hidráulico', 'Unidad', 42.00, 'Filtro hidráulico'),
+            ('Filtro de Combustible', 'Unidad', 22.50, 'Filtro de combustible')
+        ],
+        'Frenos': [
+            ('Pastillas de Freno Delantero', 'Juego', 85.00, 'Pastillas cerámicas'),
+            ('Pastillas de Freno Trasero', 'Juego', 75.50, 'Pastillas estándar'),
+            ('Discos de Freno', 'Unidad', 120.00, 'Discos ventilados'),
+            ('Líquido de Freno DOT 4', 'Litro', 18.75, 'Líquido de frenos')
+        ],
+        'Neumáticos': [
+            ('Neumático 16.5R25', 'Unidad', 450.00, 'Neumático radial'),
+            ('Neumático 23.5R25', 'Unidad', 680.00, 'Neumático para carga'),
+            ('Neumático 14.00R24', 'Unidad', 520.00, 'Neumático estándar'),
+            ('Cámara de Aire 16.5R25', 'Unidad', 85.00, 'Cámara interna')
+        ],
+        'Baterías': [
+            ('Batería 12V 100Ah', 'Unidad', 145.00, 'Batería sellada'),
+            ('Batería 12V 150Ah', 'Unidad', 195.00, 'Batería de alta capacidad'),
+            ('Batería 24V 200Ah', 'Unidad', 380.00, 'Batería para maquinaria pesada')
+        ],
+        'Repuestos Eléctricos': [
+            ('Alternador 12V 90A', 'Unidad', 280.00, 'Alternador estándar'),
+            ('Motor de Arranque', 'Unidad', 320.00, 'Motor de arranque'),
+            ('Fusibles Varios', 'Set', 15.50, 'Set de fusibles'),
+            ('Cable de Batería', 'Metro', 12.00, 'Cable AWG 4')
+        ],
+        'Pinturas y Protección': [
+            ('Pintura Epoxi Industrial', 'Galón', 85.00, 'Pintura anticorrosiva'),
+            ('Primer Anticorrosivo', 'Galón', 72.00, 'Primer base'),
+            ('Disolvente Universal', 'Galón', 28.50, 'Disolvente industrial')
+        ],
+        'Adhesivos y Selladores': [
+            ('Sellador de Juntas', 'Tubo', 12.50, 'Sellador silicónico'),
+            ('Adhesivo Epóxico', 'Unidad', 18.75, 'Adhesivo de dos componentes'),
+            ('Cinta Téflon', 'Rollito', 3.50, 'Cinta para roscas')
+        ]
+    }
+    
+    CARGOS = [
+        'Operador de Maquinaria', 'Mecánico Especialista', 'Técnico en Mantenimiento',
+        'Supervisor de Mantenimiento', 'Jefe de Taller', 'Ingeniero de Mantenimiento',
+        'Electricista Industrial', 'Soldador', 'Hidráulico', 'Especialista en Neumáticos',
+        'Operador de Excavadora', 'Operador de Cargador', 'Operador de Retroexcavadora',
+        'Operador de Bulldozer', 'Operador de Motoniveladora', 'Chofer de Camión',
+        'Jefe de Operaciones', 'Coordinador de Mantenimiento', 'Planificador de Mantenimiento'
+    ]
+    
+    NOMBRES = [
+        'Carlos', 'María', 'Juan', 'Ana', 'Luis', 'Laura', 'Pedro', 'Carmen',
+        'Miguel', 'Sofía', 'Javier', 'Patricia', 'Roberto', 'Elena', 'Fernando',
+        'Isabel', 'Ricardo', 'Mónica', 'Antonio', 'Andrea', 'José', 'Lucía',
+        'Francisco', 'Marina', 'Daniel', 'Silvia', 'Manuel', 'Natalia', 'Alejandro',
+        'Paula', 'David', 'Beatriz', 'Jorge', 'Claudia', 'Rafael', 'Teresa'
+    ]
+    
+    APELLIDOS = [
+        'García', 'Rodríguez', 'González', 'López', 'Martínez', 'Sánchez', 'Pérez',
+        'Gómez', 'Fernández', 'Díaz', 'Moreno', 'Alvarez', 'Romero', 'Ruiz', 'Jiménez',
+        'Torres', 'Vargas', 'Mendoza', 'Herrera', 'Castro', 'Ramos', 'Ortega', 'Morales',
+        'Delgado', 'Ramírez', 'Ortiz', 'Cruz', 'Reyes', 'Guerrero', 'Rivera'
+    ]
+    
+    ACTIVIDADES_MANTENIMIENTO = [
+        ('Sistema Hidráulico', 'Revisar nivel y estado del aceite hidráulico', 30, 45, 60),
+        ('Filtros', 'Inspeccionar y reemplazar filtros de aire, aceite y combustible', 20, 30, 45),
+        ('Neumáticos', 'Verificar presión y estado de neumáticos', 15, 25, 35),
+        ('Batería', 'Revisar carga y conexiones de batería', 10, 15, 20),
+        ('Sistema de Frenos', 'Inspeccionar pastillas, discos y líquido de frenos', 30, 45, 60),
+        ('Motor', 'Revisar nivel de aceite y refrigerante del motor', 15, 20, 30),
+        ('Transmisión', 'Verificar nivel de aceite de transmisión', 10, 15, 20),
+        ('Sistema Eléctrico', 'Revisar luces, conexiones y fusibles', 20, 30, 40),
+        ('Lubricación', 'Aplicar grasa en puntos de lubricación', 20, 30, 45),
+        ('Cuchillas y Herramientas', 'Inspeccionar y afilar cuchillas', 30, 45, 60),
+        ('Sistema de Refrigeración', 'Revisar radiador y mangueras', 20, 30, 40),
+        ('Carrocería', 'Inspección visual de estructura y carrocería', 15, 25, 35)
+    ]
+    
+    # ============================================
+    # FUNCIONES DE GENERACIÓN
+    # ============================================
+    
+    def generar_ci():
+        """Genera un CI válido (8 dígitos)"""
+        return str(random.randint(1000000, 99999999))
+    
+    def generar_telefono():
+        """Genera un número de teléfono"""
+        return f"{random.randint(2, 9)}{random.randint(1000000, 9999999)}"
+    
+    def generar_celular():
+        """Genera un número de celular"""
+        return f"7{random.randint(10000000, 99999999)}"
+    
+    def generar_maquinaria(cursor, cantidad=250):
+        """Genera registros de maquinaria"""
+        estados = ['OPERATIVO', 'MANTENIMIENTO', 'INACTIVO']
+        años = [str(2010 + i) for i in range(15)]
+        
+        print(f"\n📦 Generando {cantidad} registros de maquinaria...")
+        
+        for i in range(1, cantidad + 1):
+            codigo = f"MAQ-{i:04d}"
+            tipo = random.choice(TIPOS_MAQUINARIA)
+            marca = random.choice(MARCAS_MAQUINARIA)
+            modelo = f"{marca[:3].upper()}-{random.randint(100, 999)}"
+            anio = random.choice(años)
+            estado = random.choices(estados, weights=[70, 20, 10])[0]
+            
+            # Costo en BOB (Bolivianos): entre 50,000 y 2,500,000 Bs.
+            costo_adquisicion = round(random.uniform(50000, 2500000), 2)
+            
+            try:
+                cursor.execute("""
+                    INSERT INTO maquinaria (codigo, nombre, marca, modelo, anio, estado, costo_adquisicion)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """, (codigo, tipo, marca, modelo, anio, estado, costo_adquisicion))
+            except Error as e:
+                if "Duplicate entry" not in str(e):
+                    print(f"   Error en maquinaria {codigo}: {e}")
+        
+        print(f"   ✅ {cantidad} registros de maquinaria generados")
+    
+    def generar_personal(cursor, cantidad=180):
+        """Genera registros de personal"""
+        estados = ['ACTIVO', 'INACTIVO']
+        
+        print(f"\n👥 Generando {cantidad} registros de personal...")
+        
+        for i in range(1, cantidad + 1):
+            codigo = f"PER-{i:04d}"
+            nombre = random.choice(NOMBRES)
+            apellido1 = random.choice(APELLIDOS)
+            apellido2 = random.choice(APELLIDOS)
+            nombre_completo = f"{nombre} {apellido1} {apellido2}"
+            ci = generar_ci()
+            cargo = random.choice(CARGOS)
+            telefono = generar_telefono()
+            celular = generar_celular()
+            estado = random.choices(estados, weights=[85, 15])[0]
+            
+            try:
+                cursor.execute("""
+                    INSERT INTO personal (codigo, nombre_completo, ci, cargo, telefono, celular, estado)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """, (codigo, nombre_completo, ci, cargo, telefono, celular, estado))
+            except Error as e:
+                if "Duplicate entry" not in str(e):
+                    print(f"   Error en personal {codigo}: {e}")
+        
+        print(f"   ✅ {cantidad} registros de personal generados")
+    
+    def generar_herramientas(cursor, cantidad=220):
+        """Genera registros de herramientas"""
+        estados = ['OPERATIVO', 'MANTENIMIENTO', 'INACTIVO']
+        
+        print(f"\n🔧 Generando {cantidad} registros de herramientas...")
+        
+        for i in range(1, cantidad + 1):
+            codigo = f"HER-{i:04d}"
+            herramienta_info = random.choice(HERRAMIENTAS)
+            nombre = herramienta_info[0]
+            categoria = herramienta_info[1]
+            marca = random.choice(MARCAS_HERRAMIENTAS)
+            estado = random.choices(estados, weights=[75, 20, 5])[0]
+            
+            # Costo en BOB: entre 50 y 15,000 Bs.
+            costo = round(random.uniform(50, 15000), 2)
+            
+            try:
+                cursor.execute("""
+                    INSERT INTO herramientas (codigo, nombre, marca, estado, categoria, costo)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                """, (codigo, nombre, marca, estado, categoria, costo))
+            except Error as e:
+                if "Duplicate entry" not in str(e):
+                    print(f"   Error en herramienta {codigo}: {e}")
+        
+        print(f"   ✅ {cantidad} registros de herramientas generados")
+    
+    def generar_insumos(cursor, cantidad=250):
+        """Genera registros de insumos"""
+        print(f"\n📦 Generando {cantidad} registros de insumos...")
+        
+        insumos_todos = []
+        for categoria, items in CATEGORIAS_INSUMOS.items():
+            insumos_todos.extend([(item, categoria) for item in items])
+        
+        # Generar más variaciones
+        while len(insumos_todos) < cantidad:
+            categoria = random.choice(list(CATEGORIAS_INSUMOS.keys()))
+            item_base = random.choice(CATEGORIAS_INSUMOS[categoria])
+            variacion = (f"{item_base[0]} Variante {len(insumos_todos)+1}", item_base[1], 
+                        round(item_base[2] * random.uniform(0.8, 1.2), 2), item_base[3])
+            insumos_todos.append((variacion, categoria))
+        
+        random.shuffle(insumos_todos)
+        
+        for i, (item, categoria) in enumerate(insumos_todos[:cantidad], 1):
+            codigo = f"INS-{i:04d}"
+            nombre = item[0]
+            unidad = item[1]
+            precio = item[2]
+            cantidad_stock = random.randint(10, 500)
+            stock_minimo = max(5, int(cantidad_stock * 0.2))
+            
+            try:
+                cursor.execute("""
+                    INSERT INTO insumos (codigo, nombre, unidad, precio_unitario, cantidad, stock_minimo, categoria)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """, (codigo, nombre, unidad, precio, cantidad_stock, stock_minimo, categoria))
+            except Error as e:
+                if "Duplicate entry" not in str(e):
+                    print(f"   Error en insumo {codigo}: {e}")
+        
+        print(f"   ✅ {cantidad} registros de insumos generados")
+    
+    def generar_planes_mantenimiento(cursor):
+        """Genera planes de mantenimiento preventivo para cada maquinaria"""
+        # Intervalos de horas para mantenimiento preventivo
+        INTERVALOS_HORAS = [10, 50, 250, 500, 1000, 2000]
+        
+        print(f"\n📅 Generando planes de mantenimiento preventivo por horas...")
+        
+        # Obtener todas las maquinarias
+        cursor.execute("SELECT id, nombre, codigo FROM maquinaria")
+        maquinarias = cursor.fetchall()
+        
+        if not maquinarias:
+            print("   ⚠️ No hay maquinaria disponible.")
+            return
+        
+        total_planes = 0
+        
+        # Para cada maquinaria, crear 6 planes (uno por cada intervalo de horas)
+        for maquinaria_id, nombre_maq, codigo_maq in maquinarias:
+            for horas in INTERVALOS_HORAS:
+                nombre_plan = f"PMP {nombre_maq} - {horas}H"
+                descripcion = f"Plan de mantenimiento preventivo para {nombre_maq} ({codigo_maq}) cada {horas} horas de operación"
+                
+                try:
+                    cursor.execute("""
+                        INSERT INTO planes_mantenimiento (maquinaria_id, nombre_plan, tipo_plan, horas_operacion, descripcion, activo)
+                        VALUES (%s, %s, %s, %s, %s, %s)
+                    """, (maquinaria_id, nombre_plan, 'POR_HORAS', horas, descripcion, True))
+                    total_planes += 1
+                except Error as e:
+                    if "Duplicate entry" not in str(e):
+                        print(f"   Error en plan {nombre_plan}: {e}")
+        
+        print(f"   ✅ {total_planes} planes de mantenimiento preventivo generados ({len(INTERVALOS_HORAS)} por maquinaria)")
+    
+    def generar_actividades_mantenimiento(cursor):
+        """Genera actividades de mantenimiento para los planes"""
+        print(f"\n⚙️ Generando actividades de mantenimiento...")
+        
+        cursor.execute("SELECT id FROM planes_mantenimiento WHERE activo = TRUE")
+        planes = cursor.fetchall()
+        
+        if not planes:
+            print("   ⚠️ No hay planes activos disponibles")
+            return
+        
+        total_actividades = 0
+        for plan_id in [p[0] for p in planes]:
+            # 5-15 actividades por plan
+            num_actividades = random.randint(5, 15)
+            for orden in range(1, num_actividades + 1):
+                actividad_info = random.choice(ACTIVIDADES_MANTENIMIENTO)
+                descripcion_componente = actividad_info[0]
+                actividad = actividad_info[1]
+                tiempo_min = actividad_info[2]
+                tiempo_promedio = actividad_info[3]
+                tiempo_max = actividad_info[4]
+                
+                # Costo estimado en BOB: entre 50 y 2,000 Bs. por actividad
+                costo_estimado = round(random.uniform(50, 2000), 2)
+                
+                try:
+                    cursor.execute("""
+                        INSERT INTO actividades_mantenimiento 
+                        (plan_id, numero_orden, descripcion_componente, actividad, tiempo_min, tiempo_promedio, tiempo_max, costo_estimado)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    """, (plan_id, orden, descripcion_componente, actividad, tiempo_min, tiempo_promedio, tiempo_max, costo_estimado))
+                    total_actividades += 1
+                except Error as e:
+                    print(f"   Error en actividad: {e}")
+        
+        print(f"   ✅ {total_actividades} actividades de mantenimiento generadas")
+    
+    def generar_historial_mantenimiento(cursor, cantidad=100):
+        """Genera historial de mantenimiento"""
+        print(f"\n📊 Generando {cantidad} registros de historial...")
+        
+        cursor.execute("SELECT id FROM maquinaria")
+        maquinarias = [m[0] for m in cursor.fetchall()]
+        
+        cursor.execute("SELECT id FROM planes_mantenimiento")
+        planes = [p[0] for p in cursor.fetchall()]
+        
+        cursor.execute("SELECT id FROM personal WHERE estado = 'ACTIVO'")
+        personal = [p[0] for p in cursor.fetchall()]
+        
+        if not maquinarias:
+            print("   ⚠️ No hay datos suficientes para generar historial")
+            return
+        
+        fecha_inicio = datetime.now() - timedelta(days=365)
+        
+        for i in range(cantidad):
+            maquinaria_id = random.choice(maquinarias)
+            plan_id = random.choice(planes) if planes else None
+            personal_id = random.choice(personal) if personal else None
+            fecha_ejecucion = fecha_inicio + timedelta(days=random.randint(0, 365))
+            horas_maquina = random.randint(500, 5000)
+            observaciones = random.choice([
+                'Mantenimiento realizado correctamente',
+                'Se reemplazaron filtros',
+                'Lubricación completa realizada',
+                'Inspección general sin observaciones',
+                'Requiere seguimiento'
+            ])
+            costo_total = round(random.uniform(500, 5000), 2)
+            completado = random.choice([True, True, True, False])  # 75% completados
+            
+            try:
+                cursor.execute("""
+                    INSERT INTO historial_mantenimiento 
+                    (maquinaria_id, plan_id, personal_id, fecha_ejecucion, horas_maquina, observaciones, costo_total, completado)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                """, (maquinaria_id, plan_id, personal_id, fecha_ejecucion, horas_maquina, observaciones, costo_total, completado))
+            except Error as e:
+                print(f"   Error en historial {i}: {e}")
+        
+        print(f"   ✅ {cantidad} registros de historial generados")
+    
+    def main():
+        """Función principal"""
+        connection = None
+        try:
+            print("=" * 60)
+            print("🚀 GENERADOR DE DATOS DE PRUEBA - MTTO PRO")
+            print("=" * 60)
+            
+            print(f"\n📡 Conectando a MySQL...")
+            print(f"   Host: {DB_CONFIG['host']}")
+            print(f"   Database: {DB_CONFIG['database']}")
+            
+            connection = mysql.connector.connect(**DB_CONFIG)
+            
+            if connection.is_connected():
+                cursor = connection.cursor()
+                print("   ✅ Conexión establecida\n")
+                
+                # Deshabilitar verificación de claves foráneas temporalmente
+                cursor.execute("SET FOREIGN_KEY_CHECKS = 0")
+                
+                # Generar datos
+                generar_maquinaria(cursor, cantidad=250)
+                generar_personal(cursor, cantidad=180)
+                generar_herramientas(cursor, cantidad=220)
+                generar_insumos(cursor, cantidad=250)
+                
+                # Reiniciar verificación
+                cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
+                
+                generar_planes_mantenimiento(cursor)
+                generar_actividades_mantenimiento(cursor)
+                generar_historial_mantenimiento(cursor, cantidad=100)
+                
+                # Commit todos los cambios
+                connection.commit()
+                
+                # Estadísticas finales
+                print("\n" + "=" * 60)
+                print("📊 RESUMEN DE DATOS GENERADOS:")
+                print("=" * 60)
+                
+                cursor.execute("SELECT COUNT(*) FROM maquinaria")
+                print(f"   Maquinaria: {cursor.fetchone()[0]} registros")
+                
+                cursor.execute("SELECT COUNT(*) FROM personal")
+                print(f"   Personal: {cursor.fetchone()[0]} registros")
+                
+                cursor.execute("SELECT COUNT(*) FROM herramientas")
+                print(f"   Herramientas: {cursor.fetchone()[0]} registros")
+                
+                cursor.execute("SELECT COUNT(*) FROM insumos")
+                print(f"   Insumos: {cursor.fetchone()[0]} registros")
+                
+                cursor.execute("SELECT COUNT(*) FROM planes_mantenimiento")
+                print(f"   Planes de Mantenimiento: {cursor.fetchone()[0]} registros")
+                
+                cursor.execute("SELECT COUNT(*) FROM actividades_mantenimiento")
+                print(f"   Actividades: {cursor.fetchone()[0]} registros")
+                
+                cursor.execute("SELECT COUNT(*) FROM historial_mantenimiento")
+                print(f"   Historial: {cursor.fetchone()[0]} registros")
+                
+                cursor.execute("SELECT SUM(total) FROM (SELECT COUNT(*) as total FROM maquinaria UNION ALL SELECT COUNT(*) FROM personal UNION ALL SELECT COUNT(*) FROM herramientas UNION ALL SELECT COUNT(*) FROM insumos UNION ALL SELECT COUNT(*) FROM planes_mantenimiento UNION ALL SELECT COUNT(*) FROM actividades_mantenimiento UNION ALL SELECT COUNT(*) FROM historial_mantenimiento) as totals")
+                total = cursor.fetchone()[0]
+                print(f"\n   ✅ TOTAL: {total} registros generados")
+                
+                print("\n✅ Proceso completado exitosamente!")
+                
+        except Error as e:
+            print(f"\n❌ Error: {e}")
+            if connection:
+                connection.rollback()
+            
+        finally:
+            if connection and connection.is_connected():
+                cursor.close()
+                connection.close()
+                print("\n✓ Conexión cerrada")
+    
+    if __name__ == "__main__":
+        main()

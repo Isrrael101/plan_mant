@@ -1,0 +1,325 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mysql-migration
+  namespace: mtto-system
+  labels:
+    app: migration
+spec:
+  template:
+    metadata:
+      labels:
+        app: migration
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: migration
+          image: python:3.11-slim
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo "Esperando archivo Excel..."
+              while [ ! -f /data/Plan_Mant.xlsm ]; do
+                echo "Archivo no encontrado, esperando 5 segundos..."
+                sleep 5
+              done
+              echo "Archivo encontrado, iniciando migración..."
+              apt-get update && apt-get install -y \
+                default-libmysqlclient-dev \
+                gcc \
+                && rm -rf /var/lib/apt/lists/*
+              pip install --no-cache-dir pandas==2.1.4 openpyxl==3.1.2 mysql-connector-python==8.2.0
+              python /app/migrate.py
+          env:
+            - name: MYSQL_HOST
+              value: "mysql-service"
+            - name: MYSQL_PORT
+              value: "3306"
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: mtto-config
+                  key: MYSQL_DATABASE
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mtto-secrets
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mtto-secrets
+                  key: MYSQL_PASSWORD
+            - name: EXCEL_FILE
+              value: "/data/Plan_Mant.xlsm"
+          volumeMounts:
+            - name: excel-data
+              mountPath: /data
+            - name: migration-script
+              mountPath: /app
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "200m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+      volumes:
+        - name: excel-data
+          emptyDir: {}
+        - name: migration-script
+          configMap:
+            name: migration-script-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: migration-script-config
+  namespace: mtto-system
+data:
+  migrate.py: |
+    # -*- coding: utf-8 -*-
+    import os
+    import sys
+    import pandas as pd
+    import mysql.connector
+    from mysql.connector import Error
+    import time
+
+    DB_CONFIG = {
+        'host': os.getenv('MYSQL_HOST', 'mysql-service'),
+        'port': int(os.getenv('MYSQL_PORT', 3306)),
+        'user': os.getenv('MYSQL_USER', 'mtto_user'),
+        'password': os.getenv('MYSQL_PASSWORD', 'mtto_password'),
+        'database': os.getenv('MYSQL_DATABASE', 'mtto_db'),
+        'charset': 'utf8mb4',
+        'collation': 'utf8mb4_unicode_ci'
+    }
+
+    EXCEL_FILE = os.getenv('EXCEL_FILE', '/data/Plan_Mant.xlsm')
+
+    def get_connection(max_retries=30, delay=3):
+        """Crear conexión a MySQL con reintentos"""
+        for attempt in range(max_retries):
+            try:
+                connection = mysql.connector.connect(**DB_CONFIG)
+                if connection.is_connected():
+                    print(f"✓ Conectado a MySQL: {DB_CONFIG['database']}")
+                    return connection
+            except Error as e:
+                print(f"Intento {attempt + 1}/{max_retries}: Error al conectar: {e}")
+                if attempt < max_retries - 1:
+                    print(f"Reintentando en {delay} segundos...")
+                    time.sleep(delay)
+                else:
+                    print(f"✗ Error al conectar a MySQL después de {max_retries} intentos")
+                    sys.exit(1)
+
+    def clean_value(value):
+        if pd.isna(value) or value == '' or str(value).strip() == '':
+            return None
+        return str(value).strip()
+
+    def migrate_maquinaria(connection, excel_file):
+        print("\n📦 Migrando Maquinaria...")
+        try:
+            df = pd.read_excel(excel_file, sheet_name='Maquinaria', engine='openpyxl')
+            cursor = connection.cursor()
+            count = 0
+            for _, row in df.iterrows():
+                codigo = clean_value(row.get('Unnamed: 3'))
+                nombre = clean_value(row.get('Unnamed: 4'))
+                if not codigo or not nombre:
+                    continue
+                if 'CODIGO' in str(codigo).upper() or 'NOMBRE' in str(nombre).upper():
+                    continue
+                marca = clean_value(row.get('Unnamed: 5'))
+                modelo = clean_value(row.get('Unnamed: 6'))
+                anio = clean_value(row.get('Unnamed: 7'))
+                estado = clean_value(row.get('Unnamed: 8')) or 'OPERATIVO'
+                estado = estado.upper()
+                if estado not in ['OPERATIVO', 'MANTENIMIENTO', 'INACTIVO']:
+                    estado = 'OPERATIVO'
+                sql = """INSERT INTO maquinaria (codigo, nombre, marca, modelo, anio, estado)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                    ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), marca=VALUES(marca),
+                    modelo=VALUES(modelo), anio=VALUES(anio), estado=VALUES(estado)"""
+                cursor.execute(sql, (codigo, nombre, marca, modelo, anio, estado))
+                count += 1
+            connection.commit()
+            print(f"  ✓ {count} registros migrados")
+            return count
+        except Exception as e:
+            print(f"  ✗ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return 0
+
+    def migrate_personal(connection, excel_file):
+        print("\n👥 Migrando Personal...")
+        try:
+            df = pd.read_excel(excel_file, sheet_name='Personal', engine='openpyxl')
+            cursor = connection.cursor()
+            count = 0
+            for _, row in df.iterrows():
+                nombre = clean_value(row.get('Unnamed: 3'))
+                if not nombre:
+                    continue
+                if 'APELLIDOS' in str(nombre).upper() or 'NOMBRE' in str(nombre).upper():
+                    continue
+                codigo = clean_value(row.get('Unnamed: 2')) or f"EMP-{count+1:03d}"
+                ci = clean_value(row.get('Unnamed: 4'))
+                cargo = clean_value(row.get('Unnamed: 5'))
+                telefono = clean_value(row.get('Unnamed: 6'))
+                celular = clean_value(row.get('Unnamed: 7'))
+                sql = """INSERT INTO personal (codigo, nombre_completo, ci, cargo, telefono, celular)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                    ON DUPLICATE KEY UPDATE nombre_completo=VALUES(nombre_completo),
+                    ci=VALUES(ci), cargo=VALUES(cargo), telefono=VALUES(telefono), celular=VALUES(celular)"""
+                cursor.execute(sql, (codigo, nombre, ci, cargo, telefono, celular))
+                count += 1
+            connection.commit()
+            print(f"  ✓ {count} registros migrados")
+            return count
+        except Exception as e:
+            print(f"  ✗ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return 0
+
+    def categorize_tool(nombre):
+        nombre_upper = str(nombre).upper()
+        categories = {
+            'Herramientas Manuales': ['LLAVE', 'DESTORNILLADOR', 'MARTILLO', 'ALICATE', 'PINZA'],
+            'Herramientas Eléctricas': ['TALADRO', 'SIERRA', 'PULIDORA', 'ESMERIL', 'ELECTRICA'],
+            'Equipos de Medición': ['MEDIDOR', 'NIVEL', 'CALIBRADOR', 'TERMOMETRO'],
+            'Herramientas Pesadas': ['COMPRESOR', 'SOLDADOR', 'GENERADOR']
+        }
+        for category, keywords in categories.items():
+            if any(kw in nombre_upper for kw in keywords):
+                return category
+        return 'Otras Herramientas'
+
+    def migrate_herramientas(connection, excel_file):
+        print("\n🔧 Migrando Herramientas...")
+        try:
+            df = pd.read_excel(excel_file, sheet_name='Herramientas', engine='openpyxl')
+            cursor = connection.cursor()
+            count = 0
+            for _, row in df.iterrows():
+                nombre = clean_value(row.get('Unnamed: 3'))
+                if not nombre:
+                    continue
+                if 'HERRAMIENTA' in str(nombre).upper():
+                    continue
+                codigo = clean_value(row.get('Unnamed: 2')) or f"HER-{count+1:03d}"
+                marca = clean_value(row.get('Unnamed: 4'))
+                estado = clean_value(row.get('Unnamed: 5')) or 'OPERATIVO'
+                estado = estado.upper()
+                if estado not in ['OPERATIVO', 'MANTENIMIENTO', 'INACTIVO']:
+                    estado = 'OPERATIVO'
+                categoria = categorize_tool(nombre)
+                sql = """INSERT INTO herramientas (codigo, nombre, marca, estado, categoria)
+                    VALUES (%s, %s, %s, %s, %s)
+                    ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), marca=VALUES(marca),
+                    estado=VALUES(estado), categoria=VALUES(categoria)"""
+                cursor.execute(sql, (codigo, nombre, marca, estado, categoria))
+                count += 1
+            connection.commit()
+            print(f"  ✓ {count} registros migrados")
+            return count
+        except Exception as e:
+            print(f"  ✗ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return 0
+
+    def categorize_supply(nombre):
+        nombre_upper = str(nombre).upper()
+        categories = {
+            'Lubricantes': ['ACEITE', 'LUBRICANTE', 'GRASA'],
+            'Filtros': ['FILTRO'],
+            'Repuestos': ['REPUESTO', 'PARTE', 'PIEZA'],
+            'Combustibles': ['COMBUSTIBLE', 'DIESEL', 'GASOLINA'],
+            'Materiales de Consumo': ['BATERIA', 'FUSIBLE', 'BOMBILLA']
+        }
+        for category, keywords in categories.items():
+            if any(kw in nombre_upper for kw in keywords):
+                return category
+        return 'Otros Insumos'
+
+    def migrate_insumos(connection, excel_file):
+        print("\n📦 Migrando Insumos...")
+        try:
+            df = pd.read_excel(excel_file, sheet_name='Insumos', engine='openpyxl')
+            cursor = connection.cursor()
+            count = 0
+            for _, row in df.iterrows():
+                nombre = clean_value(row.get('Unnamed: 3'))
+                if not nombre:
+                    continue
+                if 'INSUMO' in str(nombre).upper():
+                    continue
+                codigo = clean_value(row.get('Unnamed: 2')) or f"INS-{count+1:03d}"
+                unidad = clean_value(row.get('Unnamed: 4'))
+                precio = row.get('Unnamed: 5')
+                try:
+                    precio = float(precio) if pd.notna(precio) else 0.00
+                except:
+                    precio = 0.00
+                cantidad = row.get('Unnamed: 6')
+                try:
+                    cantidad = int(float(cantidad)) if pd.notna(cantidad) else 0
+                except:
+                    cantidad = 0
+                categoria = categorize_supply(nombre)
+                sql = """INSERT INTO insumos (codigo, nombre, unidad, precio_unitario, cantidad, categoria)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                    ON DUPLICATE KEY UPDATE nombre=VALUES(nombre), unidad=VALUES(unidad),
+                    precio_unitario=VALUES(precio_unitario), cantidad=VALUES(cantidad), categoria=VALUES(categoria)"""
+                cursor.execute(sql, (codigo, nombre, unidad, precio, cantidad, categoria))
+                count += 1
+            connection.commit()
+            print(f"  ✓ {count} registros migrados")
+            return count
+        except Exception as e:
+            print(f"  ✗ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return 0
+
+    def main():
+        print("=" * 60)
+        print("  MTTO Pro - Migración de Excel a MySQL")
+        print("=" * 60)
+        print(f"\n📄 Archivo Excel: {EXCEL_FILE}")
+        print(f"🗄️  Base de datos: {DB_CONFIG['database']}")
+        print(f"🖥️  Servidor: {DB_CONFIG['host']}:{DB_CONFIG['port']}")
+        
+        if not os.path.exists(EXCEL_FILE):
+            print(f"\n✗ Error: No se encuentra el archivo {EXCEL_FILE}")
+            sys.exit(1)
+        
+        connection = get_connection()
+        try:
+            total = 0
+            total += migrate_maquinaria(connection, EXCEL_FILE)
+            total += migrate_personal(connection, EXCEL_FILE)
+            total += migrate_herramientas(connection, EXCEL_FILE)
+            total += migrate_insumos(connection, EXCEL_FILE)
+            print("\n" + "=" * 60)
+            print(f"  ✓ Migración completada: {total} registros totales")
+            print("=" * 60)
+        except Exception as e:
+            print(f"\n✗ Error durante la migración: {e}")
+            import traceback
+            traceback.print_exc()
+            connection.rollback()
+            sys.exit(1)
+        finally:
+            if connection.is_connected():
+                connection.close()
+                print("\n✓ Conexión cerrada")
+
+    if __name__ == '__main__':
+        main()

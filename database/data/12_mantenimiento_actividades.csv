@@ -1,0 +1,1268 @@
+id,mantenimiento_id,actividad_id,descripcion,tiempo_real,completada,observaciones
+1,2,46,Revisar convertidor,15,1,Ejecutado según plan
+2,2,47,Verificar pasadores,41,1,Ejecutado según plan
+3,2,41,Verificar controles,35,1,Ejecutado según plan
+4,2,42,Revisar nivel de refrigerante,40,1,Ejecutado según plan
+5,2,43,Revisar pastillas,50,1,Ejecutado según plan
+6,3,14,Reparar abolladuras,46,1,Ejecutado según plan
+7,3,8,Verificar juego,27,1,Ejecutado según plan
+8,3,3,Verificar bomba de combustible,18,1,Ejecutado según plan
+9,3,9,Verificar alternador,45,1,Ejecutado según plan
+10,4,136,Revisar mangueras,46,1,Ejecutado según plan
+11,4,132,Engrasar articulaciones,14,1,Ejecutado según plan
+12,4,130,Verificar nivel de aceite,24,1,Ejecutado según plan
+13,5,144,Revisar mangueras,34,1,Ejecutado según plan
+14,5,148,Ajustar frenos,20,1,Ejecutado según plan
+15,5,149,Pintar partes oxidadas,28,0,Pendiente de completar
+16,6,116,Verificar juego,38,1,Ejecutado según plan
+17,6,114,Revisar convertidor,33,1,Ejecutado según plan
+18,6,120,Cambiar filtro de aceite,35,1,Ejecutado según plan
+19,6,123,Reparar abolladuras,29,1,Ejecutado según plan
+20,6,118,Revisar mangueras,12,1,Ejecutado según plan
+21,6,121,Verificar nivel de aceite,14,1,Ejecutado según plan
+22,6,119,Revisar nivel de refrigerante,27,1,Ejecutado según plan
+23,6,115,Verificar pasadores,29,1,Ejecutado según plan
+24,7,137,Inspección visual,26,1,Ejecutado según plan
+25,7,136,Revisar mangueras,36,1,Ejecutado según plan
+26,7,135,Revisar batería,29,1,Ejecutado según plan
+27,8,206,Limpiar filtros de aire acondicionado,18,1,Ejecutado según plan
+28,8,205,Revisar batería,33,1,Ejecutado según plan
+29,8,203,Verificar cilindros,20,0,Pendiente de completar
+30,8,199,Verificar presión,35,1,Ejecutado según plan
+31,8,204,Inspección visual,30,0,Pendiente de completar
+32,8,207,Revisar inyectores,37,1,Ejecutado según plan
+33,8,202,Revisar nivel de refrigerante,27,1,Ejecutado según plan
+34,8,200,Revisar pastillas,35,0,Pendiente de completar
+35,9,221,Inspeccionar rodillos,32,0,Pendiente de completar
+36,9,220,Limpiar filtros de aire acondicionado,17,1,Ejecutado según plan
+37,9,219,Revisar bomba de dirección,37,0,Pendiente de completar
+38,10,191,Rotar neumáticos,50,1,Ejecutado según plan
+39,10,194,Cambiar aceite de motor,16,1,Ejecutado según plan
+40,10,197,Verificar líquido de frenos,40,1,Ejecutado según plan
+41,11,285,Rotar neumáticos,18,0,Pendiente de completar
+42,11,287,Revisar pastillas,20,1,Ejecutado según plan
+43,11,291,Verificar controles,43,0,Pendiente de completar
+44,11,289,Cambiar aceite hidráulico,37,1,Ejecutado según plan
+45,11,283,Revisar batería,48,0,Pendiente de completar
+46,12,284,Cambiar filtro de aceite,20,1,Ejecutado según plan
+47,12,285,Rotar neumáticos,29,1,Ejecutado según plan
+48,12,291,Verificar controles,30,1,Ejecutado según plan
+49,12,287,Revisar pastillas,29,1,Ejecutado según plan
+50,12,282,Pintar partes oxidadas,56,1,Ejecutado según plan
+51,12,289,Cambiar aceite hidráulico,33,1,Ejecutado según plan
+52,13,236,Verificar termostato,24,1,Ejecutado según plan
+53,13,238,Cambiar filtro de aceite,33,1,Ejecutado según plan
+54,13,240,Engrasar articulaciones,29,1,Ejecutado según plan
+55,13,237,Inspeccionar correas,20,1,Ejecutado según plan
+56,13,239,Revisar pastillas,22,1,Ejecutado según plan
+57,14,275,Revisar nivel de refrigerante,44,1,Ejecutado según plan
+58,14,274,Engrasar articulaciones,31,1,Ejecutado según plan
+59,14,268,Cambiar aceite hidráulico,19,1,Ejecutado según plan
+60,14,269,Limpiar radiador,54,1,Ejecutado según plan
+61,15,297,Cambiar filtro de combustible,26,1,Ejecutado según plan
+62,15,294,Verificar nivel de aceite,15,1,Ejecutado según plan
+63,15,295,Inspección visual,41,1,Ejecutado según plan
+64,16,289,Cambiar aceite hidráulico,15,1,Ejecutado según plan
+65,16,287,Revisar pastillas,25,1,Ejecutado según plan
+66,16,284,Cambiar filtro de aceite,20,1,Ejecutado según plan
+67,16,286,Engrasar puntos de lubricación,48,1,Ejecutado según plan
+68,17,295,Inspección visual,44,1,Ejecutado según plan
+69,17,292,Verificar pasadores,30,1,Ejecutado según plan
+70,17,297,Cambiar filtro de combustible,23,1,Ejecutado según plan
+71,17,294,Verificar nivel de aceite,14,1,Ejecutado según plan
+72,17,299,Inspeccionar DPF,37,1,Ejecutado según plan
+73,17,298,Verificar controles,26,1,Ejecutado según plan
+74,17,296,Revisar convertidor,37,1,Ejecutado según plan
+75,18,327,Verificar juego,18,1,Ejecutado según plan
+76,18,334,Revisar tubo de escape,27,0,Pendiente de completar
+77,18,329,Cambiar filtro de aceite,32,0,Pendiente de completar
+78,18,326,Verificar termostato,33,0,Pendiente de completar
+79,18,322,Revisar dientes,37,1,Ejecutado según plan
+80,18,331,Verificar controles,34,0,Pendiente de completar
+81,19,336,Revisar bomba de dirección,54,1,Ejecutado según plan
+82,19,339,Verificar pasadores,35,1,Ejecutado según plan
+83,19,347,Inspeccionar conexiones,12,1,Ejecutado según plan
+84,19,340,Revisar convertidor,23,1,Ejecutado según plan
+85,20,358,Revisar nivel de refrigerante,54,1,Ejecutado según plan
+86,20,359,Engrasar articulaciones,33,0,Pendiente de completar
+87,20,356,Limpiar filtros de aire acondicionado,30,0,Pendiente de completar
+88,20,348,Verificar termostato,34,1,Ejecutado según plan
+89,20,352,Verificar silenciador,21,1,Ejecutado según plan
+90,20,349,Inspeccionar conexiones,37,1,Ejecutado según plan
+91,22,326,Verificar termostato,44,1,Ejecutado según plan
+92,22,328,Cambiar aceite de motor,43,1,Ejecutado según plan
+93,22,333,Revisar mangueras,24,1,Ejecutado según plan
+94,22,331,Verificar controles,39,1,Ejecutado según plan
+95,22,329,Cambiar filtro de aceite,33,0,Pendiente de completar
+96,22,334,Revisar tubo de escape,30,0,Pendiente de completar
+97,23,313,Revisar mangueras,26,1,Ejecutado según plan
+98,23,315,Verificar pasadores,28,1,Ejecutado según plan
+99,23,320,Revisar pastillas,23,1,Ejecutado según plan
+100,23,317,Cambiar filtro de combustible,27,1,Ejecutado según plan
+101,23,318,Rotar neumáticos,20,0,Pendiente de completar
+102,23,312,Inspeccionar conexiones,39,1,Ejecutado según plan
+103,23,311,Revisar asiento,21,1,Ejecutado según plan
+104,23,319,Revisar convertidor,34,1,Ejecutado según plan
+105,24,375,Cambiar filtro de aceite,27,1,Ejecutado según plan
+106,24,377,Verificar termostato,21,1,Ejecutado según plan
+107,24,376,Engrasar puntos de lubricación,12,1,Ejecutado según plan
+108,24,373,Revisar pastillas,18,1,Ejecutado según plan
+109,24,374,Verificar controles,10,1,Ejecutado según plan
+110,25,323,Pintar partes oxidadas,26,1,Ejecutado según plan
+111,25,329,Cambiar filtro de aceite,28,1,Ejecutado según plan
+112,25,328,Cambiar aceite de motor,39,1,Ejecutado según plan
+113,25,334,Revisar tubo de escape,23,1,Ejecutado según plan
+114,25,326,Verificar termostato,38,1,Ejecutado según plan
+115,26,439,Ajustar embrague,25,1,Ejecutado según plan
+116,26,447,Cambiar filtro de combustible,43,1,Ejecutado según plan
+117,26,445,Revisar pastillas,26,1,Ejecutado según plan
+118,26,451,Verificar silenciador,26,1,Ejecutado según plan
+119,26,449,Rotar neumáticos,31,1,Ejecutado según plan
+120,26,446,Limpiar radiador,30,1,Ejecutado según plan
+121,28,391,Verificar alternador,30,1,Ejecutado según plan
+122,28,381,Verificar líquido de frenos,43,1,Ejecutado según plan
+123,28,389,Ajustar embrague,41,1,Ejecutado según plan
+124,29,436,Verificar bomba de combustible,34,0,Pendiente de completar
+125,29,435,Revisar batería,24,0,Pendiente de completar
+126,29,432,Cambiar aceite de transmisión,30,1,Ejecutado según plan
+127,29,437,Revisar mangueras,16,0,Pendiente de completar
+128,29,434,Engrasar puntos de lubricación,30,0,Pendiente de completar
+129,29,433,Inspeccionar desgaste,26,1,Ejecutado según plan
+130,30,455,Verificar termostato,25,0,Pendiente de completar
+131,30,457,Rotar neumáticos,41,0,Pendiente de completar
+132,30,454,Revisar batería,24,0,Pendiente de completar
+133,30,456,Verificar sprockets,40,0,Pendiente de completar
+134,30,453,Inspección visual,28,1,Ejecutado según plan
+135,30,458,Cambiar aceite de transmisión,26,0,Pendiente de completar
+136,31,454,Revisar batería,23,1,Ejecutado según plan
+137,31,453,Inspección visual,40,1,Ejecutado según plan
+138,31,455,Verificar termostato,34,1,Ejecutado según plan
+139,31,457,Rotar neumáticos,24,1,Ejecutado según plan
+140,31,458,Cambiar aceite de transmisión,33,1,Ejecutado según plan
+141,32,493,Revisar tensión de cadena,24,0,Pendiente de completar
+142,32,501,Engrasar articulaciones,28,0,Pendiente de completar
+143,32,498,Reparar abolladuras,31,1,Ejecutado según plan
+144,34,499,Verificar líquido de frenos,18,1,Ejecutado según plan
+145,34,496,Revisar mangueras,26,1,Ejecutado según plan
+146,34,490,Cambiar aceite de transmisión,29,1,Ejecutado según plan
+147,34,501,Engrasar articulaciones,46,1,Ejecutado según plan
+148,34,497,Verificar controles,20,1,Ejecutado según plan
+149,34,498,Reparar abolladuras,36,1,Ejecutado según plan
+150,34,500,Verificar nivel de aceite,23,1,Ejecutado según plan
+151,37,466,Verificar juego,47,1,Ejecutado según plan
+152,37,464,Verificar funcionamiento de motor,31,1,Ejecutado según plan
+153,37,463,Limpiar radiador,33,1,Ejecutado según plan
+154,37,471,Inspeccionar desgaste,27,1,Ejecutado según plan
+155,37,468,Inspeccionar conexiones,50,1,Ejecutado según plan
+156,37,469,Verificar sprockets,21,1,Ejecutado según plan
+157,37,459,Cambiar aceite de motor,41,1,Ejecutado según plan
+158,38,553,Verificar cilindros,24,1,Ejecutado según plan
+159,38,558,Verificar líquido de frenos,23,0,Pendiente de completar
+160,38,559,Revisar dientes,33,1,Ejecutado según plan
+161,38,561,Engrasar puntos de lubricación,21,1,Ejecutado según plan
+162,38,554,Reparar abolladuras,40,0,Pendiente de completar
+163,38,557,Cambiar filtro de aire,23,0,Pendiente de completar
+164,39,598,Revisar tubo de escape,27,1,Ejecutado según plan
+165,39,591,Verificar juego,31,1,Ejecutado según plan
+166,39,593,Pintar partes oxidadas,38,1,Ejecutado según plan
+167,39,600,Cambiar aceite hidráulico,26,1,Ejecutado según plan
+168,39,599,Revisar mangueras,31,1,Ejecutado según plan
+169,39,596,Engrasar articulaciones,36,1,Ejecutado según plan
+170,39,589,Inspeccionar desgaste,38,1,Ejecutado según plan
+171,40,560,Inspeccionar desgaste,32,0,Pendiente de completar
+172,40,553,Verificar cilindros,12,0,Pendiente de completar
+173,40,561,Engrasar puntos de lubricación,17,0,Pendiente de completar
+174,40,559,Revisar dientes,19,0,Pendiente de completar
+175,40,557,Cambiar filtro de aire,23,1,Ejecutado según plan
+176,40,558,Verificar líquido de frenos,36,0,Pendiente de completar
+177,43,618,Revisar bomba de dirección,31,1,Ejecutado según plan
+178,43,609,Engrasar puntos de lubricación,49,1,Ejecutado según plan
+179,43,616,Cambiar filtro de combustible,37,1,Ejecutado según plan
+180,43,620,Inspeccionar correas,29,1,Ejecutado según plan
+181,43,611,Drenar tanque,23,1,Ejecutado según plan
+182,43,614,Inspección visual,33,1,Ejecutado según plan
+183,43,610,Revisar tensión de cadena,33,1,Ejecutado según plan
+184,44,616,Cambiar filtro de combustible,35,1,Ejecutado según plan
+185,44,614,Inspección visual,49,1,Ejecutado según plan
+186,44,620,Inspeccionar correas,32,1,Ejecutado según plan
+187,44,609,Engrasar puntos de lubricación,31,1,Ejecutado según plan
+188,44,613,Revisar convertidor,24,1,Ejecutado según plan
+189,47,640,Reparar abolladuras,11,1,Ejecutado según plan
+190,47,641,Ajustar frenos,36,1,Ejecutado según plan
+191,47,648,Cambiar filtro de aire,16,1,Ejecutado según plan
+192,47,638,Inspeccionar conexiones,19,1,Ejecutado según plan
+193,47,643,Cambiar aceite hidráulico,30,1,Ejecutado según plan
+194,47,647,Engrasar articulaciones,18,1,Ejecutado según plan
+195,47,645,Rotar neumáticos,27,1,Ejecutado según plan
+196,48,662,Engrasar puntos de lubricación,38,0,Pendiente de completar
+197,48,666,Drenar tanque,42,1,Ejecutado según plan
+198,48,659,Pintar partes oxidadas,19,1,Ejecutado según plan
+199,48,671,Verificar sprockets,37,0,Pendiente de completar
+200,48,660,Verificar presión,29,0,Pendiente de completar
+201,48,661,Engrasar articulaciones,49,1,Ejecutado según plan
+202,48,663,Verificar termostato,37,0,Pendiente de completar
+203,49,739,Cambiar filtro de combustible,15,1,Ejecutado según plan
+204,49,733,Inspeccionar desgaste,22,1,Ejecutado según plan
+205,49,736,Verificar pasadores,46,1,Ejecutado según plan
+206,49,731,Cambiar aceite hidráulico,34,1,Ejecutado según plan
+207,49,738,Verificar funcionamiento de motor,38,1,Ejecutado según plan
+208,49,735,Engrasar articulaciones,23,1,Ejecutado según plan
+209,49,732,Pintar partes oxidadas,37,1,Ejecutado según plan
+210,50,714,Verificar bomba de combustible,30,1,Ejecutado según plan
+211,50,710,Verificar alternador,30,1,Ejecutado según plan
+212,50,709,Revisar tubo de escape,22,1,Ejecutado según plan
+213,50,708,Cambiar aceite de motor,34,1,Ejecutado según plan
+214,50,712,Ajustar embrague,40,1,Ejecutado según plan
+215,50,705,Revisar tensión de cadena,31,1,Ejecutado según plan
+216,52,763,Inspeccionar rodillos,31,1,Ejecutado según plan
+217,52,765,Revisar dientes,36,1,Ejecutado según plan
+218,52,764,Revisar mangueras,16,1,Ejecutado según plan
+219,52,767,Revisar tubo de escape,40,1,Ejecutado según plan
+220,53,765,Revisar dientes,54,1,Ejecutado según plan
+221,53,766,Revisar pastillas,25,1,Ejecutado según plan
+222,53,764,Revisar mangueras,13,1,Ejecutado según plan
+223,53,767,Revisar tubo de escape,34,1,Ejecutado según plan
+224,53,763,Inspeccionar rodillos,43,1,Ejecutado según plan
+225,54,745,Revisar asiento,16,1,Ejecutado según plan
+226,54,744,Cambiar aceite de motor,39,1,Ejecutado según plan
+227,54,750,Limpiar radiador,32,1,Ejecutado según plan
+228,54,749,Cambiar aceite hidráulico,46,1,Ejecutado según plan
+229,54,747,Ajustar embrague,31,1,Ejecutado según plan
+230,56,796,Verificar juego,42,1,Ejecutado según plan
+231,56,792,Verificar sprockets,45,1,Ejecutado según plan
+232,56,799,Cambiar aceite de transmisión,21,1,Ejecutado según plan
+233,57,833,Drenar tanque,25,1,Ejecutado según plan
+234,57,835,Cambiar filtro de combustible,29,1,Ejecutado según plan
+235,57,836,Pintar partes oxidadas,36,1,Ejecutado según plan
+236,58,782,Cambiar filtro de aire,29,1,Ejecutado según plan
+237,58,781,Revisar nivel de refrigerante,20,1,Ejecutado según plan
+238,58,788,Verificar cilindros,29,1,Ejecutado según plan
+239,58,791,Revisar dientes,46,1,Ejecutado según plan
+240,58,785,Revisar tubo de escape,39,1,Ejecutado según plan
+241,58,784,Inspeccionar rodillos,22,1,Ejecutado según plan
+242,58,787,Verificar alternador,13,1,Ejecutado según plan
+243,59,854,Rotar neumáticos,29,1,Ejecutado según plan
+244,59,851,Revisar mangueras,34,1,Ejecutado según plan
+245,59,855,Revisar convertidor,22,1,Ejecutado según plan
+246,59,850,Verificar pasadores,41,1,Ejecutado según plan
+247,59,853,Verificar nivel de aceite,29,1,Ejecutado según plan
+248,59,857,Verificar controles,44,1,Ejecutado según plan
+249,59,856,Engrasar articulaciones,31,1,Ejecutado según plan
+250,60,856,Engrasar articulaciones,50,1,Ejecutado según plan
+251,60,853,Verificar nivel de aceite,40,1,Ejecutado según plan
+252,60,851,Revisar mangueras,42,1,Ejecutado según plan
+253,60,855,Revisar convertidor,26,1,Ejecutado según plan
+254,60,857,Verificar controles,38,1,Ejecutado según plan
+255,60,852,Inspeccionar conexiones,28,1,Ejecutado según plan
+256,60,854,Rotar neumáticos,36,1,Ejecutado según plan
+257,60,850,Verificar pasadores,43,1,Ejecutado según plan
+258,61,856,Engrasar articulaciones,29,1,Ejecutado según plan
+259,61,853,Verificar nivel de aceite,28,1,Ejecutado según plan
+260,61,855,Revisar convertidor,28,1,Ejecutado según plan
+261,61,851,Revisar mangueras,44,1,Ejecutado según plan
+262,62,875,Inspeccionar correas,26,0,Pendiente de completar
+263,62,878,Revisar tubo de escape,32,0,Pendiente de completar
+264,62,874,Revisar dientes,24,0,Pendiente de completar
+265,62,876,Verificar nivel de aceite,25,0,Pendiente de completar
+266,62,871,Revisar asiento,22,1,Ejecutado según plan
+267,62,879,Rotar neumáticos,32,1,Ejecutado según plan
+268,62,870,Revisar mangueras,28,1,Ejecutado según plan
+269,63,890,Inspeccionar rodillos,29,1,Ejecutado según plan
+270,63,888,Verificar presión,46,1,Ejecutado según plan
+271,63,883,Inspección visual,22,1,Ejecutado según plan
+272,64,905,Verificar juego,30,1,Ejecutado según plan
+273,64,902,Inspeccionar conexiones,26,1,Ejecutado según plan
+274,64,899,Revisar convertidor,28,1,Ejecutado según plan
+275,64,901,Verificar silenciador,19,1,Ejecutado según plan
+276,64,898,Revisar pastillas,23,1,Ejecutado según plan
+277,65,863,Engrasar articulaciones,33,1,Ejecutado según plan
+278,65,866,Drenar tanque,33,1,Ejecutado según plan
+279,65,861,Verificar presión,28,1,Ejecutado según plan
+280,65,859,Revisar batería,23,1,Ejecutado según plan
+281,65,867,Limpiar radiador,38,1,Ejecutado según plan
+282,66,853,Verificar nivel de aceite,48,1,Ejecutado según plan
+283,66,850,Verificar pasadores,34,1,Ejecutado según plan
+284,66,851,Revisar mangueras,53,1,Ejecutado según plan
+285,67,940,Verificar termostato,32,1,Ejecutado según plan
+286,67,938,Revisar convertidor,41,1,Ejecutado según plan
+287,67,946,Verificar bomba de combustible,14,1,Ejecutado según plan
+288,68,946,Verificar bomba de combustible,22,1,Ejecutado según plan
+289,68,937,Verificar funcionamiento de motor,40,1,Ejecutado según plan
+290,68,942,Cambiar filtro de aire,14,1,Ejecutado según plan
+291,68,939,Reparar abolladuras,35,1,Ejecutado según plan
+292,68,940,Verificar termostato,41,1,Ejecutado según plan
+293,69,919,Revisar convertidor,33,1,Ejecutado según plan
+294,69,915,Cambiar aceite de motor,33,1,Ejecutado según plan
+295,69,922,Verificar funcionamiento de motor,12,1,Ejecutado según plan
+296,69,923,Revisar dientes,33,1,Ejecutado según plan
+297,69,914,Inspeccionar conexiones,33,1,Ejecutado según plan
+298,70,921,Revisar tensión de cadena,20,0,Pendiente de completar
+299,70,922,Verificar funcionamiento de motor,19,0,Pendiente de completar
+300,70,915,Cambiar aceite de motor,26,0,Pendiente de completar
+301,70,920,Ajustar frenos,16,0,Pendiente de completar
+302,70,925,Reparar abolladuras,37,1,Ejecutado según plan
+303,70,916,Verificar silenciador,35,1,Ejecutado según plan
+304,71,945,Verificar juego,51,1,Ejecutado según plan
+305,71,939,Reparar abolladuras,42,1,Ejecutado según plan
+306,71,936,Revisar tensión de cadena,17,1,Ejecutado según plan
+307,72,1041,Verificar controles,25,1,Ejecutado según plan
+308,72,1040,Drenar tanque,27,1,Ejecutado según plan
+309,72,1042,Cambiar aceite de motor,45,1,Ejecutado según plan
+310,73,1010,Revisar batería,35,1,Ejecutado según plan
+311,73,1011,Verificar termostato,33,1,Ejecutado según plan
+312,73,1006,Verificar líquido de frenos,28,1,Ejecutado según plan
+313,73,1008,Cambiar aceite hidráulico,28,1,Ejecutado según plan
+314,73,1007,Drenar tanque,20,1,Ejecutado según plan
+315,73,1015,Verificar pasadores,19,1,Ejecutado según plan
+316,73,1013,Inspeccionar DPF,30,1,Ejecutado según plan
+317,73,1016,Revisar bomba de dirección,36,1,Ejecutado según plan
+318,74,1014,Revisar asiento,20,1,Ejecutado según plan
+319,74,1016,Revisar bomba de dirección,17,1,Ejecutado según plan
+320,74,1006,Verificar líquido de frenos,35,1,Ejecutado según plan
+321,77,1022,Revisar pastillas,26,1,Ejecutado según plan
+322,77,1019,Inspeccionar correas,31,1,Ejecutado según plan
+323,77,1020,Verificar silenciador,33,1,Ejecutado según plan
+324,77,1021,Verificar presión,37,1,Ejecutado según plan
+325,78,996,Ajustar embrague,32,0,Pendiente de completar
+326,78,994,Verificar sprockets,33,0,Pendiente de completar
+327,78,991,Inspección visual,32,1,Ejecutado según plan
+328,78,995,Engrasar articulaciones,30,1,Ejecutado según plan
+329,78,990,Inspeccionar conexiones,50,1,Ejecutado según plan
+330,79,1061,Verificar alternador,27,1,Ejecutado según plan
+331,79,1065,Verificar controles,29,1,Ejecutado según plan
+332,79,1068,Limpiar radiador,36,1,Ejecutado según plan
+333,79,1059,Revisar tensión de cadena,40,0,Pendiente de completar
+334,79,1063,Revisar tubo de escape,41,1,Ejecutado según plan
+335,80,1097,Drenar tanque,35,1,Ejecutado según plan
+336,80,1102,Verificar controles,23,1,Ejecutado según plan
+337,80,1101,Verificar termostato,27,1,Ejecutado según plan
+338,80,1099,Revisar bomba de dirección,33,1,Ejecutado según plan
+339,80,1098,Ajustar frenos,31,1,Ejecutado según plan
+340,80,1096,Inspeccionar DPF,29,1,Ejecutado según plan
+341,82,1099,Revisar bomba de dirección,29,1,Ejecutado según plan
+342,82,1100,Cambiar filtro de aire,17,0,Pendiente de completar
+343,82,1098,Ajustar frenos,39,0,Pendiente de completar
+344,82,1096,Inspeccionar DPF,22,1,Ejecutado según plan
+345,82,1102,Verificar controles,29,0,Pendiente de completar
+346,84,1066,Cambiar filtro de combustible,35,1,Ejecutado según plan
+347,84,1062,Verificar líquido de frenos,28,1,Ejecutado según plan
+348,84,1064,Ajustar embrague,27,1,Ejecutado según plan
+349,84,1063,Revisar tubo de escape,35,1,Ejecutado según plan
+350,85,1135,Revisar asiento,37,1,Ejecutado según plan
+351,85,1138,Inspección visual,14,1,Ejecutado según plan
+352,85,1140,Cambiar aceite hidráulico,25,1,Ejecutado según plan
+353,85,1141,Engrasar articulaciones,25,1,Ejecutado según plan
+354,85,1139,Verificar bomba de combustible,26,1,Ejecutado según plan
+355,85,1133,Verificar pasadores,46,1,Ejecutado según plan
+356,85,1136,Revisar batería,40,1,Ejecutado según plan
+357,85,1132,Verificar nivel de aceite,27,1,Ejecutado según plan
+358,86,1197,Inspección visual,33,0,Pendiente de completar
+359,86,1202,Verificar bomba de combustible,26,0,Pendiente de completar
+360,86,1203,Revisar tubo de escape,27,0,Pendiente de completar
+361,88,1189,Verificar cilindros,32,1,Ejecutado según plan
+362,88,1187,Verificar termostato,44,1,Ejecutado según plan
+363,88,1190,Verificar controles,19,1,Ejecutado según plan
+364,88,1183,Inspección visual,32,1,Ejecutado según plan
+365,88,1184,Drenar tanque,27,1,Ejecutado según plan
+366,88,1185,Rotar neumáticos,50,1,Ejecutado según plan
+367,89,1205,Revisar pastillas,39,1,Ejecutado según plan
+368,89,1209,Rotar neumáticos,26,1,Ejecutado según plan
+369,89,1204,Verificar bomba de combustible,24,1,Ejecutado según plan
+370,89,1210,Inspeccionar conexiones,23,1,Ejecutado según plan
+371,89,1208,Cambiar aceite hidráulico,20,1,Ejecutado según plan
+372,89,1211,Engrasar articulaciones,41,1,Ejecutado según plan
+373,89,1207,Revisar tensión de cadena,32,1,Ejecutado según plan
+374,89,1206,Revisar convertidor,33,1,Ejecutado según plan
+375,90,1249,Revisar batería,35,1,Ejecutado según plan
+376,90,1248,Inspección visual,32,1,Ejecutado según plan
+377,90,1251,Revisar mangueras,29,1,Ejecutado según plan
+378,90,1252,Verificar presión,25,1,Ejecutado según plan
+379,90,1247,Engrasar articulaciones,21,1,Ejecutado según plan
+380,91,1233,Revisar bomba de dirección,29,1,Ejecutado según plan
+381,91,1237,Verificar silenciador,25,1,Ejecutado según plan
+382,91,1241,Cambiar filtro de combustible,34,1,Ejecutado según plan
+383,91,1235,Verificar bomba de combustible,27,1,Ejecutado según plan
+384,91,1242,Verificar pasadores,36,1,Ejecutado según plan
+385,92,1332,Revisar tubo de escape,33,1,Ejecutado según plan
+386,92,1331,Rotar neumáticos,30,1,Ejecutado según plan
+387,92,1340,Revisar nivel de refrigerante,33,0,Pendiente de completar
+388,92,1333,Ajustar embrague,21,1,Ejecutado según plan
+389,93,1307,Verificar silenciador,40,1,Ejecutado según plan
+390,93,1297,Rotar neumáticos,22,1,Ejecutado según plan
+391,93,1296,Verificar termostato,23,1,Ejecutado según plan
+392,93,1303,Ajustar embrague,34,1,Ejecutado según plan
+393,93,1295,Limpiar filtros de aire acondicionado,26,1,Ejecutado según plan
+394,93,1302,Inspeccionar correas,29,1,Ejecutado según plan
+395,94,1344,Pintar partes oxidadas,39,1,Ejecutado según plan
+396,94,1341,Verificar termostato,44,1,Ejecutado según plan
+397,94,1342,Revisar asiento,16,1,Ejecutado según plan
+398,94,1345,Cambiar aceite de transmisión,22,1,Ejecutado según plan
+399,95,1316,Revisar bomba de dirección,31,1,Ejecutado según plan
+400,95,1311,Verificar cilindros,27,1,Ejecutado según plan
+401,95,1312,Revisar batería,30,1,Ejecutado según plan
+402,95,1317,Drenar tanque,19,1,Ejecutado según plan
+403,96,1297,Rotar neumáticos,29,0,Pendiente de completar
+404,96,1306,Inspeccionar rodillos,32,1,Ejecutado según plan
+405,96,1294,Revisar mangueras,19,0,Pendiente de completar
+406,96,1304,Verificar bomba de combustible,25,0,Pendiente de completar
+407,96,1305,Cambiar filtro de combustible,28,1,Ejecutado según plan
+408,96,1303,Ajustar embrague,26,0,Pendiente de completar
+409,96,1293,Verificar alternador,32,1,Ejecutado según plan
+410,96,1300,Revisar bomba de dirección,17,1,Ejecutado según plan
+411,99,1355,Inspeccionar correas,37,1,Ejecutado según plan
+412,99,1351,Rotar neumáticos,36,1,Ejecutado según plan
+413,99,1346,Verificar alternador,29,1,Ejecutado según plan
+414,99,1353,Revisar tensión de cadena,34,1,Ejecutado según plan
+415,99,1352,Revisar convertidor,46,1,Ejecutado según plan
+416,99,1347,Verificar controles,39,1,Ejecutado según plan
+417,99,1354,Cambiar aceite de motor,39,1,Ejecutado según plan
+418,99,1349,Revisar bomba de dirección,22,1,Ejecutado según plan
+419,100,1382,Revisar pastillas,30,0,Pendiente de completar
+420,100,1377,Inspeccionar conexiones,16,0,Pendiente de completar
+421,100,1373,Cambiar filtro de aire,20,1,Ejecutado según plan
+422,100,1370,Verificar juego,24,0,Pendiente de completar
+423,100,1376,Inspección visual,26,0,Pendiente de completar
+424,101,1396,Cambiar filtro de aceite,37,1,Ejecutado según plan
+425,101,1387,Ajustar frenos,34,1,Ejecutado según plan
+426,101,1397,Rotar neumáticos,34,1,Ejecutado según plan
+427,101,1395,Inspección visual,24,1,Ejecutado según plan
+428,101,1391,Drenar tanque,23,1,Ejecutado según plan
+429,101,1385,Revisar nivel de refrigerante,25,1,Ejecutado según plan
+430,101,1394,Revisar mangueras,38,1,Ejecutado según plan
+431,101,1390,Cambiar aceite hidráulico,22,1,Ejecutado según plan
+432,102,1405,Inspeccionar desgaste,17,0,Pendiente de completar
+433,102,1403,Drenar tanque,41,1,Ejecutado según plan
+434,102,1398,Verificar alternador,39,1,Ejecutado según plan
+435,102,1402,Inspeccionar correas,25,1,Ejecutado según plan
+436,102,1404,Inspección visual,27,1,Ejecutado según plan
+437,102,1401,Engrasar articulaciones,39,1,Ejecutado según plan
+438,104,1373,Cambiar filtro de aire,32,1,Ejecutado según plan
+439,104,1382,Revisar pastillas,23,1,Ejecutado según plan
+440,104,1370,Verificar juego,30,1,Ejecutado según plan
+441,104,1374,Inspeccionar desgaste,25,1,Ejecutado según plan
+442,104,1375,Cambiar aceite de motor,37,1,Ejecutado según plan
+443,104,1379,Ajustar embrague,30,1,Ejecutado según plan
+444,105,1351,Rotar neumáticos,27,1,Ejecutado según plan
+445,105,1355,Inspeccionar correas,29,0,Pendiente de completar
+446,105,1350,Revisar inyectores,28,0,Pendiente de completar
+447,105,1348,Cambiar filtro de combustible,41,1,Ejecutado según plan
+448,105,1352,Revisar convertidor,45,0,Pendiente de completar
+449,107,1492,Revisar asiento,32,1,Ejecutado según plan
+450,107,1491,Revisar convertidor,33,1,Ejecutado según plan
+451,107,1493,Verificar sprockets,38,1,Ejecutado según plan
+452,108,1463,Verificar nivel de aceite,23,1,Ejecutado según plan
+453,108,1465,Verificar silenciador,31,1,Ejecutado según plan
+454,108,1466,Verificar termostato,42,1,Ejecutado según plan
+455,108,1468,Cambiar filtro de combustible,45,1,Ejecutado según plan
+456,108,1461,Engrasar articulaciones,13,1,Ejecutado según plan
+457,109,1470,Ajustar frenos,30,1,Ejecutado según plan
+458,109,1471,Revisar bomba de dirección,28,1,Ejecutado según plan
+459,109,1477,Rotar neumáticos,49,1,Ejecutado según plan
+460,109,1476,Verificar pasadores,22,1,Ejecutado según plan
+461,109,1473,Revisar inyectores,24,1,Ejecutado según plan
+462,109,1474,Cambiar aceite de motor,19,1,Ejecutado según plan
+463,109,1475,Verificar cilindros,46,1,Ejecutado según plan
+464,110,1423,Revisar inyectores,28,1,Ejecutado según plan
+465,110,1428,Inspeccionar desgaste,32,1,Ejecutado según plan
+466,110,1424,Ajustar frenos,30,1,Ejecutado según plan
+467,110,1431,Revisar nivel de refrigerante,39,1,Ejecutado según plan
+468,110,1434,Cambiar aceite hidráulico,29,1,Ejecutado según plan
+469,110,1425,Revisar dientes,37,1,Ejecutado según plan
+470,110,1421,Verificar nivel de aceite,26,1,Ejecutado según plan
+471,110,1432,Verificar silenciador,23,1,Ejecutado según plan
+472,111,1568,Limpiar radiador,27,1,Ejecutado según plan
+473,111,1569,Verificar sprockets,20,1,Ejecutado según plan
+474,111,1570,Engrasar articulaciones,27,1,Ejecutado según plan
+475,111,1571,Engrasar puntos de lubricación,24,1,Ejecutado según plan
+476,112,1497,Limpiar filtros de aire acondicionado,41,0,Pendiente de completar
+477,112,1495,Drenar tanque,33,0,Pendiente de completar
+478,112,1496,Ajustar frenos,18,1,Ejecutado según plan
+479,113,1500,Revisar mangueras,29,1,Ejecutado según plan
+480,113,1495,Drenar tanque,24,1,Ejecutado según plan
+481,113,1501,Inspeccionar conexiones,43,1,Ejecutado según plan
+482,113,1499,Inspeccionar rodillos,36,1,Ejecutado según plan
+483,113,1497,Limpiar filtros de aire acondicionado,43,1,Ejecutado según plan
+484,113,1498,Reparar abolladuras,32,1,Ejecutado según plan
+485,113,1494,Engrasar articulaciones,35,1,Ejecutado según plan
+486,114,1509,Reparar abolladuras,18,1,Ejecutado según plan
+487,114,1504,Inspeccionar conexiones,48,1,Ejecutado según plan
+488,114,1510,Inspeccionar correas,19,1,Ejecutado según plan
+489,114,1506,Engrasar articulaciones,42,1,Ejecutado según plan
+490,114,1503,Verificar silenciador,25,1,Ejecutado según plan
+491,114,1511,Verificar pasadores,49,1,Ejecutado según plan
+492,114,1507,Rotar neumáticos,47,1,Ejecutado según plan
+493,115,1497,Limpiar filtros de aire acondicionado,49,1,Ejecutado según plan
+494,115,1500,Revisar mangueras,49,1,Ejecutado según plan
+495,115,1498,Reparar abolladuras,28,1,Ejecutado según plan
+496,115,1499,Inspeccionar rodillos,27,1,Ejecutado según plan
+497,115,1495,Drenar tanque,19,1,Ejecutado según plan
+498,115,1501,Inspeccionar conexiones,53,1,Ejecutado según plan
+499,115,1494,Engrasar articulaciones,38,1,Ejecutado según plan
+500,117,1588,Cambiar filtro de aire,25,1,Ejecutado según plan
+501,117,1584,Reparar abolladuras,33,1,Ejecutado según plan
+502,117,1590,Verificar cilindros,32,1,Ejecutado según plan
+503,117,1587,Inspeccionar correas,29,1,Ejecutado según plan
+504,118,1583,Ajustar frenos,32,1,Ejecutado según plan
+505,118,1580,Revisar tensión de cadena,35,1,Ejecutado según plan
+506,118,1579,Verificar cilindros,29,1,Ejecutado según plan
+507,118,1573,Limpiar radiador,15,1,Ejecutado según plan
+508,119,1630,Inspección visual,24,1,Ejecutado según plan
+509,119,1631,Revisar convertidor,16,1,Ejecutado según plan
+510,119,1629,Verificar alternador,24,1,Ejecutado según plan
+511,119,1626,Cambiar aceite de motor,32,1,Ejecutado según plan
+512,119,1624,Verificar pasadores,31,1,Ejecutado según plan
+513,120,1588,Cambiar filtro de aire,19,1,Ejecutado según plan
+514,120,1591,Revisar bomba de dirección,33,1,Ejecutado según plan
+515,120,1587,Inspeccionar correas,28,1,Ejecutado según plan
+516,120,1585,Verificar líquido de frenos,29,1,Ejecutado según plan
+517,120,1592,Verificar bomba de combustible,35,1,Ejecutado según plan
+518,120,1586,Verificar presión,38,1,Ejecutado según plan
+519,120,1584,Reparar abolladuras,48,1,Ejecutado según plan
+520,120,1590,Verificar cilindros,30,1,Ejecutado según plan
+521,121,1641,Verificar bomba de combustible,31,0,Pendiente de completar
+522,121,1636,Limpiar radiador,40,1,Ejecutado según plan
+523,121,1640,Verificar sprockets,51,0,Pendiente de completar
+524,121,1637,Verificar nivel de aceite,24,1,Ejecutado según plan
+525,121,1638,Ajustar frenos,44,0,Pendiente de completar
+526,121,1639,Reparar abolladuras,22,1,Ejecutado según plan
+527,122,1666,Ajustar frenos,35,1,Ejecutado según plan
+528,122,1676,Revisar tensión de cadena,32,1,Ejecutado según plan
+529,122,1678,Verificar controles,23,1,Ejecutado según plan
+530,122,1669,Revisar mangueras,17,1,Ejecutado según plan
+531,122,1665,Verificar funcionamiento de motor,27,1,Ejecutado según plan
+532,122,1677,Ajustar embrague,42,1,Ejecutado según plan
+533,123,1692,Cambiar aceite de motor,43,1,Ejecutado según plan
+534,123,1697,Revisar mangueras,33,1,Ejecutado según plan
+535,123,1691,Verificar controles,19,1,Ejecutado según plan
+536,123,1703,Verificar líquido de frenos,26,1,Ejecutado según plan
+537,124,1683,Ajustar embrague,47,1,Ejecutado según plan
+538,124,1684,Verificar pasadores,23,1,Ejecutado según plan
+539,124,1689,Revisar mangueras,41,1,Ejecutado según plan
+540,125,1777,Inspeccionar rodillos,13,0,Pendiente de completar
+541,125,1779,Verificar bomba de combustible,32,0,Pendiente de completar
+542,125,1770,Inspección visual,18,0,Pendiente de completar
+543,125,1773,Revisar bomba de dirección,27,0,Pendiente de completar
+544,125,1768,Limpiar radiador,39,0,Pendiente de completar
+545,125,1772,Inspeccionar DPF,27,0,Pendiente de completar
+546,125,1775,Revisar batería,44,0,Pendiente de completar
+547,125,1778,Revisar convertidor,40,1,Ejecutado según plan
+548,126,1761,Revisar tensión de cadena,30,1,Ejecutado según plan
+549,126,1767,Revisar convertidor,33,1,Ejecutado según plan
+550,126,1757,Inspeccionar desgaste,29,1,Ejecutado según plan
+551,127,1790,Revisar bomba de dirección,16,1,Ejecutado según plan
+552,127,1789,Verificar silenciador,35,0,Pendiente de completar
+553,127,1791,Revisar asiento,30,1,Ejecutado según plan
+554,128,1791,Revisar asiento,39,1,Ejecutado según plan
+555,128,1789,Verificar silenciador,42,1,Ejecutado según plan
+556,128,1790,Revisar bomba de dirección,19,1,Ejecutado según plan
+557,132,1850,Inspección visual,37,1,Ejecutado según plan
+558,132,1847,Revisar inyectores,44,0,Pendiente de completar
+559,132,1849,Verificar silenciador,33,0,Pendiente de completar
+560,133,1816,Verificar funcionamiento de motor,35,1,Ejecutado según plan
+561,133,1820,Engrasar articulaciones,23,1,Ejecutado según plan
+562,133,1817,Verificar nivel de aceite,44,1,Ejecutado según plan
+563,133,1814,Verificar presión,44,1,Ejecutado según plan
+564,133,1815,Cambiar aceite hidráulico,30,1,Ejecutado según plan
+565,134,1823,Revisar tubo de escape,33,1,Ejecutado según plan
+566,134,1825,Cambiar aceite hidráulico,10,1,Ejecutado según plan
+567,134,1826,Verificar líquido de frenos,30,1,Ejecutado según plan
+568,134,1822,Ajustar embrague,29,1,Ejecutado según plan
+569,134,1824,Verificar pasadores,30,1,Ejecutado según plan
+570,134,1830,Inspeccionar rodillos,21,1,Ejecutado según plan
+571,134,1827,Revisar asiento,31,1,Ejecutado según plan
+572,135,1797,Verificar pasadores,35,1,Ejecutado según plan
+573,135,1795,Limpiar filtros de aire acondicionado,37,1,Ejecutado según plan
+574,135,1793,Verificar bomba de combustible,33,1,Ejecutado según plan
+575,135,1796,Verificar juego,34,1,Ejecutado según plan
+576,135,1792,Rotar neumáticos,16,1,Ejecutado según plan
+577,135,1794,Cambiar filtro de aceite,47,1,Ejecutado según plan
+578,135,1800,Ajustar frenos,35,1,Ejecutado según plan
+579,135,1801,Revisar convertidor,22,1,Ejecutado según plan
+580,136,1854,Verificar pasadores,30,1,Ejecutado según plan
+581,136,1856,Revisar convertidor,37,1,Ejecutado según plan
+582,136,1853,Verificar controles,57,1,Ejecutado según plan
+583,138,1924,Cambiar aceite de motor,35,0,Pendiente de completar
+584,138,1923,Verificar juego,42,1,Ejecutado según plan
+585,138,1920,Cambiar aceite de transmisión,19,0,Pendiente de completar
+586,138,1925,Revisar pastillas,29,1,Ejecutado según plan
+587,138,1921,Verificar termostato,31,1,Ejecutado según plan
+588,138,1922,Revisar dientes,29,0,Pendiente de completar
+589,140,1898,Inspeccionar DPF,39,1,Ejecutado según plan
+590,140,1901,Reparar abolladuras,48,1,Ejecutado según plan
+591,140,1899,Revisar inyectores,30,1,Ejecutado según plan
+592,141,1904,Engrasar puntos de lubricación,47,1,Ejecutado según plan
+593,141,1906,Cambiar aceite de transmisión,53,1,Ejecutado según plan
+594,141,1902,Verificar cilindros,34,1,Ejecutado según plan
+595,141,1905,Inspeccionar correas,41,1,Ejecutado según plan
+596,141,1901,Reparar abolladuras,32,1,Ejecutado según plan
+597,141,1900,Verificar controles,41,1,Ejecutado según plan
+598,143,1890,Limpiar radiador,29,1,Ejecutado según plan
+599,143,1886,Revisar inyectores,32,0,Pendiente de completar
+600,143,1894,Revisar tubo de escape,27,0,Pendiente de completar
+601,143,1896,Verificar pasadores,25,0,Pendiente de completar
+602,143,1889,Revisar bomba de dirección,33,0,Pendiente de completar
+603,143,1892,Verificar controles,36,1,Ejecutado según plan
+604,143,1895,Inspección visual,38,1,Ejecutado según plan
+605,144,1884,Cambiar aceite hidráulico,39,1,Ejecutado según plan
+606,144,1880,Rotar neumáticos,31,1,Ejecutado según plan
+607,144,1882,Revisar asiento,29,1,Ejecutado según plan
+608,144,1885,Reparar abolladuras,26,1,Ejecutado según plan
+609,144,1879,Revisar pastillas,30,1,Ejecutado según plan
+610,144,1883,Cambiar filtro de aceite,23,1,Ejecutado según plan
+611,144,1878,Verificar juego,15,1,Ejecutado según plan
+612,144,1881,Verificar silenciador,29,1,Ejecutado según plan
+613,145,1932,Verificar bomba de combustible,51,1,Ejecutado según plan
+614,145,1934,Verificar líquido de frenos,24,1,Ejecutado según plan
+615,145,1931,Verificar controles,28,1,Ejecutado según plan
+616,145,1929,Inspeccionar conexiones,48,1,Ejecutado según plan
+617,145,1935,Cambiar filtro de aceite,42,1,Ejecutado según plan
+618,145,1930,Inspeccionar rodillos,39,1,Ejecutado según plan
+619,149,1966,Verificar funcionamiento de motor,40,1,Ejecutado según plan
+620,149,1973,Verificar cilindros,31,1,Ejecutado según plan
+621,149,1971,Inspeccionar desgaste,29,1,Ejecutado según plan
+622,149,1976,Verificar controles,24,1,Ejecutado según plan
+623,149,1968,Revisar mangueras,17,1,Ejecutado según plan
+624,150,1961,Verificar sprockets,40,1,Ejecutado según plan
+625,150,1960,Verificar líquido de frenos,35,1,Ejecutado según plan
+626,150,1962,Revisar mangueras,32,1,Ejecutado según plan
+627,150,1951,Inspeccionar desgaste,25,1,Ejecutado según plan
+628,150,1958,Cambiar aceite de transmisión,32,1,Ejecutado según plan
+629,150,1957,Inspección visual,26,1,Ejecutado según plan
+630,150,1954,Revisar batería,30,1,Ejecutado según plan
+631,150,1955,Verificar funcionamiento de motor,34,1,Ejecutado según plan
+632,151,1990,Revisar tubo de escape,44,1,Ejecutado según plan
+633,151,1989,Verificar sprockets,39,1,Ejecutado según plan
+634,151,1993,Verificar líquido de frenos,35,1,Ejecutado según plan
+635,151,1996,Revisar mangueras,26,1,Ejecutado según plan
+636,151,1995,Cambiar filtro de aire,26,1,Ejecutado según plan
+637,151,1992,Inspeccionar desgaste,36,1,Ejecutado según plan
+638,152,2036,Revisar batería,35,1,Ejecutado según plan
+639,152,2040,Inspeccionar DPF,29,1,Ejecutado según plan
+640,152,2032,Verificar líquido de frenos,18,1,Ejecutado según plan
+641,152,2035,Cambiar filtro de aceite,38,1,Ejecutado según plan
+642,152,2027,Revisar mangueras,35,1,Ejecutado según plan
+643,152,2038,Verificar juego,40,1,Ejecutado según plan
+644,153,2061,Limpiar radiador,29,1,Ejecutado según plan
+645,153,2057,Verificar líquido de frenos,34,1,Ejecutado según plan
+646,153,2051,Verificar nivel de aceite,27,1,Ejecutado según plan
+647,153,2059,Revisar tubo de escape,36,1,Ejecutado según plan
+648,153,2056,Revisar inyectores,28,1,Ejecutado según plan
+649,153,2052,Rotar neumáticos,31,1,Ejecutado según plan
+650,154,2030,Cambiar aceite hidráulico,17,1,Ejecutado según plan
+651,154,2032,Verificar líquido de frenos,20,1,Ejecutado según plan
+652,154,2038,Verificar juego,26,1,Ejecutado según plan
+653,154,2040,Inspeccionar DPF,39,1,Ejecutado según plan
+654,154,2033,Revisar dientes,31,0,Pendiente de completar
+655,154,2035,Cambiar filtro de aceite,42,0,Pendiente de completar
+656,154,2036,Revisar batería,16,0,Pendiente de completar
+657,154,2029,Verificar controles,55,1,Ejecutado según plan
+658,155,2058,Verificar sprockets,39,0,Pendiente de completar
+659,155,2051,Verificar nivel de aceite,24,0,Pendiente de completar
+660,155,2062,Verificar cilindros,36,1,Ejecutado según plan
+661,155,2052,Rotar neumáticos,43,1,Ejecutado según plan
+662,155,2060,Revisar batería,40,1,Ejecutado según plan
+663,155,2057,Verificar líquido de frenos,21,1,Ejecutado según plan
+664,155,2054,Revisar bomba de dirección,28,0,Pendiente de completar
+665,156,2042,Verificar juego,36,1,Ejecutado según plan
+666,156,2047,Engrasar articulaciones,48,1,Ejecutado según plan
+667,156,2043,Limpiar filtros de aire acondicionado,42,1,Ejecutado según plan
+668,156,2049,Cambiar aceite de transmisión,46,1,Ejecutado según plan
+669,156,2041,Revisar pastillas,26,1,Ejecutado según plan
+670,156,2046,Cambiar aceite hidráulico,52,1,Ejecutado según plan
+671,158,2017,Cambiar filtro de aceite,35,1,Ejecutado según plan
+672,158,2015,Limpiar filtros de aire acondicionado,39,1,Ejecutado según plan
+673,158,2011,Inspeccionar desgaste,37,1,Ejecutado según plan
+674,158,2023,Inspeccionar conexiones,27,1,Ejecutado según plan
+675,158,2021,Revisar tubo de escape,29,1,Ejecutado según plan
+676,158,2013,Revisar inyectores,14,1,Ejecutado según plan
+677,158,2024,Inspección visual,38,1,Ejecutado según plan
+678,159,2090,Verificar silenciador,33,1,Ejecutado según plan
+679,159,2088,Inspeccionar conexiones,34,1,Ejecutado según plan
+680,159,2087,Verificar pasadores,35,1,Ejecutado según plan
+681,159,2084,Cambiar filtro de aceite,43,1,Ejecutado según plan
+682,159,2089,Limpiar radiador,35,1,Ejecutado según plan
+683,159,2086,Inspeccionar desgaste,35,1,Ejecutado según plan
+684,159,2091,Limpiar filtros de aire acondicionado,13,1,Ejecutado según plan
+685,159,2085,Cambiar aceite de motor,31,1,Ejecutado según plan
+686,160,2112,Verificar controles,22,1,Ejecutado según plan
+687,160,2111,Verificar bomba de combustible,34,1,Ejecutado según plan
+688,160,2117,Verificar juego,24,1,Ejecutado según plan
+689,160,2115,Verificar líquido de frenos,17,1,Ejecutado según plan
+690,161,2111,Verificar bomba de combustible,18,1,Ejecutado según plan
+691,161,2112,Verificar controles,23,1,Ejecutado según plan
+692,161,2115,Verificar líquido de frenos,41,1,Ejecutado según plan
+693,162,2132,Revisar mangueras,16,1,Ejecutado según plan
+694,162,2133,Verificar cilindros,40,1,Ejecutado según plan
+695,162,2141,Cambiar aceite de transmisión,45,1,Ejecutado según plan
+696,162,2140,Pintar partes oxidadas,31,1,Ejecutado según plan
+697,162,2142,Inspeccionar rodillos,43,1,Ejecutado según plan
+698,162,2136,Inspeccionar desgaste,16,1,Ejecutado según plan
+699,162,2143,Cambiar filtro de aceite,37,1,Ejecutado según plan
+700,163,2172,Drenar tanque,45,1,Ejecutado según plan
+701,163,2168,Revisar mangueras,44,1,Ejecutado según plan
+702,163,2165,Inspeccionar desgaste,22,1,Ejecutado según plan
+703,163,2170,Inspeccionar correas,18,1,Ejecutado según plan
+704,164,2245,Verificar cilindros,26,1,Ejecutado según plan
+705,164,2248,Verificar sprockets,50,1,Ejecutado según plan
+706,164,2247,Verificar pasadores,40,1,Ejecutado según plan
+707,164,2246,Verificar presión,33,1,Ejecutado según plan
+708,165,2174,Verificar controles,30,1,Ejecutado según plan
+709,165,2182,Verificar cilindros,19,1,Ejecutado según plan
+710,165,2185,Inspeccionar conexiones,25,1,Ejecutado según plan
+711,165,2183,Verificar bomba de combustible,41,1,Ejecutado según plan
+712,165,2178,Engrasar articulaciones,20,1,Ejecutado según plan
+713,165,2177,Rotar neumáticos,47,1,Ejecutado según plan
+714,165,2179,Verificar funcionamiento de motor,31,1,Ejecutado según plan
+715,166,2246,Verificar presión,20,1,Ejecutado según plan
+716,166,2245,Verificar cilindros,44,1,Ejecutado según plan
+717,166,2247,Verificar pasadores,48,1,Ejecutado según plan
+718,166,2248,Verificar sprockets,54,1,Ejecutado según plan
+719,167,2202,Verificar líquido de frenos,30,1,Ejecutado según plan
+720,167,2208,Inspeccionar correas,31,1,Ejecutado según plan
+721,167,2215,Revisar mangueras,37,1,Ejecutado según plan
+722,167,2212,Reparar abolladuras,23,1,Ejecutado según plan
+723,168,2311,Drenar tanque,22,1,Ejecutado según plan
+724,168,2309,Cambiar aceite de motor,24,1,Ejecutado según plan
+725,168,2310,Cambiar aceite de transmisión,44,1,Ejecutado según plan
+726,168,2308,Revisar asiento,32,1,Ejecutado según plan
+727,169,2307,Revisar nivel de refrigerante,25,1,Ejecutado según plan
+728,169,2308,Revisar asiento,28,1,Ejecutado según plan
+729,169,2311,Drenar tanque,19,1,Ejecutado según plan
+730,169,2310,Cambiar aceite de transmisión,44,1,Ejecutado según plan
+731,169,2309,Cambiar aceite de motor,18,1,Ejecutado según plan
+732,169,2305,Inspeccionar conexiones,47,1,Ejecutado según plan
+733,169,2306,Revisar tensión de cadena,37,1,Ejecutado según plan
+734,169,2304,Cambiar filtro de aire,16,1,Ejecutado según plan
+735,170,2292,Revisar bomba de dirección,23,1,Ejecutado según plan
+736,170,2288,Verificar funcionamiento de motor,32,0,Pendiente de completar
+737,170,2287,Cambiar aceite de transmisión,41,0,Pendiente de completar
+738,170,2291,Verificar líquido de frenos,35,1,Ejecutado según plan
+739,170,2286,Inspeccionar DPF,40,0,Pendiente de completar
+740,171,2313,Ajustar embrague,22,1,Ejecutado según plan
+741,171,2315,Engrasar articulaciones,21,1,Ejecutado según plan
+742,171,2314,Verificar bomba de combustible,44,1,Ejecutado según plan
+743,171,2312,Cambiar aceite hidráulico,41,1,Ejecutado según plan
+744,172,2291,Verificar líquido de frenos,28,1,Ejecutado según plan
+745,172,2288,Verificar funcionamiento de motor,46,1,Ejecutado según plan
+746,172,2290,Verificar controles,30,1,Ejecutado según plan
+747,172,2289,Revisar inyectores,22,1,Ejecutado según plan
+748,172,2287,Cambiar aceite de transmisión,24,1,Ejecutado según plan
+749,172,2292,Revisar bomba de dirección,14,1,Ejecutado según plan
+750,172,2286,Inspeccionar DPF,24,1,Ejecutado según plan
+751,172,2284,Verificar nivel de aceite,39,1,Ejecutado según plan
+752,175,2344,Verificar controles,37,1,Ejecutado según plan
+753,175,2345,Engrasar articulaciones,17,1,Ejecutado según plan
+754,175,2355,Verificar silenciador,22,1,Ejecutado según plan
+755,175,2342,Inspeccionar desgaste,43,1,Ejecutado según plan
+756,175,2353,Inspección visual,31,1,Ejecutado según plan
+757,175,2352,Inspeccionar correas,17,1,Ejecutado según plan
+758,175,2351,Verificar termostato,35,1,Ejecutado según plan
+759,176,2385,Reparar abolladuras,26,1,Ejecutado según plan
+760,176,2388,Cambiar aceite de motor,34,1,Ejecutado según plan
+761,176,2389,Revisar nivel de refrigerante,30,1,Ejecutado según plan
+762,176,2386,Revisar pastillas,45,1,Ejecutado según plan
+763,177,2350,Verificar alternador,40,1,Ejecutado según plan
+764,177,2346,Revisar pastillas,21,1,Ejecutado según plan
+765,177,2349,Inspeccionar rodillos,48,1,Ejecutado según plan
+766,177,2343,Engrasar puntos de lubricación,22,1,Ejecutado según plan
+767,177,2348,Cambiar aceite de transmisión,33,1,Ejecutado según plan
+768,177,2351,Verificar termostato,39,1,Ejecutado según plan
+769,178,2363,Cambiar aceite de transmisión,44,1,Ejecutado según plan
+770,178,2361,Cambiar aceite de motor,37,1,Ejecutado según plan
+771,178,2358,Revisar dientes,33,1,Ejecutado según plan
+772,178,2362,Limpiar radiador,37,1,Ejecutado según plan
+773,179,2325,Engrasar puntos de lubricación,30,1,Ejecutado según plan
+774,179,2327,Revisar tubo de escape,18,1,Ejecutado según plan
+775,179,2321,Verificar líquido de frenos,38,1,Ejecutado según plan
+776,179,2319,Reparar abolladuras,29,1,Ejecutado según plan
+777,179,2324,Engrasar articulaciones,17,1,Ejecutado según plan
+778,179,2323,Verificar cilindros,40,1,Ejecutado según plan
+779,179,2329,Revisar mangueras,27,1,Ejecutado según plan
+780,179,2328,Cambiar filtro de aceite,19,1,Ejecutado según plan
+781,180,2420,Verificar cilindros,16,1,Ejecutado según plan
+782,180,2423,Verificar presión,48,1,Ejecutado según plan
+783,180,2415,Revisar tensión de cadena,22,0,Pendiente de completar
+784,180,2412,Engrasar articulaciones,29,1,Ejecutado según plan
+785,180,2421,Ajustar embrague,31,1,Ejecutado según plan
+786,180,2414,Cambiar filtro de combustible,23,0,Pendiente de completar
+787,180,2418,Verificar controles,16,1,Ejecutado según plan
+788,181,2401,Revisar mangueras,16,1,Ejecutado según plan
+789,181,2406,Reparar abolladuras,44,1,Ejecutado según plan
+790,181,2409,Cambiar filtro de aceite,17,1,Ejecutado según plan
+791,181,2405,Limpiar filtros de aire acondicionado,27,1,Ejecutado según plan
+792,181,2408,Verificar termostato,20,1,Ejecutado según plan
+793,181,2407,Revisar tubo de escape,30,1,Ejecutado según plan
+794,181,2410,Drenar tanque,26,1,Ejecutado según plan
+795,182,2442,Verificar nivel de aceite,36,1,Ejecutado según plan
+796,182,2446,Inspeccionar desgaste,26,1,Ejecutado según plan
+797,182,2451,Cambiar filtro de aceite,39,1,Ejecutado según plan
+798,182,2441,Revisar inyectores,32,1,Ejecutado según plan
+799,182,2444,Inspeccionar correas,24,1,Ejecutado según plan
+800,182,2447,Ajustar embrague,28,1,Ejecutado según plan
+801,182,2440,Engrasar articulaciones,32,1,Ejecutado según plan
+802,182,2443,Revisar mangueras,31,1,Ejecutado según plan
+803,183,2443,Revisar mangueras,31,1,Ejecutado según plan
+804,183,2444,Inspeccionar correas,33,1,Ejecutado según plan
+805,183,2448,Verificar silenciador,23,1,Ejecutado según plan
+806,183,2440,Engrasar articulaciones,29,1,Ejecutado según plan
+807,183,2441,Revisar inyectores,33,1,Ejecutado según plan
+808,184,2415,Revisar tensión de cadena,22,1,Ejecutado según plan
+809,184,2419,Revisar batería,39,1,Ejecutado según plan
+810,184,2412,Engrasar articulaciones,35,1,Ejecutado según plan
+811,184,2422,Verificar silenciador,23,1,Ejecutado según plan
+812,184,2421,Ajustar embrague,15,1,Ejecutado según plan
+813,184,2423,Verificar presión,29,1,Ejecutado según plan
+814,184,2424,Revisar pastillas,36,1,Ejecutado según plan
+815,185,2543,Engrasar articulaciones,50,1,Ejecutado según plan
+816,185,2546,Verificar bomba de combustible,32,1,Ejecutado según plan
+817,185,2544,Ajustar embrague,26,1,Ejecutado según plan
+818,185,2545,Verificar sprockets,27,1,Ejecutado según plan
+819,187,2543,Engrasar articulaciones,33,1,Ejecutado según plan
+820,187,2544,Ajustar embrague,42,1,Ejecutado según plan
+821,187,2545,Verificar sprockets,27,1,Ejecutado según plan
+822,187,2546,Verificar bomba de combustible,25,1,Ejecutado según plan
+823,188,2598,Revisar inyectores,49,1,Ejecutado según plan
+824,188,2594,Verificar alternador,49,1,Ejecutado según plan
+825,188,2596,Engrasar puntos de lubricación,24,1,Ejecutado según plan
+826,188,2591,Verificar funcionamiento de motor,32,0,Pendiente de completar
+827,189,2596,Engrasar puntos de lubricación,28,1,Ejecutado según plan
+828,189,2595,Verificar pasadores,16,0,Pendiente de completar
+829,189,2598,Revisar inyectores,50,1,Ejecutado según plan
+830,189,2599,Verificar cilindros,41,1,Ejecutado según plan
+831,189,2592,Verificar termostato,29,1,Ejecutado según plan
+832,189,2591,Verificar funcionamiento de motor,21,0,Pendiente de completar
+833,189,2597,Ajustar embrague,31,0,Pendiente de completar
+834,189,2594,Verificar alternador,33,0,Pendiente de completar
+835,190,2554,Inspeccionar rodillos,33,0,Pendiente de completar
+836,190,2558,Verificar juego,37,0,Pendiente de completar
+837,190,2560,Inspeccionar conexiones,54,1,Ejecutado según plan
+838,190,2556,Verificar funcionamiento de motor,14,1,Ejecutado según plan
+839,190,2557,Verificar cilindros,37,1,Ejecutado según plan
+840,190,2552,Verificar termostato,27,0,Pendiente de completar
+841,190,2559,Revisar pastillas,30,1,Ejecutado según plan
+842,190,2549,Cambiar aceite de motor,37,1,Ejecutado según plan
+843,192,2578,Revisar inyectores,45,0,Pendiente de completar
+844,192,2577,Engrasar articulaciones,50,1,Ejecutado según plan
+845,192,2579,Revisar mangueras,26,1,Ejecutado según plan
+846,193,2581,Ajustar embrague,34,1,Ejecutado según plan
+847,193,2583,Verificar alternador,36,1,Ejecutado según plan
+848,193,2577,Engrasar articulaciones,47,1,Ejecutado según plan
+849,193,2588,Pintar partes oxidadas,23,1,Ejecutado según plan
+850,193,2582,Limpiar filtros de aire acondicionado,40,1,Ejecutado según plan
+851,193,2587,Revisar dientes,19,1,Ejecutado según plan
+852,194,2568,Verificar nivel de aceite,18,0,Pendiente de completar
+853,194,2563,Verificar presión,32,0,Pendiente de completar
+854,194,2565,Verificar alternador,35,1,Ejecutado según plan
+855,194,2561,Verificar silenciador,28,0,Pendiente de completar
+856,194,2566,Inspeccionar rodillos,34,1,Ejecutado según plan
+857,194,2562,Revisar convertidor,30,1,Ejecutado según plan
+858,195,2605,Engrasar puntos de lubricación,22,1,Ejecutado según plan
+859,195,2608,Rotar neumáticos,33,1,Ejecutado según plan
+860,195,2607,Ajustar frenos,44,1,Ejecutado según plan
+861,196,2683,Inspeccionar DPF,20,1,Ejecutado según plan
+862,196,2680,Cambiar aceite hidráulico,47,1,Ejecutado según plan
+863,196,2682,Inspeccionar rodillos,38,1,Ejecutado según plan
+864,196,2681,Revisar asiento,38,1,Ejecutado según plan
+865,197,2632,Cambiar filtro de combustible,42,1,Ejecutado según plan
+866,197,2634,Ajustar frenos,24,1,Ejecutado según plan
+867,197,2640,Verificar funcionamiento de motor,46,1,Ejecutado según plan
+868,198,2683,Inspeccionar DPF,23,0,Pendiente de completar
+869,198,2682,Inspeccionar rodillos,26,0,Pendiente de completar
+870,198,2680,Cambiar aceite hidráulico,46,0,Pendiente de completar
+871,199,2619,Inspeccionar rodillos,29,1,Ejecutado según plan
+872,199,2621,Revisar tubo de escape,40,1,Ejecutado según plan
+873,199,2618,Inspeccionar conexiones,23,1,Ejecutado según plan
+874,199,2620,Cambiar filtro de combustible,35,1,Ejecutado según plan
+875,199,2615,Revisar nivel de refrigerante,22,1,Ejecutado según plan
+876,199,2617,Pintar partes oxidadas,36,1,Ejecutado según plan
+877,200,2672,Verificar bomba de combustible,32,0,Pendiente de completar
+878,200,2677,Verificar controles,29,0,Pendiente de completar
+879,200,2669,Cambiar aceite de motor,30,1,Ejecutado según plan
+880,200,2670,Ajustar embrague,32,1,Ejecutado según plan
+881,200,2675,Pintar partes oxidadas,48,0,Pendiente de completar
+882,200,2676,Cambiar filtro de aire,29,1,Ejecutado según plan
+883,200,2673,Verificar sprockets,29,0,Pendiente de completar
+884,200,2668,Revisar batería,30,1,Ejecutado según plan
+885,201,2647,Revisar inyectores,33,1,Ejecutado según plan
+886,201,2646,Verificar líquido de frenos,21,1,Ejecutado según plan
+887,201,2649,Revisar tensión de cadena,39,1,Ejecutado según plan
+888,201,2642,Revisar mangueras,23,1,Ejecutado según plan
+889,201,2645,Cambiar filtro de combustible,44,1,Ejecutado según plan
+890,201,2644,Revisar mangueras,39,1,Ejecutado según plan
+891,201,2652,Rotar neumáticos,37,1,Ejecutado según plan
+892,202,2680,Cambiar aceite hidráulico,56,1,Ejecutado según plan
+893,202,2681,Revisar asiento,26,1,Ejecutado según plan
+894,202,2682,Inspeccionar rodillos,51,1,Ejecutado según plan
+895,202,2683,Inspeccionar DPF,39,1,Ejecutado según plan
+896,204,2756,Inspeccionar desgaste,31,1,Ejecutado según plan
+897,204,2752,Verificar termostato,35,1,Ejecutado según plan
+898,204,2751,Revisar mangueras,29,1,Ejecutado según plan
+899,207,2791,Drenar tanque,41,1,Ejecutado según plan
+900,207,2793,Revisar mangueras,25,1,Ejecutado según plan
+901,207,2781,Rotar neumáticos,20,1,Ejecutado según plan
+902,207,2786,Revisar pastillas,38,1,Ejecutado según plan
+903,207,2789,Engrasar articulaciones,47,1,Ejecutado según plan
+904,207,2792,Inspeccionar rodillos,37,1,Ejecutado según plan
+905,207,2783,Verificar controles,47,1,Ejecutado según plan
+906,207,2794,Inspeccionar DPF,37,1,Ejecutado según plan
+907,208,2801,Cambiar aceite hidráulico,26,1,Ejecutado según plan
+908,208,2799,Revisar bomba de dirección,17,1,Ejecutado según plan
+909,208,2800,Pintar partes oxidadas,49,1,Ejecutado según plan
+910,208,2797,Verificar silenciador,22,1,Ejecutado según plan
+911,208,2803,Verificar nivel de aceite,27,1,Ejecutado según plan
+912,209,2809,Revisar convertidor,14,1,Ejecutado según plan
+913,209,2806,Cambiar aceite hidráulico,31,1,Ejecutado según plan
+914,209,2808,Revisar pastillas,42,1,Ejecutado según plan
+915,211,2766,Inspeccionar rodillos,34,0,Pendiente de completar
+916,211,2769,Verificar presión,31,0,Pendiente de completar
+917,211,2763,Cambiar aceite de motor,37,1,Ejecutado según plan
+918,211,2761,Ajustar embrague,52,0,Pendiente de completar
+919,211,2757,Revisar mangueras,40,0,Pendiente de completar
+920,213,2813,Inspeccionar rodillos,17,1,Ejecutado según plan
+921,213,2821,Verificar controles,34,1,Ejecutado según plan
+922,213,2820,Revisar dientes,16,1,Ejecutado según plan
+923,213,2822,Inspeccionar correas,29,1,Ejecutado según plan
+924,213,2814,Verificar juego,34,1,Ejecutado según plan
+925,213,2815,Revisar batería,31,1,Ejecutado según plan
+926,214,2799,Revisar bomba de dirección,25,0,Pendiente de completar
+927,214,2803,Verificar nivel de aceite,44,0,Pendiente de completar
+928,214,2797,Verificar silenciador,39,0,Pendiente de completar
+929,214,2801,Cambiar aceite hidráulico,14,0,Pendiente de completar
+930,214,2795,Inspeccionar desgaste,30,1,Ejecutado según plan
+931,214,2804,Verificar alternador,47,1,Ejecutado según plan
+932,214,2802,Inspeccionar rodillos,16,0,Pendiente de completar
+933,216,2898,Revisar convertidor,31,1,Ejecutado según plan
+934,216,2899,Inspeccionar conexiones,50,1,Ejecutado según plan
+935,216,2894,Verificar líquido de frenos,30,1,Ejecutado según plan
+936,216,2896,Cambiar filtro de combustible,39,1,Ejecutado según plan
+937,216,2897,Inspeccionar correas,31,1,Ejecutado según plan
+938,216,2895,Verificar bomba de combustible,33,1,Ejecutado según plan
+939,217,2892,Revisar tubo de escape,28,1,Ejecutado según plan
+940,217,2886,Engrasar articulaciones,40,1,Ejecutado según plan
+941,217,2891,Cambiar aceite de motor,37,1,Ejecutado según plan
+942,218,2873,Cambiar aceite de motor,17,1,Ejecutado según plan
+943,218,2867,Inspeccionar correas,21,1,Ejecutado según plan
+944,218,2870,Inspeccionar desgaste,34,1,Ejecutado según plan
+945,218,2869,Verificar líquido de frenos,46,1,Ejecutado según plan
+946,218,2872,Inspeccionar DPF,12,1,Ejecutado según plan
+947,219,2924,Verificar presión,24,1,Ejecutado según plan
+948,219,2934,Inspeccionar rodillos,37,1,Ejecutado según plan
+949,219,2928,Engrasar puntos de lubricación,12,1,Ejecutado según plan
+950,219,2932,Revisar convertidor,26,1,Ejecutado según plan
+951,220,2969,Verificar termostato,36,1,Ejecutado según plan
+952,220,2965,Verificar alternador,26,1,Ejecutado según plan
+953,220,2960,Limpiar filtros de aire acondicionado,30,1,Ejecutado según plan
+954,220,2961,Revisar tensión de cadena,36,1,Ejecutado según plan
+955,220,2968,Engrasar puntos de lubricación,33,1,Ejecutado según plan
+956,221,2974,Inspeccionar desgaste,31,1,Ejecutado según plan
+957,221,2976,Verificar nivel de aceite,35,1,Ejecutado según plan
+958,221,2972,Inspeccionar rodillos,31,1,Ejecutado según plan
+959,221,2973,Inspeccionar DPF,19,1,Ejecutado según plan
+960,221,2975,Engrasar articulaciones,34,1,Ejecutado según plan
+961,222,2968,Engrasar puntos de lubricación,42,0,Pendiente de completar
+962,222,2970,Verificar funcionamiento de motor,20,1,Ejecutado según plan
+963,222,2965,Verificar alternador,36,1,Ejecutado según plan
+964,222,2967,Verificar silenciador,22,1,Ejecutado según plan
+965,222,2964,Inspección visual,34,1,Ejecutado según plan
+966,222,2969,Verificar termostato,25,1,Ejecutado según plan
+967,222,2971,Ajustar frenos,35,0,Pendiente de completar
+968,224,2951,Verificar silenciador,26,1,Ejecutado según plan
+969,224,2947,Engrasar articulaciones,32,1,Ejecutado según plan
+970,224,2955,Revisar asiento,35,1,Ejecutado según plan
+971,224,2950,Cambiar aceite hidráulico,23,1,Ejecutado según plan
+972,224,2959,Verificar líquido de frenos,25,1,Ejecutado según plan
+973,224,2957,Inspeccionar rodillos,20,1,Ejecutado según plan
+974,224,2949,Revisar bomba de dirección,31,1,Ejecutado según plan
+975,224,2958,Verificar bomba de combustible,39,1,Ejecutado según plan
+976,225,2955,Revisar asiento,32,1,Ejecutado según plan
+977,225,2950,Cambiar aceite hidráulico,42,1,Ejecutado según plan
+978,225,2949,Revisar bomba de dirección,36,1,Ejecutado según plan
+979,225,2953,Pintar partes oxidadas,50,1,Ejecutado según plan
+980,225,2948,Revisar batería,48,1,Ejecutado según plan
+981,226,3031,Limpiar filtros de aire acondicionado,23,1,Ejecutado según plan
+982,226,3032,Cambiar filtro de aire,45,1,Ejecutado según plan
+983,226,3030,Verificar pasadores,25,1,Ejecutado según plan
+984,226,3035,Verificar termostato,24,1,Ejecutado según plan
+985,226,3036,Verificar bomba de combustible,28,1,Ejecutado según plan
+986,226,3034,Ajustar embrague,21,1,Ejecutado según plan
+987,227,3015,Revisar pastillas,53,1,Ejecutado según plan
+988,227,3006,Verificar controles,30,1,Ejecutado según plan
+989,227,3013,Engrasar puntos de lubricación,32,1,Ejecutado según plan
+990,227,3014,Revisar batería,24,1,Ejecutado según plan
+991,227,3004,Engrasar articulaciones,37,1,Ejecutado según plan
+992,228,3041,Verificar líquido de frenos,21,1,Ejecutado según plan
+993,228,3047,Verificar bomba de combustible,26,0,Pendiente de completar
+994,228,3042,Engrasar articulaciones,29,1,Ejecutado según plan
+995,228,3043,Revisar convertidor,33,1,Ejecutado según plan
+996,229,3049,Revisar inyectores,16,1,Ejecutado según plan
+997,229,3050,Cambiar aceite de motor,31,1,Ejecutado según plan
+998,229,3051,Verificar pasadores,36,1,Ejecutado según plan
+999,229,3052,Cambiar aceite hidráulico,48,1,Ejecutado según plan
+1000,230,3045,Cambiar filtro de combustible,26,1,Ejecutado según plan
+1001,230,3044,Verificar controles,45,0,Pendiente de completar
+1002,230,3048,Revisar tensión de cadena,19,1,Ejecutado según plan
+1003,230,3046,Inspeccionar correas,21,1,Ejecutado según plan
+1004,231,3019,Cambiar aceite de motor,41,1,Ejecutado según plan
+1005,231,3023,Cambiar aceite hidráulico,26,1,Ejecutado según plan
+1006,231,3018,Rotar neumáticos,45,1,Ejecutado según plan
+1007,231,3026,Limpiar filtros de aire acondicionado,34,1,Ejecutado según plan
+1008,231,3022,Verificar pasadores,16,1,Ejecutado según plan
+1009,232,3049,Revisar inyectores,31,1,Ejecutado según plan
+1010,232,3051,Verificar pasadores,36,1,Ejecutado según plan
+1011,232,3050,Cambiar aceite de motor,22,1,Ejecutado según plan
+1012,232,3052,Cambiar aceite hidráulico,55,1,Ejecutado según plan
+1013,235,3120,Verificar sprockets,18,1,Ejecutado según plan
+1014,235,3119,Inspeccionar desgaste,34,0,Pendiente de completar
+1015,235,3122,Revisar bomba de dirección,27,0,Pendiente de completar
+1016,235,3121,Limpiar filtros de aire acondicionado,34,1,Ejecutado según plan
+1017,236,3116,Limpiar radiador,37,1,Ejecutado según plan
+1018,236,3112,Verificar funcionamiento de motor,26,1,Ejecutado según plan
+1019,236,3102,Cambiar aceite de transmisión,32,1,Ejecutado según plan
+1020,236,3107,Verificar juego,22,1,Ejecutado según plan
+1021,236,3105,Revisar batería,41,1,Ejecutado según plan
+1022,236,3103,Inspeccionar desgaste,20,1,Ejecutado según plan
+1023,236,3114,Limpiar filtros de aire acondicionado,30,1,Ejecutado según plan
+1024,236,3109,Ajustar frenos,43,1,Ejecutado según plan
+1025,237,3071,Verificar presión,28,0,Pendiente de completar
+1026,237,3063,Revisar tensión de cadena,31,1,Ejecutado según plan
+1027,237,3064,Verificar alternador,32,0,Pendiente de completar
+1028,237,3068,Revisar asiento,42,0,Pendiente de completar
+1029,237,3065,Engrasar puntos de lubricación,40,0,Pendiente de completar
+1030,237,3072,Verificar bomba de combustible,42,1,Ejecutado según plan
+1031,237,3066,Revisar mangueras,34,1,Ejecutado según plan
+1032,237,3067,Cambiar filtro de aceite,25,1,Ejecutado según plan
+1033,238,3088,Cambiar aceite de motor,26,0,Pendiente de completar
+1034,238,3085,Verificar cilindros,40,0,Pendiente de completar
+1035,238,3082,Ajustar frenos,37,0,Pendiente de completar
+1036,238,3089,Revisar dientes,15,0,Pendiente de completar
+1037,238,3087,Cambiar filtro de combustible,33,0,Pendiente de completar
+1038,239,3068,Revisar asiento,48,1,Ejecutado según plan
+1039,239,3064,Verificar alternador,28,1,Ejecutado según plan
+1040,239,3072,Verificar bomba de combustible,37,1,Ejecutado según plan
+1041,239,3066,Revisar mangueras,27,1,Ejecutado según plan
+1042,239,3063,Revisar tensión de cadena,31,1,Ejecutado según plan
+1043,239,3065,Engrasar puntos de lubricación,11,1,Ejecutado según plan
+1044,239,3067,Cambiar filtro de aceite,40,1,Ejecutado según plan
+1045,240,3181,Revisar inyectores,29,1,Ejecutado según plan
+1046,240,3185,Inspeccionar DPF,37,1,Ejecutado según plan
+1047,240,3187,Reparar abolladuras,23,1,Ejecutado según plan
+1048,241,3184,Revisar convertidor,34,1,Ejecutado según plan
+1049,241,3186,Verificar cilindros,17,1,Ejecutado según plan
+1050,241,3185,Inspeccionar DPF,29,1,Ejecutado según plan
+1051,241,3187,Reparar abolladuras,33,1,Ejecutado según plan
+1052,241,3181,Revisar inyectores,40,1,Ejecutado según plan
+1053,242,3148,Verificar nivel de aceite,28,1,Ejecutado según plan
+1054,242,3146,Pintar partes oxidadas,47,1,Ejecutado según plan
+1055,242,3142,Revisar nivel de refrigerante,37,1,Ejecutado según plan
+1056,242,3141,Verificar pasadores,37,1,Ejecutado según plan
+1057,242,3144,Ajustar embrague,50,1,Ejecutado según plan
+1058,242,3149,Revisar mangueras,27,1,Ejecutado según plan
+1059,242,3137,Cambiar aceite hidráulico,29,1,Ejecutado según plan
+1060,242,3147,Verificar bomba de combustible,41,1,Ejecutado según plan
+1061,243,3182,Limpiar radiador,44,1,Ejecutado según plan
+1062,243,3186,Verificar cilindros,15,1,Ejecutado según plan
+1063,243,3184,Revisar convertidor,36,1,Ejecutado según plan
+1064,243,3183,Verificar nivel de aceite,22,1,Ejecutado según plan
+1065,243,3181,Revisar inyectores,45,1,Ejecutado según plan
+1066,244,3226,Verificar bomba de combustible,22,1,Ejecutado según plan
+1067,244,3223,Verificar cilindros,29,1,Ejecutado según plan
+1068,244,3224,Engrasar puntos de lubricación,17,1,Ejecutado según plan
+1069,244,3229,Inspeccionar DPF,29,1,Ejecutado según plan
+1070,246,3268,Verificar líquido de frenos,36,1,Ejecutado según plan
+1071,246,3265,Cambiar aceite hidráulico,13,1,Ejecutado según plan
+1072,246,3266,Ajustar embrague,27,1,Ejecutado según plan
+1073,246,3269,Verificar juego,27,1,Ejecutado según plan
+1074,246,3267,Limpiar filtros de aire acondicionado,41,1,Ejecutado según plan
+1075,247,3232,Cambiar aceite de transmisión,27,1,Ejecutado según plan
+1076,247,3239,Verificar silenciador,27,0,Pendiente de completar
+1077,247,3236,Inspeccionar desgaste,30,0,Pendiente de completar
+1078,247,3237,Revisar inyectores,42,0,Pendiente de completar
+1079,247,3241,Engrasar articulaciones,27,1,Ejecutado según plan
+1080,247,3235,Revisar nivel de refrigerante,15,0,Pendiente de completar
+1081,248,3266,Ajustar embrague,39,1,Ejecutado según plan
+1082,248,3267,Limpiar filtros de aire acondicionado,41,1,Ejecutado según plan
+1083,248,3268,Verificar líquido de frenos,42,1,Ejecutado según plan
+1084,248,3265,Cambiar aceite hidráulico,25,1,Ejecutado según plan
+1085,248,3269,Verificar juego,37,1,Ejecutado según plan
+1086,249,3201,Verificar termostato,37,0,Pendiente de completar
+1087,249,3203,Revisar tensión de cadena,38,1,Ejecutado según plan
+1088,249,3205,Revisar nivel de refrigerante,36,1,Ejecutado según plan
+1089,249,3194,Verificar líquido de frenos,41,1,Ejecutado según plan
+1090,249,3206,Rotar neumáticos,25,1,Ejecutado según plan
+1091,249,3197,Verificar alternador,27,1,Ejecutado según plan
+1092,250,3247,Limpiar radiador,30,1,Ejecutado según plan
+1093,250,3249,Verificar controles,29,1,Ejecutado según plan
+1094,250,3243,Inspeccionar correas,27,1,Ejecutado según plan
+1095,250,3250,Engrasar puntos de lubricación,38,1,Ejecutado según plan
+1096,251,3251,Pintar partes oxidadas,25,1,Ejecutado según plan
+1097,251,3248,Verificar bomba de combustible,19,1,Ejecutado según plan
+1098,251,3244,Revisar tensión de cadena,21,1,Ejecutado según plan
+1099,251,3250,Engrasar puntos de lubricación,36,1,Ejecutado según plan
+1100,251,3249,Verificar controles,28,1,Ejecutado según plan
+1101,251,3245,Verificar juego,39,1,Ejecutado según plan
+1102,252,3353,Rotar neumáticos,33,1,Ejecutado según plan
+1103,252,3349,Inspección visual,28,1,Ejecutado según plan
+1104,252,3352,Revisar dientes,37,1,Ejecutado según plan
+1105,252,3347,Verificar nivel de aceite,43,1,Ejecutado según plan
+1106,252,3348,Revisar mangueras,22,1,Ejecutado según plan
+1107,252,3350,Inspeccionar correas,30,1,Ejecutado según plan
+1108,254,3347,Verificar nivel de aceite,45,0,Pendiente de completar
+1109,254,3349,Inspección visual,21,0,Pendiente de completar
+1110,254,3348,Revisar mangueras,29,0,Pendiente de completar
+1111,255,3277,Verificar controles,52,1,Ejecutado según plan
+1112,255,3276,Revisar convertidor,19,1,Ejecutado según plan
+1113,255,3271,Verificar termostato,15,1,Ejecutado según plan
+1114,255,3273,Engrasar puntos de lubricación,27,1,Ejecutado según plan
+1115,255,3274,Pintar partes oxidadas,19,1,Ejecutado según plan
+1116,256,3399,Revisar batería,27,1,Ejecutado según plan
+1117,256,3401,Verificar juego,32,1,Ejecutado según plan
+1118,256,3398,Verificar líquido de frenos,16,1,Ejecutado según plan
+1119,256,3410,Inspeccionar DPF,44,1,Ejecutado según plan
+1120,256,3404,Limpiar radiador,27,1,Ejecutado según plan
+1121,256,3407,Cambiar aceite hidráulico,28,1,Ejecutado según plan
+1122,257,3425,Cambiar aceite hidráulico,31,1,Ejecutado según plan
+1123,257,3424,Rotar neumáticos,21,1,Ejecutado según plan
+1124,257,3421,Revisar mangueras,11,1,Ejecutado según plan
+1125,257,3423,Revisar batería,22,1,Ejecutado según plan
+1126,257,3428,Verificar sprockets,19,1,Ejecutado según plan
+1127,257,3426,Revisar convertidor,33,1,Ejecutado según plan
+1128,258,3362,Inspeccionar DPF,33,1,Ejecutado según plan
+1129,258,3359,Cambiar aceite hidráulico,47,1,Ejecutado según plan
+1130,258,3356,Verificar alternador,22,1,Ejecutado según plan
+1131,258,3366,Inspeccionar desgaste,33,1,Ejecutado según plan
+1132,258,3365,Reparar abolladuras,44,1,Ejecutado según plan
+1133,258,3361,Revisar inyectores,43,1,Ejecutado según plan
+1134,258,3354,Revisar asiento,15,1,Ejecutado según plan
+1135,259,3374,Revisar tensión de cadena,26,1,Ejecutado según plan
+1136,259,3369,Verificar pasadores,36,1,Ejecutado según plan
+1137,259,3371,Engrasar articulaciones,35,1,Ejecutado según plan
+1138,259,3375,Cambiar filtro de aceite,44,1,Ejecutado según plan
+1139,259,3372,Verificar presión,46,1,Ejecutado según plan
+1140,259,3373,Ajustar frenos,30,1,Ejecutado según plan
+1141,259,3370,Inspeccionar correas,25,1,Ejecutado según plan
+1142,259,3376,Reparar abolladuras,35,1,Ejecutado según plan
+1143,260,3408,Cambiar filtro de combustible,43,0,Pendiente de completar
+1144,260,3402,Inspeccionar rodillos,23,0,Pendiente de completar
+1145,260,3405,Ajustar embrague,43,1,Ejecutado según plan
+1146,260,3406,Reparar abolladuras,57,1,Ejecutado según plan
+1147,260,3403,Cambiar aceite de motor,34,0,Pendiente de completar
+1148,260,3410,Inspeccionar DPF,44,1,Ejecutado según plan
+1149,261,3371,Engrasar articulaciones,44,0,Pendiente de completar
+1150,261,3375,Cambiar filtro de aceite,42,1,Ejecutado según plan
+1151,261,3370,Inspeccionar correas,12,0,Pendiente de completar
+1152,261,3376,Reparar abolladuras,30,1,Ejecutado según plan
+1153,261,3372,Verificar presión,54,0,Pendiente de completar
+1154,261,3369,Verificar pasadores,20,1,Ejecutado según plan
+1155,262,3407,Cambiar aceite hidráulico,38,1,Ejecutado según plan
+1156,262,3406,Reparar abolladuras,33,1,Ejecutado según plan
+1157,262,3402,Inspeccionar rodillos,21,1,Ejecutado según plan
+1158,263,3443,Verificar termostato,35,1,Ejecutado según plan
+1159,263,3440,Inspeccionar conexiones,29,1,Ejecutado según plan
+1160,263,3442,Verificar pasadores,12,1,Ejecutado según plan
+1161,263,3441,Verificar funcionamiento de motor,15,1,Ejecutado según plan
+1162,263,3446,Cambiar aceite de transmisión,49,1,Ejecutado según plan
+1163,263,3444,Revisar pastillas,25,0,Pendiente de completar
+1164,264,3446,Cambiar aceite de transmisión,26,1,Ejecutado según plan
+1165,264,3441,Verificar funcionamiento de motor,23,1,Ejecutado según plan
+1166,264,3444,Revisar pastillas,38,1,Ejecutado según plan
+1167,264,3443,Verificar termostato,36,0,Pendiente de completar
+1168,264,3440,Inspeccionar conexiones,14,1,Ejecutado según plan
+1169,264,3445,Limpiar filtros de aire acondicionado,41,1,Ejecutado según plan
+1170,264,3439,Engrasar puntos de lubricación,23,0,Pendiente de completar
+1171,265,3497,Verificar cilindros,25,1,Ejecutado según plan
+1172,265,3499,Verificar juego,18,1,Ejecutado según plan
+1173,265,3498,Verificar bomba de combustible,55,1,Ejecutado según plan
+1174,266,3448,Revisar pastillas,26,1,Ejecutado según plan
+1175,266,3454,Verificar cilindros,31,1,Ejecutado según plan
+1176,266,3457,Reparar abolladuras,37,1,Ejecutado según plan
+1177,269,3444,Revisar pastillas,28,1,Ejecutado según plan
+1178,269,3442,Verificar pasadores,16,1,Ejecutado según plan
+1179,269,3445,Limpiar filtros de aire acondicionado,40,1,Ejecutado según plan
+1180,269,3443,Verificar termostato,32,1,Ejecutado según plan
+1181,269,3446,Cambiar aceite de transmisión,45,1,Ejecutado según plan
+1182,270,3478,Cambiar aceite de transmisión,39,1,Ejecutado según plan
+1183,270,3479,Revisar batería,28,1,Ejecutado según plan
+1184,270,3476,Revisar bomba de dirección,36,1,Ejecutado según plan
+1185,271,3568,Revisar inyectores,50,0,Pendiente de completar
+1186,271,3561,Ajustar embrague,37,1,Ejecutado según plan
+1187,271,3562,Verificar juego,23,1,Ejecutado según plan
+1188,271,3559,Rotar neumáticos,13,1,Ejecutado según plan
+1189,271,3569,Revisar mangueras,33,0,Pendiente de completar
+1190,271,3565,Limpiar radiador,24,0,Pendiente de completar
+1191,271,3564,Verificar funcionamiento de motor,47,1,Ejecutado según plan
+1192,271,3567,Verificar nivel de aceite,21,0,Pendiente de completar
+1193,272,3534,Cambiar filtro de aire,28,1,Ejecutado según plan
+1194,272,3535,Pintar partes oxidadas,41,1,Ejecutado según plan
+1195,272,3536,Revisar batería,46,1,Ejecutado según plan
+1196,272,3533,Verificar cilindros,22,1,Ejecutado según plan
+1197,272,3527,Verificar pasadores,19,1,Ejecutado según plan
+1198,272,3525,Engrasar puntos de lubricación,36,1,Ejecutado según plan
+1199,273,3527,Verificar pasadores,27,1,Ejecutado según plan
+1200,273,3529,Inspeccionar correas,29,1,Ejecutado según plan
+1201,273,3531,Revisar mangueras,41,1,Ejecutado según plan
+1202,273,3525,Engrasar puntos de lubricación,20,1,Ejecutado según plan
+1203,273,3530,Ajustar frenos,36,1,Ejecutado según plan
+1204,274,3564,Verificar funcionamiento de motor,46,1,Ejecutado según plan
+1205,274,3561,Ajustar embrague,42,1,Ejecutado según plan
+1206,274,3562,Verificar juego,21,1,Ejecutado según plan
+1207,274,3565,Limpiar radiador,22,1,Ejecutado según plan
+1208,274,3560,Revisar dientes,34,1,Ejecutado según plan
+1209,274,3566,Inspección visual,33,1,Ejecutado según plan
+1210,276,3586,Verificar sprockets,29,1,Ejecutado según plan
+1211,276,3583,Engrasar articulaciones,27,1,Ejecutado según plan
+1212,276,3584,Verificar juego,25,1,Ejecutado según plan
+1213,276,3580,Cambiar aceite de transmisión,14,1,Ejecutado según plan
+1214,278,3593,Engrasar puntos de lubricación,33,1,Ejecutado según plan
+1215,278,3587,Inspeccionar correas,32,1,Ejecutado según plan
+1216,278,3595,Verificar pasadores,49,1,Ejecutado según plan
+1217,278,3598,Inspección visual,26,1,Ejecutado según plan
+1218,278,3592,Limpiar filtros de aire acondicionado,27,1,Ejecutado según plan
+1219,279,3595,Verificar pasadores,42,1,Ejecutado según plan
+1220,279,3593,Engrasar puntos de lubricación,46,1,Ejecutado según plan
+1221,279,3594,Verificar alternador,26,1,Ejecutado según plan
+1222,279,3600,Rotar neumáticos,40,1,Ejecutado según plan
+1223,279,3590,Verificar líquido de frenos,21,1,Ejecutado según plan
+1224,279,3591,Ajustar embrague,43,1,Ejecutado según plan
+1225,281,3616,Revisar nivel de refrigerante,27,1,Ejecutado según plan
+1226,281,3617,Cambiar filtro de aire,24,1,Ejecutado según plan
+1227,281,3620,Verificar controles,22,1,Ejecutado según plan
+1228,281,3611,Engrasar articulaciones,20,1,Ejecutado según plan
+1229,281,3610,Limpiar radiador,30,1,Ejecutado según plan
+1230,281,3615,Verificar líquido de frenos,15,1,Ejecutado según plan
+1231,282,3654,Cambiar filtro de aire,37,0,Pendiente de completar
+1232,282,3651,Verificar silenciador,14,0,Pendiente de completar
+1233,282,3653,Revisar convertidor,31,0,Pendiente de completar
+1234,282,3652,Verificar nivel de aceite,42,0,Pendiente de completar
+1235,282,3656,Revisar inyectores,29,1,Ejecutado según plan
+1236,282,3657,Verificar controles,26,0,Pendiente de completar
+1237,282,3650,Verificar pasadores,38,0,Pendiente de completar
+1238,282,3655,Verificar líquido de frenos,38,1,Ejecutado según plan
+1239,284,3658,Cambiar filtro de combustible,34,1,Ejecutado según plan
+1240,284,3665,Verificar silenciador,25,1,Ejecutado según plan
+1241,284,3660,Revisar batería,23,1,Ejecutado según plan
+1242,284,3662,Verificar pasadores,11,1,Ejecutado según plan
+1243,284,3661,Revisar mangueras,43,1,Ejecutado según plan
+1244,285,3722,Cambiar filtro de aceite,26,1,Ejecutado según plan
+1245,285,3728,Verificar controles,44,1,Ejecutado según plan
+1246,285,3719,Limpiar radiador,27,1,Ejecutado según plan
+1247,285,3724,Revisar bomba de dirección,34,1,Ejecutado según plan
+1248,285,3717,Verificar funcionamiento de motor,34,1,Ejecutado según plan
+1249,285,3725,Verificar bomba de combustible,40,1,Ejecutado según plan
+1250,286,3665,Verificar silenciador,20,1,Ejecutado según plan
+1251,286,3662,Verificar pasadores,32,1,Ejecutado según plan
+1252,286,3666,Revisar tensión de cadena,46,1,Ejecutado según plan
+1253,286,3660,Revisar batería,16,1,Ejecutado según plan
+1254,286,3659,Revisar mangueras,29,1,Ejecutado según plan
+1255,286,3664,Revisar pastillas,27,1,Ejecutado según plan
+1256,286,3658,Cambiar filtro de combustible,24,1,Ejecutado según plan
+1257,287,3664,Revisar pastillas,39,1,Ejecutado según plan
+1258,287,3658,Cambiar filtro de combustible,15,1,Ejecutado según plan
+1259,287,3665,Verificar silenciador,18,1,Ejecutado según plan
+1260,287,3661,Revisar mangueras,41,1,Ejecutado según plan
+1261,288,3666,Revisar tensión de cadena,41,1,Ejecutado según plan
+1262,288,3661,Revisar mangueras,29,1,Ejecutado según plan
+1263,288,3665,Verificar silenciador,25,1,Ejecutado según plan
+1264,288,3662,Verificar pasadores,29,1,Ejecutado según plan
+1265,288,3663,Verificar funcionamiento de motor,12,1,Ejecutado según plan
+1266,288,3660,Revisar batería,28,1,Ejecutado según plan
+1267,288,3664,Revisar pastillas,12,1,Ejecutado según plan

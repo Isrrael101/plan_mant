@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiche Exposición - Planificación del Mantenimiento</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-height: 100vh;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        .poster {
+            background-image: url('R.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 1080px;
+            height: 1920px;
+            max-width: 100%;
+            max-height: 100vh;
+            padding: 12px 15px 5px 15px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .poster::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.05) 0%, rgba(42, 82, 152, 0.1) 50%, rgba(30, 60, 114, 0.05) 100%);
+            z-index: 0;
+        }
+        
+        .logo-left {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 2;
+            max-width: 150px;
+            max-height: 115px;
+            width: auto;
+            height: auto;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+        
+        .logo-right {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 2;
+            max-width: 120px;
+            max-height: 100px;
+            width: auto;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+            background: transparent;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        
+        .logo-right img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .logo-right {
+            background: transparent;
+        }
+        
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            margin-top: 85px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            max-height: calc(100vh - 85px);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 4px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 1px;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 0, 0, 0.9), 2px 2px 4px rgba(0, 0, 0, 1), -1px -1px 2px rgba(0, 0, 0, 0.8);
+            letter-spacing: -1px;
+            color: #ffffff;
+            line-height: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            font-weight: 500;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 12px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1);
+            margin-bottom: 0px;
+            color: #ffffff;
+            line-height: 1;
+        }
+        
+        .header .institution {
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 1px;
+            padding: 3px 12px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            line-height: 1.05;
+        }
+        
+        .table-container {
+            background: transparent;
+            border-radius: 0;
+            padding: 1px 2px 0px 2px;
+            box-shadow: none;
+            border: none;
+            flex: 1;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 6.5px;
+            display: table;
+            border-spacing: 0;
+        }
+        
+        .table-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 1px;
+            padding-bottom: 1px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 0 0 12px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+        
+        thead {
+            background: transparent;
+            color: white;
+        }
+        
+        thead th {
+            padding: 1px 3px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 7px;
+            letter-spacing: 0.2px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1);
+        }
+        
+        thead th:first-child {
+            border-radius: 10px 0 0 0;
+            width: 45px;
+        }
+        
+        thead th:last-child {
+            border-radius: 0 10px 0 0;
+        }
+        
+        tbody tr {
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+        }
+        
+        tbody tr:last-child {
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        
+        tbody td {
+            padding: 0px 3px;
+            color: #ffffff;
+            vertical-align: top;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 8px rgba(0, 0, 0, 0.7);
+            font-weight: 600;
+            font-size: 6.5px;
+            line-height: 1;
+        }
+        
+        .total-row {
+            background: transparent;
+            color: white !important;
+            font-weight: 700 !important;
+            font-size: 13px !important;
+        }
+        
+        .total-row td {
+            color: white !important;
+            padding: 6px 6px !important;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 0 0 12px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1);
+            font-size: 14px !important;
+        }
+        
+        .total-row td:first-child {
+            border-radius: 0 0 0 10px;
+        }
+        
+        .total-row td:last-child {
+            border-radius: 0 0 10px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 12px;
+            color: white;
+            font-size: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 12px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1);
+            font-weight: 700;
+        }
+        
+        .expositor {
+            text-align: center;
+            margin-top: 3px;
+            margin-bottom: 2px;
+            color: white;
+            font-size: 16px;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1), -1px -1px 2px rgba(0, 0, 0, 0.8);
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            display: block;
+            visibility: visible;
+        }
+        
+        .whatsapp-info {
+            text-align: center;
+            margin-top: 2px;
+            margin-bottom: 0;
+            color: white;
+            font-size: 11px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 12px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .whatsapp-number {
+            font-size: 12px;
+            font-weight: 700;
+            color: #25D366;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 8px rgba(0, 0, 0, 0.8);
+            display: inline-block;
+            margin-top: 1px;
+        }
+        
+        .icon {
+            display: inline-block;
+            font-size: 14px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            
+            .poster {
+                width: 100%;
+                height: 100vh;
+                max-height: 100vh;
+                padding: 12px 15px 5px 15px;
+                border-radius: 0;
+            }
+            
+            .logo-left {
+                max-width: 120px;
+                max-height: 90px;
+                top: 6px;
+                left: 6px;
+                padding: 0;
+                background: transparent;
+            }
+            
+            .logo-right {
+                max-width: 100px;
+                max-height: 85px;
+                top: 6px;
+                right: 6px;
+                padding: 3px;
+            }
+            
+            .logo-right img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .content {
+                margin-top: 85px;
+            }
+            
+            .header {
+                margin-bottom: 4px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+                margin-bottom: 1px;
+            }
+            
+            .header .subtitle {
+                font-size: 14px;
+                margin-bottom: 0px;
+            }
+            
+            .header .institution {
+                font-size: 14.3px;
+                padding: 3px 12px;
+                margin-top: 1px;
+            }
+            
+            .table-container {
+                padding: 4px 8px 0px 8px;
+            }
+            
+            .table-title {
+                font-size: 29.1px;
+                margin-bottom: 0px;
+                padding-bottom: 3px;
+            }
+            
+            table {
+                font-size: 16.65px;
+            }
+            
+            thead th {
+                font-size: 17.69px;
+                padding: 3px 8px;
+                text-align: center;
+            }
+            
+            tbody td {
+                padding: 1px 8px;
+                font-size: 16.65px;
+            }
+            
+            .expositor {
+                margin-top: 3px;
+                font-size: 16px;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 12px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 1);
+                font-weight: 800;
+            }
+            
+            .whatsapp-info {
+                margin-top: 2px;
+                font-size: 16.5px;
+            }
+            
+            .whatsapp-number {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <img src="ftecnica.png" alt="Facultad Técnica" class="logo-left">
+        <div class="logo-right">
+            <img src="25-09-21-FT-MTTO-LOGO.webp" alt="Equipo Pesado La Joya">
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>⚙️ EXPOSICIÓN</h1>
+                <div class="subtitle">Sistema de Gestión de Planes de Mantenimiento</div>
+                <div class="subtitle">para Equipo Pesado</div>
+                <div class="institution">
+                    📚 Facultad Técnica - Mantenimiento de Equipo Pesado<br>
+                    📍 Subsede La Joya | 📅 Jueves 4 de Diciembre
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tema</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I. Fundamentos de Planificación del Mantenimiento</td>
+                        </tr>
+                        <tr>
+                            <td>II. Herramientas de Planificación del Mantenimiento</td>
+                        </tr>
+                        <tr>
+                            <td>III. Sistema de Gestión de Planificación</td>
+                        </tr>
+                        <tr>
+                            <td>IV. Procesos de Planificación del Mantenimiento</td>
+                        </tr>
+                        <tr>
+                            <td>V. Casos Prácticos de Planificación</td>
+                        </tr>
+                        <tr>
+                            <td>VI. Demostración Práctica de Planificación</td>
+                        </tr>
+                        <tr>
+                            <td>VII. Conclusiones y Aplicación Académica</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="expositor">
+                Expositor: Ing. Isrrael Fábrica Quispe
+            </div>
+            <div class="whatsapp-info">
+                📱 Inscripciones e Informaciones al WhatsApp<br>
+                <span class="whatsapp-number">+591 63632443</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

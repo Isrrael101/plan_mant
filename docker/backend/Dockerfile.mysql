@@ -1,0 +1,31 @@
+# Backend Dockerfile (MySQL Version)
+FROM node:20-alpine
+
+# Instalar wget para healthcheck
+RUN apk add --no-cache wget
+
+WORKDIR /app
+
+# Copiar archivos de dependencias
+COPY backend/package*.json ./
+
+# Instalar dependencias
+RUN npm ci --only=production
+
+# Copiar código del backend
+COPY backend/server-mysql.js ./server.js
+COPY backend/routes ./routes
+COPY backend/services ./services
+
+# Variables de entorno
+ENV NODE_ENV=production
+
+# Exponer puerto
+EXPOSE 3001
+
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
+    CMD wget --quiet --tries=1 --spider http://localhost:3001/api/health || exit 1
+
+CMD ["node", "server.js"]
+
