@@ -13,6 +13,8 @@ import Login from './pages/Login';
 import Users from './pages/Users';
 import Profile from './pages/Profile';
 import ResetPassword from './pages/ResetPassword';
+import Organigrama from './pages/Organigrama';
+import MissionVision from './pages/MissionVision';
 
 const ProtectedRoute = ({ children }) => {
     const { user, loading } = useAuth();
@@ -103,6 +105,16 @@ function AppContent() {
                     <Route path="/profile" element={
                         <ProtectedRoute>
                             <Profile />
+                        </ProtectedRoute>
+                    } />
+                    <Route path="/organigrama" element={
+                        <ProtectedRoute>
+                            <Organigrama />
+                        </ProtectedRoute>
+                    } />
+                    <Route path="/mision-vision" element={
+                        <ProtectedRoute>
+                            <MissionVision />
                         </ProtectedRoute>
                     } />
                 </Routes>

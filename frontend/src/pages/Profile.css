@@ -68,12 +68,24 @@
     border-radius: 6px;
     font-size: 1rem;
     transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group input:focus {
     outline: none;
     border-color: #0056b3;
     box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+
+/* Ajuste específico para el campo de correo electrónico */
+.profile-form > .form-group:nth-of-type(3) {
+    width: 100%;
+}
+
+.profile-form > .form-group:nth-of-type(3) input {
+    width: 100%;
+    max-width: 100%;
 }
 
 .form-group input.disabled-input {

@@ -43,7 +43,8 @@ function MachineryForms() {
             const specsData = await specsResponse.json();
             if (specsData.success) {
                 setSpecs(specsData.data);
-                setEditData(specsData.data || {});
+                // Inicializar editData vacío para que los campos estén en blanco
+                setEditData({});
             }
         } catch (error) {
             toast.error('Error al cargar maquinaria');
@@ -154,8 +155,8 @@ function MachineryForms() {
                         specs={specs}
                         isEditing={isEditing}
                         editData={editData}
-                        onEdit={() => setIsEditing(true)}
-                        onCancel={() => { setIsEditing(false); setEditData(specs || {}); }}
+                        onEdit={() => { setIsEditing(true); setEditData({}); }}
+                        onCancel={() => { setIsEditing(false); setEditData({}); }}
                         onSave={handleSaveSpecs}
                         onChange={handleInputChange}
                     />
@@ -190,10 +191,13 @@ function MachineryForms() {
 
 // Technical Sheet Component
 function TechnicalSheet({ machinery, specs, isEditing, editData, onEdit, onCancel, onSave, onChange }) {
-    const data = isEditing ? editData : (specs || {});
+    // Cuando está editando, usar editData (que debe estar vacío inicialmente)
+    // Cuando no está editando, mostrar specs si existen
+    const data = isEditing ? (editData || {}) : (specs || {});
 
     const renderField = (label, field, unit = '') => {
-        const value = data[field];
+        // En modo edición, siempre usar editData y si no existe, usar string vacío
+        const value = isEditing ? (editData?.[field] ?? '') : (data[field] || '');
         if (isEditing) {
             return (
                 <div className="spec-row">
@@ -201,7 +205,7 @@ function TechnicalSheet({ machinery, specs, isEditing, editData, onEdit, onCance
                     <input
                         type="text"
                         className="spec-input"
-                        value={value || ''}
+                        value={value}
                         onChange={(e) => onChange(field, e.target.value)}
                     />
                     {unit && <span className="spec-unit">{unit}</span>}
@@ -336,7 +340,7 @@ function TechnicalSheet({ machinery, specs, isEditing, editData, onEdit, onCance
                     {isEditing ? (
                         <textarea
                             className="obs-input"
-                            value={data.observaciones || ''}
+                            value={editData?.observaciones ?? ''}
                             onChange={(e) => onChange('observaciones', e.target.value)}
                             rows="3"
                         />
@@ -359,7 +363,7 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
     const [formData, setFormData] = useState({
         tipo_checklist: 'GENERAL',
         observaciones: '',
-        fecha: new Date().toISOString().split('T')[0],
+        fecha: '',
         codigo_checklist: '',
         realizado_por: user?.id || '',
         revisado_por: ''
@@ -418,23 +422,72 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
 
     const updateChecklist = async () => {
         try {
+            // Filtrar solo los campos que pertenecen a la tabla checklists_maquinaria
+            // Excluir campos calculados o de JOIN (maquinaria_nombre, maquinaria_codigo, etc.)
+            const fieldsToExclude = ['maquinaria_nombre', 'maquinaria_codigo', 'id'];
+            const fieldsToUpdate = Object.keys(editData).reduce((acc, key) => {
+                if (!fieldsToExclude.includes(key) && editData[key] !== undefined) {
+                    acc[key] = editData[key];
+                }
+                return acc;
+            }, {});
+            
+            console.log('Updating checklist with filtered data:', fieldsToUpdate);
             const response = await fetch(`http://localhost:3001/api/checklists/${selectedChecklist.id}`, {
                 method: 'PUT',
                 headers: getAuthHeaders(),
-                body: JSON.stringify(editData)
+                body: JSON.stringify(fieldsToUpdate)
             });
 
             const data = await response.json();
+            console.log('Update response:', data);
+            
             if (data.success) {
                 toast.success('Checklist actualizado');
                 setIsEditing(false);
-                setSelectedChecklist(null);
+                // Recargar el checklist actualizado desde el servidor
+                const reloadResponse = await fetch(`http://localhost:3001/api/checklists/${selectedChecklist.id}`, {
+                    headers: getAuthHeaders()
+                });
+                const reloadData = await reloadResponse.json();
+                if (reloadData.success) {
+                    setSelectedChecklist(reloadData.data);
+                    setEditData(reloadData.data);
+                }
                 onReload();
             } else {
                 toast.error(data.error || 'Error al actualizar');
             }
         } catch (error) {
+            console.error('Error updating checklist:', error);
             toast.error('Error al actualizar checklist');
+        }
+    };
+
+    const deleteChecklist = async (checklistId) => {
+        if (!window.confirm('¿Estás seguro de que deseas eliminar este checklist? Esta acción no se puede deshacer.')) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:3001/api/checklists/${checklistId}`, {
+                method: 'DELETE',
+                headers: getAuthHeaders()
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                toast.success('Checklist eliminado');
+                if (selectedChecklist && selectedChecklist.id === checklistId) {
+                    setSelectedChecklist(null);
+                    setIsEditing(false);
+                }
+                onReload();
+            } else {
+                toast.error(data.error || 'Error al eliminar');
+            }
+        } catch (error) {
+            toast.error('Error al eliminar checklist');
         }
     };
 
@@ -454,6 +507,15 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
         setEditData(prev => ({ ...prev, [field]: value }));
     };
 
+    const generatePDF = (checklist) => {
+        // Abrir el checklist en una nueva ventana para imprimir
+        handleViewChecklist(checklist);
+        // Esperar un momento para que se cargue la vista
+        setTimeout(() => {
+            window.print();
+        }, 500);
+    };
+
 
     if (loading) return <Loading message="Cargando checklists..." />;
 
@@ -466,6 +528,7 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
                 machinery={machinery}
                 onBack={() => { setSelectedChecklist(null); setIsEditing(false); setEditData({}); }}
                 onSave={updateChecklist}
+                onDelete={() => deleteChecklist(selectedChecklist.id)}
                 onChange={handleFieldChange}
                 onEdit={() => setIsEditing(true)}
                 onCancel={() => { setIsEditing(false); setEditData(selectedChecklist); }}
@@ -506,7 +569,8 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
                             <div className="card-actions">
                                 <button className="btn btn-sm btn-secondary" onClick={() => handleViewChecklist(checklist)}>👁️ Ver</button>
                                 <button className="btn btn-sm btn-primary" onClick={() => handleEditChecklist(checklist)}>✏️ Editar</button>
-                                <button className="btn btn-sm btn-info">📄 PDF</button>
+                                <button className="btn btn-sm btn-danger" onClick={() => deleteChecklist(checklist.id)}>🗑️ Eliminar</button>
+                                <button className="btn btn-sm btn-info" onClick={() => generatePDF(checklist)}>📄 PDF</button>
                             </div>
                         </div>
                     ))}
@@ -563,7 +627,7 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
 }
 
 // Checklist Detail View - Formato exacto de la imagen
-function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack, onSave, onChange, onEdit, onCancel }) {
+function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack, onSave, onDelete, onChange, onEdit, onCancel }) {
     const checklistData = isEditing ? editData : checklist;
     const fechaFormateada = new Date(checklistData.fecha).toLocaleDateString('es-BO', {
         day: '2-digit',
@@ -582,6 +646,10 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
         const condicion = checklistData[campoCondicion] || 'BUENO';
         const accionTexto = checklistData[campoAccion] || '';
         const accionTipo = getAccionTipo(condicion, accionTexto);
+        
+        // Obtener el campo base removiendo el sufijo _accion si existe
+        // Ejemplo: sonda_botella_vibradora_accion -> sonda_botella_vibradora
+        const campoBase = campoAccion.replace(/_accion$/, '');
 
         return (
             <tr key={numero}>
@@ -598,33 +666,33 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
                         <input
                             type="text"
                             className="checklist-input-small"
-                            value={checklistData[`${campoAccion}_quien`] || ''}
-                            onChange={e => onChange(`${campoAccion}_quien`, e.target.value)}
+                            value={checklistData[`${campoBase}_quien`] || ''}
+                            onChange={e => onChange(`${campoBase}_quien`, e.target.value)}
                             placeholder="Quién"
                         />
                     ) : (
-                        checklistData[`${campoAccion}_quien`] || ''
+                        checklistData[`${campoBase}_quien`] || ''
                     )}
                 </td>
                 <td className="checklist-cuando">
                     {isEditing ? (
                         <input
-                            type="text"
+                            type="date"
                             className="checklist-input-small"
-                            value={checklistData[`${campoAccion}_cuando`] || ''}
-                            onChange={e => onChange(`${campoAccion}_cuando`, e.target.value)}
+                            value={checklistData[`${campoBase}_cuando`] || ''}
+                            onChange={e => onChange(`${campoBase}_cuando`, e.target.value)}
                             placeholder="Cuándo"
                         />
                     ) : (
-                        checklistData[`${campoAccion}_cuando`] || ''
+                        checklistData[`${campoBase}_cuando`] || ''
                     )}
                 </td>
                 <td className="checklist-area">
                     {isEditing ? (
                         <select
                             className="checklist-select-small"
-                            value={checklistData[`${campoAccion}_area`] || ''}
-                            onChange={e => onChange(`${campoAccion}_area`, e.target.value)}
+                            value={checklistData[`${campoBase}_area`] || ''}
+                            onChange={e => onChange(`${campoBase}_area`, e.target.value)}
                         >
                             <option value="">-</option>
                             <option value="MANTENIMIENTO">Mantenimiento</option>
@@ -632,7 +700,7 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
                             <option value="TALLER">Taller</option>
                         </select>
                     ) : (
-                        checklistData[`${campoAccion}_area`] || '-'
+                        checklistData[`${campoBase}_area`] || '-'
                     )}
                 </td>
                 {isEditing && (
@@ -651,6 +719,10 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
         );
     };
 
+    const handlePrint = () => {
+        window.print();
+    };
+
     return (
         <div className="checklist-detail-view">
             <div className="checklist-actions">
@@ -661,7 +733,15 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
                         <button className="btn btn-secondary" onClick={onBack}>❌ Cancelar</button>
                     </>
                 ) : (
-                    <button className="btn btn-primary" onClick={onEdit}>✏️ Editar</button>
+                    <>
+                        <button className="btn btn-primary" onClick={onEdit}>✏️ Editar</button>
+                        <button className="btn btn-info" onClick={handlePrint}>📄 Imprimir/PDF</button>
+                        <button className="btn btn-danger" onClick={() => {
+                            if (window.confirm('¿Estás seguro de que deseas eliminar este checklist? Esta acción no se puede deshacer.')) {
+                                onDelete();
+                            }
+                        }}>🗑️ Eliminar</button>
+                    </>
                 )}
             </div>
 
@@ -856,15 +936,35 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
 function DailyReportView({ reports, machineryId, onReload, loading }) {
     const toast = useToast();
     const [showModal, setShowModal] = useState(false);
+    const [selectedReport, setSelectedReport] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editData, setEditData] = useState({});
+    const [machinery, setMachinery] = useState(null);
+
+    const getAuthHeaders = () => ({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+
+    const loadMachinery = async () => {
+        try {
+            const response = await fetch(`http://localhost:3001/api/machinery/${machineryId}`);
+            const data = await response.json();
+            return data.success ? data.data : null;
+        } catch (error) {
+            return null;
+        }
+    };
+
+    useEffect(() => {
+        loadMachinery().then(setMachinery);
+    }, [machineryId]);
 
     const createReport = async () => {
         try {
             const response = await fetch('http://localhost:3001/api/daily-reports', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`
-                },
+                headers: getAuthHeaders(),
                 body: JSON.stringify({
                     maquinaria_id: machineryId,
                     fecha: new Date().toISOString().split('T')[0]
@@ -884,7 +984,104 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
         }
     };
 
+    const updateReport = async () => {
+        try {
+            const response = await fetch(`http://localhost:3001/api/daily-reports/${selectedReport.id}`, {
+                method: 'PUT',
+                headers: getAuthHeaders(),
+                body: JSON.stringify(editData)
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                toast.success('Reporte actualizado');
+                setIsEditing(false);
+                // Recargar el reporte actualizado
+                const reloadResponse = await fetch(`http://localhost:3001/api/daily-reports/${selectedReport.id}`, {
+                    headers: getAuthHeaders()
+                });
+                const reloadData = await reloadResponse.json();
+                if (reloadData.success) {
+                    setSelectedReport(reloadData.data);
+                    setEditData(reloadData.data);
+                }
+                onReload();
+            } else {
+                toast.error(data.error || 'Error al actualizar');
+            }
+        } catch (error) {
+            toast.error('Error al actualizar reporte');
+        }
+    };
+
+    const deleteReport = async (reportId) => {
+        if (!window.confirm('¿Estás seguro de que deseas eliminar este reporte diario? Esta acción no se puede deshacer.')) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:3001/api/daily-reports/${reportId}`, {
+                method: 'DELETE',
+                headers: getAuthHeaders()
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                toast.success('Reporte eliminado');
+                if (selectedReport && selectedReport.id === reportId) {
+                    setSelectedReport(null);
+                    setIsEditing(false);
+                }
+                onReload();
+            } else {
+                toast.error(data.error || 'Error al eliminar');
+            }
+        } catch (error) {
+            toast.error('Error al eliminar reporte');
+        }
+    };
+
+    const handleViewReport = (report) => {
+        setSelectedReport(report);
+        setEditData(report);
+        setIsEditing(false);
+    };
+
+    const handleEditReport = (report) => {
+        setSelectedReport(report);
+        setEditData({ ...report });
+        setIsEditing(true);
+    };
+
+    const handleFieldChange = (field, value) => {
+        setEditData(prev => ({ ...prev, [field]: value }));
+    };
+
+    const generatePDF = (report) => {
+        handleViewReport(report);
+        setTimeout(() => {
+            window.print();
+        }, 500);
+    };
+
     if (loading) return <Loading message="Cargando reportes..." />;
+
+    if (selectedReport) {
+        return (
+            <DailyReportDetailView
+                report={selectedReport}
+                editData={editData}
+                isEditing={isEditing}
+                machinery={machinery}
+                onBack={() => { setSelectedReport(null); setIsEditing(false); setEditData({}); }}
+                onSave={updateReport}
+                onDelete={() => deleteReport(selectedReport.id)}
+                onChange={handleFieldChange}
+                onEdit={() => setIsEditing(true)}
+                onCancel={() => { setIsEditing(false); setEditData(selectedReport); }}
+            />
+        );
+    }
 
     return (
         <div className="daily-report-view">
@@ -912,9 +1109,10 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
                                 <span className="chofer">🧑‍✈️ {report.chofer_nombre || 'Sin chofer'}</span>
                             </div>
                             <div className="card-actions">
-                                <button className="btn btn-sm btn-secondary">👁️ Ver</button>
-                                <button className="btn btn-sm btn-primary">✏️ Editar</button>
-                                <button className="btn btn-sm btn-info">📄 PDF</button>
+                                <button className="btn btn-sm btn-secondary" onClick={() => handleViewReport(report)}>👁️ Ver</button>
+                                <button className="btn btn-sm btn-primary" onClick={() => handleEditReport(report)}>✏️ Editar</button>
+                                <button className="btn btn-sm btn-danger" onClick={() => deleteReport(report.id)}>🗑️ Eliminar</button>
+                                <button className="btn btn-sm btn-info" onClick={() => generatePDF(report)}>📄 PDF</button>
                             </div>
                         </div>
                     ))}
@@ -938,6 +1136,238 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
                     </div>
                 </div>
             )}
+        </div>
+    );
+}
+
+// Daily Report Detail View Component
+function DailyReportDetailView({ report, editData, isEditing, machinery, onBack, onSave, onDelete, onChange, onEdit, onCancel }) {
+    const reportData = isEditing ? editData : report;
+    
+    const activities = [
+        { key: 'limpieza_lavado', label: 'Limpieza y Lavado' },
+        { key: 'nivel_refrigerante', label: 'Nivel de Refrigerante' },
+        { key: 'nivel_agua_plumas', label: 'Nivel de Agua Plumas' },
+        { key: 'nivel_liquido_frenos', label: 'Nivel de Líquido de Frenos' },
+        { key: 'nivel_liquido_hidraulico', label: 'Nivel de Líquido Hidráulico' },
+        { key: 'nivel_electrolito_bateria', label: 'Nivel de Electrolito Batería' },
+        { key: 'presion_neumaticos', label: 'Presión de Neumáticos' },
+        { key: 'fugas_carter', label: 'Fugas de Carter' },
+        { key: 'fugas_direccion', label: 'Fugas de Dirección' },
+        { key: 'fugas_mangueras_frenos', label: 'Fugas de Mangueras de Frenos' },
+        { key: 'fugas_combustible', label: 'Fugas de Combustible' },
+        { key: 'fugas_agua', label: 'Fugas de Agua' },
+        { key: 'luces_interiores', label: 'Luces Interiores' },
+        { key: 'luces_exteriores', label: 'Luces Exteriores' },
+        { key: 'estabilidad_motor', label: 'Estabilidad del Motor' },
+        { key: 'temperatura_motor', label: 'Temperatura del Motor' },
+        { key: 'sonidos_raros', label: 'Sonidos Raros' }
+    ];
+
+    const days = [
+        { key: 'lunes', label: 'Lunes' },
+        { key: 'martes', label: 'Martes' },
+        { key: 'miercoles', label: 'Miércoles' },
+        { key: 'jueves', label: 'Jueves' },
+        { key: 'viernes', label: 'Viernes' }
+    ];
+
+    const handlePrint = () => {
+        window.print();
+    };
+
+    const fechaFormateada = new Date(reportData.fecha).toLocaleDateString('es-BO', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+
+    // Calcular estadísticas dinámicas
+    const getActivityStatus = (value) => {
+        if (value === 'R') return { text: 'R', class: 'status-realizado', label: 'Realizado' };
+        if (value === 'X') return { text: 'X', class: 'status-no-realizado', label: 'No Realizado' };
+        if (value === 'N/A') return { text: 'N/A', class: 'status-na', label: 'N/A' };
+        return { text: '-', class: 'status-pendiente', label: 'Pendiente' };
+    };
+
+    const getDayStats = (dayKey) => {
+        const completed = activities.filter(a => {
+            const value = reportData[`${a.key}_${dayKey}`];
+            return value === 'R';
+        }).length;
+        const total = activities.length;
+        return { completed, total, percentage: total > 0 ? Math.round((completed / total) * 100) : 0 };
+    };
+
+    return (
+        <div className="daily-report-detail-view">
+            <div className="report-actions">
+                <button className="btn btn-back" onClick={onBack}>← Volver</button>
+                {isEditing ? (
+                    <>
+                        <button className="btn btn-success" onClick={onSave}>💾 Guardar</button>
+                        <button className="btn btn-secondary" onClick={onCancel}>❌ Cancelar</button>
+                    </>
+                ) : (
+                    <>
+                        <button className="btn btn-primary" onClick={onEdit}>✏️ Editar</button>
+                        <button className="btn btn-info" onClick={handlePrint}>📄 Imprimir/PDF</button>
+                        <button className="btn btn-danger" onClick={() => {
+                            if (window.confirm('¿Estás seguro de que deseas eliminar este reporte diario? Esta acción no se puede deshacer.')) {
+                                onDelete();
+                            }
+                        }}>🗑️ Eliminar</button>
+                    </>
+                )}
+            </div>
+
+            <div className="report-document">
+                {/* Header Profesional */}
+                <div className="report-header">
+                    <div className="report-logo-section">
+                        <div className="report-logo">
+                            <div className="logo-text">PAN AMERICAN SILVER</div>
+                        </div>
+                    </div>
+                    <div className="report-title-section">
+                        <h1 className="report-main-title">REPORTE DIARIO DE MANTENIMIENTO</h1>
+                        <h2 className="report-subtitle">
+                            {machinery?.nombre?.toUpperCase() || reportData.maquinaria_nombre?.toUpperCase() || 'MAQUINARIA'}
+                        </h2>
+                    </div>
+                    <div className="report-doc-info">
+                        <div className="doc-info-row">
+                            <span className="doc-label">CÓDIGO:</span>
+                            <span className="doc-value">{machinery?.codigo || reportData.maquinaria_codigo || 'N/A'}</span>
+                        </div>
+                        <div className="doc-info-row">
+                            <span className="doc-label">FECHA:</span>
+                            <span className="doc-value">{fechaFormateada}</span>
+                        </div>
+                        <div className="doc-info-row">
+                            <span className="doc-label">CHOFER:</span>
+                            <span className="doc-value">{reportData.chofer_nombre || 'Sin asignar'}</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Estadísticas Semanales */}
+                <div className="report-stats">
+                    {days.map(day => {
+                        const stats = getDayStats(day.key);
+                        return (
+                            <div key={day.key} className="stat-card">
+                                <div className="stat-day">{day.label}</div>
+                                <div className="stat-progress">
+                                    <div className="stat-bar">
+                                        <div 
+                                            className="stat-bar-fill" 
+                                            style={{ width: `${stats.percentage}%` }}
+                                        ></div>
+                                    </div>
+                                    <div className="stat-text">
+                                        {stats.completed}/{stats.total} ({stats.percentage}%)
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Tabla Principal */}
+                <div className="report-table-wrapper">
+                    <table className="report-main-table">
+                        <thead>
+                            <tr>
+                                <th rowSpan="2" className="col-activity">ACTIVIDAD</th>
+                                <th colSpan="5" className="col-days-header">DÍAS DE LA SEMANA</th>
+                            </tr>
+                            <tr>
+                                {days.map(day => {
+                                    const stats = getDayStats(day.key);
+                                    return (
+                                        <th key={day.key} className="col-day">
+                                            <div className="day-header">
+                                                <span className="day-name">{day.label}</span>
+                                                <span className="day-stats">{stats.completed}/{stats.total}</span>
+                                            </div>
+                                        </th>
+                                    );
+                                })}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {activities.map((activity, index) => (
+                                <tr key={activity.key} className={index % 2 === 0 ? 'row-even' : 'row-odd'}>
+                                    <td className="activity-name">{activity.label}</td>
+                                    {days.map(day => {
+                                        const fieldName = `${activity.key}_${day.key}`;
+                                        const value = reportData[fieldName] || '';
+                                        const status = getActivityStatus(value);
+                                        return (
+                                            <td key={day.key} className={`activity-day ${status.class}`}>
+                                                {isEditing ? (
+                                                    <select
+                                                        className="report-select"
+                                                        value={value}
+                                                        onChange={e => onChange(fieldName, e.target.value)}
+                                                    >
+                                                        <option value="">-</option>
+                                                        <option value="R">R (Realizado)</option>
+                                                        <option value="X">X (No realizado)</option>
+                                                        <option value="N/A">N/A</option>
+                                                    </select>
+                                                ) : (
+                                                    <span className="status-badge" title={status.label}>
+                                                        {status.text}
+                                                    </span>
+                                                )}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+                {/* Observaciones */}
+                <div className="report-observaciones">
+                    <div className="obs-header">
+                        <span className="obs-icon">📝</span>
+                        <span className="obs-title">OBSERVACIONES</span>
+                    </div>
+                    <div className="obs-content-wrapper">
+                        {isEditing ? (
+                            <textarea
+                                className="report-obs-input"
+                                value={reportData.observaciones || ''}
+                                onChange={e => onChange('observaciones', e.target.value)}
+                                rows="4"
+                                placeholder="Ingrese observaciones relevantes sobre el mantenimiento..."
+                            />
+                        ) : (
+                            <div className="report-obs-text">
+                                {reportData.observaciones || 'Sin observaciones registradas'}
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* Firmas */}
+                <div className="report-firmas">
+                    <div className="firma-section">
+                        <div className="firma-title">REALIZÓ</div>
+                        <div className="firma-line"></div>
+                        <div className="firma-name">{reportData.realizado_por || ''}</div>
+                    </div>
+                    <div className="firma-section">
+                        <div className="firma-title">REVISÓ</div>
+                        <div className="firma-line"></div>
+                        <div className="firma-name">{reportData.revisado_por || ''}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

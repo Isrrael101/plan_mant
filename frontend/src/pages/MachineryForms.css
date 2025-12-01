@@ -1,3 +1,334 @@
+/* Estilos de impresión para PDF - Mejorados con colores y área dinámica */
+@media print {
+    @page {
+        margin: 0.8cm;
+        size: A4;
+    }
+    
+    /* Forzar impresión de colores */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    /* Ocultar todo excepto el contenido del documento */
+    body * {
+        visibility: hidden;
+    }
+    
+    /* Mostrar el contenedor principal */
+    .checklist-detail-view,
+    .daily-report-detail-view {
+        visibility: visible !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+    
+    /* Mostrar todo el contenido del documento */
+    .checklist-detail-view *,
+    .daily-report-detail-view * {
+        visibility: visible !important;
+    }
+    
+    /* Ocultar botones y acciones */
+    .checklist-actions,
+    .report-actions,
+    .btn,
+    button,
+    .modal-overlay,
+    .modal-content {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Asegurar que el documento se muestre con área optimizada */
+    .checklist-document,
+    .report-document {
+        visibility: visible !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 15px !important;
+        background: white !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: auto !important;
+    }
+    
+    /* Mostrar todas las secciones del documento */
+    .checklist-header,
+    .checklist-table-wrapper,
+    .checklist-observaciones,
+    .checklist-firmas,
+    .report-header,
+    .report-table-wrapper,
+    .report-observaciones {
+        visibility: visible !important;
+        display: block !important;
+        page-break-inside: avoid !important;
+    }
+    
+    /* Header optimizado */
+    .checklist-header,
+    .report-header {
+        margin-bottom: 12px !important;
+        padding-bottom: 8px !important;
+    }
+    
+    .checklist-main-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .checklist-subtitle {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Tablas con colores y diseño dinámico */
+    .checklist-main-table,
+    .report-main-table {
+        width: 100% !important;
+        font-size: 8pt !important;
+        border-collapse: collapse !important;
+        margin: 8px 0 !important;
+    }
+    
+    .checklist-main-table th,
+    .report-main-table th {
+        background: #003366 !important;
+        color: white !important;
+        border: 1px solid #000 !important;
+        padding: 6px 4px !important;
+        font-weight: 700 !important;
+        font-size: 7.5pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .checklist-main-table td,
+    .report-main-table td {
+        border: 1px solid #333 !important;
+        padding: 5px 3px !important;
+        font-size: 7.5pt !important;
+    }
+    
+    /* Colores de condición - Forzar impresión */
+    .checklist-condicion.bueno {
+        background: #90EE90 !important;
+        color: #006400 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .checklist-condicion.malo {
+        background: #FFB6C1 !important;
+        color: #8B0000 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Colores de tipo de acción - Forzar impresión */
+    .checklist-accion-tipo.preventivo {
+        background: #E6F3FF !important;
+        color: #0066CC !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .checklist-accion-tipo.correctivo {
+        background: #FFFACD !important;
+        color: #B8860B !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Secciones con colores */
+    .section-header-row {
+        background: #00994d !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .section-title {
+        color: white !important;
+        font-weight: 700 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Observaciones con colores */
+    .obs-label {
+        background: #666 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Ocultar inputs y mostrar valores */
+    .checklist-detail-view input[type="text"],
+    .checklist-detail-view input[type="date"],
+    .checklist-detail-view select,
+    .daily-report-detail-view input,
+    .daily-report-detail-view select,
+    .checklist-input-small,
+    .checklist-select-small {
+        border: none !important;
+        background: transparent !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    /* Firmas optimizadas */
+    .checklist-firmas {
+        margin-top: 15px !important;
+        page-break-inside: avoid !important;
+    }
+    
+    .firma-section {
+        margin-bottom: 10px !important;
+    }
+    
+    .firma-value {
+        border: 1px solid #ccc !important;
+        background: #f9f9f9 !important;
+        min-height: 25px !important;
+    }
+    
+    /* Evitar saltos de página dentro de tablas y filas */
+    .checklist-table-wrapper,
+    .report-table-wrapper {
+        page-break-inside: avoid !important;
+        overflow: visible !important;
+    }
+    
+    .checklist-main-table tr,
+    .report-main-table tr {
+        page-break-inside: avoid !important;
+    }
+    
+    /* Ajustes dinámicos de tamaño según contenido */
+    .checklist-elemento {
+        font-size: 7pt !important;
+        line-height: 1.2 !important;
+    }
+    
+    .checklist-quien,
+    .checklist-cuando,
+    .checklist-area {
+        font-size: 7pt !important;
+    }
+    
+    /* Logo y título */
+    .logo-text {
+        color: #0066cc !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Ajustes para reportes diarios mejorados */
+    .report-header {
+        grid-template-columns: 200px 1fr 280px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .report-main-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .report-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    /* Estadísticas en impresión */
+    .report-stats {
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: 15px !important;
+        padding: 10px !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .stat-card {
+        background: white !important;
+        padding: 8px !important;
+    }
+    
+    .stat-bar-fill {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Colores de estados en impresión */
+    .status-realizado {
+        background: #d4edda !important;
+        color: #155724 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .status-no-realizado {
+        background: #f8d7da !important;
+        color: #721c24 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .status-na {
+        background: #fff3cd !important;
+        color: #856404 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .report-main-table .activity-name {
+        font-weight: 600 !important;
+        text-align: left !important;
+    }
+    
+    .report-main-table .activity-day {
+        text-align: center !important;
+    }
+    
+    /* Observaciones en impresión */
+    .obs-header {
+        background: linear-gradient(135deg, #003366 0%, #004d99 100%) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Firmas en impresión */
+    .report-firmas .firma-title {
+        background: linear-gradient(135deg, #003366 0%, #004d99 100%) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Mejorar espaciado general */
+    .checklist-document > *,
+    .report-document > * {
+        margin-bottom: 10px !important;
+    }
+    
+    .checklist-document > *:last-child,
+    .report-document > *:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
 /* MachineryForms Page */
 .machinery-forms-page {
     padding: var(--space-6);
@@ -94,6 +425,9 @@
     border-radius: var(--radius-lg);
     padding: var(--space-6);
     min-height: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
 }
 
 /* Technical Sheet */
@@ -153,7 +487,7 @@
 .section-header.obs-header { background: #666; }
 
 .section-body {
-    background: var(--bg-elevated);
+    background: #f7fafc;
     padding: var(--space-2);
 }
 
@@ -164,6 +498,11 @@
     padding: var(--space-2) var(--space-3);
     border-bottom: 1px solid var(--border-color);
     gap: var(--space-2);
+    transition: background-color 0.2s ease;
+}
+
+.spec-row:hover {
+    background-color: rgba(102, 126, 234, 0.05);
 }
 
 .spec-row:last-child {
@@ -172,18 +511,20 @@
 
 .spec-label {
     flex: 1;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #003366;
+    color: #2d3748;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .spec-value {
     min-width: 80px;
     text-align: right;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #2d3748 !important;
     font-size: 0.9rem;
+    background: transparent;
 }
 
 .spec-value.highlight {
@@ -207,24 +548,42 @@
 
 .spec-unit {
     font-size: 0.7rem;
-    color: var(--text-muted);
+    color: #718096 !important;
     min-width: 40px;
+    font-weight: 500;
 }
 
 .spec-input {
     width: 100px;
-    padding: var(--space-1) var(--space-2);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    color: var(--text-primary);
-    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #cbd5e0;
+    border-radius: 6px;
+    background: #ffffff !important;
+    color: #2d3748 !important;
+    font-size: 0.9rem;
+    font-weight: 500;
     text-align: right;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.spec-input::placeholder {
+    color: #a0aec0;
+    opacity: 0.7;
 }
 
 .spec-input:focus {
     outline: none;
-    border-color: var(--cat-yellow);
+    border-color: #667eea;
+    background: #ffffff !important;
+    color: #2d3748 !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.spec-input:not(:placeholder-shown) {
+    background: #ffffff !important;
+    color: #2d3748 !important;
+    border-color: #667eea;
 }
 
 /* Observaciones */
@@ -234,13 +593,31 @@
 
 .obs-input {
     width: 100%;
-    padding: var(--space-3);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    border: 2px solid #cbd5e0;
+    border-radius: 8px;
+    background: #ffffff !important;
+    color: #2d3748 !important;
     font-size: 0.9rem;
+    font-weight: 400;
     resize: vertical;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.obs-input::placeholder {
+    color: #a0aec0;
+    opacity: 0.7;
+}
+
+.obs-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: #ffffff !important;
+    color: #2d3748 !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
 }
 
 .obs-text {
@@ -863,4 +1240,486 @@
     font-size: 0.85rem;
     color: #333;
     background: #f9f9f9;
+}
+
+/* ============================================
+   DAILY REPORT STYLES - PROFESIONAL Y DINÁMICO
+   ============================================ */
+
+.daily-report-detail-view {
+    padding: 0;
+    background: transparent;
+    width: 100%;
+    max-width: 100%;
+}
+
+.report-actions {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    padding: var(--space-4);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.report-document {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: var(--space-6);
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+/* Header Profesional */
+.report-header {
+    display: grid;
+    grid-template-columns: 200px 1fr 280px;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 3px solid #003366;
+    align-items: start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.report-logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.report-logo {
+    display: flex;
+    align-items: center;
+}
+
+.report-logo .logo-text {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #0066cc;
+    letter-spacing: 0.5px;
+}
+
+.report-title-section {
+    text-align: center;
+}
+
+.report-main-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #003366;
+    margin: 0 0 var(--space-2);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.report-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0066cc;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.report-doc-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-size: 0.85rem;
+    background: #f8f9fa;
+    padding: var(--space-4);
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.doc-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-1) 0;
+}
+
+.doc-label {
+    font-weight: 700;
+    color: #003366;
+    min-width: 80px;
+}
+
+.doc-value {
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+    text-align: right;
+}
+
+/* Estadísticas Semanales Dinámicas */
+.report-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    padding: var(--space-5);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.stat-card {
+    background: white;
+    padding: var(--space-4);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.stat-day {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #003366;
+    text-align: center;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-progress {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.stat-bar {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50 0%, #45a049 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #666;
+    text-align: center;
+}
+
+/* Tabla Principal Profesional */
+.report-table-wrapper {
+    margin: var(--space-8) 0;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.report-main-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    background: white;
+}
+
+.report-main-table thead {
+    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+    color: white;
+}
+
+.report-main-table th {
+    padding: var(--space-4) var(--space-3);
+    text-align: center;
+    font-weight: 700;
+    border: 1px solid #002244;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+.col-activity {
+    width: 25%;
+    text-align: left;
+    padding-left: var(--space-4);
+}
+
+.col-days-header {
+    background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+}
+
+.col-day {
+    width: 15%;
+}
+
+.day-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    align-items: center;
+}
+
+.day-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.day-stats {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    background: rgba(255,255,255,0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.report-main-table td {
+    padding: var(--space-3);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    vertical-align: middle;
+    transition: background-color 0.2s;
+}
+
+.report-main-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.report-main-table tbody tr.row-even {
+    background: #ffffff;
+}
+
+.report-main-table tbody tr.row-odd {
+    background: #f8f9fa;
+}
+
+.report-main-table tbody tr:hover {
+    background: #e8f4f8;
+}
+
+.activity-name {
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    padding-left: var(--space-4);
+    font-size: 0.8rem;
+}
+
+.activity-day {
+    position: relative;
+}
+
+/* Estados de Actividad con Colores */
+.status-realizado {
+    background: #d4edda !important;
+    color: #155724 !important;
+    font-weight: 700;
+}
+
+.status-no-realizado {
+    background: #f8d7da !important;
+    color: #721c24 !important;
+    font-weight: 700;
+}
+
+.status-na {
+    background: #fff3cd !important;
+    color: #856404 !important;
+    font-weight: 600;
+}
+
+.status-pendiente {
+    background: #e2e3e5 !important;
+    color: #6c757d !important;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-width: 40px;
+}
+
+.report-select {
+    width: 100%;
+    padding: var(--space-2);
+    border: 2px solid #003366;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.report-select:hover {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.report-select:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+}
+
+/* Observaciones Profesionales */
+.report-observaciones {
+    margin: var(--space-8) 0;
+    border: 2px solid #003366;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.obs-header {
+    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+    color: white;
+    padding: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.obs-icon {
+    font-size: 1.2rem;
+}
+
+.obs-title {
+    flex: 1;
+}
+
+.obs-content-wrapper {
+    padding: var(--space-5);
+    background: #f8f9fa;
+    min-height: 120px;
+}
+
+.report-obs-input {
+    width: 100%;
+    padding: var(--space-4);
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.2s;
+}
+
+.report-obs-input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.report-obs-text {
+    padding: var(--space-4);
+    font-size: 0.9rem;
+    color: #333;
+    white-space: pre-line;
+    line-height: 1.6;
+    background: white;
+    border-radius: 6px;
+    min-height: 100px;
+}
+
+/* Firmas del Reporte */
+.report-firmas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 3px solid #003366;
+}
+
+.report-firmas .firma-section {
+    border: 2px solid #003366;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+.report-firmas .firma-title {
+    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+    color: white;
+    padding: var(--space-3);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.firma-line {
+    height: 60px;
+    border-bottom: 2px solid #e0e0e0;
+    margin: var(--space-4);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 5px,
+        #e0e0e0 5px,
+        #e0e0e0 6px
+    );
+}
+
+.firma-name {
+    padding: var(--space-3);
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+    min-height: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .report-header {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .report-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .report-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .report-firmas {
+        grid-template-columns: 1fr;
+    }
+    
+    .report-main-table {
+        font-size: 0.7rem;
+    }
 }

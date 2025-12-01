@@ -10,6 +10,26 @@
 // CHECKLISTS DE MAQUINARIA
 // ============================================
 
+// Función auxiliar para formatear fechas a formato MySQL (YYYY-MM-DD)
+function formatDateForMySQL(dateValue) {
+    if (!dateValue) return null;
+    if (typeof dateValue === 'string') {
+        // Si es un string ISO, extraer solo la fecha
+        if (dateValue.includes('T')) {
+            return dateValue.split('T')[0];
+        }
+        // Si ya está en formato YYYY-MM-DD, devolverlo tal cual
+        if (/^\d{4}-\d{2}-\d{2}$/.test(dateValue)) {
+            return dateValue;
+        }
+    }
+    // Si es un objeto Date, formatearlo
+    if (dateValue instanceof Date) {
+        return dateValue.toISOString().split('T')[0];
+    }
+    return dateValue;
+}
+
 // Obtener todos los checklists de una maquinaria
 export function getChecklistsByMachinery(pool) {
     return async (req, res) => {
@@ -43,6 +63,14 @@ export function createChecklist(pool) {
         try {
             const data = req.body;
 
+            // Validar campos requeridos
+            if (!data.maquinaria_id) {
+                return res.status(400).json({ success: false, error: 'maquinaria_id es requerido' });
+            }
+            if (!data.fecha) {
+                return res.status(400).json({ success: false, error: 'fecha es requerido' });
+            }
+
             // Construir query dinámicamente con todos los campos
             const fields = [
                 'maquinaria_id', 'fecha', 'tipo_checklist', 'codigo_checklist', 'anexo', 'revision',
@@ -70,8 +98,13 @@ export function createChecklist(pool) {
 
             const placeholders = fields.map(() => '?').join(', ');
             const values = fields.map(field => {
+                // Formatear fechas: fecha principal y campos _cuando
+                if (field === 'fecha' || field.endsWith('_cuando')) {
+                    return formatDateForMySQL(data[field]);
+                }
+                
                 if (field.includes('_condicion') || field.includes('sonda_') || field.includes('ume_') || field.includes('umc_')) {
-                    if (field.endsWith('_accion') || field.endsWith('_quien') || field.endsWith('_cuando') || field.endsWith('_area')) {
+                    if (field.endsWith('_accion') || field.endsWith('_quien') || field.endsWith('_area')) {
                         return data[field] || null;
                     }
                     return data[field] || 'BUENO';
@@ -87,6 +120,12 @@ export function createChecklist(pool) {
             res.json({ success: true, id: result.insertId });
         } catch (error) {
             console.error('Error creating checklist:', error);
+            console.error('Error details:', {
+                message: error.message,
+                code: error.code,
+                sqlState: error.sqlState,
+                sqlMessage: error.sqlMessage
+            });
             res.status(500).json({ success: false, error: error.message });
         }
     };
@@ -98,6 +137,9 @@ export function updateChecklist(pool) {
         try {
             const { id } = req.params;
             const data = req.body;
+
+            console.log('Updating checklist:', id);
+            console.log('Data received:', JSON.stringify(data, null, 2));
 
             // Construir SET dinámicamente
             const fields = [
@@ -124,18 +166,64 @@ export function updateChecklist(pool) {
                 'observaciones'
             ];
 
-            const setClause = fields.map(field => `${field} = ?`).join(', ');
-            const values = fields.map(field => data[field] !== undefined ? data[field] : null);
+            // Filtrar solo los campos que existen en la tabla y están presentes en data
+            const fieldsToUpdate = fields.filter(field => data.hasOwnProperty(field));
+            
+            if (fieldsToUpdate.length === 0) {
+                return res.status(400).json({ success: false, error: 'No hay campos válidos para actualizar' });
+            }
+            
+            const setClause = fieldsToUpdate.map(field => `${field} = ?`).join(', ');
+            const values = fieldsToUpdate.map(field => {
+                const value = data[field] !== undefined ? data[field] : null;
+                // Formatear fechas: fecha principal y campos _cuando
+                if (field === 'fecha' || field.endsWith('_cuando')) {
+                    return formatDateForMySQL(value);
+                }
+                return value;
+            });
             values.push(id);
+            
+            console.log('Fields to update:', fieldsToUpdate);
+            console.log('Values:', values);
 
-            await pool.query(
+            const [result] = await pool.query(
                 `UPDATE checklists_maquinaria SET ${setClause} WHERE id = ?`,
                 values
             );
 
-            res.json({ success: true });
+            console.log('Update result:', result.affectedRows, 'rows affected');
+
+            if (result.affectedRows === 0) {
+                return res.status(404).json({ success: false, error: 'Checklist no encontrado o sin cambios' });
+            }
+
+            res.json({ success: true, message: 'Checklist actualizado correctamente' });
         } catch (error) {
             console.error('Error updating checklist:', error);
+            res.status(500).json({ success: false, error: error.message });
+        }
+    };
+}
+
+// Eliminar checklist
+export function deleteChecklist(pool) {
+    return async (req, res) => {
+        try {
+            const { id } = req.params;
+            
+            const [result] = await pool.query(
+                'DELETE FROM checklists_maquinaria WHERE id = ?',
+                [id]
+            );
+
+            if (result.affectedRows === 0) {
+                return res.status(404).json({ success: false, error: 'Checklist no encontrado' });
+            }
+
+            res.json({ success: true, message: 'Checklist eliminado' });
+        } catch (error) {
+            console.error('Error deleting checklist:', error);
             res.status(500).json({ success: false, error: error.message });
         }
     };
@@ -285,6 +373,101 @@ function getDailyReportValues(data) {
     });
 
     return values;
+}
+
+// Obtener un reporte diario específico
+export function getDailyReport(pool) {
+    return async (req, res) => {
+        try {
+            const { id } = req.params;
+            const [rows] = await pool.query(`
+                SELECT r.*, 
+                       m.nombre as maquinaria_nombre,
+                       m.codigo as maquinaria_codigo,
+                       p.nombre_completo as chofer_nombre
+                FROM reportes_diarios r
+                LEFT JOIN maquinaria m ON r.maquinaria_id = m.id
+                LEFT JOIN personal p ON r.chofer_id = p.id
+                WHERE r.id = ?
+            `, [id]);
+
+            if (rows.length === 0) {
+                return res.status(404).json({ success: false, error: 'Reporte diario no encontrado' });
+            }
+
+            res.json({ success: true, data: rows[0] });
+        } catch (error) {
+            console.error('Error getting daily report:', error);
+            res.status(500).json({ success: false, error: error.message });
+        }
+    };
+}
+
+// Actualizar reporte diario
+export function updateDailyReport(pool) {
+    return async (req, res) => {
+        try {
+            const { id } = req.params;
+            const data = req.body;
+
+            await pool.query(`
+                UPDATE reportes_diarios SET
+                    codigo_maquina = ?, chofer_id = ?,
+                    limpieza_lavado_lunes = ?, limpieza_lavado_martes = ?, limpieza_lavado_miercoles = ?, limpieza_lavado_jueves = ?, limpieza_lavado_viernes = ?,
+                    nivel_refrigerante_lunes = ?, nivel_refrigerante_martes = ?, nivel_refrigerante_miercoles = ?, nivel_refrigerante_jueves = ?, nivel_refrigerante_viernes = ?,
+                    nivel_agua_plumas_lunes = ?, nivel_agua_plumas_martes = ?, nivel_agua_plumas_miercoles = ?, nivel_agua_plumas_jueves = ?, nivel_agua_plumas_viernes = ?,
+                    nivel_liquido_frenos_lunes = ?, nivel_liquido_frenos_martes = ?, nivel_liquido_frenos_miercoles = ?, nivel_liquido_frenos_jueves = ?, nivel_liquido_frenos_viernes = ?,
+                    nivel_liquido_hidraulico_lunes = ?, nivel_liquido_hidraulico_martes = ?, nivel_liquido_hidraulico_miercoles = ?, nivel_liquido_hidraulico_jueves = ?, nivel_liquido_hidraulico_viernes = ?,
+                    nivel_electrolito_bateria_lunes = ?, nivel_electrolito_bateria_martes = ?, nivel_electrolito_bateria_miercoles = ?, nivel_electrolito_bateria_jueves = ?, nivel_electrolito_bateria_viernes = ?,
+                    presion_neumaticos_lunes = ?, presion_neumaticos_martes = ?, presion_neumaticos_miercoles = ?, presion_neumaticos_jueves = ?, presion_neumaticos_viernes = ?,
+                    fugas_carter_lunes = ?, fugas_carter_martes = ?, fugas_carter_miercoles = ?, fugas_carter_jueves = ?, fugas_carter_viernes = ?,
+                    fugas_direccion_lunes = ?, fugas_direccion_martes = ?, fugas_direccion_miercoles = ?, fugas_direccion_jueves = ?, fugas_direccion_viernes = ?,
+                    fugas_mangueras_frenos_lunes = ?, fugas_mangueras_frenos_martes = ?, fugas_mangueras_frenos_miercoles = ?, fugas_mangueras_frenos_jueves = ?, fugas_mangueras_frenos_viernes = ?,
+                    fugas_combustible_lunes = ?, fugas_combustible_martes = ?, fugas_combustible_miercoles = ?, fugas_combustible_jueves = ?, fugas_combustible_viernes = ?,
+                    fugas_agua_lunes = ?, fugas_agua_martes = ?, fugas_agua_miercoles = ?, fugas_agua_jueves = ?, fugas_agua_viernes = ?,
+                    luces_interiores_lunes = ?, luces_interiores_martes = ?, luces_interiores_miercoles = ?, luces_interiores_jueves = ?, luces_interiores_viernes = ?,
+                    luces_exteriores_lunes = ?, luces_exteriores_martes = ?, luces_exteriores_miercoles = ?, luces_exteriores_jueves = ?, luces_exteriores_viernes = ?,
+                    estabilidad_motor_lunes = ?, estabilidad_motor_martes = ?, estabilidad_motor_miercoles = ?, estabilidad_motor_jueves = ?, estabilidad_motor_viernes = ?,
+                    temperatura_motor_lunes = ?, temperatura_motor_martes = ?, temperatura_motor_miercoles = ?, temperatura_motor_jueves = ?, temperatura_motor_viernes = ?,
+                    sonidos_raros_lunes = ?, sonidos_raros_martes = ?, sonidos_raros_miercoles = ?, sonidos_raros_jueves = ?, sonidos_raros_viernes = ?,
+                    observaciones = ?
+                WHERE id = ?
+            `, [
+                data.codigo_maquina, data.chofer_id,
+                ...getDailyReportValues(data),
+                data.observaciones,
+                id
+            ]);
+
+            res.json({ success: true, message: 'Reporte diario actualizado' });
+        } catch (error) {
+            console.error('Error updating daily report:', error);
+            res.status(500).json({ success: false, error: error.message });
+        }
+    };
+}
+
+// Eliminar reporte diario
+export function deleteDailyReport(pool) {
+    return async (req, res) => {
+        try {
+            const { id } = req.params;
+            
+            const [result] = await pool.query(
+                'DELETE FROM reportes_diarios WHERE id = ?',
+                [id]
+            );
+
+            if (result.affectedRows === 0) {
+                return res.status(404).json({ success: false, error: 'Reporte diario no encontrado' });
+            }
+
+            res.json({ success: true, message: 'Reporte diario eliminado' });
+        } catch (error) {
+            console.error('Error deleting daily report:', error);
+            res.status(500).json({ success: false, error: error.message });
+        }
+    };
 }
 
 // ============================================

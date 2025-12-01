@@ -1,0 +1,212 @@
+.mission-vision-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 80px);
+}
+
+.mv-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.mv-header h1 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.mv-header p {
+    font-size: 1.1rem;
+    color: #718096;
+}
+
+.mv-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+/* Cards de Misión y Visión */
+.mv-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mv-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.mission-card::before {
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.vision-card::before {
+    background: linear-gradient(90deg, #f093fb, #f5576c);
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mv-icon-wrapper {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.vision-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 8px 20px rgba(240, 147, 251, 0.3);
+}
+
+.mv-icon-large {
+    font-size: 3.5rem;
+}
+
+.mv-content-wrapper {
+    flex: 1;
+}
+
+.mv-content-wrapper h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+}
+
+.mv-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Sección de Valores */
+.valores-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.valores-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.valores-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #718096;
+    margin-bottom: 2.5rem;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.valor-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+}
+
+.valor-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.valor-card h3 {
+    font-size: 1.3rem;
+    color: #2d3748;
+    margin: 0 0 0.75rem 0;
+    font-weight: 700;
+}
+
+.valor-card p {
+    font-size: 0.95rem;
+    color: #718096;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mission-vision-container {
+        padding: 1rem;
+    }
+
+    .mv-header h1 {
+        font-size: 2rem;
+    }
+
+    .mv-card {
+        flex-direction: column;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .mv-icon-wrapper {
+        margin: 0 auto;
+    }
+
+    .mv-content-wrapper h2 {
+        font-size: 1.5rem;
+    }
+
+    .mv-text {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .valores-title {
+        font-size: 1.75rem;
+    }
+}
+

@@ -14,7 +14,9 @@ function Navbar() {
         { path: '/machinery', label: 'Maquinaria', icon: '🚜' },
         { path: '/personnel', label: 'Personal', icon: '👥' },
         { path: '/maintenance', label: 'Mantenimiento', icon: '📅' },
-        { path: '/inventory', label: 'Inventario', icon: '🔧' }
+        { path: '/inventory', label: 'Inventario', icon: '🔧' },
+        { path: '/organigrama', label: 'Organigrama', icon: '📊' },
+        { path: '/mision-vision', label: 'Misión y Visión', icon: '🎯' }
     ];
 
     // Agregar Administración solo para ADMIN

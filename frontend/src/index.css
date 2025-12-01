@@ -106,8 +106,10 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* Industrial Background Pattern */
@@ -136,7 +138,8 @@ body::before {
 }
 
 #root {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -209,13 +212,18 @@ a:hover {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .main-content {
   flex: 1;
   padding: var(--space-8) 0;
-  min-height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -223,6 +231,13 @@ a:hover {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--space-6);
+}
+
+/* Override for maintenance page to allow full width table */
+.maintenance-layout ~ * .container,
+.maintenance-content .container {
+  max-width: 100%;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -401,12 +416,63 @@ a:hover {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
-  overflow: hidden;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  width: max-content !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+}
+
+.maintenances-table-view .table-container {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
+
+.maintenances-table-view::-webkit-scrollbar {
+  height: 14px !important;
+  background: var(--bg-secondary) !important;
+  display: block !important;
+}
+
+.maintenances-table-view::-webkit-scrollbar-track {
+  background: var(--bg-secondary) !important;
+  border-radius: 7px !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.maintenances-table-view::-webkit-scrollbar-thumb {
+  background: var(--cat-yellow) !important;
+  border-radius: 7px !important;
+  border: 2px solid var(--bg-secondary) !important;
+  min-height: 20px !important;
+}
+
+.maintenances-table-view::-webkit-scrollbar-thumb:hover {
+  background: var(--cat-yellow-dark) !important;
+}
+
+.maintenances-table-view {
+  scrollbar-width: auto !important;
+  scrollbar-color: var(--cat-yellow) var(--bg-secondary) !important;
 }
 
 .data-table {
-  width: 100%;
+  width: 100% !important;
   border-collapse: collapse;
+  table-layout: fixed !important;
+  display: table;
+  margin: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.data-table th,
+.data-table td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .data-table thead {
@@ -414,24 +480,38 @@ a:hover {
 }
 
 .data-table th {
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-3) var(--space-2);
   text-align: left;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   color: var(--cat-yellow);
   border-bottom: 2px solid var(--cat-yellow);
   white-space: nowrap;
+  position: sticky;
+  top: 0;
+  background: var(--bg-elevated);
+  z-index: 10;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .data-table td {
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-3) var(--space-2);
   border-bottom: 1px solid var(--border-subtle);
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   vertical-align: middle;
   transition: all var(--duration-fast);
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  box-sizing: border-box;
+  max-width: 0;
+  word-wrap: break-word;
 }
 
 .data-table tbody tr {
@@ -522,8 +602,8 @@ a:hover {
   border: 1px solid var(--cat-yellow);
   border-radius: var(--radius-xl);
   width: 100%;
-  max-width: 600px;
-  max-height: 90vh;
+  max-width: 700px;
+  max-height: 95vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -538,6 +618,7 @@ a:hover {
   padding: var(--space-6);
   border-bottom: 1px solid var(--border-color);
   background: var(--bg-elevated);
+  flex-shrink: 0;
 }
 
 .modal-header h2 {
@@ -570,7 +651,10 @@ a:hover {
 .modal-form {
   padding: var(--space-6);
   overflow-y: auto;
+  overflow-x: hidden;
   flex: 1;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-actions {
@@ -580,6 +664,7 @@ a:hover {
   padding: var(--space-5) var(--space-6);
   border-top: 1px solid var(--border-color);
   background: var(--bg-elevated);
+  flex-shrink: 0;
 }
 
 /* === ACTION BUTTONS === */

@@ -148,6 +148,21 @@ app.get('/api/machinery/:id', async (req, res) => {
 // ============================================
 app.get('/api/machinery/:id/specs', async (req, res) => {
     try {
+        // Verificar si la tabla existe
+        const [tableCheck] = await pool.query(
+            `SELECT COUNT(*) as count FROM information_schema.tables 
+             WHERE table_schema = DATABASE() AND table_name = 'maquinaria_especificaciones'`
+        );
+
+        if (tableCheck[0].count === 0) {
+            // Si la tabla no existe, retornar solo datos básicos de la maquinaria
+            const [maq] = await pool.query('SELECT * FROM maquinaria WHERE id = ?', [req.params.id]);
+            if (maq.length === 0) {
+                return res.status(404).json({ success: false, error: 'Maquinaria no encontrada' });
+            }
+            return res.json({ success: true, data: { ...maq[0], specs: null } });
+        }
+
         const [rows] = await pool.query(
             `SELECT me.*, m.codigo, m.nombre, m.marca, m.modelo, m.anio, m.estado
              FROM maquinaria_especificaciones me
@@ -157,7 +172,7 @@ app.get('/api/machinery/:id/specs', async (req, res) => {
         );
 
         if (rows.length === 0) {
-            // Si no existe, obtener datos básicos de la maquinaria
+            // Si no existe registro, obtener datos básicos de la maquinaria
             const [maq] = await pool.query('SELECT * FROM maquinaria WHERE id = ?', [req.params.id]);
             if (maq.length === 0) {
                 return res.status(404).json({ success: false, error: 'Maquinaria no encontrada' });
@@ -167,6 +182,16 @@ app.get('/api/machinery/:id/specs', async (req, res) => {
 
         res.json({ success: true, data: rows[0] });
     } catch (error) {
+        console.error('Error getting specs:', error);
+        // Si hay error, intentar al menos retornar datos básicos
+        try {
+            const [maq] = await pool.query('SELECT * FROM maquinaria WHERE id = ?', [req.params.id]);
+            if (maq.length > 0) {
+                return res.json({ success: true, data: { ...maq[0], specs: null } });
+            }
+        } catch (e) {
+            // Ignorar error secundario
+        }
         res.status(500).json({ success: false, error: error.message });
     }
 });
@@ -736,7 +761,7 @@ app.get('/api/activities', async (req, res) => {
             params.push(plan_id);
         }
 
-        query += ' ORDER BY numero_orden';
+        query += ' ORDER BY COALESCE(numero_orden, 999999), id';
 
         const [rows] = await pool.query(query, params);
         res.json({ success: true, data: rows });
@@ -776,11 +801,21 @@ app.post('/api/activities', async (req, res) => {
             return res.status(400).json({ success: false, error: 'El costo estimado debe ser mayor a cero' });
         }
 
+        // Calcular automáticamente el siguiente número de orden si no se proporciona
+        let orderNumber = numero_orden;
+        if (!orderNumber) {
+            const [existingActivities] = await pool.query(
+                'SELECT MAX(numero_orden) as max_order FROM actividades_mantenimiento WHERE plan_id = ?',
+                [plan_id]
+            );
+            orderNumber = (existingActivities[0]?.max_order || 0) + 1;
+        }
+
         const [result] = await pool.query(
             `INSERT INTO actividades_mantenimiento 
              (plan_id, numero_orden, descripcion_componente, actividad, tiempo_min, tiempo_promedio, tiempo_max, costo_estimado) 
              VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-            [plan_id, numero_orden || null, descripcion_componente || null, actividad, tiempo_min || null, tiempo_promedio || null, tiempo_max || null, costo]
+            [plan_id, orderNumber, descripcion_componente || null, actividad, tiempo_min || null, tiempo_promedio || null, tiempo_max || null, costo]
         );
 
         res.json({ success: true, message: 'Actividad creada', id: result.insertId });
@@ -816,8 +851,38 @@ app.put('/api/activities/:id', async (req, res) => {
 app.delete('/api/activities/:id', async (req, res) => {
     try {
         const { id } = req.params;
+        
+        // Obtener el plan_id y numero_orden de la actividad antes de eliminarla
+        const [activity] = await pool.query(
+            'SELECT plan_id, numero_orden FROM actividades_mantenimiento WHERE id = ?',
+            [id]
+        );
+        
+        if (activity.length === 0) {
+            return res.status(404).json({ success: false, error: 'Actividad no encontrada' });
+        }
+        
+        const planId = activity[0].plan_id;
+        const deletedOrder = activity[0].numero_orden;
+        
+        // Eliminar la actividad
         await pool.query('DELETE FROM actividades_mantenimiento WHERE id=?', [id]);
-        res.json({ success: true, message: 'Actividad eliminada' });
+        
+        // Renumerar todas las actividades restantes del mismo plan empezando desde 1
+        const [remainingActivities] = await pool.query(
+            'SELECT id FROM actividades_mantenimiento WHERE plan_id = ? ORDER BY numero_orden',
+            [planId]
+        );
+        
+        // Actualizar los números de orden secuencialmente desde 1
+        for (let i = 0; i < remainingActivities.length; i++) {
+            await pool.query(
+                'UPDATE actividades_mantenimiento SET numero_orden = ? WHERE id = ?',
+                [i + 1, remainingActivities[i].id]
+            );
+        }
+        
+        res.json({ success: true, message: 'Actividad eliminada y actividades renumeradas' });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }
@@ -1048,22 +1113,14 @@ import {
     getChecklistsByMachinery,
     createChecklist,
     updateChecklist,
+    deleteChecklist,
     getDailyReportsByMachinery,
+    getDailyReport,
     upsertDailyReport,
+    updateDailyReport,
+    deleteDailyReport,
     getMachineryHistory
 } from './routes/forms.js';
-
-// Checklists
-app.get('/api/machinery/:id/checklists', getChecklistsByMachinery(pool));
-app.post('/api/checklists', createChecklist(pool));
-app.put('/api/checklists/:id', updateChecklist(pool));
-
-// Reportes Diarios
-app.get('/api/machinery/:id/daily-reports', getDailyReportsByMachinery(pool));
-app.post('/api/daily-reports', upsertDailyReport(pool));
-
-// Historial
-app.get('/api/machinery/:id/history', getMachineryHistory(pool));
 
 // ============================================
 // RUTAS - ÓRDENES DE TRABAJO
@@ -1078,13 +1135,33 @@ import {
     updateWorkOrderStatus
 } from './routes/workOrders.js';
 
-app.get('/api/work-orders', getWorkOrders(pool));
-app.get('/api/work-orders/:id', getWorkOrder(pool));
-app.post('/api/work-orders', createWorkOrder(pool));
-app.put('/api/work-orders/:id', updateWorkOrder(pool));
-app.delete('/api/work-orders/:id', deleteWorkOrder(pool));
-app.post('/api/work-orders/:id/mechanics', assignMechanics(pool));
-app.put('/api/work-orders/:id/status', updateWorkOrderStatus(pool));
+// Función para registrar rutas que dependen del pool
+function registerPoolRoutes() {
+    // Checklists
+    app.get('/api/machinery/:id/checklists', getChecklistsByMachinery(pool));
+    app.post('/api/checklists', createChecklist(pool));
+    app.put('/api/checklists/:id', updateChecklist(pool));
+    app.delete('/api/checklists/:id', deleteChecklist(pool));
+
+    // Reportes Diarios
+    app.get('/api/machinery/:id/daily-reports', getDailyReportsByMachinery(pool));
+    app.get('/api/daily-reports/:id', getDailyReport(pool));
+    app.post('/api/daily-reports', upsertDailyReport(pool));
+    app.put('/api/daily-reports/:id', updateDailyReport(pool));
+    app.delete('/api/daily-reports/:id', deleteDailyReport(pool));
+
+    // Historial
+    app.get('/api/machinery/:id/history', getMachineryHistory(pool));
+
+    // Órdenes de Trabajo
+    app.get('/api/work-orders', getWorkOrders(pool));
+    app.get('/api/work-orders/:id', getWorkOrder(pool));
+    app.post('/api/work-orders', createWorkOrder(pool));
+    app.put('/api/work-orders/:id', updateWorkOrder(pool));
+    app.delete('/api/work-orders/:id', deleteWorkOrder(pool));
+    app.post('/api/work-orders/:id/mechanics', assignMechanics(pool));
+    app.put('/api/work-orders/:id/status', updateWorkOrderStatus(pool));
+}
 
 // ============================================
 // RUTAS - AUTENTICACIÓN
@@ -1833,68 +1910,11 @@ app.delete('/api/users/:id', authenticateToken, requireAdmin, async (req, res) =
     }
 });
 
-// ============================================
-// RUTAS - CHECKLISTS
-// ============================================
-app.get('/api/machinery/:id/checklists', async (req, res) => {
-    try {
-        const [rows] = await pool.query(
-            `SELECT c.*, u.nombre_completo as realizado_por_nombre, u2.nombre_completo as revisado_por_nombre
-             FROM checklists c
-             LEFT JOIN users u ON c.realizado_por = u.id OR c.realizado_por = u.username
-             LEFT JOIN users u2 ON c.revisado_por = u2.id OR c.revisado_por = u2.username
-             WHERE c.maquinaria_id = ?
-             ORDER BY c.fecha DESC`,
-            [req.params.id]
-        );
-        res.json({ success: true, data: rows });
-    } catch (error) {
-        res.status(500).json({ success: false, error: error.message });
-    }
-});
-
 app.get('/api/checklists/:id', async (req, res) => {
     try {
-        const [rows] = await pool.query('SELECT * FROM checklists WHERE id = ?', [req.params.id]);
+        const [rows] = await pool.query('SELECT * FROM checklists_maquinaria WHERE id = ?', [req.params.id]);
         if (rows.length === 0) return res.status(404).json({ success: false, error: 'Checklist no encontrado' });
         res.json({ success: true, data: rows[0] });
-    } catch (error) {
-        res.status(500).json({ success: false, error: error.message });
-    }
-});
-
-app.post('/api/checklists', async (req, res) => {
-    try {
-        const { maquinaria_id, fecha, tipo_checklist, codigo_checklist, realizado_por, revisado_por, observaciones, ...restData } = req.body;
-
-        const jsonData = JSON.stringify(req.body);
-
-        const [result] = await pool.query(
-            `INSERT INTO checklists (maquinaria_id, fecha, tipo_checklist, codigo_checklist, realizado_por, revisado_por, observaciones, data)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-            [maquinaria_id, fecha, tipo_checklist || 'GENERAL', codigo_checklist, realizado_por, revisado_por, observaciones, jsonData]
-        );
-
-        res.json({ success: true, message: 'Checklist creado', id: result.insertId });
-    } catch (error) {
-        res.status(500).json({ success: false, error: error.message });
-    }
-});
-
-app.put('/api/checklists/:id', async (req, res) => {
-    try {
-        const { id } = req.params;
-        const { fecha, tipo_checklist, codigo_checklist, realizado_por, revisado_por, observaciones } = req.body;
-        const jsonData = JSON.stringify(req.body);
-
-        await pool.query(
-            `UPDATE checklists
-             SET fecha=?, tipo_checklist=?, codigo_checklist=?, realizado_por=?, revisado_por=?, observaciones=?, data=?
-             WHERE id=?`,
-            [fecha, tipo_checklist, codigo_checklist, realizado_por, revisado_por, observaciones, jsonData, id]
-        );
-
-        res.json({ success: true, message: 'Checklist actualizado' });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }
@@ -1905,9 +1925,12 @@ app.put('/api/checklists/:id', async (req, res) => {
 // ============================================
 async function startServer() {
     await initDatabase();
+    
+    // Registrar rutas que dependen del pool después de inicializar la base de datos
+    registerPoolRoutes();
 
-    app.listen(PORT, () => {
-        console.log(`🚀 Backend MySQL running on http://localhost:${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`🚀 Backend MySQL running on http://0.0.0.0:${PORT}`);
         console.log(`🗄️  Database: ${dbConfig.database}`);
     });
 }

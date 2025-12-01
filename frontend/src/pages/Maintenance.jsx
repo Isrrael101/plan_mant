@@ -176,7 +176,7 @@ function MaintenancePlanViewer({ plan, onReload, onEdit, onDelete, onCreate }) {
                             return (
                                 <tr key={idx}>
                                     <td className="num-cell">
-                                        {act.numero_orden || idx + 1}
+                                        {idx + 1}
                                     </td>
                                     <td className="desc-cell" title={act.descripcion_componente || '-'}>
                                         {act.descripcion_componente || '-'}
@@ -363,9 +363,16 @@ function Maintenance() {
                 activo: true
             });
         } else if (type === 'activity') {
+            // Calcular el siguiente número de orden automáticamente
+            const nextOrderNumber = planData && planData.activities 
+                ? (planData.activities.length > 0 
+                    ? Math.max(...planData.activities.map(a => a.numero_orden || 0)) + 1 
+                    : 1)
+                : 1;
+            
             setFormData({
                 plan_id: selectedPlan || '',
-                numero_orden: '',
+                numero_orden: nextOrderNumber,
                 descripcion_componente: '',
                 actividad: '',
                 tiempo_min: '',
@@ -852,15 +859,15 @@ function Maintenance() {
                                 <table className="data-table">
                                     <thead>
                                         <tr>
-                                            <th style={{ width: '5%' }}>N°</th>
-                                            <th style={{ width: '12%' }}>Tipo</th>
-                                            <th style={{ width: '18%' }}>Maquinaria</th>
-                                            <th style={{ width: '15%' }}>Plan</th>
+                                            <th style={{ width: '4%' }}>N°</th>
+                                            <th style={{ width: '9%' }}>Tipo</th>
+                                            <th style={{ width: '15%' }}>Maquinaria</th>
+                                            <th style={{ width: '14%' }}>Plan</th>
                                             <th style={{ width: '10%' }}>Fecha Prog.</th>
                                             <th style={{ width: '10%' }}>Fecha Ejec.</th>
-                                            <th style={{ width: '8%' }}>Estado</th>
-                                            <th style={{ width: '10%' }}>Costo Total</th>
-                                            <th style={{ width: '12%' }}>Acciones</th>
+                                            <th style={{ width: '11%' }}>Estado</th>
+                                            <th style={{ width: '11%' }}>Costo Total</th>
+                                            <th style={{ width: '11%' }}>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -989,16 +996,16 @@ function Maintenance() {
                                                     <table className="data-table">
                                                         <thead>
                                                             <tr>
-                                                                <th style={{ width: '5%' }}>N°</th>
+                                                                <th style={{ width: '4%' }}>N°</th>
                                                                 <th style={{ width: '15%' }}>Maquinaria</th>
-                                                                <th style={{ width: '12%' }}>Tipo</th>
-                                                                <th style={{ width: '12%' }}>Plan</th>
+                                                                <th style={{ width: '9%' }}>Tipo</th>
+                                                                <th style={{ width: '14%' }}>Plan</th>
                                                                 <th style={{ width: '10%' }}>Fecha Prog.</th>
                                                                 <th style={{ width: '10%' }}>Fecha Ejec.</th>
                                                                 <th style={{ width: '8%' }}>Horas</th>
-                                                                <th style={{ width: '10%' }}>Estado</th>
-                                                                <th style={{ width: '10%' }}>Costo Total</th>
-                                                                <th style={{ width: '8%' }}>Acciones</th>
+                                                                <th style={{ width: '11%' }}>Estado</th>
+                                                                <th style={{ width: '11%' }}>Costo Total</th>
+                                                                <th style={{ width: '11%' }}>Acciones</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
