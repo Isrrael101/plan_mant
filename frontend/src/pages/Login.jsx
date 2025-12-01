@@ -68,7 +68,7 @@ function Login() {
 
         try {
             const result = await login(username, password, requiresTwoFactor ? twoFactorCode : null);
-            
+
             if (result.requiresTwoFactor) {
                 setRequiresTwoFactor(true);
                 setError('');
@@ -206,145 +206,159 @@ function Login() {
 
     return (
         <div className="login-container">
-            <div className={`login-wrapper ${user && user.rol === 'ADMIN' ? 'with-admin' : ''}`}>
-                <div className="login-card">
-                    <div className="login-header">
-                        <img src="/25-09-21-FT-MTTO-LOGO.webp" alt="Logo" className="login-logo" />
-                        <h2>Bienvenido</h2>
-                        <p>Sistema de Gestión de Mantenimiento</p>
+            {/* Lado Izquierdo: Visual & Branding */}
+            <div className="login-visual">
+                <div className="visual-content">
+                    <img src="/25-09-21-FT-MTTO-LOGO.webp" alt="Logo" className="visual-logo" />
+                    <div className="visual-text">
+                        <h1>Gestión de Mantenimiento</h1>
+                        <p>Plataforma integral para el control y seguimiento de maquinaria y planes de mantenimiento.</p>
                     </div>
-                    {!user || user.rol !== 'ADMIN' ? (
-                        <form onSubmit={handleSubmit} className="login-form">
-                            <div className="form-group">
-                                <label>Usuario</label>
-                                <input
-                                    type="text"
-                                    name="login-username"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    placeholder="Ingrese su usuario"
-                                    autoComplete="off"
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label>Contraseña</label>
-                                <input
-                                    type="password"
-                                    name="login-password"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    placeholder="Ingrese su contraseña"
-                                    autoComplete="new-password"
-                                    required
-                                    disabled={requiresTwoFactor}
-                                />
-                            </div>
-                            {requiresTwoFactor && (
-                                <div className="two-factor-container">
-                                    <div className="two-factor-header">
-                                        <div className="two-factor-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.72-2.77 0-2.1-1.9-2.79-3.65-3.24z" fill="currentColor"/>
-                                            </svg>
-                                        </div>
-                                        <div className="two-factor-title">
-                                            <h3>Verificación en Dos Pasos</h3>
-                                            <p>Ingresa el código de 6 dígitos de Google Authenticator</p>
-                                        </div>
-                                    </div>
-                                    <div className="code-input-container">
-                                        {[0, 1, 2, 3, 4, 5].map((index) => (
-                                            <input
-                                                key={index}
-                                                type="tel"
-                                                inputMode="numeric"
-                                                pattern="[0-9]"
-                                                maxLength={1}
-                                                value={twoFactorCode[index] || ''}
-                                                style={{
-                                                    color: '#2d3748',
-                                                    WebkitTextFillColor: '#2d3748',
-                                                    caretColor: '#667eea',
-                                                    backgroundColor: '#ffffff',
-                                                    opacity: 1
-                                                }}
-                                                onChange={(e) => {
-                                                    const value = e.target.value.replace(/\D/g, '');
-                                                    if (value) {
-                                                        const newCode = twoFactorCode.split('');
-                                                        newCode[index] = value;
-                                                        const updatedCode = newCode.join('').slice(0, 6);
-                                                        setTwoFactorCode(updatedCode);
-                                                        
-                                                        // Auto-focus siguiente campo
-                                                        setTimeout(() => {
-                                                            if (index < 5 && value) {
-                                                                const nextInput = e.target.parentElement.children[index + 1];
-                                                                if (nextInput) nextInput.focus();
-                                                            }
-                                                        }, 10);
-                                                    } else {
-                                                        // Si se borra, limpiar este campo
-                                                        const newCode = twoFactorCode.split('');
-                                                        newCode[index] = '';
-                                                        setTwoFactorCode(newCode.join(''));
-                                                    }
-                                                }}
-                                                onKeyDown={(e) => {
-                                                    if (e.key === 'Backspace' && !twoFactorCode[index] && index > 0) {
-                                                        const prevInput = e.target.parentElement.children[index - 1];
-                                                        if (prevInput) prevInput.focus();
-                                                    }
-                                                }}
-                                                onPaste={(e) => {
-                                                    e.preventDefault();
-                                                    const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
-                                                    setTwoFactorCode(pastedData);
-                                                    setTimeout(() => {
-                                                        const targetIndex = Math.min(pastedData.length - 1, 5);
-                                                        const targetInput = e.target.parentElement.children[targetIndex];
-                                                        if (targetInput) targetInput.focus();
-                                                    }, 10);
-                                                }}
-                                                className="code-digit"
-                                                autoFocus={index === 0 && twoFactorCode.length === 0}
-                                                required
-                                            />
-                                        ))}
-                                    </div>
-                                    <div className="two-factor-footer">
-                                        <div className="security-badge">
-                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/>
-                                            </svg>
-                                            <span>Código seguro y temporal</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                            {error && <div className="error-message">{error}</div>}
-                            <button
-                                type="submit"
-                                className="btn-login"
-                                disabled={loading}
-                            >
-                                {loading ? 'Iniciando sesión...' : requiresTwoFactor ? 'Verificar Código' : 'Ingresar'}
-                            </button>
+                </div>
+            </div>
 
-                            <div className="login-options">
-                                <p className="login-options-title">¿No tienes cuenta?</p>
-                                <div className="login-actions-grid">
-                                    <button
-                                        type="button"
-                                        className="btn-register"
-                                        onClick={() => setShowRegisterModal(true)}
-                                    >
-                                        ➕ Crear Usuario
-                                    </button>
-                                </div>
+            {/* Lado Derecho: Formulario o Panel */}
+            <div className="login-form-container">
+                <div className={`login-wrapper ${user && user.rol === 'ADMIN' ? 'with-admin' : ''}`}>
+
+                    {!user || user.rol !== 'ADMIN' ? (
+                        <>
+                            <div className="login-header">
+                                <h2>Bienvenido</h2>
+                                <p>Ingresa tus credenciales para continuar</p>
                             </div>
-                        </form>
+                            <form onSubmit={handleSubmit} className="login-form">
+                                <div className="form-group">
+                                    <label>Usuario</label>
+                                    <input
+                                        type="text"
+                                        name="login-username"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                        placeholder="Ingrese su usuario"
+                                        autoComplete="off"
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label>Contraseña</label>
+                                    <input
+                                        type="password"
+                                        name="login-password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        placeholder="Ingrese su contraseña"
+                                        autoComplete="new-password"
+                                        required
+                                        disabled={requiresTwoFactor}
+                                    />
+                                </div>
+                                {requiresTwoFactor && (
+                                    <div className="two-factor-container">
+                                        <div className="two-factor-header">
+                                            <div className="two-factor-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.72-2.77 0-2.1-1.9-2.79-3.65-3.24z" fill="currentColor" />
+                                                </svg>
+                                            </div>
+                                            <div className="two-factor-title">
+                                                <h3>Verificación en Dos Pasos</h3>
+                                                <p>Ingresa el código de 6 dígitos de Google Authenticator</p>
+                                            </div>
+                                        </div>
+                                        <div className="code-input-container">
+                                            {[0, 1, 2, 3, 4, 5].map((index) => (
+                                                <input
+                                                    key={index}
+                                                    type="tel"
+                                                    inputMode="numeric"
+                                                    pattern="[0-9]"
+                                                    maxLength={1}
+                                                    value={twoFactorCode[index] || ''}
+                                                    style={{
+                                                        color: '#2d3748',
+                                                        WebkitTextFillColor: '#2d3748',
+                                                        caretColor: '#667eea',
+                                                        backgroundColor: '#ffffff',
+                                                        opacity: 1
+                                                    }}
+                                                    onChange={(e) => {
+                                                        const value = e.target.value.replace(/\D/g, '');
+                                                        if (value) {
+                                                            const newCode = twoFactorCode.split('');
+                                                            newCode[index] = value;
+                                                            const updatedCode = newCode.join('').slice(0, 6);
+                                                            setTwoFactorCode(updatedCode);
+
+                                                            // Auto-focus siguiente campo
+                                                            setTimeout(() => {
+                                                                if (index < 5 && value) {
+                                                                    const nextInput = e.target.parentElement.children[index + 1];
+                                                                    if (nextInput) nextInput.focus();
+                                                                }
+                                                            }, 10);
+                                                        } else {
+                                                            // Si se borra, limpiar este campo
+                                                            const newCode = twoFactorCode.split('');
+                                                            newCode[index] = '';
+                                                            setTwoFactorCode(newCode.join(''));
+                                                        }
+                                                    }}
+                                                    onKeyDown={(e) => {
+                                                        if (e.key === 'Backspace' && !twoFactorCode[index] && index > 0) {
+                                                            const prevInput = e.target.parentElement.children[index - 1];
+                                                            if (prevInput) prevInput.focus();
+                                                        }
+                                                    }}
+                                                    onPaste={(e) => {
+                                                        e.preventDefault();
+                                                        const pastedData = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+                                                        setTwoFactorCode(pastedData);
+                                                        setTimeout(() => {
+                                                            const targetIndex = Math.min(pastedData.length - 1, 5);
+                                                            const targetInput = e.target.parentElement.children[targetIndex];
+                                                            if (targetInput) targetInput.focus();
+                                                        }, 10);
+                                                    }}
+                                                    className="code-digit"
+                                                    autoFocus={index === 0 && twoFactorCode.length === 0}
+                                                    required
+                                                />
+                                            ))}
+                                        </div>
+                                        <div className="two-factor-footer">
+                                            <div className="security-badge">
+                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor" />
+                                                </svg>
+                                                <span>Código seguro y temporal</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                                {error && <div className="error-message">{error}</div>}
+                                <button
+                                    type="submit"
+                                    className="btn-login"
+                                    disabled={loading}
+                                >
+                                    {loading ? 'Iniciando sesión...' : requiresTwoFactor ? 'Verificar Código' : 'Ingresar'}
+                                </button>
+
+                                <div className="login-options">
+                                    <p className="login-options-title">¿No tienes cuenta?</p>
+                                    <div className="login-actions-grid">
+                                        <button
+                                            type="button"
+                                            className="link-button"
+                                            onClick={() => setShowRegisterModal(true)}
+                                        >
+                                            Crear Usuario
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </>
                     ) : (
                         <div className="admin-panel">
                             <div className="admin-welcome">
@@ -379,7 +393,7 @@ function Login() {
                                                     <div key={usr.id} className="user-item">
                                                         <div className="user-info">
                                                             <strong>{usr.username}</strong>
-                                                            <span className="user-role role-{usr.rol.toLowerCase()}">{usr.rol}</span>
+                                                            <span className={`user-role role-${usr.rol.toLowerCase()}`}>{usr.rol}</span>
                                                             {usr.nombre_completo && <span className="user-name">{usr.nombre_completo}</span>}
                                                         </div>
                                                         <div className="user-actions">

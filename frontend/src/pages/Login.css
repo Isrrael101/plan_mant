@@ -5,12 +5,12 @@
 .login-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 1.5rem;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 /* Efecto de partículas/decoración de fondo */
@@ -51,7 +51,7 @@
                 0 8px 25px rgba(0, 0, 0, 0.2);
     width: 100%;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .login-card::before {
@@ -315,7 +315,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 0.5rem;
     box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
@@ -339,7 +339,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 0.5rem;
     box-shadow: 0 4px 15px rgba(246, 173, 85, 0.3);
@@ -445,7 +445,7 @@
 .users-header-small {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1rem;
 }
 
@@ -477,7 +477,7 @@
 .user-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 1rem;
     border: 1px solid #eee;
     border-radius: 6px;
@@ -566,7 +566,7 @@
     backdrop-filter: blur(8px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     z-index: 1000;
     padding: 1rem;
     animation: fadeIn 0.3s ease;
@@ -602,7 +602,7 @@
 .modal-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 1.5rem 1.75rem;
     border-bottom: 2px solid #f0f0f0;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -627,7 +627,7 @@
     height: 36px;
     border-radius: 50%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     transition: all 0.2s ease;
 }
@@ -676,7 +676,7 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
     animation: slideIn 0.4s ease-out;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -703,7 +703,7 @@
 
 .two-factor-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1.5rem;
     position: relative;
@@ -716,7 +716,7 @@
     background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
     border-radius: 12px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
 }
@@ -868,7 +868,7 @@ input.code-digit[value] {
 
 .security-badge {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
     background: rgba(0, 86, 179, 0.2);
     padding: 0.5rem 1rem;

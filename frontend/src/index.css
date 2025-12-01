@@ -2,20 +2,20 @@
 
 :root {
   /* === INDUSTRIAL CATERPILLAR THEME === */
-  
+
   /* Primary Colors - Caterpillar Yellow */
   --cat-yellow: #FFCD00;
   --cat-yellow-light: #FFE066;
   --cat-yellow-dark: #D4A800;
   --cat-yellow-glow: rgba(255, 205, 0, 0.4);
-  
+
   /* Dark Industrial Colors */
   --cat-black: #0C0C0C;
   --cat-charcoal: #141414;
   --cat-steel: #1C1C1E;
   --cat-iron: #252528;
   --cat-metal: #333338;
-  
+
   /* Semantic Colors */
   --success: #00D26A;
   --success-glow: rgba(0, 210, 106, 0.3);
@@ -25,20 +25,20 @@
   --error-glow: rgba(255, 59, 92, 0.3);
   --info: #00B4D8;
   --info-glow: rgba(0, 180, 216, 0.3);
-  
+
   /* Text Colors */
   --text-primary: #FFFFFF;
   --text-secondary: #B8B8C0;
   --text-muted: #707078;
   --text-inverse: #0C0C0C;
-  
+
   /* Background Colors */
   --bg-primary: #0C0C0C;
   --bg-secondary: #141414;
   --bg-card: rgba(28, 28, 30, 0.85);
   --bg-elevated: rgba(37, 37, 40, 0.9);
   --bg-hover: rgba(255, 205, 0, 0.08);
-  
+
   /* Border & Shadow */
   --border-color: rgba(255, 205, 0, 0.15);
   --border-subtle: rgba(255, 255, 255, 0.06);
@@ -46,7 +46,7 @@
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 30px var(--cat-yellow-glow);
-  
+
   /* Spacing System */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -58,7 +58,7 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
-  
+
   /* Border Radius */
   --radius-xs: 4px;
   --radius-sm: 8px;
@@ -66,18 +66,18 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
-  
+
   /* Transitions */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --duration-fast: 150ms;
   --duration-normal: 250ms;
   --duration-slow: 400ms;
-  
+
   /* Typography */
   --font-display: 'Outfit', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  
+
   /* Z-Index Scale */
   --z-base: 1;
   --z-dropdown: 100;
@@ -88,7 +88,9 @@
 }
 
 /* === RESET & BASE === */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -117,22 +119,18 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: 
+  background:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 205, 0, 0.08) 0%, transparent 50%),
-    repeating-linear-gradient(
-      0deg,
+    repeating-linear-gradient(0deg,
       transparent,
       transparent 50px,
       rgba(255, 205, 0, 0.02) 50px,
-      rgba(255, 205, 0, 0.02) 51px
-    ),
-    repeating-linear-gradient(
-      90deg,
+      rgba(255, 205, 0, 0.02) 51px),
+    repeating-linear-gradient(90deg,
       transparent,
       transparent 50px,
       rgba(255, 205, 0, 0.02) 50px,
-      rgba(255, 205, 0, 0.02) 51px
-    );
+      rgba(255, 205, 0, 0.02) 51px);
   pointer-events: none;
   z-index: -1;
 }
@@ -166,7 +164,12 @@ body::before {
 }
 
 /* === TYPOGRAPHY === */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
@@ -234,7 +237,7 @@ a:hover {
 }
 
 /* Override for maintenance page to allow full width table */
-.maintenance-layout ~ * .container,
+.maintenance-layout~* .container,
 .maintenance-content .container {
   max-width: 100%;
   padding: 0;
@@ -784,44 +787,65 @@ a:hover {
 
 /* === ANIMATIONS === */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(20px) scale(0.98);
   }
-  to { 
+
+  to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
 
 @keyframes slideDown {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(-10px);
   }
-  to { 
+
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .fade-in {
@@ -833,26 +857,77 @@ a:hover {
 }
 
 /* === UTILITIES === */
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.gap-2 { gap: var(--space-2); }
-.gap-3 { gap: var(--space-3); }
-.gap-4 { gap: var(--space-4); }
-.gap-6 { gap: var(--space-6); }
+.flex {
+  display: flex;
+}
 
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-muted { color: var(--text-muted); }
-.text-success { color: var(--success); }
-.text-warning { color: var(--warning); }
-.text-error { color: var(--error); }
+.flex-col {
+  flex-direction: column;
+}
 
-.font-mono { font-family: var(--font-mono); }
-.font-bold { font-weight: 700; }
-.font-semibold { font-weight: 600; }
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-error {
+  color: var(--error);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
 
 .truncate {
   overflow: hidden;
@@ -884,31 +959,71 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .page-actions {
     width: 100%;
   }
-  
+
   .page-actions .btn {
     flex: 1;
   }
-  
+
   .modal-content {
     margin: var(--space-4);
     max-height: calc(100vh - var(--space-8));
   }
-  
+
   .modal-header,
   .modal-form,
   .modal-actions {
     padding: var(--space-4);
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
+
   .action-buttons {
     flex-direction: column;
   }
+}
+
+/* ========================================
+   GLOBAL SCROLLBAR STYLES
+   ======================================== */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--cat-yellow);
+  border-radius: 6px;
+  border: 2px solid var(--bg-secondary);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--cat-yellow-dark);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cat-yellow) var(--bg-secondary);
+}
+
+/* Ensure scrollbars are always visible */
+.login-form-container,
+.modal-form,
+.table-container,
+.sidebar-nav,
+.main-content {
+  scrollbar-width: auto !important;
 }
