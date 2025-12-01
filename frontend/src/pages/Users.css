@@ -114,6 +114,7 @@
 }
 
 .btn-edit,
+.btn-reset-password,
 .btn-delete {
     background: none;
     border: none;
@@ -126,6 +127,10 @@
 
 .btn-edit:hover {
     background-color: #e7f3ff;
+}
+
+.btn-reset-password:hover {
+    background-color: #fff3cd;
 }
 
 .btn-delete:hover {

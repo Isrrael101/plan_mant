@@ -18,6 +18,9 @@ RUN npm run build
 # Etapa de producción con Nginx
 FROM nginx:alpine
 
+# Instalar wget para healthcheck
+RUN apk add --no-cache wget
+
 # Copiar configuración personalizada de nginx
 COPY docker/frontend/nginx.conf /etc/nginx/conf.d/default.conf
 

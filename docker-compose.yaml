@@ -46,6 +46,36 @@ services:
       MYSQL_DATABASE: mtto_db
       MYSQL_USER: mtto_user
       MYSQL_PASSWORD: mtto_password
+      # ============================================
+      # Configuración de Email (REQUERIDO)
+      # El sistema enviará emails desde esta cuenta a cualquier dirección
+      # (Hotmail, Gmail, corporativo, etc.)
+      # ============================================
+      
+      # ⚠️ IMPORTANTE: Descomenta y completa las siguientes líneas según tu proveedor
+      
+      # Para Hotmail/Outlook (descomenta estas líneas):
+      EMAIL_HOST: smtp-mail.outlook.com
+      EMAIL_PORT: 587
+      EMAIL_SECURE: false
+      EMAIL_USER: tu_email@hotmail.com        # ⬅️ CAMBIA ESTO: Pon tu email de Hotmail
+      EMAIL_PASSWORD: tu_contraseña           # ⬅️ CAMBIA ESTO: Pon tu contraseña de Hotmail
+      
+      # Para Gmail (comenta las líneas de arriba y descomenta estas):
+      # EMAIL_HOST: smtp.gmail.com
+      # EMAIL_PORT: 587
+      # EMAIL_SECURE: false
+      # EMAIL_USER: tu_email@gmail.com
+      # EMAIL_PASSWORD: tu_app_password        # App Password de Gmail (ver EMAIL_CONFIG.md)
+      
+      # Para Email Corporativo (comenta las líneas de arriba y descomenta estas):
+      # EMAIL_HOST: smtp.tu-empresa.com
+      # EMAIL_PORT: 587
+      # EMAIL_SECURE: false
+      # EMAIL_USER: sistema@tu-empresa.com
+      # EMAIL_PASSWORD: tu_contraseña
+      
+      FRONTEND_URL: http://localhost:8080
     ports:
       - "3001:3001"
     depends_on:

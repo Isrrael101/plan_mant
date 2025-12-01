@@ -3,17 +3,17 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import { useToast } from '../components/Toast';
-import ResetPasswordForm from './ResetPasswordForm';
 import './Login.css';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [twoFactorCode, setTwoFactorCode] = useState('');
+    const [requiresTwoFactor, setRequiresTwoFactor] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const [showUserManagement, setShowUserManagement] = useState(false);
     const [showRegisterModal, setShowRegisterModal] = useState(false);
-    const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
     const { login, user } = useAuth();
     const { success, error: showError } = useToast();
     const navigate = useNavigate();
@@ -67,16 +67,27 @@ function Login() {
         setLoading(true);
 
         try {
-            const result = await login(username, password);
-            if (!result.success) {
+            const result = await login(username, password, requiresTwoFactor ? twoFactorCode : null);
+            
+            if (result.requiresTwoFactor) {
+                setRequiresTwoFactor(true);
+                setError('');
+            } else if (!result.success) {
                 setError(result.error);
-            }
-            // Si es admin, no redirigir automáticamente, permitir gestión de usuarios
-            if (result.success && result.user?.rol !== 'ADMIN') {
-                // La redirección se maneja en AuthContext para no-admin
+                setRequiresTwoFactor(false);
+                setTwoFactorCode('');
+            } else {
+                // Login exitoso
+                setRequiresTwoFactor(false);
+                setTwoFactorCode('');
+                // Si es admin, no redirigir automáticamente, permitir gestión de usuarios
+                if (result.user?.rol !== 'ADMIN') {
+                    // La redirección se maneja en AuthContext para no-admin
+                }
             }
         } catch (err) {
             setError('Error inesperado. Por favor, intente nuevamente.');
+            setRequiresTwoFactor(false);
         } finally {
             setLoading(false);
         }
@@ -153,13 +164,6 @@ function Login() {
         email: ''
     });
 
-    const [forgotPasswordData, setForgotPasswordData] = useState({
-        username: '',
-        email: ''
-    });
-    const [forgotPasswordStep, setForgotPasswordStep] = useState('request'); // 'request' o 'token'
-    const [resetToken, setResetToken] = useState('');
-
     const handleRegister = async (e) => {
         e.preventDefault();
 
@@ -199,33 +203,6 @@ function Login() {
         }
     };
 
-    const handleForgotPassword = async (e) => {
-        e.preventDefault();
-        
-        if (!forgotPasswordData.username && !forgotPasswordData.email) {
-            showError('Debe proporcionar usuario o email');
-            return;
-        }
-
-        try {
-            const response = await api.forgotPassword(forgotPasswordData);
-            if (response.success) {
-                if (response.resetToken) {
-                    // En desarrollo, mostrar el token directamente
-                    setResetToken(response.resetToken);
-                    setForgotPasswordStep('token');
-                    success('Token de recuperación generado. Revisa tu email o usa el token mostrado.');
-                } else {
-                    // En producción, solo confirmar que se envió el email
-                    success(response.message || 'Si el usuario existe, recibirás un email con las instrucciones.');
-                    setShowForgotPasswordModal(false);
-                    setForgotPasswordData({ username: '', email: '' });
-                }
-            }
-        } catch (err) {
-            showError(err.message || 'Error al solicitar recuperación de contraseña');
-        }
-    };
 
     return (
         <div className="login-container">
@@ -256,35 +233,52 @@ function Login() {
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="Ingrese su contraseña"
                                     required
+                                    disabled={requiresTwoFactor}
                                 />
                             </div>
+                            {requiresTwoFactor && (
+                                <div className="form-group">
+                                    <label>Código de Autenticación (Google Authenticator)</label>
+                                    <input
+                                        type="text"
+                                        value={twoFactorCode}
+                                        onChange={(e) => setTwoFactorCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                                        placeholder="000000"
+                                        required
+                                        maxLength={6}
+                                        autoFocus
+                                        style={{ 
+                                            textAlign: 'center', 
+                                            fontSize: '1.5rem', 
+                                            letterSpacing: '0.5rem',
+                                            fontFamily: 'monospace'
+                                        }}
+                                    />
+                                    <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '0.5rem' }}>
+                                        Ingresa el código de 6 dígitos de tu aplicación Google Authenticator
+                                    </p>
+                                </div>
+                            )}
                             {error && <div className="error-message">{error}</div>}
                             <button
                                 type="submit"
                                 className="btn-login"
                                 disabled={loading}
                             >
-                                {loading ? 'Iniciando sesión...' : 'Ingresar'}
+                                {loading ? 'Iniciando sesión...' : requiresTwoFactor ? 'Verificar Código' : 'Ingresar'}
                             </button>
 
                             <div className="login-options">
-                                <button
-                                    type="button"
-                                    className="link-button"
-                                    onClick={() => setShowForgotPasswordModal(true)}
-                                >
-                                    ¿Olvidaste tu contraseña?
-                                </button>
-                                <div className="divider">
-                                    <span>o</span>
+                                <p className="login-options-title">¿No tienes cuenta?</p>
+                                <div className="login-actions-grid">
+                                    <button
+                                        type="button"
+                                        className="btn-register"
+                                        onClick={() => setShowRegisterModal(true)}
+                                    >
+                                        ➕ Crear Usuario
+                                    </button>
                                 </div>
-                                <button
-                                    type="button"
-                                    className="btn-register"
-                                    onClick={() => setShowRegisterModal(true)}
-                                >
-                                    Crear nueva cuenta
-                                </button>
                             </div>
                         </form>
                     ) : (
@@ -426,7 +420,7 @@ function Login() {
                     <div className="modal-overlay" onClick={() => setShowRegisterModal(false)}>
                         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                             <div className="modal-header">
-                                <h3>Crear Nueva Cuenta</h3>
+                                <h3>📝 Crear Nuevo Usuario</h3>
                                 <button className="modal-close" onClick={() => setShowRegisterModal(false)}>×</button>
                             </div>
                             <form onSubmit={handleRegister} className="user-form">
@@ -497,84 +491,6 @@ function Login() {
                     </div>
                 )}
 
-                {/* Modal de Recuperación de Contraseña */}
-                {showForgotPasswordModal && (
-                    <div className="modal-overlay" onClick={() => {
-                        setShowForgotPasswordModal(false);
-                        setForgotPasswordStep('request');
-                        setResetToken('');
-                        setForgotPasswordData({ username: '', email: '' });
-                    }}>
-                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                            <div className="modal-header">
-                                <h3>Recuperar Contraseña</h3>
-                                <button className="modal-close" onClick={() => {
-                                    setShowForgotPasswordModal(false);
-                                    setForgotPasswordStep('request');
-                                    setResetToken('');
-                                    setForgotPasswordData({ username: '', email: '' });
-                                }}>×</button>
-                            </div>
-                            
-                            {forgotPasswordStep === 'request' ? (
-                                <form onSubmit={handleForgotPassword} className="user-form">
-                                    <div className="info-box">
-                                        <p>Ingresa tu usuario o email y te enviaremos un correo electrónico con las instrucciones para restablecer tu contraseña.</p>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Usuario</label>
-                                        <input
-                                            type="text"
-                                            value={forgotPasswordData.username}
-                                            onChange={(e) => setForgotPasswordData({ ...forgotPasswordData, username: e.target.value })}
-                                            placeholder="Ingrese su nombre de usuario"
-                                        />
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Email</label>
-                                        <input
-                                            type="email"
-                                            value={forgotPasswordData.email}
-                                            onChange={(e) => setForgotPasswordData({ ...forgotPasswordData, email: e.target.value })}
-                                            placeholder="correo@ejemplo.com"
-                                        />
-                                    </div>
-                                    <p className="field-note">Debe proporcionar al menos uno: usuario o email</p>
-                                    <div className="form-actions">
-                                        <button type="button" className="btn-secondary" onClick={() => {
-                                            setShowForgotPasswordModal(false);
-                                            setForgotPasswordStep('request');
-                                            setResetToken('');
-                                            setForgotPasswordData({ username: '', email: '' });
-                                        }}>
-                                            Cancelar
-                                        </button>
-                                        <button type="submit" className="btn-primary">
-                                            Solicitar Token
-                                        </button>
-                                    </div>
-                                </form>
-                            ) : (
-                                <ResetPasswordForm 
-                                    token={resetToken}
-                                    onSuccess={() => {
-                                        setShowForgotPasswordModal(false);
-                                        setForgotPasswordStep('request');
-                                        setResetToken('');
-                                        setForgotPasswordData({ username: '', email: '' });
-                                        success('Contraseña restablecida exitosamente. Ahora puedes iniciar sesión.');
-                                    }}
-                                    onCancel={() => {
-                                        setShowForgotPasswordModal(false);
-                                        setForgotPasswordStep('request');
-                                        setResetToken('');
-                                        setForgotPasswordData({ username: '', email: '' });
-                                    }}
-                                />
-                            )}
-                        </div>
-                    </div>
-                )}
             </div>
         </div>
     );

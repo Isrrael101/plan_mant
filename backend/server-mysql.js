@@ -6,6 +6,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import { sendPasswordResetEmail } from './services/emailService.js';
+import { generateSecret, generateQRCode, verifyToken } from './services/twoFactorService.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'tu_secreto_super_seguro_123';
 
@@ -1123,7 +1124,7 @@ app.post('/api/auth/register', async (req, res) => {
 
 app.post('/api/auth/login', async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { username, password, twoFactorCode } = req.body;
 
         const [users] = await pool.query('SELECT * FROM users WHERE username = ?', [username]);
         if (users.length === 0) {
@@ -1135,6 +1136,26 @@ app.post('/api/auth/login', async (req, res) => {
 
         if (!validPassword) {
             return res.status(401).json({ success: false, error: 'Credenciales inválidas' });
+        }
+
+        // Si el usuario tiene 2FA activado, verificar el código
+        if (user.two_factor_enabled && user.two_factor_secret) {
+            if (!twoFactorCode) {
+                return res.status(200).json({
+                    success: false,
+                    requiresTwoFactor: true,
+                    message: 'Se requiere código de autenticación de dos factores'
+                });
+            }
+
+            const isValidCode = verifyToken(user.two_factor_secret, twoFactorCode);
+            if (!isValidCode) {
+                return res.status(401).json({ 
+                    success: false, 
+                    error: 'Código de autenticación inválido',
+                    requiresTwoFactor: true
+                });
+            }
         }
 
         const token = jwt.sign(
@@ -1151,10 +1172,161 @@ app.post('/api/auth/login', async (req, res) => {
                 username: user.username,
                 rol: user.rol,
                 nombre: user.nombre_completo,
-                email: user.email || null
+                email: user.email || null,
+                two_factor_enabled: user.two_factor_enabled || false
             }
         });
     } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// ============================================
+// RUTAS - AUTENTICACIÓN DE DOS FACTORES (2FA)
+// ============================================
+
+// GET - Generar secreto y QR code para activar 2FA
+app.get('/api/auth/two-factor/setup', authenticateToken, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        
+        const [users] = await pool.query('SELECT * FROM users WHERE id = ?', [userId]);
+        if (users.length === 0) {
+            return res.status(404).json({ success: false, error: 'Usuario no encontrado' });
+        }
+
+        const user = users[0];
+        
+        // Si ya tiene 2FA activado, devolver el QR existente
+        if (user.two_factor_enabled && user.two_factor_secret) {
+            const otpauthUrl = `otpauth://totp/MTTO%20Pro%20(${user.username})?secret=${user.two_factor_secret}&issuer=MTTO%20Pro`;
+            const qrCode = await generateQRCode(otpauthUrl);
+            return res.json({
+                success: true,
+                qrCode,
+                secret: user.two_factor_secret,
+                enabled: true
+            });
+        }
+
+        // Generar nuevo secreto
+        const { secret, otpauth_url } = generateSecret(user.username, 'MTTO Pro');
+        const qrCode = await generateQRCode(otpauth_url);
+
+        // Guardar el secreto temporalmente (aún no activado)
+        await pool.query(
+            'UPDATE users SET two_factor_secret = ? WHERE id = ?',
+            [secret, userId]
+        );
+
+        res.json({
+            success: true,
+            qrCode,
+            secret,
+            enabled: false
+        });
+    } catch (error) {
+        console.error('Error en setup 2FA:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// POST - Verificar código y activar 2FA
+app.post('/api/auth/two-factor/verify', authenticateToken, async (req, res) => {
+    try {
+        const { code } = req.body;
+        const userId = req.user.id;
+
+        if (!code) {
+            return res.status(400).json({ success: false, error: 'Código requerido' });
+        }
+
+        const [users] = await pool.query('SELECT * FROM users WHERE id = ?', [userId]);
+        if (users.length === 0) {
+            return res.status(404).json({ success: false, error: 'Usuario no encontrado' });
+        }
+
+        const user = users[0];
+
+        if (!user.two_factor_secret) {
+            return res.status(400).json({ success: false, error: 'Primero debes generar un código QR' });
+        }
+
+        const isValid = verifyToken(user.two_factor_secret, code);
+        if (!isValid) {
+            return res.status(401).json({ success: false, error: 'Código inválido' });
+        }
+
+        // Activar 2FA
+        await pool.query(
+            'UPDATE users SET two_factor_enabled = TRUE WHERE id = ?',
+            [userId]
+        );
+
+        res.json({
+            success: true,
+            message: 'Autenticación de dos factores activada exitosamente'
+        });
+    } catch (error) {
+        console.error('Error verificando código 2FA:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// POST - Desactivar 2FA
+app.post('/api/auth/two-factor/disable', authenticateToken, async (req, res) => {
+    try {
+        const { password } = req.body;
+        const userId = req.user.id;
+
+        if (!password) {
+            return res.status(400).json({ success: false, error: 'Contraseña requerida para desactivar 2FA' });
+        }
+
+        const [users] = await pool.query('SELECT * FROM users WHERE id = ?', [userId]);
+        if (users.length === 0) {
+            return res.status(404).json({ success: false, error: 'Usuario no encontrado' });
+        }
+
+        const user = users[0];
+        const validPassword = await bcrypt.compare(password, user.password);
+
+        if (!validPassword) {
+            return res.status(401).json({ success: false, error: 'Contraseña incorrecta' });
+        }
+
+        // Desactivar 2FA y eliminar secreto
+        await pool.query(
+            'UPDATE users SET two_factor_enabled = FALSE, two_factor_secret = NULL WHERE id = ?',
+            [userId]
+        );
+
+        res.json({
+            success: true,
+            message: 'Autenticación de dos factores desactivada exitosamente'
+        });
+    } catch (error) {
+        console.error('Error desactivando 2FA:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// GET - Estado de 2FA del usuario
+app.get('/api/auth/two-factor/status', authenticateToken, async (req, res) => {
+    try {
+        const userId = req.user.id;
+        
+        const [users] = await pool.query('SELECT two_factor_enabled FROM users WHERE id = ?', [userId]);
+        if (users.length === 0) {
+            return res.status(404).json({ success: false, error: 'Usuario no encontrado' });
+        }
+
+        res.json({
+            success: true,
+            enabled: users[0].two_factor_enabled || false
+        });
+    } catch (error) {
+        console.error('Error obteniendo estado 2FA:', error);
         res.status(500).json({ success: false, error: error.message });
     }
 });
@@ -1219,7 +1391,16 @@ app.post('/api/auth/forgot-password', async (req, res) => {
         // Construir URL de reset
         const resetUrl = `${process.env.FRONTEND_URL || 'http://localhost:5173'}/reset-password?token=${resetToken}`;
 
-        // Enviar email con el token
+        // Validar que el usuario tenga email registrado
+        if (!user.email) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Tu cuenta no tiene un email registrado. Por favor, contacta al administrador para restablecer tu contraseña.' 
+            });
+        }
+
+        // Intentar enviar email con el token
+        let emailSent = false;
         try {
             const emailResult = await sendPasswordResetEmail(
                 user.email,
@@ -1229,27 +1410,34 @@ app.post('/api/auth/forgot-password', async (req, res) => {
             );
 
             if (emailResult.sent) {
-                console.log(`✅ Email de recuperación enviado a ${user.email}`);
-            } else {
-                console.log(`⚠️ Email no enviado (modo desarrollo). Token: ${resetToken}`);
+                emailSent = true;
+                console.log(`✅ Email de recuperación enviado exitosamente a ${user.email}`);
             }
         } catch (emailError) {
-            console.error('Error enviando email:', emailError);
-            // Continuar aunque falle el email, el token ya está guardado
+            console.error('❌ Error enviando email de recuperación:', emailError);
+            
+            // Si el email no está configurado o hay error, informar que debe contactar al administrador
+            if (emailError.code === 'EMAIL_NOT_CONFIGURED' || emailError.code === 'USER_NO_EMAIL') {
+                console.log(`⚠️ Solicitud de recuperación para ${user.username} - Email no disponible. El administrador debe resetear la contraseña.`);
+                // El token ya está guardado en la BD, el admin puede verlo y resetear
+            }
         }
-
-        // En desarrollo, también devolver el token en la respuesta para facilitar pruebas
-        const isDevelopment = process.env.NODE_ENV !== 'production';
         
-        res.json({ 
-            success: true, 
-            message: user.email 
-                ? 'Se ha enviado un email con las instrucciones para restablecer tu contraseña'
-                : 'Token generado. Contacta al administrador para obtener el token de recuperación.',
-            // Solo en desarrollo - mostrar token
-            resetToken: isDevelopment ? resetToken : null,
-            resetUrl: isDevelopment ? resetUrl : null
-        });
+        // Respuesta segura: siempre informar que se procesó la solicitud
+        // Si el email se envió, informar al usuario
+        if (emailSent) {
+            return res.json({ 
+                success: true, 
+                message: 'Se ha enviado un email a tu dirección de correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada (y la carpeta de spam si no lo encuentras).'
+            });
+        } else {
+            // Si no se pudo enviar el email, informar que debe contactar al administrador
+            return res.json({ 
+                success: true, 
+                message: 'Tu solicitud de recuperación de contraseña ha sido registrada. Por favor, contacta al administrador del sistema para restablecer tu contraseña de forma segura.',
+                requiresAdmin: true
+            });
+        }
     } catch (error) {
         console.error('Error en forgot-password:', error);
         res.status(500).json({ success: false, error: 'Error al procesar la solicitud' });
@@ -1563,6 +1751,61 @@ app.put('/api/users/:id', authenticateToken, requireAdmin, async (req, res) => {
         await pool.query(`UPDATE users SET ${updates.join(', ')} WHERE id = ?`, values);
 
         res.json({ success: true, message: 'Usuario actualizado exitosamente' });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// GET - Obtener solicitudes de recuperación de contraseña pendientes (Solo ADMIN)
+app.get('/api/password-reset-requests', authenticateToken, requireAdmin, async (req, res) => {
+    try {
+        const [requests] = await pool.query(
+            `SELECT prt.id, prt.token, prt.created_at, prt.expires_at, prt.used,
+                    u.id as user_id, u.username, u.nombre_completo, u.email
+             FROM password_reset_tokens prt
+             JOIN users u ON prt.user_id = u.id
+             WHERE prt.used = FALSE AND prt.expires_at > NOW()
+             ORDER BY prt.created_at DESC`
+        );
+        res.json({ success: true, data: requests });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// POST - Resetear contraseña de usuario (Solo ADMIN)
+app.post('/api/users/:id/reset-password', authenticateToken, requireAdmin, async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const { newPassword } = req.body;
+
+        if (!newPassword) {
+            return res.status(400).json({ success: false, error: 'Nueva contraseña es requerida' });
+        }
+
+        if (newPassword.length < 6) {
+            return res.status(400).json({ success: false, error: 'La contraseña debe tener al menos 6 caracteres' });
+        }
+
+        // Verificar que el usuario existe
+        const [users] = await pool.query('SELECT id, username FROM users WHERE id = ?', [userId]);
+        if (users.length === 0) {
+            return res.status(404).json({ success: false, error: 'Usuario no encontrado' });
+        }
+
+        // Hash de la nueva contraseña
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        // Actualizar contraseña
+        await pool.query('UPDATE users SET password = ? WHERE id = ?', [hashedPassword, userId]);
+
+        // Invalidar todos los tokens de recuperación del usuario
+        await pool.query('UPDATE password_reset_tokens SET used = TRUE WHERE user_id = ?', [userId]);
+
+        res.json({ 
+            success: true, 
+            message: `Contraseña restablecida exitosamente para el usuario ${users[0].username}` 
+        });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }

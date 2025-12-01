@@ -1,17 +1,86 @@
 # Configuración de Email para Recuperación de Contraseña
 
+## ⚠️ IMPORTANTE
+
+**El sistema ahora requiere configuración de email para funcionar correctamente.** 
+
+**Nota importante:** El sistema envía emails **desde** una cuenta configurada **hacia** cualquier dirección (Hotmail, Gmail, corporativo, etc.). Los usuarios pueden tener cualquier tipo de email, pero el sistema necesita una cuenta de email configurada para enviar.
+
 ## Variables de Entorno Requeridas
 
-Para habilitar el envío de emails, configura las siguientes variables de entorno en tu archivo `.env` del backend:
+Para habilitar el envío de emails, configura las siguientes variables de entorno en `docker-compose.yaml` en la sección `backend` → `environment`:
 
-### Opción 1: Gmail (Recomendado para desarrollo)
+### Opción 1: SMTP Genérico (Recomendado - Funciona con cualquier proveedor)
 
-```env
-EMAIL_SERVICE=gmail
-EMAIL_USER=tu_email@gmail.com
-EMAIL_PASSWORD=tu_app_password_de_gmail
-FRONTEND_URL=http://localhost:5173
+Esta opción funciona con **cualquier proveedor de email**: Hotmail, Gmail, Outlook, Yahoo, o servidores corporativos.
+
+Edita `docker-compose.yaml` y descomenta/agrega estas líneas en la sección `backend` → `environment`:
+
+#### Para Hotmail/Outlook:
+```yaml
+environment:
+  # ... otras variables ...
+  EMAIL_HOST: smtp-mail.outlook.com
+  EMAIL_PORT: 587
+  EMAIL_SECURE: false
+  EMAIL_USER: tu_email@hotmail.com
+  EMAIL_PASSWORD: tu_contraseña
+  FRONTEND_URL: http://localhost:8080
 ```
+
+#### Para Gmail:
+```yaml
+environment:
+  # ... otras variables ...
+  EMAIL_HOST: smtp.gmail.com
+  EMAIL_PORT: 587
+  EMAIL_SECURE: false
+  EMAIL_USER: tu_email@gmail.com
+  EMAIL_PASSWORD: tu_app_password  # Ver instrucciones abajo
+  FRONTEND_URL: http://localhost:8080
+```
+
+#### Para Email Corporativo:
+```yaml
+environment:
+  # ... otras variables ...
+  EMAIL_HOST: smtp.tu-empresa.com  # Servidor SMTP de tu empresa
+  EMAIL_PORT: 587                  # O 465 para SSL
+  EMAIL_SECURE: false              # true si usas puerto 465
+  EMAIL_USER: sistema@tu-empresa.com
+  EMAIL_PASSWORD: tu_contraseña
+  EMAIL_TLS_REJECT_UNAUTHORIZED: false  # Solo si tu servidor usa certificado autofirmado
+  FRONTEND_URL: http://localhost:8080
+```
+
+### Opción 2: Servicio Predefinido (Solo Gmail/Outlook)
+
+Si prefieres usar la configuración predefinida:
+
+```yaml
+environment:
+  # ... otras variables ...
+  EMAIL_SERVICE: gmail  # o 'hotmail', 'outlook'
+  EMAIL_USER: tu_email@gmail.com
+  EMAIL_PASSWORD: tu_app_password
+  FRONTEND_URL: http://localhost:8080
+```
+
+## Configuración por Proveedor
+
+### Hotmail/Outlook
+- **EMAIL_HOST:** `smtp-mail.outlook.com`
+- **EMAIL_PORT:** `587`
+- **EMAIL_SECURE:** `false`
+- **EMAIL_USER:** Tu email completo (ej: `usuario@hotmail.com`)
+- **EMAIL_PASSWORD:** Tu contraseña normal de Hotmail/Outlook
+
+### Gmail
+- **EMAIL_HOST:** `smtp.gmail.com`
+- **EMAIL_PORT:** `587`
+- **EMAIL_SECURE:** `false`
+- **EMAIL_USER:** Tu email completo (ej: `usuario@gmail.com`)
+- **EMAIL_PASSWORD:** **App Password** (no tu contraseña normal)
 
 **Cómo obtener App Password de Gmail:**
 1. Ve a tu cuenta de Google: https://myaccount.google.com/
@@ -20,43 +89,64 @@ FRONTEND_URL=http://localhost:5173
 4. Genera una nueva contraseña para "Correo"
 5. Usa esa contraseña de 16 caracteres en `EMAIL_PASSWORD`
 
-### Opción 2: SMTP Genérico
+### Yahoo
+- **EMAIL_HOST:** `smtp.mail.yahoo.com`
+- **EMAIL_PORT:** `587`
+- **EMAIL_SECURE:** `false`
+- **EMAIL_USER:** Tu email completo
+- **EMAIL_PASSWORD:** App Password (similar a Gmail)
 
-```env
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_SECURE=false
-EMAIL_USER=tu_email@gmail.com
-EMAIL_PASSWORD=tu_contraseña
-FRONTEND_URL=http://localhost:5173
+### Email Corporativo
+- **EMAIL_HOST:** Servidor SMTP de tu empresa (pregunta a tu administrador IT)
+- **EMAIL_PORT:** Generalmente `587` o `465`
+- **EMAIL_SECURE:** `false` para 587, `true` para 465
+- **EMAIL_USER:** Email corporativo del sistema
+- **EMAIL_PASSWORD:** Contraseña del email corporativo
+- **EMAIL_TLS_REJECT_UNAUTHORIZED:** `false` si el servidor usa certificado autofirmado
+
+## Configuración en Docker
+
+1. Edita el archivo `docker-compose.yaml`
+2. Busca la sección `backend` → `environment`
+3. Descomenta y completa las variables de email según tu proveedor (ver ejemplos arriba)
+4. Reinicia el backend:
+   ```bash
+   docker-compose restart backend
+   ```
+
+## Ejemplo Completo para Hotmail
+
+```yaml
+backend:
+  environment:
+    NODE_ENV: development
+    PORT: 3001
+    MYSQL_HOST: mysql
+    MYSQL_PORT: 3306
+    MYSQL_DATABASE: mtto_db
+    MYSQL_USER: mtto_user
+    MYSQL_PASSWORD: mtto_password
+    EMAIL_HOST: smtp-mail.outlook.com
+    EMAIL_PORT: 587
+    EMAIL_SECURE: false
+    EMAIL_USER: sistema@hotmail.com
+    EMAIL_PASSWORD: tu_contraseña_hotmail
+    FRONTEND_URL: http://localhost:8080
 ```
 
-### Opción 3: Otros Proveedores
+## ¿Cómo Funciona?
 
-**Outlook/Hotmail:**
-```env
-EMAIL_HOST=smtp-mail.outlook.com
-EMAIL_PORT=587
-EMAIL_SECURE=false
-EMAIL_USER=tu_email@outlook.com
-EMAIL_PASSWORD=tu_contraseña
-```
+- El sistema envía emails **desde** la cuenta configurada (EMAIL_USER)
+- Puede enviar **a cualquier dirección**: Hotmail, Gmail, corporativo, etc.
+- Los usuarios solo necesitan tener un email registrado en su cuenta
+- No importa qué tipo de email tenga el usuario, el sistema puede enviarle emails
 
-**Yahoo:**
-```env
-EMAIL_HOST=smtp.mail.yahoo.com
-EMAIL_PORT=587
-EMAIL_SECURE=false
-EMAIL_USER=tu_email@yahoo.com
-EMAIL_PASSWORD=tu_app_password
-```
+## ⚠️ Sin Email Configurado
 
-## Modo Desarrollo
-
-Si no configuras las variables de email, el sistema funcionará en **modo desarrollo**:
-- El token se mostrará en la consola del servidor
-- El token también se devolverá en la respuesta de la API (solo en desarrollo)
-- No se enviará ningún email real
+Si no configuras las variables de email:
+- ❌ La recuperación de contraseña **NO funcionará**
+- ❌ El sistema mostrará un error indicando que el servicio de email no está disponible
+- ✅ Debes configurar el email para que el sistema funcione correctamente
 
 ## Verificación
 

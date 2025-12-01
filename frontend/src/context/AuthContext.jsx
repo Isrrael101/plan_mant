@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
     }, []);
 
-    const login = async (username, password) => {
+    const login = async (username, password, twoFactorCode = null) => {
         try {
             const response = await fetch('/api/auth/login', {
                 method: 'POST',
@@ -38,10 +38,20 @@ export const AuthProvider = ({ children }) => {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json; charset=utf-8'
                 },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ username, password, twoFactorCode })
             });
 
             const data = await response.json();
+            
+            // Si requiere 2FA, devolver información especial
+            if (data.requiresTwoFactor) {
+                return { 
+                    success: false, 
+                    requiresTwoFactor: true,
+                    error: data.message || 'Se requiere código de autenticación de dos factores'
+                };
+            }
+            
             if (data.success) {
                 localStorage.setItem('token', data.token);
                 // Guardar user con email si está disponible

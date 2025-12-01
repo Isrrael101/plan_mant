@@ -112,7 +112,31 @@ class ApiService {
     // Password Recovery
     // ============================================
     async forgotPassword(data) {
-        return this.postData('/auth/forgot-password', data);
+        try {
+            const response = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    'Accept': 'application/json; charset=utf-8'
+                },
+                body: JSON.stringify(data),
+            });
+            
+            const result = await response.json();
+            
+            if (!response.ok) {
+                // Extraer el mensaje de error del backend
+                const errorMessage = result.error || `Error ${response.status}: ${response.statusText}`;
+                const error = new Error(errorMessage);
+                error.status = response.status;
+                throw error;
+            }
+            
+            return result;
+        } catch (error) {
+            console.error('API Error:', error);
+            throw error;
+        }
     }
 
     async verifyResetToken(token) {
@@ -121,6 +145,11 @@ class ApiService {
 
     async resetPassword(token, newPassword) {
         return this.postData('/auth/reset-password', { token, newPassword });
+    }
+
+    // Resetear contraseña como administrador
+    async adminResetPassword(userId, newPassword) {
+        return this.postData(`/users/${userId}/reset-password`, { newPassword });
     }
 
     // ============================================
@@ -144,6 +173,33 @@ class ApiService {
 
     async deleteUser(id) {
         return this.deleteData(`/users/${id}`);
+    }
+
+    async adminResetPassword(userId, newPassword) {
+        return this.postData(`/users/${userId}/reset-password`, { newPassword });
+    }
+
+    async getPasswordResetRequests() {
+        return this.fetchData('/password-reset-requests');
+    }
+
+    // ============================================
+    // Two-Factor Authentication (2FA)
+    // ============================================
+    async getTwoFactorSetup() {
+        return this.fetchData('/auth/two-factor/setup');
+    }
+
+    async verifyTwoFactorCode(code) {
+        return this.postData('/auth/two-factor/verify', { code });
+    }
+
+    async disableTwoFactor(password) {
+        return this.postData('/auth/two-factor/disable', { password });
+    }
+
+    async getTwoFactorStatus() {
+        return this.fetchData('/auth/two-factor/status');
     }
 
     // CRUD Operations - Machinery

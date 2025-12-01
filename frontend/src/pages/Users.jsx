@@ -133,6 +133,50 @@ function Users() {
         }
     };
 
+    const [showResetPasswordModal, setShowResetPasswordModal] = useState(false);
+    const [userToReset, setUserToReset] = useState(null);
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const handleResetPassword = (usr) => {
+        setUserToReset(usr);
+        setNewPassword('');
+        setConfirmPassword('');
+        setShowResetPasswordModal(true);
+    };
+
+    const handleResetPasswordSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!newPassword) {
+            showError('La nueva contraseña es requerida');
+            return;
+        }
+
+        if (newPassword.length < 6) {
+            showError('La contraseña debe tener al menos 6 caracteres');
+            return;
+        }
+
+        if (newPassword !== confirmPassword) {
+            showError('Las contraseñas no coinciden');
+            return;
+        }
+
+        try {
+            const response = await api.adminResetPassword(userToReset.id, newPassword);
+            if (response.success) {
+                success(`Contraseña restablecida exitosamente para ${userToReset.username}`);
+                setShowResetPasswordModal(false);
+                setUserToReset(null);
+                setNewPassword('');
+                setConfirmPassword('');
+            }
+        } catch (err) {
+            showError(err.message || 'Error al restablecer contraseña');
+        }
+    };
+
     if (user?.rol !== 'ADMIN') {
         return (
             <div className="users-container">
@@ -203,6 +247,13 @@ function Users() {
                                             title="Editar"
                                         >
                                             ✏️
+                                        </button>
+                                        <button
+                                            className="btn-reset-password"
+                                            onClick={() => handleResetPassword(usr)}
+                                            title="Resetear Contraseña"
+                                        >
+                                            🔑
                                         </button>
                                         {usr.id !== user.id && (
                                             <button
@@ -302,6 +353,72 @@ function Users() {
                                 </button>
                                 <button type="submit" className="btn-primary">
                                     {editingUser ? 'Actualizar' : 'Crear'}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
+
+            {/* Modal para Resetear Contraseña */}
+            {showResetPasswordModal && userToReset && (
+                <div className="modal-overlay" onClick={() => {
+                    setShowResetPasswordModal(false);
+                    setUserToReset(null);
+                    setNewPassword('');
+                    setConfirmPassword('');
+                }}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <h2>Resetear Contraseña</h2>
+                            <button className="modal-close" onClick={() => {
+                                setShowResetPasswordModal(false);
+                                setUserToReset(null);
+                                setNewPassword('');
+                                setConfirmPassword('');
+                            }}>×</button>
+                        </div>
+                        <form onSubmit={handleResetPasswordSubmit} className="user-form">
+                            <div className="info-box">
+                                <p><strong>Usuario:</strong> {userToReset.username}</p>
+                                <p><strong>Nombre:</strong> {userToReset.nombre_completo || 'N/A'}</p>
+                                <p style={{ marginTop: '10px', color: '#856404' }}>
+                                    ⚠️ Esta acción restablecerá la contraseña del usuario. El usuario deberá usar esta nueva contraseña para iniciar sesión.
+                                </p>
+                            </div>
+                            <div className="form-group">
+                                <label>Nueva Contraseña *</label>
+                                <input
+                                    type="password"
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                    placeholder="Mínimo 6 caracteres"
+                                    required
+                                    minLength={6}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label>Confirmar Nueva Contraseña *</label>
+                                <input
+                                    type="password"
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    placeholder="Repita la contraseña"
+                                    required
+                                    minLength={6}
+                                />
+                            </div>
+                            <div className="form-actions">
+                                <button type="button" className="btn-secondary" onClick={() => {
+                                    setShowResetPasswordModal(false);
+                                    setUserToReset(null);
+                                    setNewPassword('');
+                                    setConfirmPassword('');
+                                }}>
+                                    Cancelar
+                                </button>
+                                <button type="submit" className="btn-primary">
+                                    Resetear Contraseña
                                 </button>
                             </div>
                         </form>

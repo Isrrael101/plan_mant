@@ -75,9 +75,30 @@ function ResetPasswordForm({ token, onSuccess, onCancel }) {
 
             {token && (
                 <div className="token-display">
-                    <p className="token-label">Token de recuperación:</p>
-                    <div className="token-value">{token}</div>
-                    <p className="token-note">Guarda este token si necesitas usarlo más tarde. Expira en 1 hora.</p>
+                    <div className="token-header">
+                        <p className="token-label">🔑 Token de Recuperación de Contraseña</p>
+                        <button
+                            type="button"
+                            className="btn-copy-token"
+                            onClick={() => {
+                                navigator.clipboard.writeText(token);
+                                success('Token copiado al portapapeles');
+                            }}
+                            title="Copiar token"
+                        >
+                            📋 Copiar
+                        </button>
+                    </div>
+                    <div className="token-value" onClick={() => {
+                        navigator.clipboard.writeText(token);
+                        success('Token copiado al portapapeles');
+                    }} style={{ cursor: 'pointer' }} title="Clic para copiar">
+                        {token}
+                    </div>
+                    <p className="token-note">
+                        ✅ <strong>Token generado exitosamente.</strong> Usa este token para restablecer tu contraseña. 
+                        El token expira en 1 hora. Puedes copiarlo haciendo clic en el botón o en el token mismo.
+                    </p>
                 </div>
             )}
 

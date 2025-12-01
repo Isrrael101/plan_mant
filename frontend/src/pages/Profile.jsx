@@ -23,9 +23,17 @@ function Profile() {
         password: '',
         confirmPassword: ''
     });
+    const [twoFactorEnabled, setTwoFactorEnabled] = useState(false);
+    const [twoFactorLoading, setTwoFactorLoading] = useState(false);
+    const [showTwoFactorSetup, setShowTwoFactorSetup] = useState(false);
+    const [qrCode, setQrCode] = useState('');
+    const [twoFactorSecret, setTwoFactorSecret] = useState('');
+    const [verificationCode, setVerificationCode] = useState('');
+    const [disablePassword, setDisablePassword] = useState('');
 
     useEffect(() => {
         loadProfile();
+        loadTwoFactorStatus();
     }, []);
 
     const loadProfile = async () => {
@@ -134,6 +142,81 @@ function Profile() {
         }
     };
 
+    const loadTwoFactorStatus = async () => {
+        try {
+            const response = await api.getTwoFactorStatus();
+            if (response.success) {
+                setTwoFactorEnabled(response.enabled);
+            }
+        } catch (err) {
+            console.error('Error cargando estado 2FA:', err);
+        }
+    };
+
+    const handleSetupTwoFactor = async () => {
+        try {
+            setTwoFactorLoading(true);
+            const response = await api.getTwoFactorSetup();
+            if (response.success) {
+                setQrCode(response.qrCode);
+                setTwoFactorSecret(response.secret);
+                setShowTwoFactorSetup(true);
+                setTwoFactorEnabled(response.enabled);
+            }
+        } catch (err) {
+            showError(err.message || 'Error al generar código QR');
+        } finally {
+            setTwoFactorLoading(false);
+        }
+    };
+
+    const handleVerifyTwoFactor = async (e) => {
+        e.preventDefault();
+        if (!verificationCode || verificationCode.length !== 6) {
+            showError('Ingresa un código de 6 dígitos');
+            return;
+        }
+
+        try {
+            setTwoFactorLoading(true);
+            const response = await api.verifyTwoFactorCode(verificationCode);
+            if (response.success) {
+                success('Autenticación de dos factores activada exitosamente');
+                setShowTwoFactorSetup(false);
+                setVerificationCode('');
+                setQrCode('');
+                setTwoFactorSecret('');
+                setTwoFactorEnabled(true);
+            }
+        } catch (err) {
+            showError(err.message || 'Código inválido');
+        } finally {
+            setTwoFactorLoading(false);
+        }
+    };
+
+    const handleDisableTwoFactor = async (e) => {
+        e.preventDefault();
+        if (!disablePassword) {
+            showError('Ingresa tu contraseña para desactivar 2FA');
+            return;
+        }
+
+        try {
+            setTwoFactorLoading(true);
+            const response = await api.disableTwoFactor(disablePassword);
+            if (response.success) {
+                success('Autenticación de dos factores desactivada');
+                setTwoFactorEnabled(false);
+                setDisablePassword('');
+            }
+        } catch (err) {
+            showError(err.message || 'Error al desactivar 2FA');
+        } finally {
+            setTwoFactorLoading(false);
+        }
+    };
+
     if (loading) {
         return (
             <div className="profile-container">
@@ -239,6 +322,116 @@ function Profile() {
                             </button>
                         </div>
                     </form>
+                </div>
+
+                <div className="profile-section">
+                    <h2>Autenticación de Dos Factores (2FA)</h2>
+                    <div className="two-factor-section">
+                        <div className="two-factor-status">
+                            <div className="status-info">
+                                <span className="status-label">Estado:</span>
+                                <span className={`status-badge ${twoFactorEnabled ? 'enabled' : 'disabled'}`}>
+                                    {twoFactorEnabled ? '🔒 Activado' : '🔓 Desactivado'}
+                                </span>
+                            </div>
+                            <p className="two-factor-description">
+                                La autenticación de dos factores añade una capa adicional de seguridad a tu cuenta.
+                                Necesitarás un código de tu aplicación Google Authenticator cada vez que inicies sesión.
+                            </p>
+                        </div>
+
+                        {!twoFactorEnabled ? (
+                            <div className="two-factor-setup">
+                                {!showTwoFactorSetup ? (
+                                    <button
+                                        onClick={handleSetupTwoFactor}
+                                        className="btn-primary"
+                                        disabled={twoFactorLoading}
+                                    >
+                                        {twoFactorLoading ? 'Generando...' : '🔐 Activar 2FA'}
+                                    </button>
+                                ) : (
+                                    <div className="qr-setup">
+                                        <h3>Configurar Google Authenticator</h3>
+                                        <ol className="setup-steps">
+                                            <li>Descarga la aplicación <strong>Google Authenticator</strong> en tu teléfono</li>
+                                            <li>Escanea este código QR con la aplicación:</li>
+                                        </ol>
+                                        {qrCode && (
+                                            <div className="qr-code-container">
+                                                <img src={qrCode} alt="QR Code" className="qr-code" />
+                                            </div>
+                                        )}
+                                        <p className="secret-note">
+                                            <strong>O ingresa manualmente:</strong> {twoFactorSecret}
+                                        </p>
+                                        <form onSubmit={handleVerifyTwoFactor} className="verify-form">
+                                            <div className="form-group">
+                                                <label>Código de Verificación</label>
+                                                <input
+                                                    type="text"
+                                                    value={verificationCode}
+                                                    onChange={(e) => setVerificationCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                                                    placeholder="000000"
+                                                    maxLength={6}
+                                                    required
+                                                    style={{
+                                                        textAlign: 'center',
+                                                        fontSize: '1.5rem',
+                                                        letterSpacing: '0.5rem',
+                                                        fontFamily: 'monospace',
+                                                        width: '200px',
+                                                        margin: '0 auto'
+                                                    }}
+                                                />
+                                                <p className="field-note">Ingresa el código de 6 dígitos de Google Authenticator</p>
+                                            </div>
+                                            <div className="form-actions">
+                                                <button
+                                                    type="button"
+                                                    className="btn-secondary"
+                                                    onClick={() => {
+                                                        setShowTwoFactorSetup(false);
+                                                        setVerificationCode('');
+                                                        setQrCode('');
+                                                        setTwoFactorSecret('');
+                                                    }}
+                                                >
+                                                    Cancelar
+                                                </button>
+                                                <button type="submit" className="btn-primary" disabled={twoFactorLoading}>
+                                                    {twoFactorLoading ? 'Verificando...' : 'Verificar y Activar'}
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="two-factor-disable">
+                                <form onSubmit={handleDisableTwoFactor} className="disable-form">
+                                    <div className="form-group">
+                                        <label>Contraseña Actual *</label>
+                                        <input
+                                            type="password"
+                                            value={disablePassword}
+                                            onChange={(e) => setDisablePassword(e.target.value)}
+                                            placeholder="Ingresa tu contraseña para desactivar 2FA"
+                                            required
+                                        />
+                                        <p className="field-note">Se requiere tu contraseña para desactivar la autenticación de dos factores</p>
+                                    </div>
+                                    <button
+                                        type="submit"
+                                        className="btn-secondary"
+                                        disabled={twoFactorLoading}
+                                    >
+                                        {twoFactorLoading ? 'Desactivando...' : 'Desactivar 2FA'}
+                                    </button>
+                                </form>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 <div className="profile-info">

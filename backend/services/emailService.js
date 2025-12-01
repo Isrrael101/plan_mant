@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 // Configuración del servicio de email
 const createTransporter = () => {
-    // Si hay configuración SMTP personalizada, usarla
+    // Prioridad 1: Si hay configuración SMTP personalizada, usarla (funciona con cualquier proveedor)
     if (process.env.EMAIL_HOST) {
         return nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
@@ -12,20 +12,27 @@ const createTransporter = () => {
             auth: {
                 user: process.env.EMAIL_USER || '',
                 pass: process.env.EMAIL_PASSWORD || ''
+            },
+            tls: {
+                // No rechazar certificados no autorizados (útil para servidores corporativos)
+                rejectUnauthorized: process.env.EMAIL_TLS_REJECT_UNAUTHORIZED !== 'false'
             }
         });
     }
 
-    // Configuración para Gmail (puedes cambiar a otro proveedor)
-    const transporter = nodemailer.createTransport({
-        service: process.env.EMAIL_SERVICE || 'gmail',
-        auth: {
-            user: process.env.EMAIL_USER || '',
-            pass: process.env.EMAIL_PASSWORD || '' // Para Gmail, usar "App Password"
-        }
-    });
+    // Prioridad 2: Si hay EMAIL_SERVICE configurado, usar servicio predefinido
+    if (process.env.EMAIL_SERVICE) {
+        return nodemailer.createTransport({
+            service: process.env.EMAIL_SERVICE,
+            auth: {
+                user: process.env.EMAIL_USER || '',
+                pass: process.env.EMAIL_PASSWORD || ''
+            }
+        });
+    }
 
-    return transporter;
+    // Si no hay configuración, lanzar error
+    throw new Error('EMAIL_NOT_CONFIGURED');
 };
 
 // Plantilla HTML para email de recuperación de contraseña
@@ -87,20 +94,27 @@ const getResetPasswordEmailTemplate = (username, resetUrl, resetToken) => {
 
 // Función para enviar email de recuperación de contraseña
 export const sendPasswordResetEmail = async (userEmail, username, resetToken, resetUrl) => {
-    try {
-        // Si no hay configuración de email, usar modo desarrollo (solo log)
-        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
-            console.log('═══════════════════════════════════════════════════════');
-            console.log('📧 EMAIL DE RECUPERACIÓN DE CONTRASEÑA (MODO DESARROLLO)');
-            console.log('═══════════════════════════════════════════════════════');
-            console.log(`Para: ${userEmail || 'No especificado'}`);
-            console.log(`Usuario: ${username}`);
-            console.log(`Token: ${resetToken}`);
-            console.log(`URL: ${resetUrl}`);
-            console.log('═══════════════════════════════════════════════════════');
-            return { success: true, sent: false, mode: 'development' };
-        }
+    // Validar que el email esté configurado
+    const emailUser = process.env.EMAIL_USER || '';
+    const emailPassword = process.env.EMAIL_PASSWORD || '';
+    
+    // Verificar que no estén vacíos y que no sean valores de ejemplo
+    if (!emailUser || !emailPassword || 
+        emailUser.includes('tu_email') || emailUser.includes('ejemplo') ||
+        emailPassword.includes('tu_contraseña') || emailPassword.includes('ejemplo')) {
+        const error = new Error('El servicio de email no está configurado correctamente. Por favor, configura EMAIL_USER y EMAIL_PASSWORD en docker-compose.yaml con valores reales (no uses los valores de ejemplo).');
+        error.code = 'EMAIL_NOT_CONFIGURED';
+        throw error;
+    }
 
+    // Validar que el usuario tenga email
+    if (!userEmail) {
+        const error = new Error('El usuario no tiene un email registrado. Por favor, contacta al administrador.');
+        error.code = 'USER_NO_EMAIL';
+        throw error;
+    }
+
+    try {
         const transporter = createTransporter();
 
         const mailOptions = {
@@ -108,20 +122,21 @@ export const sendPasswordResetEmail = async (userEmail, username, resetToken, re
             to: userEmail,
             subject: 'Recuperación de Contraseña - MTTO Pro',
             html: getResetPasswordEmailTemplate(username, resetUrl, resetToken),
-            text: `Hola ${username},\n\nHas solicitado restablecer tu contraseña.\n\nTu token de recuperación es: ${resetToken}\n\nO visita: ${resetUrl}\n\nEste token expira en 1 hora.\n\nSi no solicitaste este cambio, ignora este email.`
+            text: `Hola ${username},\n\nHas solicitado restablecer la contraseña de tu cuenta en MTTO Pro.\n\nHaz clic en el siguiente enlace para restablecer tu contraseña:\n${resetUrl}\n\nEste enlace expira en 1 hora.\n\nSi no solicitaste este cambio, ignora este email.\n\nSaludos,\nEquipo MTTO Pro`
         };
 
         const info = await transporter.sendMail(mailOptions);
         
-        console.log('✅ Email enviado exitosamente:', info.messageId);
+        console.log(`✅ Email de recuperación enviado exitosamente a ${userEmail} (MessageId: ${info.messageId})`);
         return { success: true, sent: true, messageId: info.messageId };
     } catch (error) {
-        console.error('❌ Error enviando email:', error);
-        // En desarrollo, no fallar si no se puede enviar el email
-        if (process.env.NODE_ENV === 'development') {
-            console.log('Modo desarrollo: continuando sin enviar email');
-            return { success: true, sent: false, mode: 'development', error: error.message };
+        console.error('❌ Error enviando email de recuperación:', error);
+        
+        // Si es un error de autenticación, dar un mensaje más claro
+        if (error.code === 'EAUTH' || error.code === 'EENVELOPE') {
+            throw new Error('Error de configuración del servicio de email. Por favor, contacta al administrador.');
         }
+        
         throw error;
     }
 };
