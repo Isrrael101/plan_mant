@@ -2,15 +2,39 @@
    LOGIN - DISEÑO PROFESIONAL Y MODERNO
    ======================================== */
 
+/* Override global overflow restrictions for login page */
+/* Using more compatible approach - will be handled via JS if needed */
+body.login-page-active,
+#root.login-page-active {
+    overflow: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+}
+
+/* Modern browser support with :has() */
+body:has(.login-container),
+#root:has(.login-container) {
+    overflow: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+}
+
 .login-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
+    height: auto;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 1.5rem;
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Efecto de partículas/decoración de fondo */
@@ -37,10 +61,101 @@
     max-width: 420px;
     position: relative;
     z-index: 1;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                0 8px 25px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 3rem);
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.login-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #667eea);
+    background-size: 300% 100%;
+    animation: gradientMove 4s ease infinite;
+    border-radius: 24px 24px 0 0;
 }
 
 .login-wrapper.with-admin {
     max-width: 850px;
+}
+
+/* Login Visual Section (Left Side) */
+.login-visual {
+    display: none; /* Hidden by default, can be enabled for larger screens */
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.visual-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 500px;
+    color: white;
+}
+
+.visual-logo {
+    max-width: 200px;
+    max-height: 150px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.visual-text h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.visual-text p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Login Form Container (Right Side) */
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .login-card {
@@ -52,6 +167,10 @@
     width: 100%;
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .login-card::before {
@@ -379,6 +498,11 @@
 /* Admin Panel */
 .admin-panel {
     padding-top: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .admin-welcome {
@@ -440,6 +564,11 @@
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 2px solid #eee;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .users-header-small {
@@ -472,6 +601,10 @@
 .users-list {
     max-height: 400px;
     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .user-item {
@@ -570,6 +703,11 @@
     z-index: 1000;
     padding: 1rem;
     animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 @keyframes fadeIn {
@@ -584,6 +722,10 @@
     max-width: 480px;
     max-height: 90vh;
     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     animation: slideUp 0.3s ease;
 }
@@ -677,6 +819,10 @@
     animation: slideIn 0.4s ease-out;
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -886,9 +1032,35 @@ input.code-digit[value] {
 }
 
 /* Responsive adjustments */
+@media (min-width: 1024px) {
+    .login-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    .login-visual {
+        display: flex;
+    }
+    
+    .login-form-container {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
 @media (max-width: 768px) {
     .login-container {
         padding: 1rem;
+        flex-direction: column;
+    }
+    
+    .login-visual {
+        display: none;
+    }
+    
+    .login-form-container {
+        width: 100%;
+        max-width: 100%;
     }
     
     .login-card {

@@ -37,7 +37,7 @@ function Machinery() {
             const data = await api.getMachinery();
             if (data.success && data.data) {
                 const filtered = data.data.filter(item =>
-                    item['Unnamed: 3'] && item['Unnamed: 4']
+                    (item.codigo || item['Unnamed: 3']) && (item.nombre || item['Unnamed: 4'])
                 );
                 setMachinery(filtered);
             }
@@ -68,12 +68,12 @@ function Machinery() {
     const handleEdit = (item, index) => {
         setEditingItem(item.id || item['id'] || null);
         setFormData({
-            codigo: item['Unnamed: 3'] || '',
-            nombre: item['Unnamed: 4'] || '',
-            marca: item['Unnamed: 5'] || '',
-            modelo: item['Unnamed: 6'] || '',
-            año: item['Unnamed: 7'] || '',
-            estado: item['Unnamed: 8'] || 'OPERATIVO',
+            codigo: item.codigo || item['Unnamed: 3'] || '',
+            nombre: item.nombre || item['Unnamed: 4'] || '',
+            marca: item.marca || item['Unnamed: 5'] || '',
+            modelo: item.modelo || item['Unnamed: 6'] || '',
+            año: item.anio || item['Unnamed: 7'] || '',
+            estado: item.estado || item['Unnamed: 8'] || 'OPERATIVO',
             costo_adquisicion: item['costo_adquisicion'] || ''
         });
         setShowModal(true);
@@ -129,18 +129,18 @@ function Machinery() {
 
     const filteredMachinery = machinery.filter(item => {
         const matchesSearch = 
-            (item['Unnamed: 3'] || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-            (item['Unnamed: 4'] || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-            (item['Unnamed: 5'] || '').toLowerCase().includes(searchTerm.toLowerCase());
+            ((item.codigo || item['Unnamed: 3']) || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+            ((item.nombre || item['Unnamed: 4']) || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+            ((item.marca || item['Unnamed: 5']) || '').toLowerCase().includes(searchTerm.toLowerCase());
         
         const matchesFilter = filterStatus === 'all' || 
-            (item['Unnamed: 8'] || 'OPERATIVO') === filterStatus;
+            (item.estado || item['Unnamed: 8'] || 'OPERATIVO') === filterStatus;
         
         return matchesSearch && matchesFilter;
     });
 
     const getStatusCount = (status) => {
-        return machinery.filter(item => (item['Unnamed: 8'] || 'OPERATIVO') === status).length;
+        return machinery.filter(item => (item.estado || item['Unnamed: 8'] || 'OPERATIVO') === status).length;
     };
 
     if (loading) return <Loading message="Cargando maquinaria" />;
@@ -272,21 +272,21 @@ function Machinery() {
                             filteredMachinery.map((item, index) => (
                                 <tr key={index}>
                                     <td>
-                                        <span className="code-badge">{item['Unnamed: 3'] || 'N/A'}</span>
+                                        <span className="code-badge">{item.codigo || item['Unnamed: 3'] || 'N/A'}</span>
                                     </td>
-                                    <td className="item-name" title={item['Unnamed: 4']}>
-                                        {item['Unnamed: 4'] || 'N/A'}
+                                    <td className="item-name" title={item.nombre || item['Unnamed: 4']}>
+                                        {item.nombre || item['Unnamed: 4'] || 'N/A'}
                                     </td>
-                                    <td title={item['Unnamed: 5']}>{item['Unnamed: 5'] || 'N/A'}</td>
-                                    <td title={item['Unnamed: 6']}>{item['Unnamed: 6'] || 'N/A'}</td>
-                                    <td>{item['Unnamed: 7'] || 'N/A'}</td>
+                                    <td title={item.marca || item['Unnamed: 5']}>{item.marca || item['Unnamed: 5'] || 'N/A'}</td>
+                                    <td title={item.modelo || item['Unnamed: 6']}>{item.modelo || item['Unnamed: 6'] || 'N/A'}</td>
+                                    <td>{item.anio || item['Unnamed: 7'] || 'N/A'}</td>
                                     <td>
                                         <span className={`badge ${
-                                            item['Unnamed: 8'] === 'OPERATIVO' ? 'badge-success' : 
-                                            item['Unnamed: 8'] === 'MANTENIMIENTO' ? 'badge-warning' : 
+                                            (item.estado || item['Unnamed: 8']) === 'OPERATIVO' ? 'badge-success' : 
+                                            (item.estado || item['Unnamed: 8']) === 'MANTENIMIENTO' ? 'badge-warning' : 
                                             'badge-error'
                                         }`}>
-                                            {item['Unnamed: 8'] || 'OPERATIVO'}
+                                            {item.estado || item['Unnamed: 8'] || 'OPERATIVO'}
                                         </span>
                                     </td>
                                     <td className="cost-cell">

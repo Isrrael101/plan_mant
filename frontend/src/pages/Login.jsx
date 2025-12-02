@@ -19,6 +19,22 @@ function Login() {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Habilitar scroll en la página de login
+    useEffect(() => {
+        document.body.classList.add('login-page-active');
+        const root = document.getElementById('root');
+        if (root) {
+            root.classList.add('login-page-active');
+        }
+        
+        return () => {
+            document.body.classList.remove('login-page-active');
+            if (root) {
+                root.classList.remove('login-page-active');
+            }
+        };
+    }, []);
+
     // Si el usuario ya está autenticado y no es admin, redirigir al dashboard
     // Si es admin, permitir mostrar gestión de usuarios en el login
     useEffect(() => {

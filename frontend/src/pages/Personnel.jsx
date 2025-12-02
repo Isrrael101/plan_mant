@@ -34,7 +34,7 @@ function Personnel() {
             const data = await api.getPersonnel();
             if (data.success && data.data) {
                 const filtered = data.data.filter(item =>
-                    item['Unnamed: 3'] && item['Unnamed: 3'] !== 'APELLIDOS Y NOMBRES'
+                    (item.nombre_completo || item['Unnamed: 3']) && (item.nombre_completo || item['Unnamed: 3']) !== 'APELLIDOS Y NOMBRES'
                 );
                 setPersonnel(filtered);
             }
@@ -65,12 +65,12 @@ function Personnel() {
     const handleEdit = (person, index) => {
         setEditingItem(person.id || person['id'] || null);
         setFormData({
-            codigo: person['Unnamed: 2'] || '',
-            nombre: person['Unnamed: 3'] || '',
-            ci: person['Unnamed: 4'] || '',
-            cargo: person['Unnamed: 5'] || '',
-            telefono: person['Unnamed: 6'] || '',
-            celular: person['Unnamed: 7'] || '',
+            codigo: person.codigo || person['Unnamed: 2'] || '',
+            nombre: person.nombre_completo || person['Unnamed: 3'] || '',
+            ci: person.ci || person['Unnamed: 4'] || '',
+            cargo: person.cargo || person['Unnamed: 5'] || '',
+            telefono: person.telefono || person['Unnamed: 6'] || '',
+            celular: person.celular || person['Unnamed: 7'] || '',
             tarifa_hora: person['tarifa_hora'] || ''
         });
         setShowModal(true);
@@ -127,14 +127,14 @@ function Personnel() {
     const filteredPersonnel = personnel.filter(person => {
         const searchLower = searchTerm.toLowerCase();
         return (
-            (person['Unnamed: 2'] || '').toLowerCase().includes(searchLower) ||
-            (person['Unnamed: 3'] || '').toLowerCase().includes(searchLower) ||
-            (person['Unnamed: 5'] || '').toLowerCase().includes(searchLower)
+            ((person.codigo || person['Unnamed: 2']) || '').toLowerCase().includes(searchLower) ||
+            ((person.nombre_completo || person['Unnamed: 3']) || '').toLowerCase().includes(searchLower) ||
+            ((person.cargo || person['Unnamed: 5']) || '').toLowerCase().includes(searchLower)
         );
     });
 
     // Get unique positions for stats
-    const positions = [...new Set(personnel.map(p => p['Unnamed: 5']).filter(Boolean))];
+    const positions = [...new Set(personnel.map(p => p.cargo || p['Unnamed: 5']).filter(Boolean))];
 
     if (loading) return <Loading message="Cargando personal" />;
 
@@ -243,28 +243,28 @@ function Personnel() {
                                 <tr key={index}>
                                     <td>{person['INVENTARIO PERSONAL'] || index + 1}</td>
                                     <td>
-                                        <span className="code-badge">{person['Unnamed: 2'] || 'N/A'}</span>
+                                        <span className="code-badge">{person.codigo || person['Unnamed: 2'] || 'N/A'}</span>
                                     </td>
-                                    <td className="personnel-name" title={person['Unnamed: 3']}>
+                                    <td className="personnel-name" title={person.nombre_completo || person['Unnamed: 3']}>
                                         <div className="person-info">
                                             <span className="person-avatar">
-                                                {(person['Unnamed: 3'] || 'U')[0].toUpperCase()}
+                                                {((person.nombre_completo || person['Unnamed: 3']) || 'U')[0].toUpperCase()}
                                             </span>
-                                            <span className="person-name">{person['Unnamed: 3'] || 'N/A'}</span>
+                                            <span className="person-name">{person.nombre_completo || person['Unnamed: 3'] || 'N/A'}</span>
                                         </div>
                                     </td>
-                                    <td>{person['Unnamed: 4'] || 'N/A'}</td>
+                                    <td>{person.ci || person['Unnamed: 4'] || 'N/A'}</td>
                                     <td>
-                                        <span className="cargo-badge">{person['Unnamed: 5'] || 'N/A'}</span>
+                                        <span className="cargo-badge">{person.cargo || person['Unnamed: 5'] || 'N/A'}</span>
                                     </td>
                                     <td className="contact-cell">
-                                        {person['Unnamed: 6'] ? (
-                                            <span className="phone-number">📞 {person['Unnamed: 6']}</span>
+                                        {person.telefono || person['Unnamed: 6'] ? (
+                                            <span className="phone-number">📞 {person.telefono || person['Unnamed: 6']}</span>
                                         ) : 'N/A'}
                                     </td>
                                     <td className="contact-cell">
-                                        {person['Unnamed: 7'] ? (
-                                            <span className="phone-number">📱 {person['Unnamed: 7']}</span>
+                                        {person.celular || person['Unnamed: 7'] ? (
+                                            <span className="phone-number">📱 {person.celular || person['Unnamed: 7']}</span>
                                         ) : 'N/A'}
                                     </td>
                                     <td className="cost-cell">

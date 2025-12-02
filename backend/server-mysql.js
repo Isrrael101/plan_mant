@@ -110,16 +110,24 @@ app.get('/api/machinery', async (req, res) => {
             'SELECT id, codigo, nombre, marca, modelo, anio, estado, costo_adquisicion, horas_totales FROM maquinaria ORDER BY id'
         );
 
+        // Devolver los datos con nombres de columnas correctos
         const data = rows.map(row => ({
+            id: row.id,
+            codigo: row.codigo,
+            nombre: row.nombre,
+            marca: row.marca,
+            modelo: row.modelo,
+            anio: row.anio,
+            estado: row.estado,
+            costo_adquisicion: row.costo_adquisicion || 0,
+            horas_totales: row.horas_totales || 0,
+            // Mantener compatibilidad con código legacy que usa "Unnamed: X"
             'Unnamed: 3': row.codigo,
             'Unnamed: 4': row.nombre,
             'Unnamed: 5': row.marca,
             'Unnamed: 6': row.modelo,
             'Unnamed: 7': row.anio,
-            'Unnamed: 8': row.estado,
-            'costo_adquisicion': row.costo_adquisicion || 0,
-            'horas_totales': row.horas_totales || 0,
-            'id': row.id
+            'Unnamed: 8': row.estado
         }));
 
         res.json({ success: true, data, rows: rows.length });
@@ -349,16 +357,23 @@ app.get('/api/personnel', async (req, res) => {
         );
 
         const data = rows.map((row, index) => ({
+            id: row.id,
+            codigo: row.codigo,
+            nombre_completo: row.nombre_completo,
+            ci: row.ci,
+            cargo: row.cargo,
+            telefono: row.telefono,
+            celular: row.celular,
+            tarifa_hora: row.tarifa_hora || 0,
+            estado: row.estado,
+            // Mantener compatibilidad con código legacy
             'INVENTARIO PERSONAL': index + 1,
             'Unnamed: 2': row.codigo,
             'Unnamed: 3': row.nombre_completo,
             'Unnamed: 4': row.ci,
             'Unnamed: 5': row.cargo,
             'Unnamed: 6': row.telefono,
-            'Unnamed: 7': row.celular,
-            'tarifa_hora': row.tarifa_hora || 0,
-            'estado': row.estado,
-            'id': row.id
+            'Unnamed: 7': row.celular
         }));
 
         res.json({ success: true, data, rows: rows.length });
@@ -428,14 +443,19 @@ app.get('/api/tools', async (req, res) => {
         );
 
         const data = rows.map((row, index) => ({
+            id: row.id,
+            codigo: row.codigo,
+            nombre: row.nombre,
+            marca: row.marca,
+            estado: row.estado,
+            categoria: row.categoria,
+            costo: row.costo || 0,
+            // Mantener compatibilidad con código legacy
             'Unnamed: 1': index + 1,
             'Unnamed: 2': row.codigo,
             'Unnamed: 3': row.nombre,
             'Unnamed: 4': row.marca,
-            'Unnamed: 5': row.estado,
-            'categoria': row.categoria,
-            'costo': row.costo || 0,
-            'id': row.id
+            'Unnamed: 5': row.estado
         }));
 
         res.json({ success: true, data, rows: rows.length });
@@ -505,15 +525,21 @@ app.get('/api/supplies', async (req, res) => {
         );
 
         const data = rows.map((row, index) => ({
+            id: row.id,
+            codigo: row.codigo,
+            nombre: row.nombre,
+            unidad: row.unidad,
+            precio_unitario: row.precio_unitario || 0,
+            cantidad: row.cantidad || 0,
+            stock_minimo: row.stock_minimo || 0,
+            categoria: row.categoria,
+            // Mantener compatibilidad con código legacy
             'Unnamed: 1': index + 1,
             'Unnamed: 2': row.codigo,
             'Unnamed: 3': row.nombre,
             'Unnamed: 4': row.unidad,
             'Unnamed: 5': row.precio_unitario,
-            'Unnamed: 6': row.cantidad,
-            'stock_minimo': row.stock_minimo,
-            'categoria': row.categoria,
-            'id': row.id
+            'Unnamed: 6': row.cantidad
         }));
 
         res.json({ success: true, data, rows: rows.length });

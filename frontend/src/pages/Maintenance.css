@@ -26,6 +26,8 @@
     max-height: calc(100vh - 200px);
     position: sticky;
     top: 100px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 .sidebar-header {
@@ -81,7 +83,11 @@
 .sidebar-nav {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: var(--space-3);
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Category */
@@ -199,10 +205,14 @@
     flex-direction: column;
     overflow: hidden;
     overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Welcome View */
@@ -267,6 +277,7 @@
     min-height: 0;
     overflow: visible;
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 .sheet-header {
@@ -297,6 +308,9 @@
     overflow-y: auto;
     overflow-x: hidden;
     min-height: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .plan-stats {
@@ -328,8 +342,12 @@
 /* Plan Table */
 .plan-table-wrapper {
     overflow-x: auto;
+    overflow-y: visible;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .plan-table {
@@ -770,12 +788,15 @@
 .maintenances-table-view {
     width: 100% !important;
     overflow-x: hidden !important;
-    overflow-y: visible !important;
+    overflow-y: auto !important;
     padding: var(--space-4) !important;
     box-sizing: border-box;
     position: relative;
     display: block;
     max-width: 100%;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
 }
 
 .maintenances-table-view .table-container {
@@ -805,6 +826,9 @@
     border-radius: var(--radius-lg);
     overflow-x: auto;
     overflow-y: visible;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 .maintenances-summary {

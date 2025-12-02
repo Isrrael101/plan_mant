@@ -42,14 +42,14 @@ function Inventory() {
 
             if (toolsData.success && toolsData.data) {
                 const filtered = toolsData.data.filter(item =>
-                    item['Unnamed: 3'] && item['Unnamed: 3'] !== 'HERRAMIENTA'
+                    (item.nombre || item['Unnamed: 3']) && (item.nombre || item['Unnamed: 3']) !== 'HERRAMIENTA'
                 );
                 setTools(filtered);
             }
 
             if (suppliesData.success && suppliesData.data) {
                 const filtered = suppliesData.data.filter(item =>
-                    item['Unnamed: 3'] && item['Unnamed: 3'] !== 'INSUMOS'
+                    (item.nombre || item['Unnamed: 3']) && (item.nombre || item['Unnamed: 3']) !== 'INSUMOS'
                 );
                 setSupplies(filtered);
             }
@@ -68,8 +68,8 @@ function Inventory() {
         if (!searchTerm) return items;
         const term = searchTerm.toLowerCase();
         return items.filter(item => {
-            const name = (item['Unnamed: 3'] || '').toLowerCase();
-            const code = (item['Unnamed: 2'] || '').toLowerCase();
+            const name = ((item.nombre || item['Unnamed: 3']) || '').toLowerCase();
+            const code = ((item.codigo || item['Unnamed: 2']) || '').toLowerCase();
             return name.includes(term) || code.includes(term);
         });
     };
@@ -96,10 +96,10 @@ function Inventory() {
         setEditingIndex(index);
         if (type === 'tool') {
             setFormData({
-                codigo: item['Unnamed: 2'] || '',
-                nombre: item['Unnamed: 3'] || '',
-                marca: item['Unnamed: 4'] || '',
-                estado: item['Unnamed: 5'] || 'OPERATIVO',
+                codigo: item.codigo || item['Unnamed: 2'] || '',
+                nombre: item.nombre || item['Unnamed: 3'] || '',
+                marca: item.marca || item['Unnamed: 4'] || '',
+                estado: item.estado || item['Unnamed: 5'] || 'OPERATIVO',
                 unidad: '',
                 precio: '',
                 cantidad: '',
@@ -107,13 +107,13 @@ function Inventory() {
             });
         } else {
             setFormData({
-                codigo: item['Unnamed: 2'] || '',
-                nombre: item['Unnamed: 3'] || '',
+                codigo: item.codigo || item['Unnamed: 2'] || '',
+                nombre: item.nombre || item['Unnamed: 3'] || '',
                 marca: '',
                 estado: '',
-                unidad: item['Unnamed: 4'] || '',
-                precio: item['Unnamed: 5'] || '',
-                cantidad: item['Unnamed: 6'] || ''
+                unidad: item.unidad || item['Unnamed: 4'] || '',
+                precio: item.precio_unitario || item['Unnamed: 5'] || '',
+                cantidad: item.cantidad || item['Unnamed: 6'] || ''
             });
         }
         setShowModal(true);
@@ -193,7 +193,7 @@ function Inventory() {
     const filteredSupplies = filterItems(supplies);
 
     const getToolStatusCount = (status) => {
-        return tools.filter(item => (item['Unnamed: 5'] || 'OPERATIVO') === status).length;
+        return tools.filter(item => (item.estado || item['Unnamed: 5'] || 'OPERATIVO') === status).length;
     };
 
     if (loading) return <Loading message="Cargando inventario" />;
@@ -324,21 +324,21 @@ function Inventory() {
                             ) : (
                                 filteredTools.map((tool, index) => (
                                     <tr key={index}>
-                                        <td>{tool['Unnamed: 1'] || index + 1}</td>
+                                        <td>{index + 1}</td>
                                         <td>
-                                            <span className="code-badge">{tool['Unnamed: 2'] || 'N/A'}</span>
+                                            <span className="code-badge">{tool.codigo || tool['Unnamed: 2'] || 'N/A'}</span>
                                         </td>
-                                        <td className="item-name" title={tool['Unnamed: 3']}>
-                                            {tool['Unnamed: 3'] || 'N/A'}
+                                        <td className="item-name" title={tool.nombre || tool['Unnamed: 3']}>
+                                            {tool.nombre || tool['Unnamed: 3'] || 'N/A'}
                                         </td>
-                                        <td>{tool['Unnamed: 4'] || 'N/A'}</td>
+                                        <td>{tool.marca || tool['Unnamed: 4'] || 'N/A'}</td>
                                         <td>
                                             <span className={`badge ${
-                                                tool['Unnamed: 5'] === 'OPERATIVO' ? 'badge-success' : 
-                                                tool['Unnamed: 5'] === 'MANTENIMIENTO' ? 'badge-warning' : 
+                                                (tool.estado || tool['Unnamed: 5']) === 'OPERATIVO' ? 'badge-success' : 
+                                                (tool.estado || tool['Unnamed: 5']) === 'MANTENIMIENTO' ? 'badge-warning' : 
                                                 'badge-error'
                                             }`}>
-                                                {tool['Unnamed: 5'] || 'N/A'}
+                                                {tool.estado || tool['Unnamed: 5'] || 'N/A'}
                                             </span>
                                         </td>
                                         <td className="cost-cell">
@@ -404,25 +404,25 @@ function Inventory() {
                             ) : (
                                 filteredSupplies.map((supply, index) => (
                                     <tr key={index}>
-                                        <td>{supply['Unnamed: 1'] || index + 1}</td>
+                                        <td>{index + 1}</td>
                                         <td>
-                                            <span className="code-badge">{supply['Unnamed: 2'] || 'N/A'}</span>
+                                            <span className="code-badge">{supply.codigo || supply['Unnamed: 2'] || 'N/A'}</span>
                                         </td>
-                                        <td className="item-name" title={supply['Unnamed: 3']}>
-                                            {supply['Unnamed: 3'] || 'N/A'}
+                                        <td className="item-name" title={supply.nombre || supply['Unnamed: 3']}>
+                                            {supply.nombre || supply['Unnamed: 3'] || 'N/A'}
                                         </td>
-                                        <td>{supply['Unnamed: 4'] || 'N/A'}</td>
+                                        <td>{supply.unidad || supply['Unnamed: 4'] || 'N/A'}</td>
                                         <td className="price-cell">
-                                            {safeFormatCurrency(supply['Unnamed: 5']) ? (
-                                                <span>{safeFormatCurrency(supply['Unnamed: 5'])}</span>
+                                            {safeFormatCurrency(supply.precio_unitario || supply['Unnamed: 5']) ? (
+                                                <span>{safeFormatCurrency(supply.precio_unitario || supply['Unnamed: 5'])}</span>
                                             ) : (
                                                 <span className="no-data">-</span>
                                             )}
                                         </td>
                                         <td>
-                                            {safeFormatInteger(supply['Unnamed: 6']) ? (
+                                            {safeFormatInteger(supply.cantidad || supply['Unnamed: 6']) ? (
                                                 <span className="quantity-badge">
-                                                    {safeFormatInteger(supply['Unnamed: 6'])}
+                                                    {safeFormatInteger(supply.cantidad || supply['Unnamed: 6'])}
                                                 </span>
                                             ) : (
                                                 <span className="no-data">-</span>
