@@ -19,6 +19,9 @@ COPY backend/services ./services
 
 # Variables de entorno
 ENV NODE_ENV=production
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV PYTHONIOENCODING=utf-8
 
 # Exponer puerto
 EXPOSE 3001

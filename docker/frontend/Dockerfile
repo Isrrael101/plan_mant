@@ -18,6 +18,10 @@ RUN npm run build
 # Etapa de producción con Nginx
 FROM nginx:alpine
 
+# Variables de entorno UTF-8
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
 # Instalar wget para healthcheck
 RUN apk add --no-cache wget
 

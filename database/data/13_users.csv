@@ -1,0 +1,17 @@
+id,username,password,nombre_completo,email,rol,estado,two_factor_secret,two_factor_enabled,created_at
+1,admin,admin123_hashed_placeholder,Administrador del Sistema,admin@mttopro.com,ADMIN,1,,0,2025-12-03 08:01:36
+2,josé.gonzález,password123,José González Rojas,josé.gonzález@outlook.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+3,patricia.silva,password123,Patricia Silva Reyes,patricia.silva@hotmail.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+4,rosa.fernández,password123,Rosa Fernández Ramírez,rosa.fernández@empresa.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+5,josé.gómez,password123,José Gómez Castillo,josé.gómez@hotmail.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+6,carlos.rivera,password123,Carlos Rivera Cruz,carlos.rivera@outlook.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+7,ricardo.fernández,password123,Ricardo Fernández Alvarez,ricardo.fernández@outlook.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+8,hugo.ortiz,password123,Hugo Ortiz González,hugo.ortiz@outlook.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+9,fernando.díaz,password123,Fernando Díaz Pérez,fernando.díaz@gmail.com,ADMIN,1,,0,2025-12-03 08:01:36
+10,diego.ramírez,password123,Diego Ramírez Rodríguez,diego.ramírez@hotmail.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+11,fernando.flores,password123,Fernando Flores Reyes,fernando.flores@outlook.com,OPERADOR,1,,0,2025-12-03 08:01:36
+12,sandra.ortiz,password123,Sandra Ortiz Ruiz,sandra.ortiz@gmail.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+13,hugo.fernández,password123,Hugo Fernández Romero,hugo.fernández@gmail.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+14,francisco.lópez,password123,Francisco López Ruiz,francisco.lópez@outlook.com,ADMIN,1,,0,2025-12-03 08:01:36
+15,javier.gonzález,password123,Javier González Silva,javier.gonzález@hotmail.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36
+16,elena.romero,password123,Elena Romero Pérez,elena.romero@empresa.com,MANTENIMIENTO,1,,0,2025-12-03 08:01:36

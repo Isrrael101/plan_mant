@@ -1,61 +1,61 @@
 id,codigo,nombre,marca,estado,categoria,costo
-1,HER-001,Llave de Tubo,Bosch,OPERATIVO,Manual,1474.79
-2,HER-002,Llave Allen,DeWalt,INACTIVO,Manual,863.63
-3,HER-003,Destornillador Phillips,Stanley,MANTENIMIENTO,Manual,1225.02
-4,HER-004,Destornillador Plano,Bosch,OPERATIVO,Manual,997.27
-5,HER-005,Martillo de Bola,Proto,INACTIVO,Manual,1451.94
-6,HER-006,Alicate Universal,Stanley,OPERATIVO,Manual,1960.11
-7,HER-007,Llave Stilson,Makita,INACTIVO,Manual,592.79
-8,HER-008,Torquímetro,Proto,OPERATIVO,Medición,1205.92
-9,HER-009,Calibrador Digital,Makita,INACTIVO,Medición,1518.4
-10,HER-010,Micrómetro,Proto,MANTENIMIENTO,Medición,1979.41
-11,HER-011,Nivel de Burbuja,Bosch,OPERATIVO,Medición,498.87
-12,HER-012,Manómetro,Proto,INACTIVO,Medición,944.21
-13,HER-013,Multímetro Digital,Snap-on,OPERATIVO,Medición,870.78
-14,HER-014,Taladro Industrial,Makita,OPERATIVO,Eléctrica,753.09
-15,HER-015,Amoladora Angular,Stanley,OPERATIVO,Eléctrica,267.51
-16,HER-016,Soldadora MIG,Stanley,OPERATIVO,Soldadura,1103.37
-17,HER-017,Soldadora TIG,Stanley,OPERATIVO,Soldadura,309.3
-18,HER-018,Equipo Oxicorte,DeWalt,INACTIVO,Corte,1642.17
-19,HER-019,Compresor de Aire 100 PSI,Milwaukee,INACTIVO,Neumática,1313.42
-20,HER-020,Pistola de Impacto,DeWalt,OPERATIVO,Neumática,1878.8
-21,HER-021,Gato Hidráulico 20T,Makita,OPERATIVO,Hidráulica,933.5
-22,HER-022,Prensa Hidráulica,Bahco,OPERATIVO,Hidráulica,169.74
-23,HER-023,Tecle 5T,DeWalt,OPERATIVO,Elevación,352.07
-24,HER-024,Eslinga de Cadena,Snap-on,OPERATIVO,Elevación,597.98
-25,HER-025,Engrasadora Manual,Bosch,OPERATIVO,Manual,498.88
-26,HER-026,Extractor de Rodamientos,Milwaukee,INACTIVO,Manual,463.09
-27,HER-027,Llave Stilson Variante 27,Milwaukee,OPERATIVO,Manual,755.28
-28,HER-028,Torquímetro Variante 28,Bahco,OPERATIVO,Medición,1476.19
-29,HER-029,Micrómetro Variante 29,Makita,OPERATIVO,Medición,504.87
-30,HER-030,Eslinga de Cadena Variante 30,Bahco,OPERATIVO,Elevación,877.65
-31,HER-031,Nivel de Burbuja Variante 31,Proto,OPERATIVO,Medición,1180.6
-32,HER-032,Destornillador Plano Variante 32,Makita,MANTENIMIENTO,Manual,1652.34
-33,HER-033,Martillo de Bola Variante 33,Milwaukee,INACTIVO,Manual,1361.81
-34,HER-034,Destornillador Phillips Variante 34,Bosch,MANTENIMIENTO,Manual,1906.23
-35,HER-035,Llave Allen Variante 35,Makita,INACTIVO,Manual,1901.73
-36,HER-036,Engrasadora Manual Variante 36,Stanley,INACTIVO,Manual,894.98
-37,HER-037,Llave Allen Variante 37,DeWalt,MANTENIMIENTO,Manual,1309.85
-38,HER-038,Extractor de Rodamientos Variante 38,Makita,OPERATIVO,Manual,1294.75
-39,HER-039,Gato Hidráulico 20T Variante 39,Makita,MANTENIMIENTO,Hidráulica,1528.42
-40,HER-040,Martillo de Bola Variante 40,Makita,OPERATIVO,Manual,589.18
-41,HER-041,Martillo de Bola Variante 41,Stanley,OPERATIVO,Manual,1752.86
-42,HER-042,Amoladora Angular Variante 42,Bahco,MANTENIMIENTO,Eléctrica,1120.09
-43,HER-043,Pistola de Impacto Variante 43,Snap-on,OPERATIVO,Neumática,1563.07
-44,HER-044,Tecle 5T Variante 44,Makita,MANTENIMIENTO,Elevación,553.08
-45,HER-045,Pistola de Impacto Variante 45,Snap-on,OPERATIVO,Neumática,1297.67
-46,HER-046,Calibrador Digital Variante 46,Makita,INACTIVO,Medición,1716.29
-47,HER-047,Nivel de Burbuja Variante 47,Stanley,OPERATIVO,Medición,1549.12
-48,HER-048,Compresor de Aire 100 PSI Variante 48,Milwaukee,OPERATIVO,Neumática,1136.11
-49,HER-049,Soldadora MIG Variante 49,Stanley,OPERATIVO,Soldadura,1604.57
-50,HER-050,Martillo de Bola Variante 50,Bahco,OPERATIVO,Manual,402.86
-51,HER-051,Engrasadora Manual Variante 51,DeWalt,OPERATIVO,Manual,1879.72
-52,HER-052,Gato Hidráulico 20T Variante 52,Stanley,OPERATIVO,Hidráulica,91.67
-53,HER-053,Eslinga de Cadena Variante 53,Bahco,INACTIVO,Elevación,649.01
-54,HER-054,Tecle 5T Variante 54,Bahco,INACTIVO,Elevación,1835.72
-55,HER-055,Taladro Industrial Variante 55,Snap-on,OPERATIVO,Eléctrica,1716.62
-56,HER-056,Soldadora TIG Variante 56,Snap-on,OPERATIVO,Soldadura,1787.39
-57,HER-057,Destornillador Phillips Variante 57,Stanley,OPERATIVO,Manual,1896.05
-58,HER-058,Equipo Oxicorte Variante 58,Bosch,OPERATIVO,Corte,1613.18
-59,HER-059,Nivel de Burbuja Variante 59,Snap-on,OPERATIVO,Medición,1477.46
-60,HER-060,Micrómetro Variante 60,Bosch,INACTIVO,Medición,742.97
+1,HER-001,Llave de Tubo,DeWalt,OPERATIVO,Manual,1718.49
+2,HER-002,Llave Allen,Proto,OPERATIVO,Manual,436.66
+3,HER-003,Destornillador Phillips,Stanley,OPERATIVO,Manual,1561.83
+4,HER-004,Destornillador Plano,Snap-on,OPERATIVO,Manual,2086.19
+5,HER-005,Martillo de Bola,Ingersoll Rand,OPERATIVO,Manual,577.94
+6,HER-006,Alicate Universal,Hilti,OPERATIVO,Manual,215.03
+7,HER-007,Llave Stilson,Hilti,MANTENIMIENTO,Manual,2440.96
+8,HER-008,Torquímetro,Proto,OPERATIVO,Medición,1677.94
+9,HER-009,Calibrador Digital,Ingersoll Rand,OPERATIVO,Medición,846.14
+10,HER-010,Micrómetro,Milwaukee,MANTENIMIENTO,Medición,390.17
+11,HER-011,Nivel de Burbuja,Proto,OPERATIVO,Medición,263.06
+12,HER-012,Manómetro,Stanley,OPERATIVO,Medición,875.96
+13,HER-013,Multímetro Digital,Bosch,INACTIVO,Medición,2439.89
+14,HER-014,Taladro Industrial,Bosch,OPERATIVO,Eléctrica,2310.91
+15,HER-015,Amoladora Angular,Bahco,INACTIVO,Eléctrica,2004.46
+16,HER-016,Soldadora MIG,Proto,OPERATIVO,Soldadura,425.56
+17,HER-017,Soldadora TIG,Bosch,INACTIVO,Soldadura,939.86
+18,HER-018,Equipo Oxicorte,DeWalt,INACTIVO,Corte,317.51
+19,HER-019,Compresor de Aire 100 PSI,Stanley,OPERATIVO,Neumática,469.61
+20,HER-020,Pistola de Impacto,Bosch,INACTIVO,Neumática,2162.02
+21,HER-021,Gato Hidráulico 20T,DeWalt,OPERATIVO,Hidráulica,2027.6
+22,HER-022,Prensa Hidráulica,Stanley,MANTENIMIENTO,Hidráulica,1658.94
+23,HER-023,Tecle 5T,Bahco,OPERATIVO,Elevación,806.79
+24,HER-024,Eslinga de Cadena,Ingersoll Rand,INACTIVO,Elevación,2164.96
+25,HER-025,Engrasadora Manual,Makita,OPERATIVO,Manual,836.02
+26,HER-026,Extractor de Rodamientos,Bahco,INACTIVO,Manual,1203.67
+27,HER-027,"Llave de Impacto 1""",Snap-on,OPERATIVO,Neumática,808.05
+28,HER-028,Esmeril de Banco,Bahco,OPERATIVO,Eléctrica,256.27
+29,HER-029,Sierra Sable,Makita,OPERATIVO,Eléctrica,1595.1
+30,HER-030,Pinza Amperimétrica,Bahco,OPERATIVO,Medición,2296.03
+31,HER-031,Tacómetro Digital,Makita,OPERATIVO,Medición,552.1
+32,HER-032,Termómetro Infrarrojo,Hilti,OPERATIVO,Medición,1138.96
+33,HER-033,"Juego de Dados 3/4""",Makita,OPERATIVO,Manual,2064.86
+34,HER-034,Llave Dinamométrica,Makita,OPERATIVO,Medición,584.89
+35,HER-035,Gata Lagarto,Milwaukee,INACTIVO,Hidráulica,1507.7
+36,HER-036,Pluma Hidráulica,Snap-on,MANTENIMIENTO,Elevación,1237.47
+37,HER-037,Mesa Elevadora,Bosch,OPERATIVO,Elevación,826.5
+38,HER-038,Cizalla Manual,Proto,OPERATIVO,Corte,405.46
+39,HER-039,Sierra Circular,Proto,MANTENIMIENTO,Eléctrica,1316.24
+40,HER-040,Lijadora Orbital,Hilti,INACTIVO,Eléctrica,954.59
+41,HER-041,Pistola de Calor,Hilti,OPERATIVO,Eléctrica,2060.55
+42,HER-042,Cargador de Baterías,Milwaukee,OPERATIVO,Eléctrica,1263.11
+43,HER-043,Probador de Inyectores,Proto,INACTIVO,Medición,894.51
+44,HER-044,Analizador de Gases,Bahco,OPERATIVO,Medición,2449.26
+45,HER-045,Estetoscopio Mecánico,Milwaukee,OPERATIVO,Medición,1472.51
+46,HER-046,Comparador de Carátula,DeWalt,OPERATIVO,Medición,750.38
+47,HER-047,Goniómetro,Milwaukee,MANTENIMIENTO,Medición,1686.98
+48,HER-048,Remachadora Neumática,DeWalt,MANTENIMIENTO,Neumática,1745.98
+49,HER-049,Taladro de Banco,Snap-on,OPERATIVO,Eléctrica,596.93
+50,HER-050,Pistola de Pintar,Snap-on,OPERATIVO,Neumática,1658.16
+51,HER-051,Llave Dinamométrica Pro,Proto,INACTIVO,Medición,1279.65
+52,HER-052,Probador de Inyectores Pro,Ingersoll Rand,OPERATIVO,Medición,1896.5
+53,HER-053,Remachadora Neumática Pro,Makita,OPERATIVO,Neumática,423.55
+54,HER-054,Llave de Tubo Pro,Hilti,OPERATIVO,Manual,202.79
+55,HER-055,Engrasadora Manual Pro,Ingersoll Rand,OPERATIVO,Manual,2350.92
+56,HER-056,Compresor de Aire 100 PSI Pro,Bosch,INACTIVO,Neumática,289.98
+57,HER-057,Remachadora Neumática Pro,Bosch,MANTENIMIENTO,Neumática,1496.14
+58,HER-058,Pistola de Pintar Pro,DeWalt,MANTENIMIENTO,Neumática,1858.58
+59,HER-059,Goniómetro Pro,Makita,MANTENIMIENTO,Medición,844.89
+60,HER-060,Pinza Amperimétrica Pro,DeWalt,OPERATIVO,Medición,249.74

@@ -888,7 +888,7 @@ function Maintenance() {
                                                 <option value="">Seleccionar...</option>
                                                 {machinery.map(m => (
                                                     <option key={m.id} value={m.id}>
-                                                        {m.nombre || m['Unnamed: 4']} ({m.codigo || m['Unnamed: 3']})
+                                                        {m.nombre} ({m.codigo})
                                                     </option>
                                                 ))}
                                             </select>
@@ -1058,7 +1058,7 @@ function Maintenance() {
                                                 <option value="">Seleccionar...</option>
                                                 {machinery.map(m => (
                                                     <option key={m.id} value={m.id}>
-                                                        {m.nombre || m['Unnamed: 4']} ({m.codigo || m['Unnamed: 3']})
+                                                        {m.nombre} ({m.codigo})
                                                     </option>
                                                 ))}
                                             </select>

@@ -1,81 +1,81 @@
 id,codigo,nombre,unidad,precio_unitario,cantidad,stock_minimo,categoria
-1,INS-001,Aceite de Motor 15W40,Litro,22.6,209,50,Lubricantes
-2,INS-002,Aceite Hidráulico ISO 46,Litro,18.63,49,39,Hidráulicos
-3,INS-003,Aceite Transmisión,Litro,28.41,309,49,Lubricantes
-4,INS-004,Aceite de Reductor,Litro,24.05,343,32,Lubricantes
-5,INS-005,Grasa de Rodamientos,Kg,19.17,329,25,Lubricantes
-6,INS-006,Grasa EP2,Kg,15.65,323,44,Lubricantes
-7,INS-007,Filtro de Aceite Motor,Unidad,54.31,112,16,Filtros
-8,INS-008,Filtro de Combustible,Unidad,38.39,232,5,Filtros
-9,INS-009,Filtro de Aire Primario,Unidad,153.52,379,40,Filtros
-10,INS-010,Filtro de Aire Secundario,Unidad,76.95,216,21,Filtros
-11,INS-011,Filtro Hidráulico,Unidad,182.04,133,14,Filtros
-12,INS-012,Filtro de Transmisión,Unidad,112.53,467,46,Filtros
-13,INS-013,Refrigerante Anticongelante,Litro,21.42,47,37,Químicos
-14,INS-014,Líquido de Frenos DOT4,Litro,41.95,247,10,Químicos
-15,INS-015,Desengrasante Industrial,Litro,22.71,80,24,Químicos
-16,INS-016,Neumático 23.5R25,Unidad,3964.04,376,40,Neumáticos
-17,INS-017,Neumático 17.5R25,Unidad,2959.45,168,6,Neumáticos
-18,INS-018,Cámara de Llanta,Unidad,168.23,294,32,Neumáticos
-19,INS-019,Batería 12V 150Ah,Unidad,692.57,138,17,Eléctricos
-20,INS-020,Cable de Batería,Metro,23.25,267,9,Eléctricos
-21,INS-021,Fusible 30A,Unidad,4.69,157,12,Eléctricos
-22,INS-022,Foco Halógeno 24V,Unidad,45.22,417,49,Eléctricos
-23,INS-023,Correa de Alternador,Unidad,77.47,18,43,Repuestos
-24,INS-024,Rodamiento 6205,Unidad,44.49,268,31,Repuestos
-25,INS-025,Empaque de Culata,Unidad,252.67,45,34,Repuestos
-26,INS-026,"Manguera Hidráulica 1/2""",Metro,66.92,476,17,Hidráulicos
-27,INS-027,Conexión Rápida,Unidad,39.85,199,44,Hidráulicos
-28,INS-028,Cilindro Hidráulico,Unidad,1350.76,412,42,Hidráulicos
-29,INS-029,Bomba Hidráulica,Unidad,2962.21,406,21,Hidráulicos
-30,INS-030,Trapo Industrial,Kg,9.85,493,44,Consumibles
-31,INS-031,Silicona Roja,Unidad,24.59,485,22,Consumibles
-32,INS-032,Cinta Aislante,Rollo,13.99,191,10,Consumibles
-33,INS-033,Cinta Aislante Variante 33,Rollo,10.95,410,23,Consumibles
-34,INS-034,Rodamiento 6205 Variante 34,Unidad,53.29,285,45,Repuestos
-35,INS-035,Fusible 30A Variante 35,Unidad,5.78,262,30,Eléctricos
-36,INS-036,Batería 12V 150Ah Variante 36,Unidad,867.16,472,42,Eléctricos
-37,INS-037,Neumático 23.5R25 Variante 37,Unidad,4664.11,169,37,Neumáticos
-38,INS-038,Desengrasante Industrial Variante 38,Litro,21.04,343,8,Químicos
-39,INS-039,Desengrasante Industrial Variante 39,Litro,19.86,309,27,Químicos
-40,INS-040,Grasa de Rodamientos Variante 40,Kg,13.22,102,28,Lubricantes
-41,INS-041,Rodamiento 6205 Variante 41,Unidad,55.7,240,8,Repuestos
-42,INS-042,Correa de Alternador Variante 42,Unidad,88.45,39,28,Repuestos
-43,INS-043,Rodamiento 6205 Variante 43,Unidad,55.3,64,36,Repuestos
-44,INS-044,Aceite Hidráulico ISO 46 Variante 44,Litro,22.01,291,50,Hidráulicos
-45,INS-045,Correa de Alternador Variante 45,Unidad,103.68,226,37,Repuestos
-46,INS-046,Bomba Hidráulica Variante 46,Unidad,2133.66,48,29,Hidráulicos
-47,INS-047,Cinta Aislante Variante 47,Rollo,10.46,389,42,Consumibles
-48,INS-048,Grasa EP2 Variante 48,Kg,13.54,239,33,Lubricantes
-49,INS-049,Neumático 17.5R25 Variante 49,Unidad,4020.01,199,13,Neumáticos
-50,INS-050,Aceite de Reductor Variante 50,Litro,26.83,495,29,Lubricantes
-51,INS-051,Empaque de Culata Variante 51,Unidad,285.17,38,49,Repuestos
-52,INS-052,Cable de Batería Variante 52,Metro,30.6,96,34,Eléctricos
-53,INS-053,Empaque de Culata Variante 53,Unidad,314.96,464,30,Repuestos
-54,INS-054,Empaque de Culata Variante 54,Unidad,289.96,96,40,Repuestos
-55,INS-055,Cilindro Hidráulico Variante 55,Unidad,1559.76,17,25,Hidráulicos
-56,INS-056,Batería 12V 150Ah Variante 56,Unidad,810.73,101,13,Eléctricos
-57,INS-057,Silicona Roja Variante 57,Unidad,32.3,485,24,Consumibles
-58,INS-058,Filtro de Aire Secundario Variante 58,Unidad,83.68,443,5,Filtros
-59,INS-059,Grasa EP2 Variante 59,Kg,15.9,205,47,Lubricantes
-60,INS-060,Filtro de Combustible Variante 60,Unidad,32.67,238,41,Filtros
-61,INS-061,"Manguera Hidráulica 1/2"" Variante 61",Metro,55.11,414,40,Hidráulicos
-62,INS-062,Bomba Hidráulica Variante 62,Unidad,2513.71,26,37,Hidráulicos
-63,INS-063,Filtro de Aire Secundario Variante 63,Unidad,108.41,155,49,Filtros
-64,INS-064,Líquido de Frenos DOT4 Variante 64,Litro,37.39,333,31,Químicos
-65,INS-065,Aceite Hidráulico ISO 46 Variante 65,Litro,16.21,484,19,Hidráulicos
-66,INS-066,Filtro de Transmisión Variante 66,Unidad,87.62,390,25,Filtros
-67,INS-067,Aceite Transmisión Variante 67,Litro,32.63,311,14,Lubricantes
-68,INS-068,Fusible 30A Variante 68,Unidad,5.19,492,39,Eléctricos
-69,INS-069,Cinta Aislante Variante 69,Rollo,11.83,196,17,Consumibles
-70,INS-070,Desengrasante Industrial Variante 70,Litro,18.43,149,28,Químicos
-71,INS-071,"Manguera Hidráulica 1/2"" Variante 71",Metro,80.71,244,27,Hidráulicos
-72,INS-072,Batería 12V 150Ah Variante 72,Unidad,879.87,389,35,Eléctricos
-73,INS-073,Cable de Batería Variante 73,Metro,26.21,83,48,Eléctricos
-74,INS-074,Cilindro Hidráulico Variante 74,Unidad,1428.35,248,14,Hidráulicos
-75,INS-075,Grasa EP2 Variante 75,Kg,15.27,484,40,Lubricantes
-76,INS-076,Filtro de Aire Primario Variante 76,Unidad,102.65,258,9,Filtros
-77,INS-077,Refrigerante Anticongelante Variante 77,Litro,19.39,385,44,Químicos
-78,INS-078,Filtro de Aceite Motor Variante 78,Unidad,57.81,60,41,Filtros
-79,INS-079,Grasa EP2 Variante 79,Kg,13.21,88,22,Lubricantes
-80,INS-080,Filtro de Aire Secundario Variante 80,Unidad,91.42,338,41,Filtros
+1,INS-001,Aceite de Motor 15W40,Litro,26.81,302,53,Lubricantes
+2,INS-002,Aceite Hidráulico ISO 46,Litro,17.88,555,44,Hidráulicos
+3,INS-003,Aceite Transmisión,Litro,36.87,596,62,Lubricantes
+4,INS-004,Aceite de Reductor,Litro,27.7,633,11,Lubricantes
+5,INS-005,Grasa de Rodamientos,Kg,13.83,397,96,Lubricantes
+6,INS-006,Grasa EP2,Kg,11.87,528,60,Lubricantes
+7,INS-007,Filtro de Aceite Motor,Unidad,40.85,435,16,Filtros
+8,INS-008,Filtro de Combustible,Unidad,41.64,124,57,Filtros
+9,INS-009,Filtro de Aire Primario,Unidad,119.93,137,16,Filtros
+10,INS-010,Filtro de Aire Secundario,Unidad,79.32,741,30,Filtros
+11,INS-011,Filtro Hidráulico,Unidad,146.31,97,74,Filtros
+12,INS-012,Filtro de Transmisión,Unidad,96.61,646,27,Filtros
+13,INS-013,Refrigerante Anticongelante,Litro,21.9,619,71,Químicos
+14,INS-014,Líquido de Frenos DOT4,Litro,32.61,545,93,Químicos
+15,INS-015,Desengrasante Industrial,Litro,18.94,101,87,Químicos
+16,INS-016,Neumático 23.5R25,Unidad,4290.92,536,55,Neumáticos
+17,INS-017,Neumático 17.5R25,Unidad,3202.55,481,51,Neumáticos
+18,INS-018,Cámara de Llanta,Unidad,176.73,413,52,Neumáticos
+19,INS-019,Batería 12V 150Ah,Unidad,895.75,736,84,Eléctricos
+20,INS-020,Cable de Batería,Metro,23.31,500,52,Eléctricos
+21,INS-021,Fusible 30A,Unidad,5.01,200,92,Eléctricos
+22,INS-022,Foco Halógeno 24V,Unidad,33.32,193,96,Eléctricos
+23,INS-023,Correa de Alternador,Unidad,76.86,194,89,Repuestos
+24,INS-024,Rodamiento 6205,Unidad,42.98,471,78,Repuestos
+25,INS-025,Empaque de Culata,Unidad,269.56,781,12,Repuestos
+26,INS-026,"Manguera Hidráulica 1/2""",Metro,70.24,84,86,Hidráulicos
+27,INS-027,Conexión Rápida,Unidad,35.91,433,54,Hidráulicos
+28,INS-028,Cilindro Hidráulico,Unidad,1222.27,356,60,Hidráulicos
+29,INS-029,Bomba Hidráulica,Unidad,2414.37,537,72,Hidráulicos
+30,INS-030,Trapo Industrial,Kg,7.86,611,41,Consumibles
+31,INS-031,Silicona Roja,Unidad,25.38,253,38,Consumibles
+32,INS-032,Cinta Aislante,Rollo,12.22,496,77,Consumibles
+33,INS-033,Limpiador de Contactos,Spray,16.08,284,81,Químicos
+34,INS-034,Aflojatodo,Spray,12.09,379,64,Químicos
+35,INS-035,Abrazadera Metálica,Unidad,2.72,615,76,Consumibles
+36,INS-036,Tornillo Grado 8,Unidad,2.74,469,43,Repuestos
+37,INS-037,Tuerca de Seguridad,Unidad,1.38,500,67,Repuestos
+38,INS-038,Arandela de Presión,Unidad,0.47,147,54,Repuestos
+39,INS-039,O-ring Kit,Kit,47.51,440,86,Hidráulicos
+40,INS-040,Retén de Aceite,Unidad,23.36,702,76,Repuestos
+41,INS-041,Terminal Eléctrico,Unidad,0.48,594,21,Eléctricos
+42,INS-042,Relé 24V,Unidad,14.16,429,52,Eléctricos
+43,INS-043,Sensor de Presión,Unidad,112.47,30,39,Eléctricos
+44,INS-044,Sensor de Temperatura,Unidad,88.15,90,42,Eléctricos
+45,INS-045,Filtro Separador Agua,Unidad,58.6,750,77,Filtros
+46,INS-046,Aceite Diferencial,Litro,27.33,460,84,Lubricantes
+47,INS-047,Grasa Chasis,Kg,9.44,572,90,Lubricantes
+48,INS-048,Lija de Agua,Pliego,1.57,341,19,Consumibles
+49,INS-049,Disco de Corte,Unidad,4.68,304,28,Consumibles
+50,INS-050,Electrodo 7018,Kg,18.78,62,80,Consumibles
+51,INS-051,Conexión Rápida Premium,Unidad,45.82,192,26,Hidráulicos
+52,INS-052,Cámara de Llanta Premium,Unidad,218.84,515,61,Neumáticos
+53,INS-053,Batería 12V 150Ah Premium,Unidad,1053.5,407,71,Eléctricos
+54,INS-054,Grasa Chasis Premium,Kg,13.04,305,58,Lubricantes
+55,INS-055,Trapo Industrial Premium,Kg,10.52,90,93,Consumibles
+56,INS-056,Relé 24V Premium,Unidad,17.23,694,70,Eléctricos
+57,INS-057,Filtro de Aire Primario Premium,Unidad,133.39,477,39,Filtros
+58,INS-058,Tornillo Grado 8 Premium,Unidad,3.64,657,15,Repuestos
+59,INS-059,Arandela de Presión Premium,Unidad,0.59,54,56,Repuestos
+60,INS-060,Abrazadera Metálica Premium,Unidad,3.0,87,69,Consumibles
+61,INS-061,Lija de Agua Premium,Pliego,1.73,749,21,Consumibles
+62,INS-062,Filtro de Aire Secundario Premium,Unidad,99.38,560,100,Filtros
+63,INS-063,Disco de Corte Premium,Unidad,6.08,666,97,Consumibles
+64,INS-064,Rodamiento 6205 Premium,Unidad,56.35,108,14,Repuestos
+65,INS-065,Tuerca de Seguridad Premium,Unidad,1.94,327,59,Repuestos
+66,INS-066,Aceite Diferencial Premium,Litro,34.56,514,83,Lubricantes
+67,INS-067,Tornillo Grado 8 Premium,Unidad,3.52,641,46,Repuestos
+68,INS-068,Empaque de Culata Premium,Unidad,323.88,294,13,Repuestos
+69,INS-069,Refrigerante Anticongelante Premium,Litro,26.98,415,49,Químicos
+70,INS-070,Filtro de Combustible Premium,Unidad,48.52,107,37,Filtros
+71,INS-071,Filtro de Aire Secundario Premium,Unidad,100.49,547,46,Filtros
+72,INS-072,Disco de Corte Premium,Unidad,5.86,458,57,Consumibles
+73,INS-073,Refrigerante Anticongelante Premium,Litro,24.39,722,92,Químicos
+74,INS-074,Cámara de Llanta Premium,Unidad,217.94,684,69,Neumáticos
+75,INS-075,Cinta Aislante Premium,Rollo,15.57,413,74,Consumibles
+76,INS-076,Tuerca de Seguridad Premium,Unidad,1.67,559,55,Repuestos
+77,INS-077,"Manguera Hidráulica 1/2"" Premium",Metro,71.69,80,48,Hidráulicos
+78,INS-078,Abrazadera Metálica Premium,Unidad,3.29,116,88,Consumibles
+79,INS-079,Terminal Eléctrico Premium,Unidad,0.54,511,95,Eléctricos
+80,INS-080,Filtro Hidráulico Premium,Unidad,172.31,571,31,Filtros

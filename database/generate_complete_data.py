@@ -6,6 +6,7 @@ Todos los campos tendrán valores válidos - Sin NaN
 
 import csv
 import random
+import json
 import os
 from datetime import datetime, timedelta
 
@@ -39,9 +40,11 @@ CARGOS_PERSONAL = [
 ]
 
 NOMBRES = ['Carlos', 'Juan', 'Miguel', 'José', 'Pedro', 'Luis', 'Fernando', 'Roberto', 'Diego', 'Andrés',
-           'María', 'Ana', 'Carmen', 'Rosa', 'Patricia', 'Laura', 'Sandra', 'Elena', 'Claudia', 'Isabel']
+           'María', 'Ana', 'Carmen', 'Rosa', 'Patricia', 'Laura', 'Sandra', 'Elena', 'Claudia', 'Isabel',
+           'Ricardo', 'Gabriel', 'Hugo', 'Daniel', 'Pablo', 'Alejandro', 'Javier', 'Francisco', 'Manuel', 'Antonio']
 APELLIDOS = ['García', 'Rodríguez', 'Martínez', 'López', 'González', 'Hernández', 'Pérez', 'Sánchez',
-             'Ramírez', 'Torres', 'Flores', 'Rivera', 'Gómez', 'Díaz', 'Cruz', 'Morales', 'Reyes', 'Vargas']
+             'Ramírez', 'Torres', 'Flores', 'Rivera', 'Gómez', 'Díaz', 'Cruz', 'Morales', 'Reyes', 'Vargas',
+             'Castillo', 'Ortiz', 'Silva', 'Rojas', 'Guerrero', 'Mendoza', 'Ruiz', 'Alvarez', 'Romero', 'Fernández']
 
 CATEGORIAS_HERRAMIENTAS = ['Manual', 'Eléctrica', 'Neumática', 'Hidráulica', 'Medición', 'Corte', 'Soldadura', 'Elevación']
 HERRAMIENTAS = [
@@ -53,7 +56,15 @@ HERRAMIENTAS = [
     ('Soldadora MIG', 'Soldadura'), ('Soldadora TIG', 'Soldadura'), ('Equipo Oxicorte', 'Corte'),
     ('Compresor de Aire 100 PSI', 'Neumática'), ('Pistola de Impacto', 'Neumática'),
     ('Gato Hidráulico 20T', 'Hidráulica'), ('Prensa Hidráulica', 'Hidráulica'), ('Tecle 5T', 'Elevación'),
-    ('Eslinga de Cadena', 'Elevación'), ('Engrasadora Manual', 'Manual'), ('Extractor de Rodamientos', 'Manual')
+    ('Eslinga de Cadena', 'Elevación'), ('Engrasadora Manual', 'Manual'), ('Extractor de Rodamientos', 'Manual'),
+    ('Llave de Impacto 1"', 'Neumática'), ('Esmeril de Banco', 'Eléctrica'), ('Sierra Sable', 'Eléctrica'),
+    ('Pinza Amperimétrica', 'Medición'), ('Tacómetro Digital', 'Medición'), ('Termómetro Infrarrojo', 'Medición'),
+    ('Juego de Dados 3/4"', 'Manual'), ('Llave Dinamométrica', 'Medición'), ('Gata Lagarto', 'Hidráulica'),
+    ('Pluma Hidráulica', 'Elevación'), ('Mesa Elevadora', 'Elevación'), ('Cizalla Manual', 'Corte'),
+    ('Sierra Circular', 'Eléctrica'), ('Lijadora Orbital', 'Eléctrica'), ('Pistola de Calor', 'Eléctrica'),
+    ('Cargador de Baterías', 'Eléctrica'), ('Probador de Inyectores', 'Medición'), ('Analizador de Gases', 'Medición'),
+    ('Estetoscopio Mecánico', 'Medición'), ('Comparador de Carátula', 'Medición'), ('Goniómetro', 'Medición'),
+    ('Remachadora Neumática', 'Neumática'), ('Taladro de Banco', 'Eléctrica'), ('Pistola de Pintar', 'Neumática')
 ]
 
 CATEGORIAS_INSUMOS = ['Lubricantes', 'Filtros', 'Repuestos', 'Eléctricos', 'Hidráulicos', 'Neumáticos', 'Químicos', 'Consumibles']
@@ -89,7 +100,25 @@ INSUMOS = [
     ('Bomba Hidráulica', 'Unidad', 'Hidráulicos', 2500.00),
     ('Trapo Industrial', 'Kg', 'Consumibles', 8.00),
     ('Silicona Roja', 'Unidad', 'Consumibles', 25.00),
-    ('Cinta Aislante', 'Rollo', 'Consumibles', 12.00)
+    ('Cinta Aislante', 'Rollo', 'Consumibles', 12.00),
+    ('Limpiador de Contactos', 'Spray', 'Químicos', 15.00),
+    ('Aflojatodo', 'Spray', 'Químicos', 12.00),
+    ('Abrazadera Metálica', 'Unidad', 'Consumibles', 2.50),
+    ('Tornillo Grado 8', 'Unidad', 'Repuestos', 3.00),
+    ('Tuerca de Seguridad', 'Unidad', 'Repuestos', 1.50),
+    ('Arandela de Presión', 'Unidad', 'Repuestos', 0.50),
+    ('O-ring Kit', 'Kit', 'Hidráulicos', 45.00),
+    ('Retén de Aceite', 'Unidad', 'Repuestos', 25.00),
+    ('Terminal Eléctrico', 'Unidad', 'Eléctricos', 0.50),
+    ('Relé 24V', 'Unidad', 'Eléctricos', 15.00),
+    ('Sensor de Presión', 'Unidad', 'Eléctricos', 120.00),
+    ('Sensor de Temperatura', 'Unidad', 'Eléctricos', 85.00),
+    ('Filtro Separador Agua', 'Unidad', 'Filtros', 65.00),
+    ('Aceite Diferencial', 'Litro', 'Lubricantes', 30.00),
+    ('Grasa Chasis', 'Kg', 'Lubricantes', 10.00),
+    ('Lija de Agua', 'Pliego', 'Consumibles', 1.50),
+    ('Disco de Corte', 'Unidad', 'Consumibles', 5.00),
+    ('Electrodo 7018', 'Kg', 'Consumibles', 18.00)
 ]
 
 COMPONENTES = [
@@ -100,23 +129,36 @@ COMPONENTES = [
 ]
 
 ACTIVIDADES_POR_COMPONENTE = {
-    'Sistema de Lubricación': ['Cambiar aceite de motor', 'Verificar nivel de aceite', 'Engrasar puntos de lubricación'],
-    'Motor': ['Revisar nivel de refrigerante', 'Inspeccionar correas', 'Verificar funcionamiento de motor'],
-    'Sistema Hidráulico': ['Cambiar aceite hidráulico', 'Revisar mangueras', 'Verificar cilindros'],
-    'Sistema de Transmisión': ['Cambiar aceite de transmisión', 'Ajustar embrague', 'Revisar convertidor'],
-    'Sistema de Refrigeración': ['Limpiar radiador', 'Verificar termostato', 'Revisar mangueras'],
-    'Sistema Eléctrico': ['Revisar batería', 'Verificar alternador', 'Inspeccionar conexiones'],
-    'Sistema de Frenos': ['Revisar pastillas', 'Verificar líquido de frenos', 'Ajustar frenos'],
-    'Neumáticos': ['Verificar presión', 'Inspeccionar desgaste', 'Rotar neumáticos'],
-    'Carrocería': ['Inspección visual', 'Reparar abolladuras', 'Pintar partes oxidadas'],
-    'Cuchara y Brazo': ['Revisar dientes', 'Verificar pasadores', 'Engrasar articulaciones'],
-    'Filtros': ['Cambiar filtro de aceite', 'Cambiar filtro de aire', 'Cambiar filtro de combustible'],
-    'Sistema de Combustible': ['Drenar tanque', 'Revisar inyectores', 'Verificar bomba de combustible'],
-    'Cabina': ['Revisar asiento', 'Verificar controles', 'Limpiar filtros de aire acondicionado'],
-    'Sistema de Dirección': ['Revisar bomba de dirección', 'Verificar juego', 'Engrasar articulaciones'],
-    'Tren de Rodaje': ['Revisar tensión de cadena', 'Inspeccionar rodillos', 'Verificar sprockets'],
-    'Sistema de Escape': ['Revisar tubo de escape', 'Verificar silenciador', 'Inspeccionar DPF']
+    'Sistema de Lubricación': ['Cambiar aceite de motor', 'Verificar nivel de aceite', 'Engrasar puntos de lubricación', 'Tomar muestra de aceite'],
+    'Motor': ['Revisar nivel de refrigerante', 'Inspeccionar correas', 'Verificar funcionamiento de motor', 'Ajustar válvulas', 'Revisar soportes de motor'],
+    'Sistema Hidráulico': ['Cambiar aceite hidráulico', 'Revisar mangueras', 'Verificar cilindros', 'Medir presiones de bomba', 'Cambiar sellos de cilindro'],
+    'Sistema de Transmisión': ['Cambiar aceite de transmisión', 'Ajustar embrague', 'Revisar convertidor', 'Verificar cardanes', 'Engrasar crucetas'],
+    'Sistema de Refrigeración': ['Limpiar radiador', 'Verificar termostato', 'Revisar mangueras', 'Cambiar refrigerante', 'Revisar bomba de agua'],
+    'Sistema Eléctrico': ['Revisar batería', 'Verificar alternador', 'Inspeccionar conexiones', 'Revisar luces de trabajo', 'Verificar motor de arranque'],
+    'Sistema de Frenos': ['Revisar pastillas', 'Verificar líquido de frenos', 'Ajustar frenos', 'Purgar sistema de frenos', 'Revisar discos'],
+    'Neumáticos': ['Verificar presión', 'Inspeccionar desgaste', 'Rotar neumáticos', 'Ajustar pernos de rueda', 'Reparar pinchazo'],
+    'Carrocería': ['Inspección visual', 'Reparar abolladuras', 'Pintar partes oxidadas', 'Lavar equipo completo', 'Revisar vidrios'],
+    'Cuchara y Brazo': ['Revisar dientes', 'Verificar pasadores', 'Engrasar articulaciones', 'Soldar refuerzos', 'Cambiar bocinas'],
+    'Filtros': ['Cambiar filtro de aceite', 'Cambiar filtro de aire', 'Cambiar filtro de combustible', 'Limpiar pre-filtro', 'Cambiar filtro de cabina'],
+    'Sistema de Combustible': ['Drenar tanque', 'Revisar inyectores', 'Verificar bomba de combustible', 'Limpiar trampa de agua', 'Cambiar cañerías'],
+    'Cabina': ['Revisar asiento', 'Verificar controles', 'Limpiar filtros de aire acondicionado', 'Revisar cinturón de seguridad', 'Verificar tablero'],
+    'Sistema de Dirección': ['Revisar bomba de dirección', 'Verificar juego', 'Engrasar articulaciones', 'Alinear dirección', 'Revisar terminales'],
+    'Tren de Rodaje': ['Revisar tensión de cadena', 'Inspeccionar rodillos', 'Verificar sprockets', 'Medir desgaste de zapatas', 'Ajustar tensión'],
+    'Sistema de Escape': ['Revisar tubo de escape', 'Verificar silenciador', 'Inspeccionar DPF', 'Revisar turbo', 'Cambiar empaques']
 }
+
+OBSERVACIONES_MANTENIMIENTO = [
+    "Mantenimiento realizado sin novedades.",
+    "Se detectó desgaste prematuro en componentes.",
+    "Equipo operativo y en buenas condiciones.",
+    "Se recomienda monitorear temperatura en próxima guardia.",
+    "Trabajo realizado según procedimiento estándar.",
+    "Se requiere cambio de repuestos en próximo servicio.",
+    "Limpieza general realizada.",
+    "Niveles de fluidos restablecidos.",
+    "Pruebas de funcionamiento exitosas.",
+    "Se ajustaron parámetros de operación."
+]
 
 # ============================================
 # FUNCIONES GENERADORAS
@@ -134,6 +176,10 @@ def generar_ci():
 def fecha_aleatoria(inicio_anios=5):
     dias = random.randint(0, inicio_anios * 365)
     return (datetime.now() - timedelta(days=dias)).strftime('%Y-%m-%d')
+
+def generar_email(nombre, apellido):
+    dominios = ['empresa.com', 'gmail.com', 'outlook.com', 'hotmail.com']
+    return f"{nombre.lower()}.{apellido.lower()}@{random.choice(dominios)}"
 
 # ============================================
 # GENERADORES DE CSV
@@ -153,10 +199,10 @@ def generar_maquinaria(cantidad=50):
             'nombre': f"{tipo} {marca} {modelo}",
             'marca': marca,
             'modelo': modelo,
-            'anio': str(random.randint(2010, 2024)),
+            'anio': str(random.randint(2015, 2024)),
             'estado': random.choice(['OPERATIVO', 'OPERATIVO', 'OPERATIVO', 'MANTENIMIENTO', 'INACTIVO']),
-            'costo_adquisicion': round(random.uniform(50000, 500000), 2),
-            'horas_totales': round(random.uniform(500, 15000), 2)
+            'costo_adquisicion': round(random.uniform(80000, 600000), 2),
+            'horas_totales': round(random.uniform(100, 12000), 2)
         })
     
     return data
@@ -165,7 +211,10 @@ def generar_personal(cantidad=40):
     """Genera datos de personal"""
     data = []
     for i in range(1, cantidad + 1):
-        nombre = f"{random.choice(NOMBRES)} {random.choice(APELLIDOS)} {random.choice(APELLIDOS)}"
+        nombre_pila = random.choice(NOMBRES)
+        apellido1 = random.choice(APELLIDOS)
+        apellido2 = random.choice(APELLIDOS)
+        nombre = f"{nombre_pila} {apellido1} {apellido2}"
         cargo = random.choice(CARGOS_PERSONAL)
         
         # Tarifa según cargo
@@ -195,14 +244,14 @@ def generar_herramientas(cantidad=60):
     data = []
     herramientas_base = HERRAMIENTAS.copy()
     
+    # Asegurar que tenemos suficientes herramientas base o repetir con lógica
+    while len(herramientas_base) < cantidad:
+        item = random.choice(HERRAMIENTAS)
+        herramientas_base.append((f"{item[0]} Pro", item[1]))
+
     for i in range(1, cantidad + 1):
-        if i <= len(herramientas_base):
-            nombre, categoria = herramientas_base[i-1]
-        else:
-            nombre, categoria = random.choice(herramientas_base)
-            nombre = f"{nombre} Variante {i}"
-        
-        marca = random.choice(['Stanley', 'DeWalt', 'Bosch', 'Makita', 'Milwaukee', 'Snap-on', 'Proto', 'Bahco'])
+        nombre, categoria = herramientas_base[i-1]
+        marca = random.choice(['Stanley', 'DeWalt', 'Bosch', 'Makita', 'Milwaukee', 'Snap-on', 'Proto', 'Bahco', 'Hilti', 'Ingersoll Rand'])
         
         data.append({
             'id': i,
@@ -211,7 +260,7 @@ def generar_herramientas(cantidad=60):
             'marca': marca,
             'estado': random.choice(['OPERATIVO', 'OPERATIVO', 'OPERATIVO', 'MANTENIMIENTO', 'INACTIVO']),
             'categoria': categoria,
-            'costo': round(random.uniform(50, 2000), 2)
+            'costo': round(random.uniform(50, 2500), 2)
         })
     
     return data
@@ -221,16 +270,16 @@ def generar_insumos(cantidad=80):
     data = []
     insumos_base = INSUMOS.copy()
     
+    while len(insumos_base) < cantidad:
+        item = random.choice(INSUMOS)
+        insumos_base.append((f"{item[0]} Premium", item[1], item[2], item[3] * 1.2))
+
     for i in range(1, cantidad + 1):
-        if i <= len(insumos_base):
-            nombre, unidad, categoria, precio_base = insumos_base[i-1]
-        else:
-            nombre, unidad, categoria, precio_base = random.choice(insumos_base)
-            nombre = f"{nombre} Variante {i}"
+        nombre, unidad, categoria, precio_base = insumos_base[i-1]
         
-        precio = round(precio_base * random.uniform(0.8, 1.3), 2)
-        cantidad_stock = random.randint(10, 500)
-        stock_minimo = random.randint(5, 50)
+        precio = round(precio_base * random.uniform(0.9, 1.1), 2)
+        cantidad_stock = random.randint(20, 800)
+        stock_minimo = random.randint(10, 100)
         
         data.append({
             'id': i,
@@ -249,7 +298,7 @@ def generar_planes_mantenimiento(maquinaria_data):
     """Genera planes de mantenimiento para cada maquinaria"""
     data = []
     plan_id = 1
-    horas_planes = [10, 50, 250, 500, 1000, 2000]
+    horas_planes = [250, 500, 1000, 2000]
     
     for maq in maquinaria_data:
         # Generar planes por horas
@@ -257,12 +306,12 @@ def generar_planes_mantenimiento(maquinaria_data):
             data.append({
                 'id': plan_id,
                 'maquinaria_id': maq['id'],
-                'nombre_plan': f"PMP {maq['nombre'].split()[0]} {maq['modelo']} {horas}H",
+                'nombre_plan': f"PM-{horas}H {maq['nombre'].split()[0]} {maq['modelo']}",
                 'tipo_mantenimiento': 'PREVENTIVO',
                 'tipo_plan': 'POR_HORAS',
                 'horas_operacion': horas,
                 'intervalo_dias': 0,
-                'descripcion': f"Plan de mantenimiento preventivo cada {horas} horas de operación",
+                'descripcion': f"Mantenimiento preventivo estándar de {horas} horas. Incluye cambio de filtros y aceites según manual.",
                 'activo': 1
             })
             plan_id += 1
@@ -271,12 +320,12 @@ def generar_planes_mantenimiento(maquinaria_data):
         data.append({
             'id': plan_id,
             'maquinaria_id': maq['id'],
-            'nombre_plan': f"Mantenimiento Correctivo {maq['nombre'].split()[0]} {maq['modelo']}",
+            'nombre_plan': f"Correctivo General {maq['modelo']}",
             'tipo_mantenimiento': 'CORRECTIVO',
             'tipo_plan': 'CRONOGRAMA',
             'horas_operacion': 0,
             'intervalo_dias': 0,
-            'descripcion': f"Plan para mantenimientos correctivos no programados",
+            'descripcion': f"Plan para reparaciones no programadas y fallas imprevistas.",
             'activo': 1
         })
         plan_id += 1
@@ -291,9 +340,16 @@ def generar_actividades_mantenimiento(planes_data):
     for plan in planes_data:
         # Número de actividades según tipo de plan
         if plan['tipo_mantenimiento'] == 'PREVENTIVO':
-            num_actividades = random.randint(8, 15)
+            if '250H' in plan['nombre_plan']:
+                num_actividades = 5
+            elif '500H' in plan['nombre_plan']:
+                num_actividades = 8
+            elif '1000H' in plan['nombre_plan']:
+                num_actividades = 12
+            else:
+                num_actividades = 15
         else:
-            num_actividades = random.randint(3, 8)
+            num_actividades = 4
         
         componentes_usados = random.sample(COMPONENTES, min(num_actividades, len(COMPONENTES)))
         
@@ -301,10 +357,10 @@ def generar_actividades_mantenimiento(planes_data):
             actividades_comp = ACTIVIDADES_POR_COMPONENTE.get(componente, ['Inspección general', 'Mantenimiento preventivo'])
             actividad = random.choice(actividades_comp)
             
-            tiempo_min = random.randint(10, 30)
-            tiempo_prom = tiempo_min + random.randint(5, 15)
-            tiempo_max = tiempo_prom + random.randint(5, 20)
-            costo = round(random.uniform(50, 500), 2)
+            tiempo_min = random.randint(15, 45)
+            tiempo_prom = tiempo_min + random.randint(10, 30)
+            tiempo_max = tiempo_prom + random.randint(10, 30)
+            costo = round(random.uniform(80, 600), 2)
             
             data.append({
                 'id': act_id,
@@ -327,24 +383,25 @@ def generar_actividad_insumos(actividades_data, insumos_data):
     rel_id = 1
     
     for act in actividades_data:
-        # Cada actividad tiene 1-4 insumos
-        num_insumos = random.randint(1, 4)
-        insumos_seleccionados = random.sample(insumos_data, min(num_insumos, len(insumos_data)))
-        
-        for insumo in insumos_seleccionados:
-            cantidad = round(random.uniform(0.5, 10), 2)
-            costo_unitario = insumo['precio_unitario']
+        # 40% de probabilidad de necesitar insumos
+        if random.random() > 0.6:
+            num_insumos = random.randint(1, 3)
+            insumos_seleccionados = random.sample(insumos_data, min(num_insumos, len(insumos_data)))
             
-            data.append({
-                'id': rel_id,
-                'actividad_id': act['id'],
-                'insumo_id': insumo['id'],
-                'cantidad': cantidad,
-                'unidad': insumo['unidad'],
-                'especificaciones': f"Para {act['descripcion_componente']}",
-                'costo_unitario': costo_unitario
-            })
-            rel_id += 1
+            for insumo in insumos_seleccionados:
+                cantidad = round(random.uniform(1, 5), 2)
+                costo_unitario = insumo['precio_unitario']
+                
+                data.append({
+                    'id': rel_id,
+                    'actividad_id': act['id'],
+                    'insumo_id': insumo['id'],
+                    'cantidad': cantidad,
+                    'unidad': insumo['unidad'],
+                    'especificaciones': f"Requerido para {act['actividad']}",
+                    'costo_unitario': costo_unitario
+                })
+                rel_id += 1
     
     return data
 
@@ -354,19 +411,20 @@ def generar_actividad_herramientas(actividades_data, herramientas_data):
     rel_id = 1
     
     for act in actividades_data:
-        # Cada actividad tiene 1-3 herramientas
-        num_herramientas = random.randint(1, 3)
-        herramientas_seleccionadas = random.sample(herramientas_data, min(num_herramientas, len(herramientas_data)))
-        
-        for herramienta in herramientas_seleccionadas:
-            data.append({
-                'id': rel_id,
-                'actividad_id': act['id'],
-                'herramienta_id': herramienta['id'],
-                'cantidad': random.randint(1, 2),
-                'especificaciones': f"Herramienta para {act['actividad']}"
-            })
-            rel_id += 1
+        # 50% de probabilidad de necesitar herramientas específicas
+        if random.random() > 0.5:
+            num_herramientas = random.randint(1, 2)
+            herramientas_seleccionadas = random.sample(herramientas_data, min(num_herramientas, len(herramientas_data)))
+            
+            for herramienta in herramientas_seleccionadas:
+                data.append({
+                    'id': rel_id,
+                    'actividad_id': act['id'],
+                    'herramienta_id': herramienta['id'],
+                    'cantidad': 1,
+                    'especificaciones': f"Uso estándar para {act['descripcion_componente']}"
+                })
+                rel_id += 1
     
     return data
 
@@ -376,19 +434,21 @@ def generar_mantenimientos(maquinaria_data, planes_data):
     mant_id = 1
     
     for maq in maquinaria_data:
-        # Generar 3-8 mantenimientos por maquinaria
-        num_mant = random.randint(3, 8)
+        # Generar 5-10 mantenimientos por maquinaria
+        num_mant = random.randint(5, 10)
         planes_maq = [p for p in planes_data if p['maquinaria_id'] == maq['id']]
         
         for _ in range(num_mant):
             plan = random.choice(planes_maq) if planes_maq else None
-            estado = random.choice(['COMPLETADO', 'COMPLETADO', 'COMPLETADO', 'PROGRAMADO', 'EN_PROCESO'])
+            estado = random.choice(['COMPLETADO', 'COMPLETADO', 'COMPLETADO', 'COMPLETADO', 'PROGRAMADO', 'EN_PROCESO'])
             
-            fecha_prog = fecha_aleatoria(2)
+            fecha_prog = fecha_aleatoria(1)
             fecha_ejec = fecha_prog if estado == 'COMPLETADO' else ''
             
-            costo_mo = round(random.uniform(100, 1500), 2) if estado == 'COMPLETADO' else 0
-            costo_ins = round(random.uniform(200, 3000), 2) if estado == 'COMPLETADO' else 0
+            costo_mo = round(random.uniform(200, 2000), 2) if estado == 'COMPLETADO' else 0
+            costo_ins = round(random.uniform(300, 5000), 2) if estado == 'COMPLETADO' else 0
+            
+            observacion = random.choice(OBSERVACIONES_MANTENIMIENTO)
             
             data.append({
                 'id': mant_id,
@@ -396,10 +456,10 @@ def generar_mantenimientos(maquinaria_data, planes_data):
                 'plan_id': plan['id'] if plan else 1,
                 'tipo_mantenimiento': plan['tipo_mantenimiento'] if plan else 'CORRECTIVO',
                 'fecha_programada': fecha_prog,
-                'fecha_ejecucion': fecha_ejec if fecha_ejec else fecha_prog,
-                'horas_maquina': round(random.uniform(100, 5000), 2),
+                'fecha_ejecucion': fecha_ejec if fecha_ejec else fecha_prog, # Para evitar NULLs molestos si el usuario quiere ver fechas
+                'horas_maquina': round(random.uniform(500, 10000), 2),
                 'estado': estado,
-                'observaciones': f"Mantenimiento {estado.lower()} correctamente",
+                'observaciones': observacion,
                 'costo_mano_obra': costo_mo,
                 'costo_insumos': costo_ins
             })
@@ -416,12 +476,11 @@ def generar_mantenimiento_personal(mantenimientos_data, personal_data):
     
     for mant in mantenimientos_data:
         if mant['estado'] in ['COMPLETADO', 'EN_PROCESO']:
-            # Asignar 1-3 personas
             num_personas = random.randint(1, 3)
             personas_asignadas = random.sample(mecanicos, min(num_personas, len(mecanicos)))
             
             for persona in personas_asignadas:
-                horas = round(random.uniform(1, 8), 2)
+                horas = round(random.uniform(2, 10), 2)
                 
                 data.append({
                     'id': rel_id,
@@ -441,12 +500,11 @@ def generar_mantenimiento_insumos(mantenimientos_data, insumos_data):
     
     for mant in mantenimientos_data:
         if mant['estado'] in ['COMPLETADO', 'EN_PROCESO']:
-            # Usar 2-6 insumos
-            num_insumos = random.randint(2, 6)
+            num_insumos = random.randint(2, 5)
             insumos_usados = random.sample(insumos_data, min(num_insumos, len(insumos_data)))
             
             for insumo in insumos_usados:
-                cantidad = round(random.uniform(0.5, 5), 2)
+                cantidad = round(random.uniform(1, 10), 2)
                 
                 data.append({
                     'id': rel_id,
@@ -467,17 +525,16 @@ def generar_mantenimiento_actividades(mantenimientos_data, actividades_data, pla
     
     for mant in mantenimientos_data:
         if mant['estado'] in ['COMPLETADO', 'EN_PROCESO']:
-            # Obtener actividades del plan
             actividades_plan = [a for a in actividades_data if a['plan_id'] == mant['plan_id']]
             
             if actividades_plan:
-                # Ejecutar algunas actividades
-                num_acts = min(random.randint(3, 8), len(actividades_plan))
+                # Ejecutar todas o casi todas las actividades
+                num_acts = max(1, int(len(actividades_plan) * 0.9))
                 acts_ejecutadas = random.sample(actividades_plan, num_acts)
                 
                 for act in acts_ejecutadas:
                     tiempo_real = random.randint(act['tiempo_min'], act['tiempo_max'])
-                    completada = 1 if mant['estado'] == 'COMPLETADO' else random.choice([0, 1])
+                    completada = 1
                     
                     data.append({
                         'id': rel_id,
@@ -486,10 +543,89 @@ def generar_mantenimiento_actividades(mantenimientos_data, actividades_data, pla
                         'descripcion': act['actividad'],
                         'tiempo_real': tiempo_real,
                         'completada': completada,
-                        'observaciones': 'Ejecutado según plan' if completada else 'Pendiente de completar'
+                        'observaciones': 'Tarea finalizada correctamente.'
                     })
                     rel_id += 1
     
+    return data
+
+def generar_usuarios(personal_data):
+    """Genera usuarios del sistema basados en personal"""
+    data = []
+    
+    # Admin
+    data.append({
+        'id': 1,
+        'username': 'admin',
+        'password': 'admin123_hashed_placeholder', # En producción esto debe ser hash
+        'nombre_completo': 'Administrador del Sistema',
+        'email': 'admin@mttopro.com',
+        'rol': 'ADMIN',
+        'estado': 1,
+        'two_factor_secret': '',
+        'two_factor_enabled': 0,
+        'created_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    })
+    
+    user_id = 2
+    # Generar usuarios para algunos del personal
+    for p in personal_data[:15]: # Primeros 15 empleados
+        username = f"{p['nombre_completo'].split()[0].lower()}.{p['nombre_completo'].split()[1].lower()}"
+        rol = 'MANTENIMIENTO'
+        if 'Jefe' in p['cargo'] or 'Supervisor' in p['cargo']:
+            rol = 'ADMIN'
+        elif 'Operador' in p['cargo']:
+            rol = 'OPERADOR'
+            
+        data.append({
+            'id': user_id,
+            'username': username,
+            'password': 'password123', # Placeholder
+            'nombre_completo': p['nombre_completo'],
+            'email': generar_email(p['nombre_completo'].split()[0], p['nombre_completo'].split()[1]),
+            'rol': rol,
+            'estado': 1,
+            'two_factor_secret': '',
+            'two_factor_enabled': 0,
+            'created_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        })
+        user_id += 1
+        
+    return data
+
+def generar_checklists(maquinaria_data, usuarios_data):
+    """Genera checklists diarios"""
+    data = []
+    checklist_id = 1
+    
+    for maq in maquinaria_data:
+        # 5 checklists por máquina
+        for _ in range(5):
+            fecha = fecha_aleatoria(1)
+            usuario = random.choice(usuarios_data)
+            
+            checklist_content = {
+                "motor": {"nivel_aceite": "OK", "ruidos_anormales": "NO", "fugas": "NO"},
+                "hidraulico": {"nivel_aceite": "OK", "mangueras": "OK", "cilindros": "OK"},
+                "electrico": {"luces": "OK", "bateria": "OK", "tablero": "OK"},
+                "seguridad": {"extintor": "OK", "cinturon": "OK", "espejos": "OK"}
+            }
+            
+            data.append({
+                'id': checklist_id,
+                'maquinaria_id': maq['id'],
+                'fecha': fecha,
+                'tipo_checklist': 'DIARIO',
+                'codigo_checklist': f"CHK-{maq['codigo']}-{checklist_id}",
+                'realizado_por': usuario['nombre_completo'],
+                'revisado_por': 'Supervisor General',
+                'observaciones': 'Equipo en condiciones operativas.',
+                'data': json.dumps(checklist_content),
+                'created_at': f"{fecha} 08:00:00",
+                'updated_at': f"{fecha} 08:30:00"
+            })
+            checklist_id += 1
+            
     return data
 
 def guardar_csv(data, nombre_archivo, campos):
@@ -507,7 +643,7 @@ def guardar_csv(data, nombre_archivo, campos):
 
 def main():
     print("=" * 50)
-    print("GENERADOR DE DATOS COMPLETOS - MTTO PRO")
+    print("GENERADOR DE DATOS COMPLETOS - MTTO PRO v2")
     print("=" * 50)
     print()
     
@@ -564,12 +700,21 @@ def main():
     guardar_csv(mant_actividades, '12_mantenimiento_actividades.csv',
                 ['id', 'mantenimiento_id', 'actividad_id', 'descripcion', 'tiempo_real', 'completada', 'observaciones'])
     
+    # Generar usuarios y checklists
+    print("\nGenerando usuarios y checklists...")
+    usuarios = generar_usuarios(personal)
+    checklists = generar_checklists(maquinaria, usuarios)
+    
+    guardar_csv(usuarios, '13_users.csv',
+                ['id', 'username', 'password', 'nombre_completo', 'email', 'rol', 'estado', 'two_factor_secret', 'two_factor_enabled', 'created_at'])
+    guardar_csv(checklists, '14_checklists.csv',
+                ['id', 'maquinaria_id', 'fecha', 'tipo_checklist', 'codigo_checklist', 'realizado_por', 'revisado_por', 'observaciones', 'data', 'created_at', 'updated_at'])
+    
     print("\n" + "=" * 50)
     print("¡DATOS GENERADOS EXITOSAMENTE!")
     print("=" * 50)
-    print(f"\nTotal de archivos: 12")
+    print(f"\nTotal de archivos: 14")
     print(f"Ubicación: {OUTPUT_DIR}")
 
 if __name__ == '__main__':
     main()
-

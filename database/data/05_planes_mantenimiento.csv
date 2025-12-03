@@ -1,351 +1,251 @@
 id,maquinaria_id,nombre_plan,tipo_mantenimiento,tipo_plan,horas_operacion,intervalo_dias,descripcion,activo
-1,1,PMP Volquete 730C 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-2,1,PMP Volquete 730C 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-3,1,PMP Volquete 730C 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-4,1,PMP Volquete 730C 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-5,1,PMP Volquete 730C 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-6,1,PMP Volquete 730C 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-7,1,Mantenimiento Correctivo Volquete 730C,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-8,2,PMP Grúa LTM 1100 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-9,2,PMP Grúa LTM 1100 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-10,2,PMP Grúa LTM 1100 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-11,2,PMP Grúa LTM 1100 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-12,2,PMP Grúa LTM 1100 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-13,2,PMP Grúa LTM 1100 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-14,2,Mantenimiento Correctivo Grúa LTM 1100,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-15,3,PMP Grúa LTM 1100 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-16,3,PMP Grúa LTM 1100 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-17,3,PMP Grúa LTM 1100 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-18,3,PMP Grúa LTM 1100 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-19,3,PMP Grúa LTM 1100 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-20,3,PMP Grúa LTM 1100 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-21,3,Mantenimiento Correctivo Grúa LTM 1100,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-22,4,PMP Cargador L150 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-23,4,PMP Cargador L150 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-24,4,PMP Cargador L150 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-25,4,PMP Cargador L150 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-26,4,PMP Cargador L150 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-27,4,PMP Cargador L150 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-28,4,Mantenimiento Correctivo Cargador L150,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-29,5,PMP Minicargador S650 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-30,5,PMP Minicargador S650 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-31,5,PMP Minicargador S650 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-32,5,PMP Minicargador S650 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-33,5,PMP Minicargador S650 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-34,5,PMP Minicargador S650 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-35,5,Mantenimiento Correctivo Minicargador S650,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-36,6,PMP Excavadora PC300 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-37,6,PMP Excavadora PC300 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-38,6,PMP Excavadora PC300 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-39,6,PMP Excavadora PC300 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-40,6,PMP Excavadora PC300 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-41,6,PMP Excavadora PC300 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-42,6,Mantenimiento Correctivo Excavadora PC300,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-43,7,PMP Cargador WA380 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-44,7,PMP Cargador WA380 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-45,7,PMP Cargador WA380 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-46,7,PMP Cargador WA380 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-47,7,PMP Cargador WA380 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-48,7,PMP Cargador WA380 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-49,7,Mantenimiento Correctivo Cargador WA380,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-50,8,PMP Motoniveladora 14M 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-51,8,PMP Motoniveladora 14M 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-52,8,PMP Motoniveladora 14M 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-53,8,PMP Motoniveladora 14M 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-54,8,PMP Motoniveladora 14M 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-55,8,PMP Motoniveladora 14M 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-56,8,Mantenimiento Correctivo Motoniveladora 14M,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-57,9,PMP Grúa LTM 1100 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-58,9,PMP Grúa LTM 1100 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-59,9,PMP Grúa LTM 1100 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-60,9,PMP Grúa LTM 1100 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-61,9,PMP Grúa LTM 1100 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-62,9,PMP Grúa LTM 1100 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-63,9,Mantenimiento Correctivo Grúa LTM 1100,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-64,10,PMP Grúa LTM 1050 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-65,10,PMP Grúa LTM 1050 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-66,10,PMP Grúa LTM 1050 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-67,10,PMP Grúa LTM 1050 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-68,10,PMP Grúa LTM 1050 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-69,10,PMP Grúa LTM 1050 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-70,10,Mantenimiento Correctivo Grúa LTM 1050,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-71,11,PMP Volquete A40G 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-72,11,PMP Volquete A40G 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-73,11,PMP Volquete A40G 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-74,11,PMP Volquete A40G 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-75,11,PMP Volquete A40G 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-76,11,PMP Volquete A40G 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-77,11,Mantenimiento Correctivo Volquete A40G,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-78,12,PMP Bulldozer D9T 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-79,12,PMP Bulldozer D9T 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-80,12,PMP Bulldozer D9T 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-81,12,PMP Bulldozer D9T 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-82,12,PMP Bulldozer D9T 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-83,12,PMP Bulldozer D9T 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-84,12,Mantenimiento Correctivo Bulldozer D9T,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-85,13,PMP Perforadora DM30 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-86,13,PMP Perforadora DM30 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-87,13,PMP Perforadora DM30 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-88,13,PMP Perforadora DM30 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-89,13,PMP Perforadora DM30 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-90,13,PMP Perforadora DM30 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-91,13,Mantenimiento Correctivo Perforadora DM30,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-92,14,PMP Grúa GMK4100 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-93,14,PMP Grúa GMK4100 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-94,14,PMP Grúa GMK4100 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-95,14,PMP Grúa GMK4100 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-96,14,PMP Grúa GMK4100 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-97,14,PMP Grúa GMK4100 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-98,14,Mantenimiento Correctivo Grúa GMK4100,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-99,15,PMP Motoniveladora G930 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-100,15,PMP Motoniveladora G930 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-101,15,PMP Motoniveladora G930 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-102,15,PMP Motoniveladora G930 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-103,15,PMP Motoniveladora G930 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-104,15,PMP Motoniveladora G930 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-105,15,Mantenimiento Correctivo Motoniveladora G930,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-106,16,PMP Grúa RT890E 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-107,16,PMP Grúa RT890E 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-108,16,PMP Grúa RT890E 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-109,16,PMP Grúa RT890E 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-110,16,PMP Grúa RT890E 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-111,16,PMP Grúa RT890E 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-112,16,Mantenimiento Correctivo Grúa RT890E,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-113,17,PMP Excavadora PC300 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-114,17,PMP Excavadora PC300 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-115,17,PMP Excavadora PC300 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-116,17,PMP Excavadora PC300 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-117,17,PMP Excavadora PC300 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-118,17,PMP Excavadora PC300 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-119,17,Mantenimiento Correctivo Excavadora PC300,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-120,18,PMP Perforadora DM45 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-121,18,PMP Perforadora DM45 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-122,18,PMP Perforadora DM45 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-123,18,PMP Perforadora DM45 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-124,18,PMP Perforadora DM45 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-125,18,PMP Perforadora DM45 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-126,18,Mantenimiento Correctivo Perforadora DM45,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-127,19,PMP Rodillo CS66 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-128,19,PMP Rodillo CS66 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-129,19,PMP Rodillo CS66 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-130,19,PMP Rodillo CS66 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-131,19,PMP Rodillo CS66 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-132,19,PMP Rodillo CS66 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-133,19,Mantenimiento Correctivo Rodillo CS66,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-134,20,PMP Grúa RT890E 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-135,20,PMP Grúa RT890E 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-136,20,PMP Grúa RT890E 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-137,20,PMP Grúa RT890E 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-138,20,PMP Grúa RT890E 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-139,20,PMP Grúa RT890E 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-140,20,Mantenimiento Correctivo Grúa RT890E,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-141,21,PMP Minicargador 262D 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-142,21,PMP Minicargador 262D 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-143,21,PMP Minicargador 262D 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-144,21,PMP Minicargador 262D 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-145,21,PMP Minicargador 262D 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-146,21,PMP Minicargador 262D 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-147,21,Mantenimiento Correctivo Minicargador 262D,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-148,22,PMP Grúa RT890E 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-149,22,PMP Grúa RT890E 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-150,22,PMP Grúa RT890E 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-151,22,PMP Grúa RT890E 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-152,22,PMP Grúa RT890E 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-153,22,PMP Grúa RT890E 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-154,22,Mantenimiento Correctivo Grúa RT890E,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-155,23,PMP Bulldozer D155 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-156,23,PMP Bulldozer D155 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-157,23,PMP Bulldozer D155 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-158,23,PMP Bulldozer D155 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-159,23,PMP Bulldozer D155 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-160,23,PMP Bulldozer D155 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-161,23,Mantenimiento Correctivo Bulldozer D155,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-162,24,PMP Volquete 745C 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-163,24,PMP Volquete 745C 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-164,24,PMP Volquete 745C 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-165,24,PMP Volquete 745C 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-166,24,PMP Volquete 745C 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-167,24,PMP Volquete 745C 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-168,24,Mantenimiento Correctivo Volquete 745C,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-169,25,PMP Grúa LTM 1050 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-170,25,PMP Grúa LTM 1050 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-171,25,PMP Grúa LTM 1050 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-172,25,PMP Grúa LTM 1050 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-173,25,PMP Grúa LTM 1050 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-174,25,PMP Grúa LTM 1050 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-175,25,Mantenimiento Correctivo Grúa LTM 1050,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-176,26,PMP Bulldozer D9T 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-177,26,PMP Bulldozer D9T 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-178,26,PMP Bulldozer D9T 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-179,26,PMP Bulldozer D9T 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-180,26,PMP Bulldozer D9T 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-181,26,PMP Bulldozer D9T 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-182,26,Mantenimiento Correctivo Bulldozer D9T,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-183,27,PMP Excavadora PC200 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-184,27,PMP Excavadora PC200 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-185,27,PMP Excavadora PC200 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-186,27,PMP Excavadora PC200 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-187,27,PMP Excavadora PC200 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-188,27,PMP Excavadora PC200 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-189,27,Mantenimiento Correctivo Excavadora PC200,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-190,28,PMP Perforadora D245S 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-191,28,PMP Perforadora D245S 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-192,28,PMP Perforadora D245S 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-193,28,PMP Perforadora D245S 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-194,28,PMP Perforadora D245S 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-195,28,PMP Perforadora D245S 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-196,28,Mantenimiento Correctivo Perforadora D245S,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-197,29,PMP Perforadora PV271 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-198,29,PMP Perforadora PV271 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-199,29,PMP Perforadora PV271 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-200,29,PMP Perforadora PV271 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-201,29,PMP Perforadora PV271 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-202,29,PMP Perforadora PV271 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-203,29,Mantenimiento Correctivo Perforadora PV271,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-204,30,PMP Rodillo CV533 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-205,30,PMP Rodillo CV533 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-206,30,PMP Rodillo CV533 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-207,30,PMP Rodillo CV533 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-208,30,PMP Rodillo CV533 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-209,30,PMP Rodillo CV533 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-210,30,Mantenimiento Correctivo Rodillo CV533,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-211,31,PMP Cargador 966M 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-212,31,PMP Cargador 966M 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-213,31,PMP Cargador 966M 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-214,31,PMP Cargador 966M 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-215,31,PMP Cargador 966M 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-216,31,PMP Cargador 966M 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-217,31,Mantenimiento Correctivo Cargador 966M,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-218,32,PMP Perforadora D245S 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-219,32,PMP Perforadora D245S 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-220,32,PMP Perforadora D245S 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-221,32,PMP Perforadora D245S 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-222,32,PMP Perforadora D245S 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-223,32,PMP Perforadora D245S 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-224,32,Mantenimiento Correctivo Perforadora D245S,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-225,33,PMP Bulldozer D6T 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-226,33,PMP Bulldozer D6T 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-227,33,PMP Bulldozer D6T 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-228,33,PMP Bulldozer D6T 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-229,33,PMP Bulldozer D6T 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-230,33,PMP Bulldozer D6T 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-231,33,Mantenimiento Correctivo Bulldozer D6T,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-232,34,PMP Perforadora DM45 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-233,34,PMP Perforadora DM45 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-234,34,PMP Perforadora DM45 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-235,34,PMP Perforadora DM45 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-236,34,PMP Perforadora DM45 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-237,34,PMP Perforadora DM45 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-238,34,Mantenimiento Correctivo Perforadora DM45,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-239,35,PMP Perforadora D245S 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-240,35,PMP Perforadora D245S 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-241,35,PMP Perforadora D245S 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-242,35,PMP Perforadora D245S 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-243,35,PMP Perforadora D245S 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-244,35,PMP Perforadora D245S 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-245,35,Mantenimiento Correctivo Perforadora D245S,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-246,36,PMP Excavadora 330 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-247,36,PMP Excavadora 330 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-248,36,PMP Excavadora 330 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-249,36,PMP Excavadora 330 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-250,36,PMP Excavadora 330 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-251,36,PMP Excavadora 330 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-252,36,Mantenimiento Correctivo Excavadora 330,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-253,37,PMP Bulldozer D9T 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-254,37,PMP Bulldozer D9T 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-255,37,PMP Bulldozer D9T 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-256,37,PMP Bulldozer D9T 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-257,37,PMP Bulldozer D9T 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-258,37,PMP Bulldozer D9T 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-259,37,Mantenimiento Correctivo Bulldozer D9T,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-260,38,PMP Excavadora 336 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-261,38,PMP Excavadora 336 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-262,38,PMP Excavadora 336 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-263,38,PMP Excavadora 336 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-264,38,PMP Excavadora 336 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-265,38,PMP Excavadora 336 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-266,38,Mantenimiento Correctivo Excavadora 336,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-267,39,PMP Retroexcavadora 420F 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-268,39,PMP Retroexcavadora 420F 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-269,39,PMP Retroexcavadora 420F 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-270,39,PMP Retroexcavadora 420F 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-271,39,PMP Retroexcavadora 420F 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-272,39,PMP Retroexcavadora 420F 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-273,39,Mantenimiento Correctivo Retroexcavadora 420F,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-274,40,PMP Retroexcavadora WB97 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-275,40,PMP Retroexcavadora WB97 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-276,40,PMP Retroexcavadora WB97 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-277,40,PMP Retroexcavadora WB97 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-278,40,PMP Retroexcavadora WB97 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-279,40,PMP Retroexcavadora WB97 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-280,40,Mantenimiento Correctivo Retroexcavadora WB97,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-281,41,PMP Bulldozer D7R 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-282,41,PMP Bulldozer D7R 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-283,41,PMP Bulldozer D7R 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-284,41,PMP Bulldozer D7R 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-285,41,PMP Bulldozer D7R 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-286,41,PMP Bulldozer D7R 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-287,41,Mantenimiento Correctivo Bulldozer D7R,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-288,42,PMP Volquete HD785 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-289,42,PMP Volquete HD785 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-290,42,PMP Volquete HD785 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-291,42,PMP Volquete HD785 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-292,42,PMP Volquete HD785 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-293,42,PMP Volquete HD785 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-294,42,Mantenimiento Correctivo Volquete HD785,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-295,43,PMP Retroexcavadora 430F 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-296,43,PMP Retroexcavadora 430F 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-297,43,PMP Retroexcavadora 430F 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-298,43,PMP Retroexcavadora 430F 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-299,43,PMP Retroexcavadora 430F 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-300,43,PMP Retroexcavadora 430F 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-301,43,Mantenimiento Correctivo Retroexcavadora 430F,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-302,44,PMP Cargador L150 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-303,44,PMP Cargador L150 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-304,44,PMP Cargador L150 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-305,44,PMP Cargador L150 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-306,44,PMP Cargador L150 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-307,44,PMP Cargador L150 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-308,44,Mantenimiento Correctivo Cargador L150,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-309,45,PMP Retroexcavadora 4CX 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-310,45,PMP Retroexcavadora 4CX 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-311,45,PMP Retroexcavadora 4CX 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-312,45,PMP Retroexcavadora 4CX 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-313,45,PMP Retroexcavadora 4CX 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-314,45,PMP Retroexcavadora 4CX 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-315,45,Mantenimiento Correctivo Retroexcavadora 4CX,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-316,46,PMP Rodillo CS56 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-317,46,PMP Rodillo CS56 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-318,46,PMP Rodillo CS56 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-319,46,PMP Rodillo CS56 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-320,46,PMP Rodillo CS56 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-321,46,PMP Rodillo CS56 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-322,46,Mantenimiento Correctivo Rodillo CS56,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-323,47,PMP Perforadora DM30 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-324,47,PMP Perforadora DM30 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-325,47,PMP Perforadora DM30 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-326,47,PMP Perforadora DM30 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-327,47,PMP Perforadora DM30 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-328,47,PMP Perforadora DM30 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-329,47,Mantenimiento Correctivo Perforadora DM30,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-330,48,PMP Bulldozer D6T 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-331,48,PMP Bulldozer D6T 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-332,48,PMP Bulldozer D6T 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-333,48,PMP Bulldozer D6T 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-334,48,PMP Bulldozer D6T 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-335,48,PMP Bulldozer D6T 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-336,48,Mantenimiento Correctivo Bulldozer D6T,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-337,49,PMP Motoniveladora G930 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-338,49,PMP Motoniveladora G930 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-339,49,PMP Motoniveladora G930 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-340,49,PMP Motoniveladora G930 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-341,49,PMP Motoniveladora G930 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-342,49,PMP Motoniveladora G930 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-343,49,Mantenimiento Correctivo Motoniveladora G930,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
-344,50,PMP Bulldozer D9T 10H,PREVENTIVO,POR_HORAS,10,0,Plan de mantenimiento preventivo cada 10 horas de operación,1
-345,50,PMP Bulldozer D9T 50H,PREVENTIVO,POR_HORAS,50,0,Plan de mantenimiento preventivo cada 50 horas de operación,1
-346,50,PMP Bulldozer D9T 250H,PREVENTIVO,POR_HORAS,250,0,Plan de mantenimiento preventivo cada 250 horas de operación,1
-347,50,PMP Bulldozer D9T 500H,PREVENTIVO,POR_HORAS,500,0,Plan de mantenimiento preventivo cada 500 horas de operación,1
-348,50,PMP Bulldozer D9T 1000H,PREVENTIVO,POR_HORAS,1000,0,Plan de mantenimiento preventivo cada 1000 horas de operación,1
-349,50,PMP Bulldozer D9T 2000H,PREVENTIVO,POR_HORAS,2000,0,Plan de mantenimiento preventivo cada 2000 horas de operación,1
-350,50,Mantenimiento Correctivo Bulldozer D9T,CORRECTIVO,CRONOGRAMA,0,0,Plan para mantenimientos correctivos no programados,1
+1,1,PM-250H Cargador WA470,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+2,1,PM-500H Cargador WA470,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+3,1,PM-1000H Cargador WA470,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+4,1,PM-2000H Cargador WA470,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+5,1,Correctivo General WA470,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+6,2,PM-250H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+7,2,PM-500H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+8,2,PM-1000H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+9,2,PM-2000H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+10,2,Correctivo General 4CX,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+11,3,PM-250H Grúa GMK4100,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+12,3,PM-500H Grúa GMK4100,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+13,3,PM-1000H Grúa GMK4100,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+14,3,PM-2000H Grúa GMK4100,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+15,3,Correctivo General GMK4100,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+16,4,PM-250H Grúa RT890E,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+17,4,PM-500H Grúa RT890E,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+18,4,PM-1000H Grúa RT890E,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+19,4,PM-2000H Grúa RT890E,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+20,4,Correctivo General RT890E,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+21,5,PM-250H Perforadora D245S,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+22,5,PM-500H Perforadora D245S,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+23,5,PM-1000H Perforadora D245S,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+24,5,PM-2000H Perforadora D245S,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+25,5,Correctivo General D245S,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+26,6,PM-250H Minicargador SR250,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+27,6,PM-500H Minicargador SR250,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+28,6,PM-1000H Minicargador SR250,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+29,6,PM-2000H Minicargador SR250,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+30,6,Correctivo General SR250,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+31,7,PM-250H Minicargador SR250,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+32,7,PM-500H Minicargador SR250,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+33,7,PM-1000H Minicargador SR250,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+34,7,PM-2000H Minicargador SR250,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+35,7,Correctivo General SR250,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+36,8,PM-250H Minicargador S650,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+37,8,PM-500H Minicargador S650,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+38,8,PM-1000H Minicargador S650,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+39,8,PM-2000H Minicargador S650,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+40,8,Correctivo General S650,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+41,9,PM-250H Motoniveladora GD655,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+42,9,PM-500H Motoniveladora GD655,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+43,9,PM-1000H Motoniveladora GD655,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+44,9,PM-2000H Motoniveladora GD655,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+45,9,Correctivo General GD655,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+46,10,PM-250H Motoniveladora 14M,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+47,10,PM-500H Motoniveladora 14M,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+48,10,PM-1000H Motoniveladora 14M,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+49,10,PM-2000H Motoniveladora 14M,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+50,10,Correctivo General 14M,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+51,11,PM-250H Excavadora 330,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+52,11,PM-500H Excavadora 330,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+53,11,PM-1000H Excavadora 330,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+54,11,PM-2000H Excavadora 330,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+55,11,Correctivo General 330,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+56,12,PM-250H Cargador 950M,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+57,12,PM-500H Cargador 950M,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+58,12,PM-1000H Cargador 950M,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+59,12,PM-2000H Cargador 950M,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+60,12,Correctivo General 950M,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+61,13,PM-250H Rodillo CS66,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+62,13,PM-500H Rodillo CS66,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+63,13,PM-1000H Rodillo CS66,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+64,13,PM-2000H Rodillo CS66,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+65,13,Correctivo General CS66,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+66,14,PM-250H Cargador L150,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+67,14,PM-500H Cargador L150,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+68,14,PM-1000H Cargador L150,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+69,14,PM-2000H Cargador L150,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+70,14,Correctivo General L150,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+71,15,PM-250H Motoniveladora GD655,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+72,15,PM-500H Motoniveladora GD655,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+73,15,PM-1000H Motoniveladora GD655,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+74,15,PM-2000H Motoniveladora GD655,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+75,15,Correctivo General GD655,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+76,16,PM-250H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+77,16,PM-500H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+78,16,PM-1000H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+79,16,PM-2000H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+80,16,Correctivo General 4CX,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+81,17,PM-250H Excavadora 349,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+82,17,PM-500H Excavadora 349,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+83,17,PM-1000H Excavadora 349,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+84,17,PM-2000H Excavadora 349,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+85,17,Correctivo General 349,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+86,18,PM-250H Excavadora 349,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+87,18,PM-500H Excavadora 349,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+88,18,PM-1000H Excavadora 349,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+89,18,PM-2000H Excavadora 349,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+90,18,Correctivo General 349,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+91,19,PM-250H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+92,19,PM-500H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+93,19,PM-1000H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+94,19,PM-2000H Retroexcavadora 4CX,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+95,19,Correctivo General 4CX,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+96,20,PM-250H Minicargador S650,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+97,20,PM-500H Minicargador S650,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+98,20,PM-1000H Minicargador S650,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+99,20,PM-2000H Minicargador S650,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+100,20,Correctivo General S650,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+101,21,PM-250H Minicargador 272D,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+102,21,PM-500H Minicargador 272D,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+103,21,PM-1000H Minicargador 272D,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+104,21,PM-2000H Minicargador 272D,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+105,21,Correctivo General 272D,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+106,22,PM-250H Minicargador 272D,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+107,22,PM-500H Minicargador 272D,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+108,22,PM-1000H Minicargador 272D,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+109,22,PM-2000H Minicargador 272D,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+110,22,Correctivo General 272D,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+111,23,PM-250H Volquete HD785,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+112,23,PM-500H Volquete HD785,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+113,23,PM-1000H Volquete HD785,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+114,23,PM-2000H Volquete HD785,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+115,23,Correctivo General HD785,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+116,24,PM-250H Motoniveladora GD655,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+117,24,PM-500H Motoniveladora GD655,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+118,24,PM-1000H Motoniveladora GD655,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+119,24,PM-2000H Motoniveladora GD655,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+120,24,Correctivo General GD655,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+121,25,PM-250H Retroexcavadora WB97,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+122,25,PM-500H Retroexcavadora WB97,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+123,25,PM-1000H Retroexcavadora WB97,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+124,25,PM-2000H Retroexcavadora WB97,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+125,25,Correctivo General WB97,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+126,26,PM-250H Cargador L150,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+127,26,PM-500H Cargador L150,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+128,26,PM-1000H Cargador L150,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+129,26,PM-2000H Cargador L150,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+130,26,Correctivo General L150,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+131,27,PM-250H Excavadora EC220,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+132,27,PM-500H Excavadora EC220,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+133,27,PM-1000H Excavadora EC220,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+134,27,PM-2000H Excavadora EC220,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+135,27,Correctivo General EC220,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+136,28,PM-250H Grúa LTM 1050,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+137,28,PM-500H Grúa LTM 1050,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+138,28,PM-1000H Grúa LTM 1050,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+139,28,PM-2000H Grúa LTM 1050,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+140,28,Correctivo General LTM 1050,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+141,29,PM-250H Bulldozer D275,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+142,29,PM-500H Bulldozer D275,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+143,29,PM-1000H Bulldozer D275,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+144,29,PM-2000H Bulldozer D275,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+145,29,Correctivo General D275,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+146,30,PM-250H Motoniveladora 140M,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+147,30,PM-500H Motoniveladora 140M,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+148,30,PM-1000H Motoniveladora 140M,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+149,30,PM-2000H Motoniveladora 140M,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+150,30,Correctivo General 140M,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+151,31,PM-250H Motoniveladora 140M,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+152,31,PM-500H Motoniveladora 140M,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+153,31,PM-1000H Motoniveladora 140M,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+154,31,PM-2000H Motoniveladora 140M,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+155,31,Correctivo General 140M,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+156,32,PM-250H Bulldozer D9T,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+157,32,PM-500H Bulldozer D9T,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+158,32,PM-1000H Bulldozer D9T,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+159,32,PM-2000H Bulldozer D9T,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+160,32,Correctivo General D9T,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+161,33,PM-250H Volquete A40G,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+162,33,PM-500H Volquete A40G,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+163,33,PM-1000H Volquete A40G,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+164,33,PM-2000H Volquete A40G,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+165,33,Correctivo General A40G,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+166,34,PM-250H Excavadora EC220,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+167,34,PM-500H Excavadora EC220,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+168,34,PM-1000H Excavadora EC220,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+169,34,PM-2000H Excavadora EC220,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+170,34,Correctivo General EC220,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+171,35,PM-250H Grúa GMK4100,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+172,35,PM-500H Grúa GMK4100,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+173,35,PM-1000H Grúa GMK4100,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+174,35,PM-2000H Grúa GMK4100,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+175,35,Correctivo General GMK4100,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+176,36,PM-250H Volquete HD785,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+177,36,PM-500H Volquete HD785,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+178,36,PM-1000H Volquete HD785,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+179,36,PM-2000H Volquete HD785,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+180,36,Correctivo General HD785,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+181,37,PM-250H Volquete 730C,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+182,37,PM-500H Volquete 730C,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+183,37,PM-1000H Volquete 730C,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+184,37,PM-2000H Volquete 730C,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+185,37,Correctivo General 730C,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+186,38,PM-250H Cargador 950M,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+187,38,PM-500H Cargador 950M,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+188,38,PM-1000H Cargador 950M,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+189,38,PM-2000H Cargador 950M,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+190,38,Correctivo General 950M,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+191,39,PM-250H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+192,39,PM-500H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+193,39,PM-1000H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+194,39,PM-2000H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+195,39,Correctivo General 430F,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+196,40,PM-250H Volquete HD785,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+197,40,PM-500H Volquete HD785,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+198,40,PM-1000H Volquete HD785,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+199,40,PM-2000H Volquete HD785,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+200,40,Correctivo General HD785,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+201,41,PM-250H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+202,41,PM-500H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+203,41,PM-1000H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+204,41,PM-2000H Retroexcavadora 430F,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+205,41,Correctivo General 430F,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+206,42,PM-250H Excavadora 349,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+207,42,PM-500H Excavadora 349,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+208,42,PM-1000H Excavadora 349,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+209,42,PM-2000H Excavadora 349,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+210,42,Correctivo General 349,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+211,43,PM-250H Rodillo CV533,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+212,43,PM-500H Rodillo CV533,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+213,43,PM-1000H Rodillo CV533,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+214,43,PM-2000H Rodillo CV533,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+215,43,Correctivo General CV533,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+216,44,PM-250H Cargador 950M,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+217,44,PM-500H Cargador 950M,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+218,44,PM-1000H Cargador 950M,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+219,44,PM-2000H Cargador 950M,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+220,44,Correctivo General 950M,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+221,45,PM-250H Grúa LTM 1100,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+222,45,PM-500H Grúa LTM 1100,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+223,45,PM-1000H Grúa LTM 1100,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+224,45,PM-2000H Grúa LTM 1100,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+225,45,Correctivo General LTM 1100,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+226,46,PM-250H Grúa LTM 1100,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+227,46,PM-500H Grúa LTM 1100,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+228,46,PM-1000H Grúa LTM 1100,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+229,46,PM-2000H Grúa LTM 1100,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+230,46,Correctivo General LTM 1100,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+231,47,PM-250H Motoniveladora G930,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+232,47,PM-500H Motoniveladora G930,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+233,47,PM-1000H Motoniveladora G930,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+234,47,PM-2000H Motoniveladora G930,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+235,47,Correctivo General G930,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+236,48,PM-250H Rodillo BW211,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+237,48,PM-500H Rodillo BW211,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+238,48,PM-1000H Rodillo BW211,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+239,48,PM-2000H Rodillo BW211,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+240,48,Correctivo General BW211,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+241,49,PM-250H Volquete HD785,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+242,49,PM-500H Volquete HD785,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+243,49,PM-1000H Volquete HD785,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+244,49,PM-2000H Volquete HD785,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+245,49,Correctivo General HD785,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1
+246,50,PM-250H Excavadora 320,PREVENTIVO,POR_HORAS,250,0,Mantenimiento preventivo estándar de 250 horas. Incluye cambio de filtros y aceites según manual.,1
+247,50,PM-500H Excavadora 320,PREVENTIVO,POR_HORAS,500,0,Mantenimiento preventivo estándar de 500 horas. Incluye cambio de filtros y aceites según manual.,1
+248,50,PM-1000H Excavadora 320,PREVENTIVO,POR_HORAS,1000,0,Mantenimiento preventivo estándar de 1000 horas. Incluye cambio de filtros y aceites según manual.,1
+249,50,PM-2000H Excavadora 320,PREVENTIVO,POR_HORAS,2000,0,Mantenimiento preventivo estándar de 2000 horas. Incluye cambio de filtros y aceites según manual.,1
+250,50,Correctivo General 320,CORRECTIVO,CRONOGRAMA,0,0,Plan para reparaciones no programadas y fallas imprevistas.,1

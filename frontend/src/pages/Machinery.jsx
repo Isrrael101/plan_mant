@@ -22,7 +22,8 @@ function Machinery() {
         modelo: '',
         año: '',
         estado: 'OPERATIVO',
-        costo_adquisicion: ''
+        costo_adquisicion: '',
+        horas_totales: ''
     });
     const toast = useToast();
     const navigate = useNavigate();
@@ -34,18 +35,30 @@ function Machinery() {
     const loadMachinery = async () => {
         try {
             setLoading(true);
-            const data = await api.getMachinery();
-            if (data.success && data.data) {
-                const filtered = data.data.filter(item =>
-                    (item.codigo || item['Unnamed: 3']) && (item.nombre || item['Unnamed: 4'])
-                );
-                setMachinery(filtered);
-            }
             setError(null);
+            const data = await api.getMachinery();
+            console.log('API Response:', data);
+            
+            if (data && data.success && data.data) {
+                console.log('=== MACHINERY LOAD ===');
+                console.log('API Response:', data);
+                console.log('Total items received:', data.data.length);
+                console.log('First item:', JSON.stringify(data.data[0], null, 2));
+                
+                // NO filtrar - aceptar todos los items
+                const allItems = data.data;
+                console.log('Setting machinery state with', allItems.length, 'items');
+                console.log('First item to set:', allItems[0]);
+                setMachinery(allItems);
+            } else {
+                console.warn('No data received or invalid response:', data);
+                setMachinery([]);
+            }
         } catch (err) {
-            setError('Error al cargar maquinaria');
+            console.error('Error loading machinery:', err);
+            setError('Error al cargar maquinaria: ' + (err.message || 'Error desconocido'));
             toast.error('Error al cargar datos de maquinaria');
-            console.error(err);
+            setMachinery([]);
         } finally {
             setLoading(false);
         }
@@ -60,21 +73,23 @@ function Machinery() {
             modelo: '',
             año: '',
             estado: 'OPERATIVO',
-            costo_adquisicion: ''
+            costo_adquisicion: '',
+            horas_totales: ''
         });
         setShowModal(true);
     };
 
     const handleEdit = (item, index) => {
-        setEditingItem(item.id || item['id'] || null);
+        setEditingItem(item.id || null);
         setFormData({
-            codigo: item.codigo || item['Unnamed: 3'] || '',
-            nombre: item.nombre || item['Unnamed: 4'] || '',
-            marca: item.marca || item['Unnamed: 5'] || '',
-            modelo: item.modelo || item['Unnamed: 6'] || '',
-            año: item.anio || item['Unnamed: 7'] || '',
-            estado: item.estado || item['Unnamed: 8'] || 'OPERATIVO',
-            costo_adquisicion: item['costo_adquisicion'] || ''
+            codigo: item.codigo || '',
+            nombre: item.nombre || '',
+            marca: item.marca || '',
+            modelo: item.modelo || '',
+            año: item.anio || '',
+            estado: item.estado || 'OPERATIVO',
+            costo_adquisicion: item.costo_adquisicion || '',
+            horas_totales: item.horas_totales || ''
         });
         setShowModal(true);
     };
@@ -82,7 +97,7 @@ function Machinery() {
     const handleDelete = async (item) => {
         if (window.confirm('¿Estás seguro de que deseas eliminar este equipo?')) {
             try {
-                const itemId = item.id || item['id'];
+                const itemId = item.id;
                 if (!itemId) {
                     toast.error('Error: ID no encontrado');
                     return;
@@ -107,9 +122,10 @@ function Machinery() {
                 modelo: formData.modelo,
                 anio: formData.año,
                 estado: formData.estado,
-                costo_adquisicion: safeParseFloat(formData.costo_adquisicion)
+                costo_adquisicion: safeParseFloat(formData.costo_adquisicion),
+                horas_totales: safeParseFloat(formData.horas_totales) || 0
             };
-            
+
             if (editingItem !== null) {
                 await api.updateMachinery(editingItem, data);
                 toast.success('Equipo actualizado correctamente');
@@ -117,7 +133,7 @@ function Machinery() {
                 await api.createMachinery(data);
                 toast.success('Equipo creado correctamente');
             }
-            
+
             setShowModal(false);
             await loadMachinery();
         } catch (err) {
@@ -128,19 +144,23 @@ function Machinery() {
     };
 
     const filteredMachinery = machinery.filter(item => {
-        const matchesSearch = 
-            ((item.codigo || item['Unnamed: 3']) || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-            ((item.nombre || item['Unnamed: 4']) || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
-            ((item.marca || item['Unnamed: 5']) || '').toLowerCase().includes(searchTerm.toLowerCase());
-        
-        const matchesFilter = filterStatus === 'all' || 
-            (item.estado || item['Unnamed: 8'] || 'OPERATIVO') === filterStatus;
-        
+        if (!item) return false;
+        const matchesSearch =
+            (item.codigo || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (item.nombre || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (item.marca || '').toLowerCase().includes(searchTerm.toLowerCase());
+
+        const matchesFilter = filterStatus === 'all' ||
+            (item.estado || 'OPERATIVO') === filterStatus;
+
         return matchesSearch && matchesFilter;
     });
+    
+    console.log('Machinery state:', machinery.length, 'items');
+    console.log('Filtered machinery:', filteredMachinery.length, 'items');
 
     const getStatusCount = (status) => {
-        return machinery.filter(item => (item.estado || item['Unnamed: 8'] || 'OPERATIVO') === status).length;
+        return machinery.filter(item => (item.estado || 'OPERATIVO') === status).length;
     };
 
     if (loading) return <Loading message="Cargando maquinaria" />;
@@ -159,8 +179,20 @@ function Machinery() {
         );
     }
 
+    // DEBUG: Mostrar información de estado
+    console.log('=== RENDER DEBUG ===');
+    console.log('machinery state:', machinery);
+    console.log('machinery length:', machinery.length);
+    console.log('filteredMachinery length:', filteredMachinery.length);
+    console.log('loading:', loading);
+    console.log('error:', error);
+
     return (
         <div className="container fade-in">
+            {/* DEBUG INFO - REMOVER DESPUÉS */}
+            <div style={{background: '#ff0', padding: '10px', marginBottom: '10px', fontSize: '12px'}}>
+                <strong>DEBUG:</strong> Machinery: {machinery.length} | Filtered: {filteredMachinery.length} | Loading: {loading ? 'YES' : 'NO'}
+            </div>
             <div className="page-header">
                 <div>
                     <h1>🚜 Inventario de Maquinaria</h1>
@@ -211,25 +243,25 @@ function Machinery() {
                     )}
                 </div>
                 <div className="filter-buttons">
-                    <button 
+                    <button
                         className={`filter-btn ${filterStatus === 'all' ? 'active' : ''}`}
                         onClick={() => setFilterStatus('all')}
                     >
                         Todos
                     </button>
-                    <button 
+                    <button
                         className={`filter-btn success ${filterStatus === 'OPERATIVO' ? 'active' : ''}`}
                         onClick={() => setFilterStatus('OPERATIVO')}
                     >
                         Operativos
                     </button>
-                    <button 
+                    <button
                         className={`filter-btn warning ${filterStatus === 'MANTENIMIENTO' ? 'active' : ''}`}
                         onClick={() => setFilterStatus('MANTENIMIENTO')}
                     >
                         Mantenimiento
                     </button>
-                    <button 
+                    <button
                         className={`filter-btn error ${filterStatus === 'INACTIVO' ? 'active' : ''}`}
                         onClick={() => setFilterStatus('INACTIVO')}
                     >
@@ -243,14 +275,14 @@ function Machinery() {
                 <table className="data-table">
                     <thead>
                         <tr>
-                            <th style={{width: '8%'}}>Código</th>
-                            <th style={{width: '18%'}}>Nombre</th>
-                            <th style={{width: '10%'}}>Marca</th>
-                            <th style={{width: '10%'}}>Modelo</th>
-                            <th style={{width: '6%'}}>Año</th>
-                            <th style={{width: '10%'}}>Estado</th>
-                            <th style={{width: '10%'}}>Costo (Bs.)</th>
-                            <th style={{width: '14%'}}>Acciones</th>
+                            <th style={{ width: '8%' }}>Código</th>
+                            <th style={{ width: '18%' }}>Nombre</th>
+                            <th style={{ width: '10%' }}>Marca</th>
+                            <th style={{ width: '10%' }}>Modelo</th>
+                            <th style={{ width: '6%' }}>Año</th>
+                            <th style={{ width: '10%' }}>Estado</th>
+                            <th style={{ width: '10%' }}>Costo (Bs.)</th>
+                            <th style={{ width: '14%' }}>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -272,27 +304,26 @@ function Machinery() {
                             filteredMachinery.map((item, index) => (
                                 <tr key={index}>
                                     <td>
-                                        <span className="code-badge">{item.codigo || item['Unnamed: 3'] || 'N/A'}</span>
+                                        <span className="code-badge">{item.codigo || 'N/A'}</span>
                                     </td>
-                                    <td className="item-name" title={item.nombre || item['Unnamed: 4']}>
-                                        {item.nombre || item['Unnamed: 4'] || 'N/A'}
+                                    <td className="item-name" title={item.nombre}>
+                                        {item.nombre || 'N/A'}
                                     </td>
-                                    <td title={item.marca || item['Unnamed: 5']}>{item.marca || item['Unnamed: 5'] || 'N/A'}</td>
-                                    <td title={item.modelo || item['Unnamed: 6']}>{item.modelo || item['Unnamed: 6'] || 'N/A'}</td>
-                                    <td>{item.anio || item['Unnamed: 7'] || 'N/A'}</td>
+                                    <td title={item.marca}>{item.marca || 'N/A'}</td>
+                                    <td title={item.modelo}>{item.modelo || 'N/A'}</td>
+                                    <td>{item.anio || 'N/A'}</td>
                                     <td>
-                                        <span className={`badge ${
-                                            (item.estado || item['Unnamed: 8']) === 'OPERATIVO' ? 'badge-success' : 
-                                            (item.estado || item['Unnamed: 8']) === 'MANTENIMIENTO' ? 'badge-warning' : 
-                                            'badge-error'
-                                        }`}>
-                                            {item.estado || item['Unnamed: 8'] || 'OPERATIVO'}
+                                        <span className={`badge ${item.estado === 'OPERATIVO' ? 'badge-success' :
+                                                item.estado === 'MANTENIMIENTO' ? 'badge-warning' :
+                                                    'badge-error'
+                                            }`}>
+                                            {item.estado || 'OPERATIVO'}
                                         </span>
                                     </td>
                                     <td className="cost-cell">
-                                        {safeFormatCurrency(item['costo_adquisicion']) ? (
+                                        {safeFormatCurrency(item.costo_adquisicion) ? (
                                             <span className="cost-value">
-                                                {safeFormatCurrency(item['costo_adquisicion'])}
+                                                {safeFormatCurrency(item.costo_adquisicion)}
                                             </span>
                                         ) : (
                                             <span className="no-data">-</span>
@@ -300,22 +331,22 @@ function Machinery() {
                                     </td>
                                     <td>
                                         <div className="action-buttons">
-                                            <button 
-                                                className="btn-action btn-forms" 
+                                            <button
+                                                className="btn-action btn-forms"
                                                 onClick={() => navigate(`/machinery/${item.id}/forms`)}
                                                 title="Fichas y Checklists"
                                             >
                                                 📋
                                             </button>
-                                            <button 
-                                                className="btn-action btn-edit" 
+                                            <button
+                                                className="btn-action btn-edit"
                                                 onClick={() => handleEdit(item, index)}
                                                 title="Editar equipo"
                                             >
                                                 ✏️
                                             </button>
-                                            <button 
-                                                className="btn-action btn-delete" 
+                                            <button
+                                                className="btn-action btn-delete"
                                                 onClick={() => handleDelete(item)}
                                                 title="Eliminar equipo"
                                             >
@@ -343,8 +374,8 @@ function Machinery() {
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <div className="modal-header">
                             <h2>{editingItem !== null ? '✏️ Editar' : '➕ Agregar'} Equipo</h2>
-                            <button 
-                                className="modal-close" 
+                            <button
+                                className="modal-close"
                                 onClick={() => !isSubmitting && setShowModal(false)}
                                 disabled={isSubmitting}
                             >
@@ -358,7 +389,7 @@ function Machinery() {
                                     <input
                                         type="text"
                                         value={formData.codigo}
-                                        onChange={(e) => setFormData({...formData, codigo: e.target.value})}
+                                        onChange={(e) => setFormData({ ...formData, codigo: e.target.value })}
                                         placeholder="Ej: EQ-001"
                                         required
                                         disabled={isSubmitting}
@@ -369,7 +400,7 @@ function Machinery() {
                                     <input
                                         type="text"
                                         value={formData.nombre}
-                                        onChange={(e) => setFormData({...formData, nombre: e.target.value})}
+                                        onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
                                         placeholder="Nombre del equipo"
                                         required
                                         disabled={isSubmitting}
@@ -382,7 +413,7 @@ function Machinery() {
                                     <input
                                         type="text"
                                         value={formData.marca}
-                                        onChange={(e) => setFormData({...formData, marca: e.target.value})}
+                                        onChange={(e) => setFormData({ ...formData, marca: e.target.value })}
                                         placeholder="Ej: Caterpillar"
                                         disabled={isSubmitting}
                                     />
@@ -392,7 +423,7 @@ function Machinery() {
                                     <input
                                         type="text"
                                         value={formData.modelo}
-                                        onChange={(e) => setFormData({...formData, modelo: e.target.value})}
+                                        onChange={(e) => setFormData({ ...formData, modelo: e.target.value })}
                                         placeholder="Ej: D6T"
                                         disabled={isSubmitting}
                                     />
@@ -404,7 +435,7 @@ function Machinery() {
                                     <input
                                         type="text"
                                         value={formData.año}
-                                        onChange={(e) => setFormData({...formData, año: e.target.value})}
+                                        onChange={(e) => setFormData({ ...formData, año: e.target.value })}
                                         placeholder="Ej: 2020"
                                         disabled={isSubmitting}
                                     />
@@ -413,7 +444,7 @@ function Machinery() {
                                     <label>Estado</label>
                                     <select
                                         value={formData.estado}
-                                        onChange={(e) => setFormData({...formData, estado: e.target.value})}
+                                        onChange={(e) => setFormData({ ...formData, estado: e.target.value })}
                                         disabled={isSubmitting}
                                     >
                                         <option value="OPERATIVO">✅ Operativo</option>
@@ -429,23 +460,34 @@ function Machinery() {
                                         type="number"
                                         step="0.01"
                                         value={formData.costo_adquisicion}
-                                        onChange={(e) => setFormData({...formData, costo_adquisicion: e.target.value})}
+                                        onChange={(e) => setFormData({ ...formData, costo_adquisicion: e.target.value })}
+                                        placeholder="0.00"
+                                        disabled={isSubmitting}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label>Horas Totales</label>
+                                    <input
+                                        type="number"
+                                        step="0.01"
+                                        value={formData.horas_totales}
+                                        onChange={(e) => setFormData({ ...formData, horas_totales: e.target.value })}
                                         placeholder="0.00"
                                         disabled={isSubmitting}
                                     />
                                 </div>
                             </div>
                             <div className="modal-actions">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-secondary" 
+                                <button
+                                    type="button"
+                                    className="btn btn-secondary"
                                     onClick={() => setShowModal(false)}
                                     disabled={isSubmitting}
                                 >
                                     Cancelar
                                 </button>
-                                <button 
-                                    type="submit" 
+                                <button
+                                    type="submit"
                                     className="btn btn-primary"
                                     disabled={isSubmitting}
                                 >

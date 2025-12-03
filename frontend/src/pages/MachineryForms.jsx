@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { useToast } from '../components/Toast';
 import { useAuth } from '../context/AuthContext';
+import api from '../services/api';
 import './MachineryForms.css';
 
 function MachineryForms() {
@@ -32,15 +33,13 @@ function MachineryForms() {
 
     const loadMachinery = async () => {
         try {
-            const response = await fetch(`http://localhost:3001/api/machinery/${id}`);
-            const data = await response.json();
+            const data = await api.getMachineryById(id);
             if (data.success) {
                 setMachinery(data.data);
             }
 
             // Cargar especificaciones
-            const specsResponse = await fetch(`http://localhost:3001/api/machinery/${id}/specs`);
-            const specsData = await specsResponse.json();
+            const specsData = await api.getMachinerySpecs(id);
             if (specsData.success) {
                 setSpecs(specsData.data);
                 // Inicializar editData vacío para que los campos estén en blanco
@@ -56,20 +55,17 @@ function MachineryForms() {
         setLoading(true);
         try {
             if (activeTab === 'checklist') {
-                const response = await fetch(`http://localhost:3001/api/machinery/${id}/checklists`);
-                const data = await response.json();
+                const data = await api.getChecklistsByMachinery(id);
                 if (data.success) {
                     setChecklists(data.data || []);
                 }
             } else if (activeTab === 'daily') {
-                const response = await fetch(`http://localhost:3001/api/machinery/${id}/daily-reports`);
-                const data = await response.json();
+                const data = await api.getDailyReportsByMachinery(id);
                 if (data.success) {
                     setDailyReports(data.data || []);
                 }
             } else if (activeTab === 'history') {
-                const response = await fetch(`http://localhost:3001/api/machinery/${id}/history`);
-                const data = await response.json();
+                const data = await api.getMachineryHistory(id);
                 if (data.success) {
                     setHistory(data.data || []);
                 }
@@ -83,12 +79,7 @@ function MachineryForms() {
 
     const handleSaveSpecs = async () => {
         try {
-            const response = await fetch(`http://localhost:3001/api/machinery/${id}/specs`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(editData)
-            });
-            const data = await response.json();
+            const data = await api.updateMachinerySpecs(id, editData);
             if (data.success) {
                 toast.success('Especificaciones guardadas');
                 setSpecs(editData);
@@ -377,8 +368,7 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
 
     const loadMachinery = async () => {
         try {
-            const response = await fetch(`http://localhost:3001/api/machinery/${machineryId}`);
-            const data = await response.json();
+            const data = await api.getMachineryById(machineryId);
             return data.success ? data.data : null;
         } catch (error) {
             return null;
@@ -393,21 +383,16 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
 
     const createChecklist = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/checklists', {
-                method: 'POST',
-                headers: getAuthHeaders(),
-                body: JSON.stringify({
-                    maquinaria_id: machineryId,
-                    fecha: formData.fecha,
-                    tipo_checklist: formData.tipo_checklist,
-                    codigo_checklist: formData.codigo_checklist || null,
-                    realizado_por: formData.realizado_por || null,
-                    revisado_por: formData.revisado_por || null,
-                    observaciones: formData.observaciones || null
-                })
+            const data = await api.createChecklist({
+                maquinaria_id: machineryId,
+                fecha: formData.fecha,
+                tipo_checklist: formData.tipo_checklist,
+                codigo_checklist: formData.codigo_checklist || null,
+                realizado_por: formData.realizado_por || null,
+                revisado_por: formData.revisado_por || null,
+                observaciones: formData.observaciones || null
             });
 
-            const data = await response.json();
             if (data.success) {
                 toast.success('Checklist creado exitosamente');
                 setShowModal(false);
@@ -431,25 +416,14 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
                 }
                 return acc;
             }, {});
-            
-            console.log('Updating checklist with filtered data:', fieldsToUpdate);
-            const response = await fetch(`http://localhost:3001/api/checklists/${selectedChecklist.id}`, {
-                method: 'PUT',
-                headers: getAuthHeaders(),
-                body: JSON.stringify(fieldsToUpdate)
-            });
 
-            const data = await response.json();
-            console.log('Update response:', data);
-            
+            const data = await api.updateChecklist(selectedChecklist.id, fieldsToUpdate);
+
             if (data.success) {
                 toast.success('Checklist actualizado');
                 setIsEditing(false);
                 // Recargar el checklist actualizado desde el servidor
-                const reloadResponse = await fetch(`http://localhost:3001/api/checklists/${selectedChecklist.id}`, {
-                    headers: getAuthHeaders()
-                });
-                const reloadData = await reloadResponse.json();
+                const reloadData = await api.getChecklist(selectedChecklist.id);
                 if (reloadData.success) {
                     setSelectedChecklist(reloadData.data);
                     setEditData(reloadData.data);
@@ -470,12 +444,7 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
         }
 
         try {
-            const response = await fetch(`http://localhost:3001/api/checklists/${checklistId}`, {
-                method: 'DELETE',
-                headers: getAuthHeaders()
-            });
-
-            const data = await response.json();
+            const data = await api.deleteChecklist(checklistId);
             if (data.success) {
                 toast.success('Checklist eliminado');
                 if (selectedChecklist && selectedChecklist.id === checklistId) {
@@ -646,7 +615,7 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
         const condicion = checklistData[campoCondicion] || 'BUENO';
         const accionTexto = checklistData[campoAccion] || '';
         const accionTipo = getAccionTipo(condicion, accionTexto);
-        
+
         // Obtener el campo base removiendo el sufijo _accion si existe
         // Ejemplo: sonda_botella_vibradora_accion -> sonda_botella_vibradora
         const campoBase = campoAccion.replace(/_accion$/, '');
@@ -941,15 +910,9 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
     const [editData, setEditData] = useState({});
     const [machinery, setMachinery] = useState(null);
 
-    const getAuthHeaders = () => ({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-    });
-
     const loadMachinery = async () => {
         try {
-            const response = await fetch(`http://localhost:3001/api/machinery/${machineryId}`);
-            const data = await response.json();
+            const data = await api.getMachineryById(machineryId);
             return data.success ? data.data : null;
         } catch (error) {
             return null;
@@ -962,16 +925,11 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
 
     const createReport = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/daily-reports', {
-                method: 'POST',
-                headers: getAuthHeaders(),
-                body: JSON.stringify({
-                    maquinaria_id: machineryId,
-                    fecha: new Date().toISOString().split('T')[0]
-                })
+            const data = await api.createDailyReport({
+                maquinaria_id: machineryId,
+                fecha: new Date().toISOString().split('T')[0]
             });
 
-            const data = await response.json();
             if (data.success) {
                 toast.success('Reporte creado exitosamente');
                 setShowModal(false);
@@ -986,21 +944,12 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
 
     const updateReport = async () => {
         try {
-            const response = await fetch(`http://localhost:3001/api/daily-reports/${selectedReport.id}`, {
-                method: 'PUT',
-                headers: getAuthHeaders(),
-                body: JSON.stringify(editData)
-            });
-
-            const data = await response.json();
+            const data = await api.updateDailyReport(selectedReport.id, editData);
             if (data.success) {
                 toast.success('Reporte actualizado');
                 setIsEditing(false);
                 // Recargar el reporte actualizado
-                const reloadResponse = await fetch(`http://localhost:3001/api/daily-reports/${selectedReport.id}`, {
-                    headers: getAuthHeaders()
-                });
-                const reloadData = await reloadResponse.json();
+                const reloadData = await api.getDailyReport(selectedReport.id);
                 if (reloadData.success) {
                     setSelectedReport(reloadData.data);
                     setEditData(reloadData.data);
@@ -1020,12 +969,7 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
         }
 
         try {
-            const response = await fetch(`http://localhost:3001/api/daily-reports/${reportId}`, {
-                method: 'DELETE',
-                headers: getAuthHeaders()
-            });
-
-            const data = await response.json();
+            const data = await api.deleteDailyReport(reportId);
             if (data.success) {
                 toast.success('Reporte eliminado');
                 if (selectedReport && selectedReport.id === reportId) {
@@ -1143,7 +1087,7 @@ function DailyReportView({ reports, machineryId, onReload, loading }) {
 // Daily Report Detail View Component
 function DailyReportDetailView({ report, editData, isEditing, machinery, onBack, onSave, onDelete, onChange, onEdit, onCancel }) {
     const reportData = isEditing ? editData : report;
-    
+
     const activities = [
         { key: 'limpieza_lavado', label: 'Limpieza y Lavado' },
         { key: 'nivel_refrigerante', label: 'Nivel de Refrigerante' },
@@ -1260,8 +1204,8 @@ function DailyReportDetailView({ report, editData, isEditing, machinery, onBack,
                                 <div className="stat-day">{day.label}</div>
                                 <div className="stat-progress">
                                     <div className="stat-bar">
-                                        <div 
-                                            className="stat-bar-fill" 
+                                        <div
+                                            className="stat-bar-fill"
                                             style={{ width: `${stats.percentage}%` }}
                                         ></div>
                                     </div>

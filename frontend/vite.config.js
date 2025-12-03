@@ -17,17 +17,26 @@ export default defineConfig({
     build: {
         target: 'esnext',
         minify: 'esbuild',
+        // Optimizar code splitting
+        chunkSizeWarningLimit: 1000,
         rollupOptions: {
             output: {
                 entryFileNames: 'assets/index-[hash].js',
                 chunkFileNames: 'assets/[name]-[hash].js',
-                assetFileNames: 'assets/[name]-[hash].[ext]'
+                assetFileNames: 'assets/[name]-[hash].[ext]',
+                // Separar dependencias grandes en chunks específicos
+                manualChunks: {
+                    'react-vendor': ['react', 'react-dom'],
+                    'router': ['react-router-dom']
+                }
             }
         }
     },
     esbuild: {
-        charset: 'utf8'
+        charset: 'utf8',
+        // Remover console.log en producción
+        drop: ['console', 'debugger']
     }
 })
 
-// Version 3.0.0 - MySQL Only - CRUD Complete - Hourly Maintenance Plans
+// Version 3.0.0 - MySQL Only - CRUD Complete - Optimizado

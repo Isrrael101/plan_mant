@@ -367,17 +367,14 @@ def generar_actividades_mantenimiento(cursor):
     print(f"   ✅ {total_actividades} actividades de mantenimiento generadas")
 
 def generar_historial_mantenimiento(cursor, cantidad=100):
-    """Genera historial de mantenimiento"""
-    print(f"\n📊 Generando {cantidad} registros de historial...")
+    """Genera historial de mantenimiento (tabla mantenimientos)"""
+    print(f"\n📊 Generando {cantidad} registros de historial (mantenimientos)...")
     
     cursor.execute("SELECT id FROM maquinaria")
     maquinarias = [m[0] for m in cursor.fetchall()]
     
     cursor.execute("SELECT id FROM planes_mantenimiento")
     planes = [p[0] for p in cursor.fetchall()]
-    
-    cursor.execute("SELECT id FROM personal WHERE estado = 'ACTIVO'")
-    personal = [p[0] for p in cursor.fetchall()]
     
     if not maquinarias:
         print("   ⚠️ No hay datos suficientes para generar historial")
@@ -388,27 +385,39 @@ def generar_historial_mantenimiento(cursor, cantidad=100):
     for i in range(cantidad):
         maquinaria_id = random.choice(maquinarias)
         plan_id = random.choice(planes) if planes else None
-        personal_id = random.choice(personal) if personal else None
-        fecha_ejecucion = fecha_inicio + timedelta(days=random.randint(0, 365))
+        fecha_programada = fecha_inicio + timedelta(days=random.randint(0, 365))
+        
+        # 75% completados, 25% programados/en proceso
+        estado = random.choice(['COMPLETADO', 'COMPLETADO', 'COMPLETADO', 'PROGRAMADO', 'EN_PROCESO'])
+        
+        fecha_ejecucion = None
+        if estado == 'COMPLETADO':
+            fecha_ejecucion = fecha_programada + timedelta(days=random.randint(0, 5))
+            
         horas_maquina = random.randint(500, 5000)
         observaciones = random.choice([
             'Mantenimiento realizado correctamente',
             'Se reemplazaron filtros',
             'Lubricación completa realizada',
             'Inspección general sin observaciones',
-            'Requiere seguimiento'
+            'Requiere seguimiento',
+            'Mantenimiento preventivo estándar'
         ])
-        costo_total = round(random.uniform(500, 5000), 2)
-        completado = random.choice([True, True, True, False])  # 75% completados
+        
+        # Costos (mano de obra e insumos)
+        costo_mano_obra = round(random.uniform(200, 2000), 2)
+        costo_insumos = round(random.uniform(300, 3000), 2)
+        
+        tipo_mantenimiento = 'PREVENTIVO' if plan_id else 'CORRECTIVO'
         
         try:
             cursor.execute("""
-                INSERT INTO historial_mantenimiento 
-                (maquinaria_id, plan_id, personal_id, fecha_ejecucion, horas_maquina, observaciones, costo_total, completado)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-            """, (maquinaria_id, plan_id, personal_id, fecha_ejecucion, horas_maquina, observaciones, costo_total, completado))
+                INSERT INTO mantenimientos 
+                (maquinaria_id, plan_id, tipo_mantenimiento, fecha_programada, fecha_ejecucion, horas_maquina, estado, observaciones, costo_mano_obra, costo_insumos)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (maquinaria_id, plan_id, tipo_mantenimiento, fecha_programada, fecha_ejecucion, horas_maquina, estado, observaciones, costo_mano_obra, costo_insumos))
         except Error as e:
-            print(f"   Error en historial {i}: {e}")
+            print(f"   Error en mantenimiento {i}: {e}")
     
     print(f"   ✅ {cantidad} registros de historial generados")
 
@@ -472,10 +481,10 @@ def main():
             cursor.execute("SELECT COUNT(*) FROM actividades_mantenimiento")
             print(f"   Actividades: {cursor.fetchone()[0]} registros")
             
-            cursor.execute("SELECT COUNT(*) FROM historial_mantenimiento")
-            print(f"   Historial: {cursor.fetchone()[0]} registros")
+            cursor.execute("SELECT COUNT(*) FROM mantenimientos")
+            print(f"   Historial (Mantenimientos): {cursor.fetchone()[0]} registros")
             
-            cursor.execute("SELECT SUM(total) FROM (SELECT COUNT(*) as total FROM maquinaria UNION ALL SELECT COUNT(*) FROM personal UNION ALL SELECT COUNT(*) FROM herramientas UNION ALL SELECT COUNT(*) FROM insumos UNION ALL SELECT COUNT(*) FROM planes_mantenimiento UNION ALL SELECT COUNT(*) FROM actividades_mantenimiento UNION ALL SELECT COUNT(*) FROM historial_mantenimiento) as totals")
+            cursor.execute("SELECT SUM(total) FROM (SELECT COUNT(*) as total FROM maquinaria UNION ALL SELECT COUNT(*) FROM personal UNION ALL SELECT COUNT(*) FROM herramientas UNION ALL SELECT COUNT(*) FROM insumos UNION ALL SELECT COUNT(*) FROM planes_mantenimiento UNION ALL SELECT COUNT(*) FROM actividades_mantenimiento UNION ALL SELECT COUNT(*) FROM mantenimientos) as totals")
             total = cursor.fetchone()[0]
             print(f"\n   ✅ TOTAL: {total} registros generados")
             

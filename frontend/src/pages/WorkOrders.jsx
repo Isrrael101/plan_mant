@@ -46,12 +46,11 @@ function WorkOrders() {
     const loadData = async () => {
         setLoading(true);
         try {
-            const params = new URLSearchParams();
-            if (filterEstado) params.append('estado', filterEstado);
-            if (filterPrioridad) params.append('prioridad', filterPrioridad);
+            const filters = {};
+            if (filterEstado) filters.estado = filterEstado;
+            if (filterPrioridad) filters.prioridad = filterPrioridad;
 
-            const response = await fetch(`http://localhost:3001/api/work-orders?${params}`);
-            const data = await response.json();
+            const data = await api.getWorkOrders(filters);
             if (data.success) {
                 setWorkOrders(data.data);
             }
@@ -147,26 +146,14 @@ function WorkOrders() {
             };
 
             if (editingOT) {
-                const response = await fetch(`http://localhost:3001/api/work-orders/${editingOT.id}`, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const data = await response.json();
+                const data = await api.updateWorkOrder(editingOT.id, payload);
                 if (data.success) {
                     toast.success('OT actualizada correctamente');
                     setShowModal(false);
                     loadData();
                 }
             } else {
-                const response = await fetch('http://localhost:3001/api/work-orders', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                const data = await response.json();
+                const data = await api.createWorkOrder(payload);
                 if (data.success) {
                     toast.success(`OT creada: ${data.numero_ot}`);
                     setShowModal(false);
@@ -182,11 +169,7 @@ function WorkOrders() {
         if (!window.confirm('¿Está seguro de eliminar esta OT?')) return;
 
         try {
-            const response = await fetch(`http://localhost:3001/api/work-orders/${id}`, {
-                method: 'DELETE'
-            });
-
-            const data = await response.json();
+            const data = await api.deleteWorkOrder(id);
             if (data.success) {
                 toast.success('OT eliminada');
                 loadData();

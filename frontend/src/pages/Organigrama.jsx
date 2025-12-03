@@ -1,10 +1,157 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import api from '../services/api';
+import Loading from '../components/Loading';
+import { useToast } from '../components/Toast';
 import './Organigrama.css';
 
 function Organigrama() {
     const [selectedCard, setSelectedCard] = useState(null);
+    const [personnel, setPersonnel] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const toast = useToast();
 
-    // Estructura del organigrama mejorada y más completa
+    useEffect(() => {
+        loadPersonnel();
+    }, []);
+
+    const loadPersonnel = async () => {
+        try {
+            setLoading(true);
+            const data = await api.getPersonnel();
+            if (data && data.success && data.data) {
+                setPersonnel(data.data);
+            }
+        } catch (err) {
+            console.error('Error loading personnel:', err);
+            toast.error('Error al cargar datos del personal');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Mapeo de cargos reales a áreas del organigrama (Empresa Minera)
+    const cargoToAreaMap = {
+        // Superintendencia
+        'Superintendente de Mantenimiento': 'Mantenimiento Mecánico',
+        'Superintendente de Seguridad': 'Seguridad',
+        // Jefaturas de Mantenimiento
+        'Jefe de Taller Mecánico': 'Mantenimiento Mecánico',
+        'Jefe de Taller Eléctrico': 'Mantenimiento Eléctrico',
+        'Planificador de Mantenimiento': 'Mantenimiento Mecánico',
+        'Supervisor de Mantenimiento Mecánico': 'Mantenimiento Mecánico',
+        'Supervisor de Mantenimiento Eléctrico': 'Mantenimiento Eléctrico',
+        // Operaciones Mineras
+        'Jefe de Mina': 'Operaciones Mineras',
+        'Supervisor de Producción Minera': 'Operaciones Mineras',
+        'Operador de Equipos Mineros': 'Operaciones Mineras',
+        // Mantenimiento - Técnicos y Mecánicos
+        'Mecánico de Equipos Pesados': 'Mantenimiento Mecánico',
+        'Mecánico de Equipos Pesados Senior': 'Mantenimiento Mecánico',
+        'Técnico en Hidráulica Industrial': 'Mantenimiento Mecánico',
+        'Técnico en Motores Diesel': 'Mantenimiento Mecánico',
+        'Electricista Industrial': 'Mantenimiento Eléctrico',
+        'Soldador Industrial': 'Mantenimiento Mecánico',
+        'Lubricador de Equipos Mineros': 'Mantenimiento Mecánico',
+        // Seguridad Minera
+        'Jefe de Seguridad Minera': 'Seguridad',
+        'Supervisor de Seguridad': 'Seguridad',
+        // Administración y Finanzas
+        'Jefe de Contabilidad': 'Contabilidad',
+        'Contador': 'Contabilidad',
+        'Auxiliar Contable': 'Contabilidad',
+        'Jefe Administrativo': 'Administración',
+        'Administrativo': 'Administración',
+        'Recepcionista': 'Administración',
+        // Recursos Humanos
+        'Jefe de RRHH': 'RRHH',
+        'Especialista en RRHH': 'RRHH',
+        'Asistente de RRHH': 'RRHH'
+    };
+
+    // Función para obtener empleados por cargo específico
+    const getEmployeesByCargo = (cargoName) => {
+        if (!personnel || personnel.length === 0) return [];
+        if (!cargoName) return [];
+        
+        const cargoLower = cargoName.toLowerCase();
+        return personnel.filter(emp => {
+            const empCargo = (emp.cargo || '').toLowerCase();
+            return empCargo === cargoLower || empCargo.includes(cargoLower) || cargoLower.includes(empCargo);
+        });
+    };
+
+    // Función para obtener empleados por área basada en cargos reales (Empresa Minera)
+    const getEmployeesByArea = (area) => {
+        if (!personnel || personnel.length === 0) return [];
+        if (!area) return [];
+        
+        const areaLower = area.toLowerCase();
+        return personnel.filter(emp => {
+            const cargo = (emp.cargo || '').toLowerCase();
+            const mappedArea = cargoToAreaMap[emp.cargo] || '';
+            const mappedAreaLower = mappedArea.toLowerCase();
+            
+            // Buscar por área mapeada o por coincidencia directa
+            return mappedAreaLower === areaLower ||
+                   (areaLower === 'mantenimiento mecánico' && (
+                       cargo.includes('mecánico') || 
+                       cargo.includes('mecanico') ||
+                       cargo.includes('técnico en hidráulica') ||
+                       cargo.includes('técnico en motores') ||
+                       cargo.includes('soldador') ||
+                       cargo.includes('lubricador') ||
+                       cargo.includes('jefe de taller mecánico') ||
+                       cargo.includes('supervisor de mantenimiento mecánico') ||
+                       cargo.includes('planificador')
+                   )) ||
+                   (areaLower === 'mantenimiento eléctrico' && (
+                       cargo.includes('electricista') ||
+                       cargo.includes('jefe de taller eléctrico') ||
+                       cargo.includes('supervisor de mantenimiento eléctrico')
+                   )) ||
+                   (areaLower === 'operaciones mineras' && (
+                       cargo.includes('operador') ||
+                       cargo.includes('jefe de mina') ||
+                       cargo.includes('supervisor de producción')
+                   )) ||
+                   (areaLower === 'seguridad' && (
+                       cargo.includes('seguridad') ||
+                       cargo.includes('superintendente de seguridad')
+                   )) ||
+                   (areaLower === 'rrhh' && (cargo.includes('rrhh') || cargo.includes('recursos humanos'))) ||
+                   (areaLower === 'contabilidad' && (cargo.includes('contabilidad') || cargo.includes('contador') || cargo.includes('auxiliar contable'))) ||
+                   (areaLower === 'administración' && (cargo.includes('administrativo') || cargo.includes('recepcionista')));
+        });
+    };
+
+    // Función para obtener empleados por tipo de cargo/rol
+    const getEmployeesByRole = (role) => {
+        if (!personnel || personnel.length === 0) return [];
+        if (!role) return [];
+        
+        const roleLower = (role || '').toLowerCase();
+        return personnel.filter(emp => {
+            const cargo = (emp.cargo || '').toLowerCase();
+            return cargo.includes(roleLower) || roleLower.includes(cargo);
+        });
+    };
+
+    // Agrupar empleados por cargo
+    const groupEmployeesByCargo = () => {
+        if (!personnel || personnel.length === 0) return {};
+        
+        const grouped = {};
+        personnel.forEach(emp => {
+            const cargo = emp.cargo || 'Sin Cargo';
+            if (!grouped[cargo]) {
+                grouped[cargo] = [];
+            }
+            grouped[cargo].push(emp);
+        });
+        return grouped;
+    };
+
+    // Estructura del organigrama de Empresa Minera Profesional
     const organigrama = {
         nivel1: {
             nombre: 'Gerencia General',
@@ -12,111 +159,155 @@ function Organigrama() {
             nombrePersona: 'Ing. Juan Pérez',
             color: '#667eea',
             responsabilidades: [
-                'Dirección estratégica de la empresa',
+                'Dirección estratégica de la empresa minera',
                 'Toma de decisiones ejecutivas',
-                'Relaciones con stakeholders',
-                'Supervisión general de operaciones'
+                'Relaciones con stakeholders y autoridades',
+                'Supervisión general de operaciones mineras',
+                'Cumplimiento de normativas mineras y ambientales'
             ]
         },
         nivel2: [
             {
-                nombre: 'Gerencia de Operaciones',
-                cargo: 'Gerente de Operaciones',
+                nombre: 'Superintendencia de Operaciones Mineras',
+                cargo: 'Superintendente de Operaciones',
                 nombrePersona: 'Ing. María González',
                 color: '#764ba2',
                 responsabilidades: [
-                    'Planificación y ejecución de operaciones',
-                    'Gestión de recursos operativos',
-                    'Optimización de procesos productivos'
+                    'Planificación y ejecución de operaciones mineras',
+                    'Gestión de producción y extracción',
+                    'Optimización de procesos mineros',
+                    'Supervisión de operaciones de mina'
                 ],
                 nivel3: [
                     { 
-                        nombre: 'Supervisor de Producción', 
-                        cargo: 'Supervisor de Producción',
-                        nombrePersona: 'Téc. Carlos Ramírez',
+                        nombre: 'Operaciones de Mina', 
+                        cargo: 'Jefe de Mina',
+                        nombrePersona: 'Ing. Carlos Ramírez',
                         color: '#f093fb',
-                        area: 'Producción',
-                        empleados: 15,
-                        detalleEmpleados: {
-                            operarios: 10,
-                            tecnicos: 3,
-                            ayudantes: 2
-                        }
-                    },
-                    { 
-                        nombre: 'Supervisor de Mantenimiento', 
-                        cargo: 'Supervisor de Mantenimiento',
-                        nombrePersona: 'Ing. Luis Martínez',
-                        color: '#f093fb',
-                        area: 'Mantenimiento',
-                        empleados: 12,
-                        detalleEmpleados: {
-                            mecanicos: 6,
-                            electricistas: 4,
-                            ayudantes: 2
-                        }
-                    },
-                    { 
-                        nombre: 'Supervisor de Logística', 
-                        cargo: 'Supervisor de Logística',
-                        nombrePersona: 'Téc. Ana Fernández',
-                        color: '#f093fb',
-                        area: 'Logística',
-                        empleados: 8,
-                        detalleEmpleados: {
-                            conductores: 5,
-                            despachadores: 2,
-                            coordinadores: 1
-                        }
-                    },
-                    { 
-                        nombre: 'Supervisor de Almacén', 
-                        cargo: 'Supervisor de Almacén',
-                        nombrePersona: 'Téc. Roberto Silva',
-                        color: '#f093fb',
-                        area: 'Almacén',
-                        empleados: 6,
-                        detalleEmpleados: {
-                            almacenistas: 4,
-                            auxiliares: 2
-                        }
+                        area: 'Operaciones Mineras',
+                        cargosNivel3: [
+                            'Jefe de Mina',
+                            'Supervisor de Producción Minera'
+                        ],
+                        cargosNivel4: [
+                            'Operador de Equipos Mineros'
+                        ],
+                        cargosReales: [
+                            'Jefe de Mina',
+                            'Supervisor de Producción Minera',
+                            'Operador de Equipos Mineros'
+                        ]
                     }
                 ]
             },
             {
-                nombre: 'Gerencia Administrativa',
-                cargo: 'Gerente Administrativo',
-                nombrePersona: 'Lic. Patricia López',
-                color: '#48bb78',
+                nombre: 'Superintendencia de Mantenimiento',
+                cargo: 'Superintendente de Mantenimiento',
+                nombrePersona: 'Ing. Luis Martínez',
+                color: '#f5576c',
                 responsabilidades: [
-                    'Administración financiera',
-                    'Gestión de recursos humanos',
-                    'Control administrativo'
+                    'Gestión integral de mantenimiento de equipos mineros',
+                    'Planificación de mantenimientos preventivos y correctivos',
+                    'Optimización de disponibilidad de equipos',
+                    'Gestión de repuestos y recursos de mantenimiento'
                 ],
                 nivel3: [
                     { 
-                        nombre: 'Recursos Humanos', 
-                        cargo: 'Jefe de RRHH',
-                        nombrePersona: 'Lic. Sofía Torres',
-                        color: '#38b2ac',
-                        area: 'RRHH',
-                        empleados: 4,
-                        detalleEmpleados: {
-                            especialistas: 2,
-                            asistentes: 2
-                        }
+                        nombre: 'Mantenimiento Mecánico', 
+                        cargo: 'Jefe de Taller Mecánico',
+                        nombrePersona: 'Ing. Diego Morales',
+                        color: '#f093fb',
+                        area: 'Mantenimiento Mecánico',
+                        cargosNivel3: [
+                            'Jefe de Taller Mecánico',
+                            'Supervisor de Mantenimiento Mecánico',
+                            'Planificador de Mantenimiento'
+                        ],
+                        cargosNivel4: [
+                            'Mecánico de Equipos Pesados',
+                            'Mecánico de Equipos Pesados Senior',
+                            'Técnico en Hidráulica Industrial',
+                            'Técnico en Motores Diesel',
+                            'Soldador Industrial',
+                            'Lubricador de Equipos Mineros'
+                        ]
                     },
                     { 
-                        nombre: 'Contabilidad', 
+                        nombre: 'Mantenimiento Eléctrico', 
+                        cargo: 'Jefe de Taller Eléctrico',
+                        nombrePersona: 'Ing. Francisco López',
+                        color: '#f093fb',
+                        area: 'Mantenimiento Eléctrico',
+                        cargosNivel3: [
+                            'Jefe de Taller Eléctrico',
+                            'Supervisor de Mantenimiento Eléctrico'
+                        ],
+                        cargosNivel4: [
+                            'Electricista Industrial'
+                        ]
+                    }
+                ]
+            },
+            {
+                nombre: 'Superintendencia de Seguridad y Salud Ocupacional',
+                cargo: 'Superintendente de Seguridad',
+                nombrePersona: 'Ing. Laura Méndez',
+                color: '#f59e0b',
+                responsabilidades: [
+                    'Gestión integral de seguridad minera',
+                    'Prevención de accidentes e incidentes',
+                    'Cumplimiento de normativas de seguridad',
+                    'Capacitación en seguridad minera'
+                ],
+                nivel3: [
+                    { 
+                        nombre: 'Seguridad Minera', 
+                        cargo: 'Jefe de Seguridad Minera',
+                        nombrePersona: 'Téc. Ricardo López',
+                        color: '#fbbf24',
+                        area: 'Seguridad',
+                        cargosNivel3: [
+                            'Jefe de Seguridad Minera',
+                            'Supervisor de Seguridad'
+                        ],
+                        cargosNivel4: [
+                            'Inspector de Seguridad Minera',
+                            'Técnico en Seguridad Minera'
+                        ],
+                        cargosReales: [
+                            'Jefe de Seguridad Minera',
+                            'Supervisor de Seguridad',
+                            'Inspector de Seguridad Minera',
+                            'Técnico en Seguridad Minera'
+                        ]
+                    }
+                ]
+            },
+            {
+                nombre: 'Gerencia Administrativa y Finanzas',
+                cargo: 'Gerente Administrativo y Financiero',
+                nombrePersona: 'Lic. Patricia López',
+                color: '#48bb78',
+                responsabilidades: [
+                    'Administración financiera y contable',
+                    'Control presupuestario y costos',
+                    'Gestión administrativa',
+                    'Relaciones comerciales y proveedores'
+                ],
+                nivel3: [
+                    { 
+                        nombre: 'Contabilidad y Finanzas', 
                         cargo: 'Jefe de Contabilidad',
-                        nombrePersona: 'C.P. Miguel Ángel',
+                        nombrePersona: 'C.P. Miguel Ángel Herrera',
                         color: '#38b2ac',
                         area: 'Contabilidad',
-                        empleados: 5,
-                        detalleEmpleados: {
-                            contadores: 2,
-                            auxiliares: 3
-                        }
+                        cargosNivel3: [
+                            'Jefe de Contabilidad'
+                        ],
+                        cargosNivel4: [
+                            'Contador',
+                            'Auxiliar Contable'
+                        ]
                     },
                     { 
                         nombre: 'Administración', 
@@ -124,124 +315,41 @@ function Organigrama() {
                         nombrePersona: 'Lic. Carmen Ruiz',
                         color: '#38b2ac',
                         area: 'Administración',
-                        empleados: 3,
-                        detalleEmpleados: {
-                            administrativos: 2,
-                            recepcionistas: 1
-                        }
+                        cargosNivel3: [
+                            'Jefe Administrativo'
+                        ],
+                        cargosNivel4: [
+                            'Administrativo',
+                            'Recepcionista'
+                        ]
                     }
                 ]
             },
             {
-                nombre: 'Gerencia Técnica',
-                cargo: 'Gerente Técnico',
-                nombrePersona: 'Ing. Diego Morales',
-                color: '#ed8936',
+                nombre: 'Gerencia de Recursos Humanos',
+                cargo: 'Gerente de Recursos Humanos',
+                nombrePersona: 'Lic. Sofía Torres',
+                color: '#8b5cf6',
                 responsabilidades: [
-                    'Desarrollo técnico y tecnológico',
-                    'Aseguramiento de calidad',
-                    'Innovación y mejora continua'
+                    'Gestión del capital humano',
+                    'Reclutamiento y selección',
+                    'Desarrollo y capacitación',
+                    'Relaciones laborales'
                 ],
                 nivel3: [
                     { 
-                        nombre: 'Ingeniería', 
-                        cargo: 'Jefe de Ingeniería',
-                        nombrePersona: 'Ing. Jorge Vargas',
-                        color: '#f6ad55',
-                        area: 'Ingeniería',
-                        empleados: 7,
-                        detalleEmpleados: {
-                            ingenieros: 4,
-                            tecnicos: 2,
-                            dibujantes: 1
-                        }
-                    },
-                    { 
-                        nombre: 'Calidad', 
-                        cargo: 'Jefe de Calidad',
-                        nombrePersona: 'Ing. Laura Méndez',
-                        color: '#f6ad55',
-                        area: 'Calidad',
-                        empleados: 5,
-                        detalleEmpleados: {
-                            inspectores: 3,
-                            tecnicos: 2
-                        }
-                    },
-                    { 
-                        nombre: 'Seguridad Industrial', 
-                        cargo: 'Jefe de Seguridad',
-                        nombrePersona: 'Téc. Fernando Castro',
-                        color: '#f6ad55',
-                        area: 'Seguridad',
-                        empleados: 4,
-                        detalleEmpleados: {
-                            supervisores: 2,
-                            tecnicos: 2
-                        }
-                    },
-                    { 
-                        nombre: 'Proyectos', 
-                        cargo: 'Jefe de Proyectos',
-                        nombrePersona: 'Ing. Ricardo Sánchez',
-                        color: '#f6ad55',
-                        area: 'Proyectos',
-                        empleados: 6,
-                        detalleEmpleados: {
-                            ingenieros: 3,
-                            coordinadores: 2,
-                            asistentes: 1
-                        }
-                    }
-                ]
-            },
-            {
-                nombre: 'Gerencia Comercial',
-                cargo: 'Gerente Comercial',
-                nombrePersona: 'Lic. Andrea Jiménez',
-                color: '#9f7aea',
-                responsabilidades: [
-                    'Desarrollo comercial',
-                    'Relaciones con clientes',
-                    'Estrategias de mercado'
-                ],
-                nivel3: [
-                    { 
-                        nombre: 'Ventas', 
-                        cargo: 'Jefe de Ventas',
-                        nombrePersona: 'Lic. Daniel Herrera',
-                        color: '#b794f4',
-                        area: 'Ventas',
-                        empleados: 8,
-                        detalleEmpleados: {
-                            vendedores: 5,
-                            ejecutivos: 2,
-                            asistentes: 1
-                        }
-                    },
-                    { 
-                        nombre: 'Marketing', 
-                        cargo: 'Jefe de Marketing',
-                        nombrePersona: 'Lic. Valeria Ríos',
-                        color: '#b794f4',
-                        area: 'Marketing',
-                        empleados: 4,
-                        detalleEmpleados: {
-                            especialistas: 2,
-                            diseñadores: 2
-                        }
-                    },
-                    { 
-                        nombre: 'Atención al Cliente', 
-                        cargo: 'Jefe de Atención',
-                        nombrePersona: 'Lic. Gabriel Peña',
-                        color: '#b794f4',
-                        area: 'Atención',
-                        empleados: 6,
-                        detalleEmpleados: {
-                            agentes: 4,
-                            supervisores: 2
-                        }
+                        nombre: 'Recursos Humanos', 
+                        cargo: 'Jefe de RRHH',
+                        nombrePersona: 'Lic. Sofía Torres',
+                        color: '#a78bfa',
+                        area: 'RRHH',
+                        cargosNivel3: [
+                            'Jefe de RRHH'
+                        ],
+                        cargosNivel4: [
+                            'Especialista en RRHH',
+                            'Asistente de RRHH'
+                        ]
                     }
                 ]
             }
@@ -252,11 +360,13 @@ function Organigrama() {
         setSelectedCard(selectedCard === cardData ? null : cardData);
     };
 
+    if (loading) return <Loading message="Cargando organigrama" />;
+
     return (
         <div className="organigrama-container">
             <div className="organigrama-header">
-                <h1>📊 Organigrama Organizacional</h1>
-                <p>Estructura jerárquica y responsabilidades de la empresa</p>
+                <h1>⛏️ Organigrama Organizacional - Empresa Minera</h1>
+                <p>Estructura jerárquica y responsabilidades de la empresa minera</p>
             </div>
 
             <div className="organigrama-content">
@@ -331,15 +441,41 @@ function Organigrama() {
                                                 <div className="org-employees-summary">
                                                     <h4>Personal a Cargo:</h4>
                                                     <div className="employees-total">
-                                                        <strong>Total: {gerencia.nivel3.reduce((sum, dep) => sum + dep.empleados, 0)} empleados</strong>
+                                                        <strong>Total: {gerencia.nivel3.reduce((sum, dep) => {
+                                                            let count = 0;
+                                                            if (dep.cargosNivel3) {
+                                                                dep.cargosNivel3.forEach(cargo => {
+                                                                    count += getEmployeesByCargo(cargo).length;
+                                                                });
+                                                            }
+                                                            if (dep.cargosNivel4) {
+                                                                dep.cargosNivel4.forEach(cargo => {
+                                                                    count += getEmployeesByCargo(cargo).length;
+                                                                });
+                                                            }
+                                                            return sum + count;
+                                                        }, 0)} empleados</strong>
                                                     </div>
                                                     <div className="employees-breakdown">
-                                                        {gerencia.nivel3.map((dep, idx) => (
-                                                            <div key={idx} className="employee-department">
-                                                                <span className="dept-name">{dep.area}:</span>
-                                                                <span className="dept-count">{dep.empleados} empleados</span>
-                                                            </div>
-                                                        ))}
+                                                        {gerencia.nivel3.map((dep, idx) => {
+                                                            let employeeCount = 0;
+                                                            if (dep.cargosNivel3) {
+                                                                dep.cargosNivel3.forEach(cargo => {
+                                                                    employeeCount += getEmployeesByCargo(cargo).length;
+                                                                });
+                                                            }
+                                                            if (dep.cargosNivel4) {
+                                                                dep.cargosNivel4.forEach(cargo => {
+                                                                    employeeCount += getEmployeesByCargo(cargo).length;
+                                                                });
+                                                            }
+                                                            return (
+                                                                <div key={idx} className="employee-department">
+                                                                    <span className="dept-name">{dep.area}:</span>
+                                                                    <span className="dept-count">{employeeCount} empleados</span>
+                                                                </div>
+                                                            );
+                                                        })}
                                                     </div>
                                                 </div>
                                             )}
@@ -358,48 +494,105 @@ function Organigrama() {
                                         </div>
                                     </div>
 
-                                    {/* Nivel 3 - Supervisores/Jefes */}
+                                    {/* Nivel 3 - Supervisores/Jefes y sus empleados */}
                                     <div className="organigrama-level level-3">
-                                        {gerencia.nivel3.map((supervisor, subIndex) => (
-                                            <div key={subIndex} className="org-card-wrapper-small">
-                                                <div 
-                                                    className={`org-card-small ${selectedCard === supervisor ? 'expanded' : ''}`}
-                                                    style={{ background: `linear-gradient(135deg, ${supervisor.color} 0%, ${supervisor.color}dd 100%)` }}
-                                                    onClick={() => handleCardClick(supervisor)}
-                                                >
-                                                    <div className="org-icon-small">👤</div>
-                                                    <div className="org-info-small">
-                                                        <h4>{supervisor.cargo}</h4>
-                                                        <p className="org-name-small">{supervisor.nombrePersona}</p>
-                                                        <p className="org-department-small">{supervisor.area}</p>
-                                                        <div className="org-meta">
-                                                            <span className="org-employees">👥 {supervisor.empleados} empleados</span>
+                                        {gerencia.nivel3.map((supervisor, subIndex) => {
+                                            // Obtener jefes/supervisores (Nivel 3)
+                                            let jefesSupervisores = [];
+                                            if (supervisor.cargosNivel3 && supervisor.cargosNivel3.length > 0) {
+                                                supervisor.cargosNivel3.forEach(cargo => {
+                                                    const employeesByCargo = getEmployeesByCargo(cargo);
+                                                    jefesSupervisores.push(...employeesByCargo);
+                                                });
+                                                jefesSupervisores = Array.from(new Map(jefesSupervisores.map(emp => [emp.codigo || emp.id, emp])).values());
+                                            }
+                                            
+                                            // Obtener empleados operativos (Nivel 4)
+                                            let empleadosOperativos = [];
+                                            if (supervisor.cargosNivel4 && supervisor.cargosNivel4.length > 0) {
+                                                supervisor.cargosNivel4.forEach(cargo => {
+                                                    const employeesByCargo = getEmployeesByCargo(cargo);
+                                                    empleadosOperativos.push(...employeesByCargo);
+                                                });
+                                                empleadosOperativos = Array.from(new Map(empleadosOperativos.map(emp => [emp.codigo || emp.id, emp])).values());
+                                            }
+                                            
+                                            // Si no hay cargosNivel3, usar el supervisor como jefe y mostrar empleados operativos
+                                            const totalEmpleados = jefesSupervisores.length + empleadosOperativos.length;
+                                            
+                                            return (
+                                                <div key={subIndex} className="org-card-wrapper-small">
+                                                    {/* Card del Supervisor/Jefe del área */}
+                                                    <div 
+                                                        className="org-card-small"
+                                                        style={{ background: `linear-gradient(135deg, ${supervisor.color} 0%, ${supervisor.color}dd 100%)` }}
+                                                    >
+                                                        <div className="org-icon-small">👤</div>
+                                                        <div className="org-info-small">
+                                                            <h4>{supervisor.cargo}</h4>
+                                                            <p className="org-name-small">{supervisor.nombrePersona}</p>
+                                                            <p className="org-department-small">{supervisor.area}</p>
+                                                            <div className="org-meta">
+                                                                <span className="org-employees">👥 {totalEmpleados} empleados</span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div className="org-expand-icon-small">▼</div>
-                                                </div>
-                                                
-                                                {/* Detalles expandidos para nivel 3 */}
-                                                {selectedCard === supervisor && (
-                                                    <div className="org-details-small">
-                                                        <h4>Detalle de Personal:</h4>
-                                                        <div className="employees-total-small">
-                                                            <strong>Total: {supervisor.empleados} empleados</strong>
-                                                        </div>
-                                                        {supervisor.detalleEmpleados && (
-                                                            <div className="employees-breakdown-small">
-                                                                {Object.entries(supervisor.detalleEmpleados).map(([cargo, cantidad], idx) => (
-                                                                    <div key={idx} className="employee-role">
-                                                                        <span className="role-name">{cargo.charAt(0).toUpperCase() + cargo.slice(1)}:</span>
-                                                                        <span className="role-count">{cantidad}</span>
+                                                    
+                                                    {/* Nivel 3.5 - Jefes/Supervisores específicos (si existen) */}
+                                                    {jefesSupervisores.length > 0 && (
+                                                        <>
+                                                            <div className="org-connector-employees">
+                                                                <div className="connector-line-employees"></div>
+                                                            </div>
+                                                            <div className="organigrama-level level-3-5">
+                                                                {jefesSupervisores.map((jefe, jefeIdx) => (
+                                                                    <div key={jefeIdx} className="org-card-wrapper-jefe">
+                                                                        <div className="org-card-jefe">
+                                                                            <div className="org-info-jefe">
+                                                                                <div className="employee-card-name">{jefe.nombre_completo || 'N/A'}</div>
+                                                                                <div className="employee-card-code">{jefe.cargo}</div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 ))}
                                                             </div>
-                                                        )}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        ))}
+                                                        </>
+                                                    )}
+                                                    
+                                                    {/* Nivel 4 - Empleados operativos */}
+                                                    {empleadosOperativos.length > 0 && (
+                                                        <>
+                                                            <div className="org-connector-employees">
+                                                                <div className="connector-line-employees"></div>
+                                                            </div>
+                                                            <div className="organigrama-level level-4">
+                                                                {empleadosOperativos.map((emp, empIdx) => (
+                                                                    <div key={empIdx || emp.id || `emp-${subIndex}-${empIdx}`} className="employee-card">
+                                                                        <div className="employee-card-info">
+                                                                            <div className="employee-card-name">{emp.nombre_completo || 'N/A'}</div>
+                                                                            {emp.cargo && (
+                                                                                <div className="employee-card-code">{emp.cargo}</div>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </>
+                                                    )}
+                                                    
+                                                    {/* Si no hay empleados */}
+                                                    {totalEmpleados === 0 && (
+                                                        <div className="organigrama-level level-4">
+                                                            <div className="employee-card empty">
+                                                                <div className="employee-card-info">
+                                                                    <div className="employee-card-name">Sin empleados asignados</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
                                     </div>
                                 </>
                             )}

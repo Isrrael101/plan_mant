@@ -31,18 +31,30 @@ function Personnel() {
     const loadPersonnel = async () => {
         try {
             setLoading(true);
-            const data = await api.getPersonnel();
-            if (data.success && data.data) {
-                const filtered = data.data.filter(item =>
-                    (item.nombre_completo || item['Unnamed: 3']) && (item.nombre_completo || item['Unnamed: 3']) !== 'APELLIDOS Y NOMBRES'
-                );
-                setPersonnel(filtered);
-            }
             setError(null);
+            const data = await api.getPersonnel();
+            console.log('Personnel API Response:', data);
+            
+            if (data && data.success && data.data) {
+                console.log('=== PERSONNEL LOAD ===');
+                console.log('API Response:', data);
+                console.log('Total items received:', data.data.length);
+                console.log('First item:', JSON.stringify(data.data[0], null, 2));
+                
+                // NO filtrar - aceptar todos los items
+                const allItems = data.data;
+                console.log('Setting personnel state with', allItems.length, 'items');
+                console.log('First item to set:', allItems[0]);
+                setPersonnel(allItems);
+            } else {
+                console.warn('No data received or invalid response:', data);
+                setPersonnel([]);
+            }
         } catch (err) {
-            setError('Error al cargar personal');
+            console.error('Error loading personnel:', err);
+            setError('Error al cargar personal: ' + (err.message || 'Error desconocido'));
             toast.error('Error al cargar datos del personal');
-            console.error(err);
+            setPersonnel([]);
         } finally {
             setLoading(false);
         }
@@ -63,15 +75,15 @@ function Personnel() {
     };
 
     const handleEdit = (person, index) => {
-        setEditingItem(person.id || person['id'] || null);
+        setEditingItem(person.id || null);
         setFormData({
-            codigo: person.codigo || person['Unnamed: 2'] || '',
-            nombre: person.nombre_completo || person['Unnamed: 3'] || '',
-            ci: person.ci || person['Unnamed: 4'] || '',
-            cargo: person.cargo || person['Unnamed: 5'] || '',
-            telefono: person.telefono || person['Unnamed: 6'] || '',
-            celular: person.celular || person['Unnamed: 7'] || '',
-            tarifa_hora: person['tarifa_hora'] || ''
+            codigo: person.codigo || '',
+            nombre: person.nombre_completo || '',
+            ci: person.ci || '',
+            cargo: person.cargo || '',
+            telefono: person.telefono || '',
+            celular: person.celular || '',
+            tarifa_hora: person.tarifa_hora || ''
         });
         setShowModal(true);
     };
@@ -79,7 +91,7 @@ function Personnel() {
     const handleDelete = async (person) => {
         if (window.confirm('¿Estás seguro de que deseas eliminar este empleado?')) {
             try {
-                const itemId = person.id || person['id'];
+                const itemId = person.id;
                 if (!itemId) {
                     toast.error('Error: ID no encontrado');
                     return;
@@ -125,16 +137,20 @@ function Personnel() {
     };
 
     const filteredPersonnel = personnel.filter(person => {
+        if (!person) return false;
         const searchLower = searchTerm.toLowerCase();
         return (
-            ((person.codigo || person['Unnamed: 2']) || '').toLowerCase().includes(searchLower) ||
-            ((person.nombre_completo || person['Unnamed: 3']) || '').toLowerCase().includes(searchLower) ||
-            ((person.cargo || person['Unnamed: 5']) || '').toLowerCase().includes(searchLower)
+            (person.codigo || '').toLowerCase().includes(searchLower) ||
+            (person.nombre_completo || '').toLowerCase().includes(searchLower) ||
+            (person.cargo || '').toLowerCase().includes(searchLower)
         );
     });
+    
+    console.log('Personnel state:', personnel.length, 'items');
+    console.log('Filtered personnel:', filteredPersonnel.length, 'items');
 
     // Get unique positions for stats
-    const positions = [...new Set(personnel.map(p => p.cargo || p['Unnamed: 5']).filter(Boolean))];
+    const positions = [...new Set(personnel.map(p => p.cargo).filter(Boolean))];
 
     if (loading) return <Loading message="Cargando personal" />;
 
@@ -152,8 +168,20 @@ function Personnel() {
         );
     }
 
+    // DEBUG: Mostrar información de estado
+    console.log('=== RENDER DEBUG ===');
+    console.log('personnel state:', personnel);
+    console.log('personnel length:', personnel.length);
+    console.log('filteredPersonnel length:', filteredPersonnel.length);
+    console.log('loading:', loading);
+    console.log('error:', error);
+
     return (
         <div className="container fade-in">
+            {/* DEBUG INFO - REMOVER DESPUÉS */}
+            <div style={{background: '#ff0', padding: '10px', marginBottom: '10px', fontSize: '12px'}}>
+                <strong>DEBUG:</strong> Personnel: {personnel.length} | Filtered: {filteredPersonnel.length} | Loading: {loading ? 'YES' : 'NO'}
+            </div>
             <div className="page-header">
                 <div>
                     <h1>👥 Gestión de Personal</h1>
@@ -241,36 +269,36 @@ function Personnel() {
                         ) : (
                             filteredPersonnel.map((person, index) => (
                                 <tr key={index}>
-                                    <td>{person['INVENTARIO PERSONAL'] || index + 1}</td>
+                                    <td>{index + 1}</td>
                                     <td>
-                                        <span className="code-badge">{person.codigo || person['Unnamed: 2'] || 'N/A'}</span>
+                                        <span className="code-badge">{person.codigo || 'N/A'}</span>
                                     </td>
-                                    <td className="personnel-name" title={person.nombre_completo || person['Unnamed: 3']}>
+                                    <td className="personnel-name" title={person.nombre_completo}>
                                         <div className="person-info">
                                             <span className="person-avatar">
-                                                {((person.nombre_completo || person['Unnamed: 3']) || 'U')[0].toUpperCase()}
+                                                {(person.nombre_completo || 'U')[0].toUpperCase()}
                                             </span>
-                                            <span className="person-name">{person.nombre_completo || person['Unnamed: 3'] || 'N/A'}</span>
+                                            <span className="person-name">{person.nombre_completo || 'N/A'}</span>
                                         </div>
                                     </td>
-                                    <td>{person.ci || person['Unnamed: 4'] || 'N/A'}</td>
+                                    <td>{person.ci || 'N/A'}</td>
                                     <td>
-                                        <span className="cargo-badge">{person.cargo || person['Unnamed: 5'] || 'N/A'}</span>
+                                        <span className="cargo-badge">{person.cargo || 'N/A'}</span>
                                     </td>
                                     <td className="contact-cell">
-                                        {person.telefono || person['Unnamed: 6'] ? (
-                                            <span className="phone-number">📞 {person.telefono || person['Unnamed: 6']}</span>
+                                        {person.telefono ? (
+                                            <span className="phone-number">📞 {person.telefono}</span>
                                         ) : 'N/A'}
                                     </td>
                                     <td className="contact-cell">
-                                        {person.celular || person['Unnamed: 7'] ? (
-                                            <span className="phone-number">📱 {person.celular || person['Unnamed: 7']}</span>
+                                        {person.celular ? (
+                                            <span className="phone-number">📱 {person.celular}</span>
                                         ) : 'N/A'}
                                     </td>
                                     <td className="cost-cell">
-                                        {safeFormatCurrency(person['tarifa_hora']) ? (
+                                        {safeFormatCurrency(person.tarifa_hora) ? (
                                             <span className="cost-value">
-                                                {safeFormatCurrency(person['tarifa_hora'])}/h
+                                                {safeFormatCurrency(person.tarifa_hora)}/h
                                             </span>
                                         ) : (
                                             <span className="no-data">-</span>
@@ -388,6 +416,18 @@ function Personnel() {
                                         disabled={isSubmitting}
                                     />
                                 </div>
+                            </div>
+                            <div className="form-group">
+                                <label>Tarifa por Hora (Bs.) <span className="required">*</span></label>
+                                <input
+                                    type="number"
+                                    step="0.01"
+                                    value={formData.tarifa_hora}
+                                    onChange={(e) => setFormData({...formData, tarifa_hora: e.target.value})}
+                                    placeholder="0.00"
+                                    required
+                                    disabled={isSubmitting}
+                                />
                             </div>
                             <div className="modal-actions">
                                 <button 

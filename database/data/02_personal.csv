@@ -1,41 +1,41 @@
 id,codigo,nombre_completo,ci,cargo,telefono,celular,tarifa_hora,estado
-1,PER-001,Carlos Reyes Rivera,2285109,Mecánico Junior,76740967,73254136,56.72,ACTIVO
-2,PER-002,Diego Hernández Gómez,3860942,Operador de Maquinaria,78055014,79757802,95.88,ACTIVO
-3,PER-003,María Martínez Ramírez,5385798,Técnico en Motores,78467804,72059109,60.0,ACTIVO
-4,PER-004,Elena González Morales,6301667,Supervisor de Mantenimiento,75611998,76344720,126.76,ACTIVO
-5,PER-005,María Ramírez Morales,4780880,Operador de Maquinaria,79231929,79770939,78.4,ACTIVO
-6,PER-006,Andrés González González,9424930,Lubricador,74489075,73075460,89.86,ACTIVO
-7,PER-007,Pedro Flores Rivera,4025140,Lubricador,77791718,78119059,86.24,ACTIVO
-8,PER-008,Isabel Vargas Morales,4040250,Supervisor de Mantenimiento,76294758,73809969,143.47,ACTIVO
-9,PER-009,María Hernández Díaz,8484232,Operador de Maquinaria,77478810,71518401,67.34,ACTIVO
-10,PER-010,Carmen Rodríguez Hernández,2797091,Lubricador,72445138,78238835,99.99,ACTIVO
-11,PER-011,Claudia Flores Sánchez,8427719,Planificador de Mantenimiento,79228221,77296771,55.13,INACTIVO
-12,PER-012,Claudia Cruz Morales,6484969,Planificador de Mantenimiento,78547370,77146882,92.24,ACTIVO
-13,PER-013,Diego Martínez González,5704542,Operador de Maquinaria,79313935,78949576,92.81,ACTIVO
-14,PER-014,Pedro Gómez Gómez,4463555,Ayudante Mecánico,77321228,73227354,48.98,ACTIVO
-15,PER-015,Juan González Díaz,3857176,Técnico en Motores,74885184,71264006,61.67,ACTIVO
-16,PER-016,Carlos Rivera Flores,6595655,Electricista,73594154,79774458,90.19,ACTIVO
-17,PER-017,María Rivera González,1051296,Soldador,71213171,78817943,59.04,ACTIVO
-18,PER-018,Carmen Hernández Reyes,9156240,Técnico en Motores,77905683,74888208,60.84,INACTIVO
-19,PER-019,Pedro Morales Morales,2638606,Supervisor de Mantenimiento,75992432,71692920,120.51,ACTIVO
-20,PER-020,Fernando Torres González,9428278,Mecánico Senior,75873089,76270185,122.17,ACTIVO
-21,PER-021,Sandra Reyes Sánchez,2187652,Lubricador,76624785,75384622,62.97,ACTIVO
-22,PER-022,José Hernández Pérez,8331702,Mecánico Senior,75901550,73739384,114.93,ACTIVO
-23,PER-023,Rosa Sánchez Rivera,7957259,Técnico en Motores,74197541,73142080,51.37,ACTIVO
-24,PER-024,María Torres Flores,4801777,Mecánico Junior,76813347,71039177,47.41,ACTIVO
-25,PER-025,Isabel Gómez Torres,2242010,Jefe de Taller,72403009,79772186,118.03,ACTIVO
-26,PER-026,Rosa González Hernández,9673145,Lubricador,71201722,75763310,51.75,ACTIVO
-27,PER-027,Fernando Vargas Vargas,5678237,Soldador,74163949,72845168,66.42,INACTIVO
-28,PER-028,Laura Rodríguez Díaz,6556100,Soldador,78382278,74296786,84.45,ACTIVO
-29,PER-029,Carmen Cruz González,1179223,Soldador,76355373,79683858,71.46,ACTIVO
-30,PER-030,Laura Díaz Torres,2753881,Planificador de Mantenimiento,71494797,77045609,86.93,ACTIVO
-31,PER-031,Claudia Pérez Martínez,9699405,Mecánico Junior,79499680,71855860,47.92,ACTIVO
-32,PER-032,Laura Díaz González,1711869,Operador de Maquinaria,71718410,73569769,54.78,ACTIVO
-33,PER-033,Diego Díaz García,2087274,Mecánico Junior,76759234,71016778,50.75,ACTIVO
-34,PER-034,Juan Rivera Flores,1065200,Electricista,71206792,71229198,74.46,ACTIVO
-35,PER-035,Andrés Reyes García,1473431,Soldador,71961907,74396456,97.87,ACTIVO
-36,PER-036,Carlos García Flores,6722006,Supervisor de Mantenimiento,74061201,72398147,145.84,ACTIVO
-37,PER-037,Carlos Flores García,7892113,Supervisor de Mantenimiento,73406698,73971348,114.65,ACTIVO
-38,PER-038,Rosa Ramírez Díaz,1453250,Supervisor de Mantenimiento,77135428,79049571,87.3,ACTIVO
-39,PER-039,Carmen Díaz González,5998131,Lubricador,79980254,72217453,63.37,ACTIVO
-40,PER-040,Miguel Pérez Flores,3671530,Supervisor de Mantenimiento,76534553,78527833,107.05,ACTIVO
+1,PER-001,José González Rojas,5883749,Inspector de Calidad,74254948,75347274,61.59,ACTIVO
+2,PER-002,Patricia Silva Reyes,8484937,Soldador,72809834,72570913,72.89,ACTIVO
+3,PER-003,Rosa Fernández Ramírez,4947084,Lubricador,72434385,77437133,83.57,ACTIVO
+4,PER-004,José Gómez Castillo,9669053,Mecánico Junior,74444045,77279360,36.32,ACTIVO
+5,PER-005,Carlos Rivera Cruz,8688533,Mecánico Senior,74264350,72556080,93.8,ACTIVO
+6,PER-006,Ricardo Fernández Alvarez,6631727,Mecánico Junior,73705922,71412880,53.33,ACTIVO
+7,PER-007,Hugo Ortiz González,6892382,Electricista,72332112,77157800,70.74,ACTIVO
+8,PER-008,Fernando Díaz Pérez,5126178,Supervisor de Mantenimiento,77200143,78524498,116.61,ACTIVO
+9,PER-009,Diego Ramírez Rodríguez,9790371,Electricista,71460973,71845519,67.92,ACTIVO
+10,PER-010,Fernando Flores Reyes,9581342,Operador de Maquinaria,71712167,78309923,75.95,ACTIVO
+11,PER-011,Sandra Ortiz Ruiz,1734059,Planificador de Mantenimiento,71253954,72575448,92.34,ACTIVO
+12,PER-012,Hugo Fernández Romero,6298099,Lubricador,72324763,75913451,72.67,ACTIVO
+13,PER-013,Francisco López Ruiz,7181636,Supervisor de Mantenimiento,72009858,77765566,115.45,ACTIVO
+14,PER-014,Javier González Silva,7450073,Mecánico Junior,73234495,78091972,47.25,ACTIVO
+15,PER-015,Elena Romero Pérez,4766585,Técnico Hidráulico,75574326,78675839,55.27,ACTIVO
+16,PER-016,Manuel Torres Hernández,4968413,Técnico Hidráulico,75219253,75183707,68.01,ACTIVO
+17,PER-017,Andrés Vargas Gómez,5279462,Técnico Hidráulico,76028156,74621544,65.78,ACTIVO
+18,PER-018,Laura Sánchez Martínez,1666124,Técnico Hidráulico,72227790,72387452,70.59,ACTIVO
+19,PER-019,Diego Morales Rivera,5081462,Jefe de Taller,75414740,74870871,121.59,ACTIVO
+20,PER-020,Carmen Vargas Silva,3348269,Jefe de Taller,72505884,76698435,122.63,ACTIVO
+21,PER-021,Ricardo López Hernández,3511991,Electricista,75948416,77590021,87.26,ACTIVO
+22,PER-022,Claudia Castillo Mendoza,5380319,Electricista,79528575,76432880,53.5,ACTIVO
+23,PER-023,Sandra Guerrero García,3374874,Electricista,76945698,73735228,73.17,ACTIVO
+24,PER-024,Diego Silva González,2897123,Planificador de Mantenimiento,72762673,76683481,82.19,ACTIVO
+25,PER-025,Hugo Martínez Fernández,6181632,Lubricador,75233281,76216552,67.53,ACTIVO
+26,PER-026,Javier Díaz Castillo,2213163,Técnico Hidráulico,77798360,72914933,79.82,ACTIVO
+27,PER-027,Miguel Reyes Ramírez,9358826,Planificador de Mantenimiento,78988558,75702375,53.22,ACTIVO
+28,PER-028,Isabel Sánchez García,7531805,Técnico Hidráulico,75708522,72791036,57.92,ACTIVO
+29,PER-029,Isabel González Hernández,3249004,Mecánico Senior,75230726,79202327,135.09,ACTIVO
+30,PER-030,Fernando Alvarez Rojas,2346944,Soldador,71174538,79459092,58.86,ACTIVO
+31,PER-031,Alejandro Morales Mendoza,1007272,Soldador,72488189,71179245,84.94,ACTIVO
+32,PER-032,Roberto Vargas Vargas,8256971,Lubricador,74989427,71197710,88.81,ACTIVO
+33,PER-033,María Díaz Reyes,9745750,Supervisor de Mantenimiento,73414974,73451112,128.77,ACTIVO
+34,PER-034,Andrés Mendoza Díaz,9813132,Jefe de Taller,71284365,77979306,87.8,ACTIVO
+35,PER-035,José López Reyes,3636880,Mecánico Junior,76474281,75844052,49.56,ACTIVO
+36,PER-036,Miguel Martínez López,8767067,Supervisor de Mantenimiento,77674178,74918285,129.36,ACTIVO
+37,PER-037,Roberto Ramírez Gómez,4358889,Técnico en Motores,75701896,72824106,54.18,ACTIVO
+38,PER-038,Fernando García Pérez,5093136,Técnico en Motores,77768653,71775765,53.4,ACTIVO
+39,PER-039,Ricardo López Vargas,8076097,Inspector de Calidad,76347328,77856970,53.55,ACTIVO
+40,PER-040,Fernando Vargas Sánchez,8068091,Mecánico Junior,73878358,76994114,57.92,ACTIVO

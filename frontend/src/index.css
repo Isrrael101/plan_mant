@@ -419,11 +419,11 @@ a:hover {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
-  overflow-x: visible !important;
+  overflow-x: auto !important;
   overflow-y: visible !important;
-  width: max-content !important;
+  width: 100% !important;
   min-width: 100% !important;
-  max-width: none !important;
+  max-width: 100% !important;
   -webkit-overflow-scrolling: touch;
   display: block;
 }
@@ -465,11 +465,12 @@ a:hover {
 .data-table {
   width: 100% !important;
   border-collapse: collapse;
-  table-layout: fixed !important;
+  table-layout: auto !important;
   display: table;
   margin: 0;
   box-sizing: border-box;
   word-wrap: break-word;
+  min-width: 100% !important;
 }
 
 .data-table th,
@@ -496,10 +497,10 @@ a:hover {
   top: 0;
   background: var(--bg-elevated);
   z-index: 10;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: clip;
   box-sizing: border-box;
-  max-width: 100%;
+  min-width: fit-content;
 }
 
 .data-table td {
@@ -509,11 +510,11 @@ a:hover {
   font-size: 0.8rem;
   vertical-align: middle;
   transition: all var(--duration-fast);
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
   box-sizing: border-box;
-  max-width: 0;
+  min-width: fit-content;
   word-wrap: break-word;
 }
 

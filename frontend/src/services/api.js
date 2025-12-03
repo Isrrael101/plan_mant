@@ -7,6 +7,8 @@ class ApiService {
         const token = localStorage.getItem('token');
         return {
             'Accept': 'application/json; charset=utf-8',
+            'Content-Type': 'application/json; charset=utf-8',
+            'Accept-Charset': 'utf-8',
             ...(token && { 'Authorization': `Bearer ${token}` })
         };
     }
@@ -45,22 +47,22 @@ class ApiService {
 
     // Get machinery data
     async getMachinery() {
-        return this.fetchData('/machinery');
+        return this.fetchData('/maquinaria');
     }
 
     // Get personnel data
     async getPersonnel() {
-        return this.fetchData('/personnel');
+        return this.fetchData('/personal');
     }
 
     // Get tools data
     async getTools() {
-        return this.fetchData('/tools');
+        return this.fetchData('/herramientas');
     }
 
     // Get supplies data
     async getSupplies() {
-        return this.fetchData('/supplies');
+        return this.fetchData('/insumos');
     }
 
     // Get dashboard statistics
@@ -121,9 +123,9 @@ class ApiService {
                 },
                 body: JSON.stringify(data),
             });
-            
+
             const result = await response.json();
-            
+
             if (!response.ok) {
                 // Extraer el mensaje de error del backend
                 const errorMessage = result.error || `Error ${response.status}: ${response.statusText}`;
@@ -131,7 +133,7 @@ class ApiService {
                 error.status = response.status;
                 throw error;
             }
-            
+
             return result;
         } catch (error) {
             console.error('API Error:', error);
@@ -175,10 +177,6 @@ class ApiService {
         return this.deleteData(`/users/${id}`);
     }
 
-    async adminResetPassword(userId, newPassword) {
-        return this.postData(`/users/${userId}/reset-password`, { newPassword });
-    }
-
     async getPasswordResetRequests() {
         return this.fetchData('/password-reset-requests');
     }
@@ -203,55 +201,59 @@ class ApiService {
     }
 
     // CRUD Operations - Machinery
+    async getMachineryById(id) {
+        return this.fetchData(`/maquinaria/${id}`);
+    }
+
     async createMachinery(data) {
-        return this.postData('/machinery', data);
+        return this.postData('/maquinaria', data);
     }
 
     async updateMachinery(id, data) {
-        return this.putData(`/machinery/${id}`, data);
+        return this.putData(`/maquinaria/${id}`, data);
     }
 
     async deleteMachinery(id) {
-        return this.deleteData(`/machinery/${id}`);
+        return this.deleteData(`/maquinaria/${id}`);
     }
 
     // CRUD Operations - Personnel
     async createPersonnel(data) {
-        return this.postData('/personnel', data);
+        return this.postData('/personal', data);
     }
 
     async updatePersonnel(id, data) {
-        return this.putData(`/personnel/${id}`, data);
+        return this.putData(`/personal/${id}`, data);
     }
 
     async deletePersonnel(id) {
-        return this.deleteData(`/personnel/${id}`);
+        return this.deleteData(`/personal/${id}`);
     }
 
     // CRUD Operations - Tools
     async createTool(data) {
-        return this.postData('/tools', data);
+        return this.postData('/herramientas', data);
     }
 
     async updateTool(id, data) {
-        return this.putData(`/tools/${id}`, data);
+        return this.putData(`/herramientas/${id}`, data);
     }
 
     async deleteTool(id) {
-        return this.deleteData(`/tools/${id}`);
+        return this.deleteData(`/herramientas/${id}`);
     }
 
     // CRUD Operations - Supplies
     async createSupply(data) {
-        return this.postData('/supplies', data);
+        return this.postData('/insumos', data);
     }
 
     async updateSupply(id, data) {
-        return this.putData(`/supplies/${id}`, data);
+        return this.putData(`/insumos/${id}`, data);
     }
 
     async deleteSupply(id) {
-        return this.deleteData(`/supplies/${id}`);
+        return this.deleteData(`/insumos/${id}`);
     }
 
     // Maintenance Operations
@@ -324,6 +326,102 @@ class ApiService {
 
     async deleteActivity(id) {
         return this.deleteData(`/activities/${id}`);
+    }
+
+    // ============================================
+    // Machinery Specifications
+    // ============================================
+    async getMachinerySpecs(id) {
+        return this.fetchData(`/maquinaria/${id}/specs`);
+    }
+
+    async updateMachinerySpecs(id, data) {
+        return this.postData(`/maquinaria/${id}/specs`, data);
+    }
+
+    // ============================================
+    // Checklists
+    // ============================================
+    async getChecklistsByMachinery(machineryId) {
+        return this.fetchData(`/maquinaria/${machineryId}/checklists`);
+    }
+
+    async getChecklist(id) {
+        return this.fetchData(`/checklists/${id}`);
+    }
+
+    async createChecklist(data) {
+        return this.postData('/checklists', data);
+    }
+
+    async updateChecklist(id, data) {
+        return this.putData(`/checklists/${id}`, data);
+    }
+
+    async deleteChecklist(id) {
+        return this.deleteData(`/checklists/${id}`);
+    }
+
+    // ============================================
+    // Daily Reports
+    // ============================================
+    async getDailyReportsByMachinery(machineryId) {
+        return this.fetchData(`/maquinaria/${machineryId}/daily-reports`);
+    }
+
+    async getDailyReport(id) {
+        return this.fetchData(`/daily-reports/${id}`);
+    }
+
+    async createDailyReport(data) {
+        return this.postData('/daily-reports', data);
+    }
+
+    async updateDailyReport(id, data) {
+        return this.putData(`/daily-reports/${id}`, data);
+    }
+
+    async deleteDailyReport(id) {
+        return this.deleteData(`/daily-reports/${id}`);
+    }
+
+    // ============================================
+    // Machinery History
+    // ============================================
+    async getMachineryHistory(machineryId) {
+        return this.fetchData(`/maquinaria/${machineryId}/history`);
+    }
+
+    // ============================================
+    // Work Orders
+    // ============================================
+    async getWorkOrders(filters = {}) {
+        const params = new URLSearchParams(filters);
+        return this.fetchData(`/work-orders?${params}`);
+    }
+
+    async getWorkOrder(id) {
+        return this.fetchData(`/work-orders/${id}`);
+    }
+
+    async createWorkOrder(data) {
+        return this.postData('/work-orders', data);
+    }
+
+    async updateWorkOrder(id, data) {
+        return this.putData(`/work-orders/${id}`, data);
+    }
+
+    async deleteWorkOrder(id) {
+        return this.deleteData(`/work-orders/${id}`);
+    }
+
+    async assignMechanics(workOrderId, data) {
+        return this.postData(`/work-orders/${workOrderId}/mechanics`, data);
+    }
+
+    async updateWorkOrderStatus(workOrderId, data) {
+        return this.putData(`/work-orders/${workOrderId}/status`, data);
     }
 
     // Helper methods for POST, PUT, DELETE

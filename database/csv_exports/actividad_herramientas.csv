@@ -1,0 +1,1600 @@
+﻿id,actividad_id,herramienta_id,cantidad,especificaciones
+1,3,43,1,Uso estándar para Sistema de Frenos
+2,3,38,1,Uso estándar para Sistema de Frenos
+3,5,49,1,Uso estándar para Cuchara y Brazo
+4,6,9,1,Uso estándar para Sistema de Escape
+5,11,26,1,Uso estándar para Sistema de Transmisión
+6,11,47,1,Uso estándar para Sistema de Transmisión
+7,15,13,1,Uso estándar para Cuchara y Brazo
+8,15,46,1,Uso estándar para Cuchara y Brazo
+9,17,14,1,Uso estándar para Sistema de Lubricación
+10,17,13,1,Uso estándar para Sistema de Lubricación
+11,18,29,1,Uso estándar para Tren de Rodaje
+12,19,17,1,Uso estándar para Sistema de Frenos
+13,20,47,1,Uso estándar para Sistema de Dirección
+14,20,53,1,Uso estándar para Sistema de Dirección
+15,22,4,1,Uso estándar para Sistema de Escape
+16,22,59,1,Uso estándar para Sistema de Escape
+17,24,4,1,Uso estándar para Carrocería
+18,24,50,1,Uso estándar para Carrocería
+19,26,38,1,Uso estándar para Sistema de Refrigeración
+20,26,12,1,Uso estándar para Sistema de Refrigeración
+21,28,18,1,Uso estándar para Sistema Hidráulico
+22,29,10,1,Uso estándar para Sistema de Frenos
+23,32,3,1,Uso estándar para Cuchara y Brazo
+24,33,48,1,Uso estándar para Filtros
+25,33,10,1,Uso estándar para Filtros
+26,35,1,1,Uso estándar para Sistema Eléctrico
+27,36,28,1,Uso estándar para Sistema de Dirección
+28,36,49,1,Uso estándar para Sistema de Dirección
+29,37,49,1,Uso estándar para Neumáticos
+30,37,12,1,Uso estándar para Neumáticos
+31,38,12,1,Uso estándar para Sistema de Transmisión
+32,38,24,1,Uso estándar para Sistema de Transmisión
+33,39,50,1,Uso estándar para Carrocería
+34,40,3,1,Uso estándar para Motor
+35,40,37,1,Uso estándar para Motor
+36,42,19,1,Uso estándar para Sistema Eléctrico
+37,43,22,1,Uso estándar para Sistema de Escape
+38,44,50,1,Uso estándar para Tren de Rodaje
+39,45,41,1,Uso estándar para Tren de Rodaje
+40,50,3,1,Uso estándar para Cabina
+41,50,49,1,Uso estándar para Cabina
+42,52,45,1,Uso estándar para Sistema de Combustible
+43,53,36,1,Uso estándar para Neumáticos
+44,54,17,1,Uso estándar para Sistema de Frenos
+45,54,43,1,Uso estándar para Sistema de Frenos
+46,55,46,1,Uso estándar para Sistema de Transmisión
+47,55,59,1,Uso estándar para Sistema de Transmisión
+48,56,46,1,Uso estándar para Motor
+49,58,35,1,Uso estándar para Cuchara y Brazo
+50,60,29,1,Uso estándar para Cabina
+51,61,20,1,Uso estándar para Sistema de Frenos
+52,66,57,1,Uso estándar para Sistema de Lubricación
+53,69,1,1,Uso estándar para Sistema de Refrigeración
+54,69,8,1,Uso estándar para Sistema de Refrigeración
+55,70,23,1,Uso estándar para Sistema de Combustible
+56,72,14,1,Uso estándar para Tren de Rodaje
+57,72,2,1,Uso estándar para Tren de Rodaje
+58,74,18,1,Uso estándar para Sistema de Escape
+59,75,47,1,Uso estándar para Sistema de Lubricación
+60,76,27,1,Uso estándar para Motor
+61,76,25,1,Uso estándar para Motor
+62,77,8,1,Uso estándar para Sistema de Transmisión
+63,78,49,1,Uso estándar para Sistema Hidráulico
+64,78,15,1,Uso estándar para Sistema Hidráulico
+65,79,21,1,Uso estándar para Sistema Eléctrico
+66,83,29,1,Uso estándar para Sistema de Refrigeración
+67,84,26,1,Uso estándar para Cabina
+68,85,48,1,Uso estándar para Sistema de Transmisión
+69,88,8,1,Uso estándar para Cabina
+70,89,43,1,Uso estándar para Sistema de Refrigeración
+71,90,16,1,Uso estándar para Sistema de Escape
+72,90,14,1,Uso estándar para Sistema de Escape
+73,91,32,1,Uso estándar para Sistema Hidráulico
+74,92,14,1,Uso estándar para Carrocería
+75,93,43,1,Uso estándar para Cuchara y Brazo
+76,93,8,1,Uso estándar para Cuchara y Brazo
+77,95,16,1,Uso estándar para Filtros
+78,95,3,1,Uso estándar para Filtros
+79,96,45,1,Uso estándar para Sistema de Dirección
+80,97,38,1,Uso estándar para Sistema Hidráulico
+81,97,46,1,Uso estándar para Sistema Hidráulico
+82,102,21,1,Uso estándar para Sistema de Refrigeración
+83,102,9,1,Uso estándar para Sistema de Refrigeración
+84,103,11,1,Uso estándar para Cuchara y Brazo
+85,103,15,1,Uso estándar para Cuchara y Brazo
+86,104,59,1,Uso estándar para Sistema Eléctrico
+87,104,39,1,Uso estándar para Sistema Eléctrico
+88,107,19,1,Uso estándar para Sistema de Lubricación
+89,108,40,1,Uso estándar para Sistema Hidráulico
+90,108,17,1,Uso estándar para Sistema Hidráulico
+91,109,6,1,Uso estándar para Sistema de Combustible
+92,116,44,1,Uso estándar para Sistema de Escape
+93,116,20,1,Uso estándar para Sistema de Escape
+94,117,32,1,Uso estándar para Tren de Rodaje
+95,117,5,1,Uso estándar para Tren de Rodaje
+96,118,22,1,Uso estándar para Sistema de Refrigeración
+97,122,32,1,Uso estándar para Neumáticos
+98,122,18,1,Uso estándar para Neumáticos
+99,123,49,1,Uso estándar para Sistema Eléctrico
+100,123,16,1,Uso estándar para Sistema Eléctrico
+101,125,19,1,Uso estándar para Motor
+102,128,30,1,Uso estándar para Sistema de Combustible
+103,128,41,1,Uso estándar para Sistema de Combustible
+104,129,30,1,Uso estándar para Sistema de Transmisión
+105,130,22,1,Uso estándar para Sistema de Lubricación
+106,130,60,1,Uso estándar para Sistema de Lubricación
+107,133,50,1,Uso estándar para Neumáticos
+108,133,44,1,Uso estándar para Neumáticos
+109,134,41,1,Uso estándar para Sistema de Frenos
+110,136,58,1,Uso estándar para Filtros
+111,136,32,1,Uso estándar para Filtros
+112,138,8,1,Uso estándar para Motor
+113,138,28,1,Uso estándar para Motor
+114,141,25,1,Uso estándar para Neumáticos
+115,141,45,1,Uso estándar para Neumáticos
+116,142,47,1,Uso estándar para Cabina
+117,144,12,1,Uso estándar para Sistema de Combustible
+118,144,23,1,Uso estándar para Sistema de Combustible
+119,146,11,1,Uso estándar para Tren de Rodaje
+120,146,27,1,Uso estándar para Tren de Rodaje
+121,152,38,1,Uso estándar para Cabina
+122,154,24,1,Uso estándar para Filtros
+123,157,44,1,Uso estándar para Cuchara y Brazo
+124,157,60,1,Uso estándar para Cuchara y Brazo
+125,163,35,1,Uso estándar para Motor
+126,163,25,1,Uso estándar para Motor
+127,165,2,1,Uso estándar para Neumáticos
+128,167,26,1,Uso estándar para Cabina
+129,167,5,1,Uso estándar para Cabina
+130,169,15,1,Uso estándar para Sistema de Transmisión
+131,174,36,1,Uso estándar para Sistema de Refrigeración
+132,178,23,1,Uso estándar para Sistema de Refrigeración
+133,181,21,1,Uso estándar para Sistema Eléctrico
+134,181,14,1,Uso estándar para Sistema Eléctrico
+135,183,1,1,Uso estándar para Sistema de Frenos
+136,183,20,1,Uso estándar para Sistema de Frenos
+137,184,36,1,Uso estándar para Sistema de Transmisión
+138,186,45,1,Uso estándar para Sistema de Combustible
+139,187,11,1,Uso estándar para Motor
+140,188,7,1,Uso estándar para Filtros
+141,188,54,1,Uso estándar para Filtros
+142,189,54,1,Uso estándar para Sistema Hidráulico
+143,190,29,1,Uso estándar para Carrocería
+144,191,58,1,Uso estándar para Tren de Rodaje
+145,197,38,1,Uso estándar para Sistema Hidráulico
+146,197,29,1,Uso estándar para Sistema Hidráulico
+147,201,15,1,Uso estándar para Filtros
+148,203,39,1,Uso estándar para Sistema de Lubricación
+149,209,45,1,Uso estándar para Sistema de Escape
+150,209,56,1,Uso estándar para Sistema de Escape
+151,211,29,1,Uso estándar para Sistema Eléctrico
+152,214,10,1,Uso estándar para Carrocería
+153,214,45,1,Uso estándar para Carrocería
+154,217,52,1,Uso estándar para Carrocería
+155,219,47,1,Uso estándar para Sistema Hidráulico
+156,219,36,1,Uso estándar para Sistema Hidráulico
+157,222,23,1,Uso estándar para Tren de Rodaje
+158,222,19,1,Uso estándar para Tren de Rodaje
+159,225,32,1,Uso estándar para Neumáticos
+160,225,19,1,Uso estándar para Neumáticos
+161,226,28,1,Uso estándar para Motor
+162,226,42,1,Uso estándar para Motor
+163,227,36,1,Uso estándar para Tren de Rodaje
+164,228,5,1,Uso estándar para Neumáticos
+165,228,53,1,Uso estándar para Neumáticos
+166,234,55,1,Uso estándar para Filtros
+167,235,41,1,Uso estándar para Sistema de Transmisión
+168,236,56,1,Uso estándar para Tren de Rodaje
+169,238,49,1,Uso estándar para Sistema de Escape
+170,241,3,1,Uso estándar para Sistema de Combustible
+171,241,7,1,Uso estándar para Sistema de Combustible
+172,244,24,1,Uso estándar para Sistema Hidráulico
+173,247,12,1,Uso estándar para Sistema de Transmisión
+174,248,2,1,Uso estándar para Cabina
+175,248,27,1,Uso estándar para Cabina
+176,250,24,1,Uso estándar para Neumáticos
+177,251,47,1,Uso estándar para Sistema de Combustible
+178,260,60,1,Uso estándar para Filtros
+179,261,51,1,Uso estándar para Neumáticos
+180,263,28,1,Uso estándar para Sistema de Lubricación
+181,268,50,1,Uso estándar para Sistema de Lubricación
+182,268,54,1,Uso estándar para Sistema de Lubricación
+183,270,22,1,Uso estándar para Motor
+184,273,16,1,Uso estándar para Sistema de Transmisión
+185,273,11,1,Uso estándar para Sistema de Transmisión
+186,274,4,1,Uso estándar para Sistema de Refrigeración
+187,276,43,1,Uso estándar para Tren de Rodaje
+188,277,43,1,Uso estándar para Sistema de Lubricación
+189,277,1,1,Uso estándar para Sistema de Lubricación
+190,278,51,1,Uso estándar para Sistema de Refrigeración
+191,280,4,1,Uso estándar para Sistema Eléctrico
+192,281,11,1,Uso estándar para Sistema de Escape
+193,282,34,1,Uso estándar para Sistema de Lubricación
+194,285,33,1,Uso estándar para Sistema de Transmisión
+195,286,2,1,Uso estándar para Sistema de Dirección
+196,287,55,1,Uso estándar para Tren de Rodaje
+197,287,5,1,Uso estándar para Tren de Rodaje
+198,288,48,1,Uso estándar para Cabina
+199,288,34,1,Uso estándar para Cabina
+200,292,13,1,Uso estándar para Cuchara y Brazo
+201,292,22,1,Uso estándar para Cuchara y Brazo
+202,294,37,1,Uso estándar para Sistema de Combustible
+203,296,41,1,Uso estándar para Filtros
+204,296,3,1,Uso estándar para Filtros
+205,302,24,1,Uso estándar para Sistema de Frenos
+206,303,42,1,Uso estándar para Sistema de Dirección
+207,304,6,1,Uso estándar para Sistema de Escape
+208,304,9,1,Uso estándar para Sistema de Escape
+209,305,46,1,Uso estándar para Sistema de Frenos
+210,307,53,1,Uso estándar para Sistema de Dirección
+211,309,60,1,Uso estándar para Filtros
+212,310,27,1,Uso estándar para Sistema de Transmisión
+213,311,34,1,Uso estándar para Sistema de Dirección
+214,312,51,1,Uso estándar para Tren de Rodaje
+215,312,37,1,Uso estándar para Tren de Rodaje
+216,316,13,1,Uso estándar para Sistema de Dirección
+217,320,18,1,Uso estándar para Sistema de Lubricación
+218,320,33,1,Uso estándar para Sistema de Lubricación
+219,323,24,1,Uso estándar para Filtros
+220,323,40,1,Uso estándar para Filtros
+221,327,8,1,Uso estándar para Sistema Hidráulico
+222,327,38,1,Uso estándar para Sistema Hidráulico
+223,328,12,1,Uso estándar para Cuchara y Brazo
+224,329,5,1,Uso estándar para Sistema de Escape
+225,331,37,1,Uso estándar para Neumáticos
+226,334,47,1,Uso estándar para Sistema de Escape
+227,341,24,1,Uso estándar para Filtros
+228,342,52,1,Uso estándar para Sistema de Transmisión
+229,342,23,1,Uso estándar para Sistema de Transmisión
+230,343,16,1,Uso estándar para Cabina
+231,343,21,1,Uso estándar para Cabina
+232,345,40,1,Uso estándar para Sistema de Refrigeración
+233,347,6,1,Uso estándar para Tren de Rodaje
+234,347,55,1,Uso estándar para Tren de Rodaje
+235,349,17,1,Uso estándar para Sistema de Transmisión
+236,349,26,1,Uso estándar para Sistema de Transmisión
+237,350,45,1,Uso estándar para Motor
+238,351,16,1,Uso estándar para Sistema de Lubricación
+239,353,26,1,Uso estándar para Carrocería
+240,353,45,1,Uso estándar para Carrocería
+241,355,57,1,Uso estándar para Sistema de Frenos
+242,355,4,1,Uso estándar para Sistema de Frenos
+243,357,47,1,Uso estándar para Sistema de Transmisión
+244,362,30,1,Uso estándar para Carrocería
+245,362,40,1,Uso estándar para Carrocería
+246,363,43,1,Uso estándar para Sistema de Dirección
+247,364,33,1,Uso estándar para Motor
+248,364,4,1,Uso estándar para Motor
+249,367,55,1,Uso estándar para Cabina
+250,370,56,1,Uso estándar para Sistema de Dirección
+251,372,24,1,Uso estándar para Cuchara y Brazo
+252,372,5,1,Uso estándar para Cuchara y Brazo
+253,373,16,1,Uso estándar para Motor
+254,373,44,1,Uso estándar para Motor
+255,376,38,1,Uso estándar para Sistema Hidráulico
+256,377,15,1,Uso estándar para Carrocería
+257,378,9,1,Uso estándar para Carrocería
+258,379,55,1,Uso estándar para Neumáticos
+259,381,44,1,Uso estándar para Sistema Eléctrico
+260,382,21,1,Uso estándar para Sistema de Lubricación
+261,382,2,1,Uso estándar para Sistema de Lubricación
+262,383,30,1,Uso estándar para Sistema de Transmisión
+263,384,23,1,Uso estándar para Sistema de Combustible
+264,386,43,1,Uso estándar para Sistema de Frenos
+265,386,6,1,Uso estándar para Sistema de Frenos
+266,387,44,1,Uso estándar para Sistema de Escape
+267,387,45,1,Uso estándar para Sistema de Escape
+268,388,54,1,Uso estándar para Tren de Rodaje
+269,388,43,1,Uso estándar para Tren de Rodaje
+270,389,18,1,Uso estándar para Sistema Hidráulico
+271,392,45,1,Uso estándar para Filtros
+272,392,60,1,Uso estándar para Filtros
+273,393,57,1,Uso estándar para Motor
+274,393,21,1,Uso estándar para Motor
+275,397,41,1,Uso estándar para Sistema de Escape
+276,397,10,1,Uso estándar para Sistema de Escape
+277,399,20,1,Uso estándar para Carrocería
+278,399,25,1,Uso estándar para Carrocería
+279,401,1,1,Uso estándar para Sistema Hidráulico
+280,401,3,1,Uso estándar para Sistema Hidráulico
+281,402,59,1,Uso estándar para Sistema de Lubricación
+282,403,29,1,Uso estándar para Carrocería
+283,404,27,1,Uso estándar para Filtros
+284,404,15,1,Uso estándar para Filtros
+285,405,22,1,Uso estándar para Tren de Rodaje
+286,405,16,1,Uso estándar para Tren de Rodaje
+287,407,25,1,Uso estándar para Sistema de Transmisión
+288,408,3,1,Uso estándar para Sistema de Frenos
+289,408,25,1,Uso estándar para Sistema de Frenos
+290,409,30,1,Uso estándar para Sistema Hidráulico
+291,411,59,1,Uso estándar para Sistema de Escape
+292,411,33,1,Uso estándar para Sistema de Escape
+293,416,60,1,Uso estándar para Sistema de Refrigeración
+294,416,16,1,Uso estándar para Sistema de Refrigeración
+295,419,54,1,Uso estándar para Cuchara y Brazo
+296,419,50,1,Uso estándar para Cuchara y Brazo
+297,422,10,1,Uso estándar para Carrocería
+298,425,50,1,Uso estándar para Sistema de Combustible
+299,427,41,1,Uso estándar para Neumáticos
+300,430,5,1,Uso estándar para Cabina
+301,431,27,1,Uso estándar para Sistema Eléctrico
+302,432,42,1,Uso estándar para Sistema de Frenos
+303,433,41,1,Uso estándar para Sistema Hidráulico
+304,434,20,1,Uso estándar para Sistema de Lubricación
+305,436,18,1,Uso estándar para Sistema de Refrigeración
+306,437,14,1,Uso estándar para Sistema de Escape
+307,438,37,1,Uso estándar para Sistema de Combustible
+308,439,2,1,Uso estándar para Sistema de Refrigeración
+309,439,21,1,Uso estándar para Sistema de Refrigeración
+310,441,21,1,Uso estándar para Sistema de Refrigeración
+311,442,5,1,Uso estándar para Motor
+312,446,25,1,Uso estándar para Sistema de Lubricación
+313,446,4,1,Uso estándar para Sistema de Lubricación
+314,447,35,1,Uso estándar para Sistema de Refrigeración
+315,447,15,1,Uso estándar para Sistema de Refrigeración
+316,448,13,1,Uso estándar para Sistema de Escape
+317,448,34,1,Uso estándar para Sistema de Escape
+318,449,14,1,Uso estándar para Sistema de Transmisión
+319,457,56,1,Uso estándar para Neumáticos
+320,457,49,1,Uso estándar para Neumáticos
+321,458,20,1,Uso estándar para Filtros
+322,459,19,1,Uso estándar para Sistema de Escape
+323,459,34,1,Uso estándar para Sistema de Escape
+324,460,22,1,Uso estándar para Sistema de Frenos
+325,460,40,1,Uso estándar para Sistema de Frenos
+326,464,8,1,Uso estándar para Sistema de Combustible
+327,465,33,1,Uso estándar para Sistema Eléctrico
+328,465,20,1,Uso estándar para Sistema Eléctrico
+329,466,37,1,Uso estándar para Sistema Hidráulico
+330,466,42,1,Uso estándar para Sistema Hidráulico
+331,468,46,1,Uso estándar para Motor
+332,469,36,1,Uso estándar para Sistema de Refrigeración
+333,471,28,1,Uso estándar para Filtros
+334,471,12,1,Uso estándar para Filtros
+335,473,26,1,Uso estándar para Tren de Rodaje
+336,473,31,1,Uso estándar para Tren de Rodaje
+337,474,59,1,Uso estándar para Sistema de Transmisión
+338,474,57,1,Uso estándar para Sistema de Transmisión
+339,475,37,1,Uso estándar para Neumáticos
+340,475,54,1,Uso estándar para Neumáticos
+341,476,45,1,Uso estándar para Sistema Eléctrico
+342,476,52,1,Uso estándar para Sistema Eléctrico
+343,477,22,1,Uso estándar para Cabina
+344,480,10,1,Uso estándar para Cuchara y Brazo
+345,481,23,1,Uso estándar para Filtros
+346,481,3,1,Uso estándar para Filtros
+347,483,30,1,Uso estándar para Cabina
+348,483,43,1,Uso estándar para Cabina
+349,484,17,1,Uso estándar para Sistema Eléctrico
+350,485,3,1,Uso estándar para Sistema de Combustible
+351,486,52,1,Uso estándar para Sistema Eléctrico
+352,486,60,1,Uso estándar para Sistema Eléctrico
+353,487,27,1,Uso estándar para Tren de Rodaje
+354,487,6,1,Uso estándar para Tren de Rodaje
+355,488,52,1,Uso estándar para Sistema de Transmisión
+356,490,13,1,Uso estándar para Tren de Rodaje
+357,492,45,1,Uso estándar para Sistema de Lubricación
+358,494,25,1,Uso estándar para Sistema de Dirección
+359,494,22,1,Uso estándar para Sistema de Dirección
+360,496,18,1,Uso estándar para Filtros
+361,497,44,1,Uso estándar para Sistema de Transmisión
+362,498,27,1,Uso estándar para Sistema de Lubricación
+363,499,9,1,Uso estándar para Motor
+364,503,13,1,Uso estándar para Sistema Hidráulico
+365,503,31,1,Uso estándar para Sistema Hidráulico
+366,504,36,1,Uso estándar para Sistema de Escape
+367,506,11,1,Uso estándar para Carrocería
+368,506,31,1,Uso estándar para Carrocería
+369,507,54,1,Uso estándar para Sistema Eléctrico
+370,507,6,1,Uso estándar para Sistema Eléctrico
+371,508,36,1,Uso estándar para Tren de Rodaje
+372,508,58,1,Uso estándar para Tren de Rodaje
+373,509,21,1,Uso estándar para Neumáticos
+374,509,38,1,Uso estándar para Neumáticos
+375,510,48,1,Uso estándar para Sistema de Transmisión
+376,511,20,1,Uso estándar para Sistema Hidráulico
+377,511,10,1,Uso estándar para Sistema Hidráulico
+378,512,60,1,Uso estándar para Carrocería
+379,512,24,1,Uso estándar para Carrocería
+380,515,18,1,Uso estándar para Tren de Rodaje
+381,515,31,1,Uso estándar para Tren de Rodaje
+382,516,7,1,Uso estándar para Sistema Eléctrico
+383,517,10,1,Uso estándar para Sistema de Refrigeración
+384,517,55,1,Uso estándar para Sistema de Refrigeración
+385,519,52,1,Uso estándar para Sistema de Frenos
+386,522,15,1,Uso estándar para Neumáticos
+387,522,58,1,Uso estándar para Neumáticos
+388,524,45,1,Uso estándar para Sistema de Combustible
+389,524,31,1,Uso estándar para Sistema de Combustible
+390,526,37,1,Uso estándar para Carrocería
+391,526,56,1,Uso estándar para Carrocería
+392,527,33,1,Uso estándar para Filtros
+393,528,29,1,Uso estándar para Cabina
+394,528,41,1,Uso estándar para Cabina
+395,530,22,1,Uso estándar para Sistema de Combustible
+396,530,10,1,Uso estándar para Sistema de Combustible
+397,531,39,1,Uso estándar para Cuchara y Brazo
+398,532,6,1,Uso estándar para Carrocería
+399,534,20,1,Uso estándar para Tren de Rodaje
+400,536,41,1,Uso estándar para Sistema de Frenos
+401,536,36,1,Uso estándar para Sistema de Frenos
+402,540,38,1,Uso estándar para Sistema de Escape
+403,541,60,1,Uso estándar para Sistema Hidráulico
+404,544,8,1,Uso estándar para Sistema de Frenos
+405,544,26,1,Uso estándar para Sistema de Frenos
+406,547,36,1,Uso estándar para Filtros
+407,547,34,1,Uso estándar para Filtros
+408,548,59,1,Uso estándar para Sistema de Escape
+409,551,8,1,Uso estándar para Neumáticos
+410,552,23,1,Uso estándar para Sistema Eléctrico
+411,552,53,1,Uso estándar para Sistema Eléctrico
+412,555,30,1,Uso estándar para Cuchara y Brazo
+413,555,8,1,Uso estándar para Cuchara y Brazo
+414,556,42,1,Uso estándar para Sistema de Combustible
+415,558,10,1,Uso estándar para Sistema de Lubricación
+416,558,56,1,Uso estándar para Sistema de Lubricación
+417,559,29,1,Uso estándar para Sistema de Escape
+418,559,39,1,Uso estándar para Sistema de Escape
+419,560,46,1,Uso estándar para Filtros
+420,560,27,1,Uso estándar para Filtros
+421,562,32,1,Uso estándar para Sistema de Transmisión
+422,564,54,1,Uso estándar para Motor
+423,567,48,1,Uso estándar para Carrocería
+424,567,57,1,Uso estándar para Carrocería
+425,568,9,1,Uso estándar para Neumáticos
+426,570,20,1,Uso estándar para Sistema Eléctrico
+427,572,16,1,Uso estándar para Tren de Rodaje
+428,572,23,1,Uso estándar para Tren de Rodaje
+429,574,57,1,Uso estándar para Filtros
+430,574,46,1,Uso estándar para Filtros
+431,575,52,1,Uso estándar para Cuchara y Brazo
+432,576,31,1,Uso estándar para Motor
+433,577,6,1,Uso estándar para Sistema Hidráulico
+434,578,38,1,Uso estándar para Sistema de Combustible
+435,578,28,1,Uso estándar para Sistema de Combustible
+436,580,44,1,Uso estándar para Sistema Eléctrico
+437,580,47,1,Uso estándar para Sistema Eléctrico
+438,582,43,1,Uso estándar para Carrocería
+439,582,47,1,Uso estándar para Carrocería
+440,585,18,1,Uso estándar para Motor
+441,587,19,1,Uso estándar para Tren de Rodaje
+442,587,20,1,Uso estándar para Tren de Rodaje
+443,590,11,1,Uso estándar para Motor
+444,591,36,1,Uso estándar para Filtros
+445,592,6,1,Uso estándar para Cuchara y Brazo
+446,593,48,1,Uso estándar para Sistema de Transmisión
+447,593,14,1,Uso estándar para Sistema de Transmisión
+448,594,22,1,Uso estándar para Sistema de Escape
+449,594,42,1,Uso estándar para Sistema de Escape
+450,599,19,1,Uso estándar para Sistema Eléctrico
+451,599,15,1,Uso estándar para Sistema Eléctrico
+452,600,10,1,Uso estándar para Filtros
+453,600,23,1,Uso estándar para Filtros
+454,602,55,1,Uso estándar para Sistema de Combustible
+455,602,3,1,Uso estándar para Sistema de Combustible
+456,604,2,1,Uso estándar para Sistema Hidráulico
+457,606,58,1,Uso estándar para Cabina
+458,607,44,1,Uso estándar para Sistema de Frenos
+459,609,40,1,Uso estándar para Sistema de Dirección
+460,610,30,1,Uso estándar para Carrocería
+461,614,59,1,Uso estándar para Neumáticos
+462,614,32,1,Uso estándar para Neumáticos
+463,616,49,1,Uso estándar para Sistema Hidráulico
+464,618,4,1,Uso estándar para Sistema de Lubricación
+465,618,3,1,Uso estándar para Sistema de Lubricación
+466,622,49,1,Uso estándar para Sistema de Frenos
+467,626,39,1,Uso estándar para Sistema Eléctrico
+468,626,18,1,Uso estándar para Sistema Eléctrico
+469,628,59,1,Uso estándar para Cuchara y Brazo
+470,628,41,1,Uso estándar para Cuchara y Brazo
+471,630,30,1,Uso estándar para Sistema de Escape
+472,630,29,1,Uso estándar para Sistema de Escape
+473,634,19,1,Uso estándar para Sistema de Refrigeración
+474,634,41,1,Uso estándar para Sistema de Refrigeración
+475,636,4,1,Uso estándar para Sistema Eléctrico
+476,636,40,1,Uso estándar para Sistema Eléctrico
+477,637,8,1,Uso estándar para Carrocería
+478,642,28,1,Uso estándar para Sistema de Dirección
+479,645,11,1,Uso estándar para Cabina
+480,645,31,1,Uso estándar para Cabina
+481,647,24,1,Uso estándar para Sistema Hidráulico
+482,647,13,1,Uso estándar para Sistema Hidráulico
+483,649,5,1,Uso estándar para Carrocería
+484,649,25,1,Uso estándar para Carrocería
+485,653,17,1,Uso estándar para Sistema de Lubricación
+486,655,37,1,Uso estándar para Motor
+487,655,24,1,Uso estándar para Motor
+488,656,18,1,Uso estándar para Sistema de Refrigeración
+489,660,14,1,Uso estándar para Sistema de Escape
+490,662,8,1,Uso estándar para Neumáticos
+491,673,3,1,Uso estándar para Sistema de Refrigeración
+492,674,10,1,Uso estándar para Sistema de Transmisión
+493,675,5,1,Uso estándar para Motor
+494,676,46,1,Uso estándar para Carrocería
+495,677,1,1,Uso estándar para Sistema Eléctrico
+496,677,53,1,Uso estándar para Sistema Eléctrico
+497,678,40,1,Uso estándar para Cuchara y Brazo
+498,681,46,1,Uso estándar para Sistema de Combustible
+499,681,14,1,Uso estándar para Sistema de Combustible
+500,685,60,1,Uso estándar para Sistema Hidráulico
+501,685,41,1,Uso estándar para Sistema Hidráulico
+502,688,2,1,Uso estándar para Sistema Hidráulico
+503,688,47,1,Uso estándar para Sistema Hidráulico
+504,689,57,1,Uso estándar para Motor
+505,689,33,1,Uso estándar para Motor
+506,691,32,1,Uso estándar para Sistema de Escape
+507,691,29,1,Uso estándar para Sistema de Escape
+508,696,55,1,Uso estándar para Carrocería
+509,697,22,1,Uso estándar para Sistema Eléctrico
+510,699,35,1,Uso estándar para Filtros
+511,699,13,1,Uso estándar para Filtros
+512,701,11,1,Uso estándar para Cabina
+513,702,34,1,Uso estándar para Sistema de Lubricación
+514,703,16,1,Uso estándar para Neumáticos
+515,703,11,1,Uso estándar para Neumáticos
+516,704,50,1,Uso estándar para Sistema de Escape
+517,704,33,1,Uso estándar para Sistema de Escape
+518,708,8,1,Uso estándar para Neumáticos
+519,708,21,1,Uso estándar para Neumáticos
+520,710,53,1,Uso estándar para Filtros
+521,710,17,1,Uso estándar para Filtros
+522,714,39,1,Uso estándar para Sistema de Transmisión
+523,714,31,1,Uso estándar para Sistema de Transmisión
+524,715,27,1,Uso estándar para Sistema de Frenos
+525,715,4,1,Uso estándar para Sistema de Frenos
+526,720,14,1,Uso estándar para Cabina
+527,720,47,1,Uso estándar para Cabina
+528,722,38,1,Uso estándar para Filtros
+529,723,2,1,Uso estándar para Sistema de Dirección
+530,724,32,1,Uso estándar para Cuchara y Brazo
+531,724,8,1,Uso estándar para Cuchara y Brazo
+532,725,38,1,Uso estándar para Sistema de Lubricación
+533,725,30,1,Uso estándar para Sistema de Lubricación
+534,727,40,1,Uso estándar para Carrocería
+535,727,53,1,Uso estándar para Carrocería
+536,729,29,1,Uso estándar para Neumáticos
+537,729,14,1,Uso estándar para Neumáticos
+538,730,15,1,Uso estándar para Sistema de Dirección
+539,730,13,1,Uso estándar para Sistema de Dirección
+540,731,48,1,Uso estándar para Sistema de Combustible
+541,732,6,1,Uso estándar para Tren de Rodaje
+542,732,18,1,Uso estándar para Tren de Rodaje
+543,733,50,1,Uso estándar para Neumáticos
+544,733,18,1,Uso estándar para Neumáticos
+545,735,22,1,Uso estándar para Motor
+546,739,31,1,Uso estándar para Sistema de Refrigeración
+547,741,44,1,Uso estándar para Sistema de Escape
+548,742,4,1,Uso estándar para Sistema Hidráulico
+549,742,45,1,Uso estándar para Sistema Hidráulico
+550,744,40,1,Uso estándar para Carrocería
+551,745,5,1,Uso estándar para Sistema de Escape
+552,746,27,1,Uso estándar para Sistema de Refrigeración
+553,746,39,1,Uso estándar para Sistema de Refrigeración
+554,747,15,1,Uso estándar para Neumáticos
+555,748,25,1,Uso estándar para Cuchara y Brazo
+556,749,27,1,Uso estándar para Filtros
+557,750,30,1,Uso estándar para Carrocería
+558,750,8,1,Uso estándar para Carrocería
+559,751,22,1,Uso estándar para Sistema de Escape
+560,751,43,1,Uso estándar para Sistema de Escape
+561,752,13,1,Uso estándar para Sistema de Refrigeración
+562,753,23,1,Uso estándar para Cabina
+563,756,18,1,Uso estándar para Cuchara y Brazo
+564,756,37,1,Uso estándar para Cuchara y Brazo
+565,758,4,1,Uso estándar para Filtros
+566,758,11,1,Uso estándar para Filtros
+567,759,58,1,Uso estándar para Sistema de Lubricación
+568,759,42,1,Uso estándar para Sistema de Lubricación
+569,760,56,1,Uso estándar para Sistema de Dirección
+570,764,15,1,Uso estándar para Carrocería
+571,770,42,1,Uso estándar para Motor
+572,770,52,1,Uso estándar para Motor
+573,775,18,1,Uso estándar para Sistema Eléctrico
+574,776,15,1,Uso estándar para Tren de Rodaje
+575,776,49,1,Uso estándar para Tren de Rodaje
+576,777,19,1,Uso estándar para Sistema de Combustible
+577,777,21,1,Uso estándar para Sistema de Combustible
+578,778,20,1,Uso estándar para Sistema de Frenos
+579,781,30,1,Uso estándar para Sistema de Dirección
+580,781,6,1,Uso estándar para Sistema de Dirección
+581,783,5,1,Uso estándar para Sistema de Lubricación
+582,785,25,1,Uso estándar para Sistema de Refrigeración
+583,786,22,1,Uso estándar para Cabina
+584,786,47,1,Uso estándar para Cabina
+585,787,14,1,Uso estándar para Sistema de Escape
+586,787,59,1,Uso estándar para Sistema de Escape
+587,788,14,1,Uso estándar para Motor
+588,789,21,1,Uso estándar para Sistema Eléctrico
+589,790,45,1,Uso estándar para Neumáticos
+590,790,57,1,Uso estándar para Neumáticos
+591,791,51,1,Uso estándar para Motor
+592,791,31,1,Uso estándar para Motor
+593,795,57,1,Uso estándar para Tren de Rodaje
+594,795,26,1,Uso estándar para Tren de Rodaje
+595,797,43,1,Uso estándar para Filtros
+596,797,26,1,Uso estándar para Filtros
+597,799,51,1,Uso estándar para Sistema de Refrigeración
+598,799,8,1,Uso estándar para Sistema de Refrigeración
+599,800,24,1,Uso estándar para Tren de Rodaje
+600,801,39,1,Uso estándar para Sistema de Escape
+601,801,53,1,Uso estándar para Sistema de Escape
+602,802,16,1,Uso estándar para Sistema de Transmisión
+603,802,18,1,Uso estándar para Sistema de Transmisión
+604,806,42,1,Uso estándar para Cabina
+605,807,15,1,Uso estándar para Sistema de Escape
+606,807,43,1,Uso estándar para Sistema de Escape
+607,808,48,1,Uso estándar para Neumáticos
+608,808,38,1,Uso estándar para Neumáticos
+609,811,32,1,Uso estándar para Sistema de Frenos
+610,813,39,1,Uso estándar para Sistema Eléctrico
+611,815,4,1,Uso estándar para Motor
+612,816,59,1,Uso estándar para Sistema de Dirección
+613,816,37,1,Uso estándar para Sistema de Dirección
+614,817,45,1,Uso estándar para Carrocería
+615,817,24,1,Uso estándar para Carrocería
+616,818,14,1,Uso estándar para Filtros
+617,821,25,1,Uso estándar para Motor
+618,821,22,1,Uso estándar para Motor
+619,823,31,1,Uso estándar para Neumáticos
+620,825,27,1,Uso estándar para Sistema de Combustible
+621,825,45,1,Uso estándar para Sistema de Combustible
+622,827,45,1,Uso estándar para Cuchara y Brazo
+623,828,58,1,Uso estándar para Sistema de Dirección
+624,828,59,1,Uso estándar para Sistema de Dirección
+625,831,12,1,Uso estándar para Sistema de Escape
+626,834,35,1,Uso estándar para Sistema de Refrigeración
+627,834,44,1,Uso estándar para Sistema de Refrigeración
+628,835,28,1,Uso estándar para Sistema de Escape
+629,835,21,1,Uso estándar para Sistema de Escape
+630,837,59,1,Uso estándar para Sistema de Combustible
+631,840,20,1,Uso estándar para Sistema Hidráulico
+632,844,4,1,Uso estándar para Tren de Rodaje
+633,844,58,1,Uso estándar para Tren de Rodaje
+634,847,41,1,Uso estándar para Cabina
+635,847,43,1,Uso estándar para Cabina
+636,849,36,1,Uso estándar para Filtros
+637,849,50,1,Uso estándar para Filtros
+638,850,10,1,Uso estándar para Neumáticos
+639,851,16,1,Uso estándar para Sistema de Refrigeración
+640,852,2,1,Uso estándar para Motor
+641,853,22,1,Uso estándar para Carrocería
+642,853,24,1,Uso estándar para Carrocería
+643,861,41,1,Uso estándar para Sistema de Lubricación
+644,861,42,1,Uso estándar para Sistema de Lubricación
+645,862,15,1,Uso estándar para Cuchara y Brazo
+646,866,43,1,Uso estándar para Cabina
+647,869,52,1,Uso estándar para Sistema de Combustible
+648,869,40,1,Uso estándar para Sistema de Combustible
+649,870,56,1,Uso estándar para Sistema de Dirección
+650,871,38,1,Uso estándar para Sistema de Frenos
+651,873,21,1,Uso estándar para Neumáticos
+652,873,32,1,Uso estándar para Neumáticos
+653,877,54,1,Uso estándar para Neumáticos
+654,877,40,1,Uso estándar para Neumáticos
+655,878,52,1,Uso estándar para Sistema Hidráulico
+656,880,6,1,Uso estándar para Cuchara y Brazo
+657,880,20,1,Uso estándar para Cuchara y Brazo
+658,881,38,1,Uso estándar para Sistema de Frenos
+659,882,33,1,Uso estándar para Cabina
+660,884,17,1,Uso estándar para Filtros
+661,887,32,1,Uso estándar para Tren de Rodaje
+662,887,8,1,Uso estándar para Tren de Rodaje
+663,888,37,1,Uso estándar para Neumáticos
+664,888,31,1,Uso estándar para Neumáticos
+665,891,21,1,Uso estándar para Cabina
+666,891,34,1,Uso estándar para Cabina
+667,893,52,1,Uso estándar para Motor
+668,894,50,1,Uso estándar para Neumáticos
+669,897,24,1,Uso estándar para Sistema Hidráulico
+670,901,6,1,Uso estándar para Sistema de Transmisión
+671,902,18,1,Uso estándar para Sistema Eléctrico
+672,906,49,1,Uso estándar para Sistema Hidráulico
+673,906,46,1,Uso estándar para Sistema Hidráulico
+674,912,38,1,Uso estándar para Sistema de Combustible
+675,916,46,1,Uso estándar para Neumáticos
+676,916,38,1,Uso estándar para Neumáticos
+677,917,60,1,Uso estándar para Tren de Rodaje
+678,917,24,1,Uso estándar para Tren de Rodaje
+679,919,50,1,Uso estándar para Sistema de Dirección
+680,919,15,1,Uso estándar para Sistema de Dirección
+681,921,9,1,Uso estándar para Neumáticos
+682,922,35,1,Uso estándar para Sistema de Refrigeración
+683,922,42,1,Uso estándar para Sistema de Refrigeración
+684,923,46,1,Uso estándar para Sistema de Frenos
+685,929,39,1,Uso estándar para Motor
+686,929,26,1,Uso estándar para Motor
+687,931,12,1,Uso estándar para Sistema de Combustible
+688,931,46,1,Uso estándar para Sistema de Combustible
+689,933,57,1,Uso estándar para Cuchara y Brazo
+690,935,48,1,Uso estándar para Neumáticos
+691,936,35,1,Uso estándar para Sistema de Escape
+692,936,17,1,Uso estándar para Sistema de Escape
+693,937,15,1,Uso estándar para Sistema Eléctrico
+694,937,58,1,Uso estándar para Sistema Eléctrico
+695,938,55,1,Uso estándar para Sistema de Transmisión
+696,940,29,1,Uso estándar para Tren de Rodaje
+697,940,5,1,Uso estándar para Tren de Rodaje
+698,941,41,1,Uso estándar para Neumáticos
+699,941,30,1,Uso estándar para Neumáticos
+700,943,17,1,Uso estándar para Sistema de Lubricación
+701,943,52,1,Uso estándar para Sistema de Lubricación
+702,944,1,1,Uso estándar para Sistema de Dirección
+703,945,49,1,Uso estándar para Motor
+704,946,26,1,Uso estándar para Sistema de Frenos
+705,948,58,1,Uso estándar para Sistema de Refrigeración
+706,948,38,1,Uso estándar para Sistema de Refrigeración
+707,949,30,1,Uso estándar para Sistema de Combustible
+708,950,46,1,Uso estándar para Sistema de Refrigeración
+709,950,25,1,Uso estándar para Sistema de Refrigeración
+710,952,14,1,Uso estándar para Sistema de Escape
+711,953,25,1,Uso estándar para Carrocería
+712,956,55,1,Uso estándar para Filtros
+713,958,10,1,Uso estándar para Sistema de Combustible
+714,958,28,1,Uso estándar para Sistema de Combustible
+715,960,38,1,Uso estándar para Cabina
+716,960,21,1,Uso estándar para Cabina
+717,964,52,1,Uso estándar para Sistema Eléctrico
+718,966,30,1,Uso estándar para Sistema de Refrigeración
+719,967,16,1,Uso estándar para Sistema de Transmisión
+720,967,49,1,Uso estándar para Sistema de Transmisión
+721,970,15,1,Uso estándar para Sistema Eléctrico
+722,971,45,1,Uso estándar para Cabina
+723,972,33,1,Uso estándar para Sistema de Escape
+724,973,35,1,Uso estándar para Sistema de Refrigeración
+725,973,17,1,Uso estándar para Sistema de Refrigeración
+726,974,16,1,Uso estándar para Tren de Rodaje
+727,974,45,1,Uso estándar para Tren de Rodaje
+728,976,55,1,Uso estándar para Sistema de Combustible
+729,981,38,1,Uso estándar para Sistema de Dirección
+730,981,3,1,Uso estándar para Sistema de Dirección
+731,982,20,1,Uso estándar para Sistema de Frenos
+732,982,2,1,Uso estándar para Sistema de Frenos
+733,983,37,1,Uso estándar para Sistema de Lubricación
+734,985,28,1,Uso estándar para Sistema de Transmisión
+735,985,14,1,Uso estándar para Sistema de Transmisión
+736,986,13,1,Uso estándar para Carrocería
+737,989,34,1,Uso estándar para Tren de Rodaje
+738,995,40,1,Uso estándar para Sistema de Dirección
+739,995,29,1,Uso estándar para Sistema de Dirección
+740,996,39,1,Uso estándar para Neumáticos
+741,996,10,1,Uso estándar para Neumáticos
+742,997,46,1,Uso estándar para Motor
+743,997,54,1,Uso estándar para Motor
+744,999,48,1,Uso estándar para Sistema Eléctrico
+745,1002,6,1,Uso estándar para Sistema de Lubricación
+746,1002,14,1,Uso estándar para Sistema de Lubricación
+747,1003,22,1,Uso estándar para Sistema de Refrigeración
+748,1005,7,1,Uso estándar para Sistema de Transmisión
+749,1005,51,1,Uso estándar para Sistema de Transmisión
+750,1008,52,1,Uso estándar para Cabina
+751,1008,57,1,Uso estándar para Cabina
+752,1010,26,1,Uso estándar para Carrocería
+753,1010,34,1,Uso estándar para Carrocería
+754,1012,24,1,Uso estándar para Sistema de Lubricación
+755,1012,19,1,Uso estándar para Sistema de Lubricación
+756,1013,46,1,Uso estándar para Filtros
+757,1013,8,1,Uso estándar para Filtros
+758,1016,16,1,Uso estándar para Sistema de Combustible
+759,1023,3,1,Uso estándar para Cuchara y Brazo
+760,1025,18,1,Uso estándar para Sistema de Dirección
+761,1025,27,1,Uso estándar para Sistema de Dirección
+762,1029,36,1,Uso estándar para Sistema Eléctrico
+763,1030,39,1,Uso estándar para Sistema de Transmisión
+764,1030,51,1,Uso estándar para Sistema de Transmisión
+765,1031,45,1,Uso estándar para Motor
+766,1031,37,1,Uso estándar para Motor
+767,1033,33,1,Uso estándar para Sistema de Frenos
+768,1033,49,1,Uso estándar para Sistema de Frenos
+769,1034,19,1,Uso estándar para Sistema de Dirección
+770,1035,16,1,Uso estándar para Sistema de Escape
+771,1040,41,1,Uso estándar para Tren de Rodaje
+772,1041,53,1,Uso estándar para Cuchara y Brazo
+773,1042,29,1,Uso estándar para Sistema de Transmisión
+774,1042,4,1,Uso estándar para Sistema de Transmisión
+775,1043,10,1,Uso estándar para Neumáticos
+776,1044,24,1,Uso estándar para Motor
+777,1046,42,1,Uso estándar para Sistema de Lubricación
+778,1046,12,1,Uso estándar para Sistema de Lubricación
+779,1047,42,1,Uso estándar para Filtros
+780,1049,9,1,Uso estándar para Sistema de Combustible
+781,1049,14,1,Uso estándar para Sistema de Combustible
+782,1051,12,1,Uso estándar para Sistema de Frenos
+783,1051,23,1,Uso estándar para Sistema de Frenos
+784,1057,59,1,Uso estándar para Sistema Eléctrico
+785,1057,41,1,Uso estándar para Sistema Eléctrico
+786,1059,25,1,Uso estándar para Sistema de Escape
+787,1062,24,1,Uso estándar para Sistema de Frenos
+788,1062,59,1,Uso estándar para Sistema de Frenos
+789,1064,48,1,Uso estándar para Sistema Eléctrico
+790,1065,30,1,Uso estándar para Tren de Rodaje
+791,1066,4,1,Uso estándar para Sistema de Lubricación
+792,1067,13,1,Uso estándar para Sistema de Transmisión
+793,1068,1,1,Uso estándar para Sistema Hidráulico
+794,1069,34,1,Uso estándar para Filtros
+795,1076,27,1,Uso estándar para Sistema Eléctrico
+796,1079,12,1,Uso estándar para Cabina
+797,1080,27,1,Uso estándar para Sistema de Transmisión
+798,1083,4,1,Uso estándar para Sistema de Combustible
+799,1084,29,1,Uso estándar para Filtros
+800,1090,8,1,Uso estándar para Sistema Hidráulico
+801,1091,4,1,Uso estándar para Sistema de Frenos
+802,1093,32,1,Uso estándar para Carrocería
+803,1093,50,1,Uso estándar para Carrocería
+804,1094,38,1,Uso estándar para Sistema de Dirección
+805,1094,49,1,Uso estándar para Sistema de Dirección
+806,1101,20,1,Uso estándar para Sistema de Combustible
+807,1110,19,1,Uso estándar para Sistema de Transmisión
+808,1110,49,1,Uso estándar para Sistema de Transmisión
+809,1112,24,1,Uso estándar para Sistema de Dirección
+810,1112,6,1,Uso estándar para Sistema de Dirección
+811,1114,5,1,Uso estándar para Sistema Hidráulico
+812,1117,25,1,Uso estándar para Cabina
+813,1119,11,1,Uso estándar para Sistema de Escape
+814,1119,7,1,Uso estándar para Sistema de Escape
+815,1122,45,1,Uso estándar para Carrocería
+816,1127,21,1,Uso estándar para Sistema Eléctrico
+817,1127,34,1,Uso estándar para Sistema Eléctrico
+818,1128,11,1,Uso estándar para Sistema de Refrigeración
+819,1129,25,1,Uso estándar para Motor
+820,1129,34,1,Uso estándar para Motor
+821,1131,12,1,Uso estándar para Sistema Hidráulico
+822,1132,32,1,Uso estándar para Neumáticos
+823,1134,4,1,Uso estándar para Tren de Rodaje
+824,1136,54,1,Uso estándar para Sistema de Lubricación
+825,1136,60,1,Uso estándar para Sistema de Lubricación
+826,1142,1,1,Uso estándar para Sistema de Lubricación
+827,1143,60,1,Uso estándar para Filtros
+828,1143,37,1,Uso estándar para Filtros
+829,1145,42,1,Uso estándar para Tren de Rodaje
+830,1147,49,1,Uso estándar para Motor
+831,1147,59,1,Uso estándar para Motor
+832,1148,41,1,Uso estándar para Sistema de Lubricación
+833,1148,2,1,Uso estándar para Sistema de Lubricación
+834,1149,54,1,Uso estándar para Sistema de Combustible
+835,1149,34,1,Uso estándar para Sistema de Combustible
+836,1152,36,1,Uso estándar para Filtros
+837,1152,58,1,Uso estándar para Filtros
+838,1155,54,1,Uso estándar para Sistema de Transmisión
+839,1155,48,1,Uso estándar para Sistema de Transmisión
+840,1158,28,1,Uso estándar para Filtros
+841,1158,42,1,Uso estándar para Filtros
+842,1160,49,1,Uso estándar para Sistema de Dirección
+843,1161,34,1,Uso estándar para Tren de Rodaje
+844,1161,35,1,Uso estándar para Tren de Rodaje
+845,1162,51,1,Uso estándar para Sistema de Escape
+846,1163,14,1,Uso estándar para Sistema de Combustible
+847,1164,38,1,Uso estándar para Cabina
+848,1164,58,1,Uso estándar para Cabina
+849,1167,31,1,Uso estándar para Carrocería
+850,1168,11,1,Uso estándar para Sistema de Lubricación
+851,1168,4,1,Uso estándar para Sistema de Lubricación
+852,1169,52,1,Uso estándar para Sistema Eléctrico
+853,1169,46,1,Uso estándar para Sistema Eléctrico
+854,1171,55,1,Uso estándar para Sistema de Escape
+855,1175,56,1,Uso estándar para Carrocería
+856,1175,34,1,Uso estándar para Carrocería
+857,1176,45,1,Uso estándar para Filtros
+858,1176,21,1,Uso estándar para Filtros
+859,1177,24,1,Uso estándar para Sistema de Lubricación
+860,1177,23,1,Uso estándar para Sistema de Lubricación
+861,1178,29,1,Uso estándar para Sistema de Transmisión
+862,1178,20,1,Uso estándar para Sistema de Transmisión
+863,1179,54,1,Uso estándar para Sistema Hidráulico
+864,1179,7,1,Uso estándar para Sistema Hidráulico
+865,1182,22,1,Uso estándar para Sistema de Frenos
+866,1186,59,1,Uso estándar para Sistema de Combustible
+867,1187,55,1,Uso estándar para Sistema Hidráulico
+868,1188,40,1,Uso estándar para Sistema de Frenos
+869,1189,31,1,Uso estándar para Motor
+870,1189,50,1,Uso estándar para Motor
+871,1190,56,1,Uso estándar para Sistema Eléctrico
+872,1190,47,1,Uso estándar para Sistema Eléctrico
+873,1191,25,1,Uso estándar para Carrocería
+874,1191,58,1,Uso estándar para Carrocería
+875,1192,9,1,Uso estándar para Sistema de Refrigeración
+876,1195,21,1,Uso estándar para Motor
+877,1195,36,1,Uso estándar para Motor
+878,1196,30,1,Uso estándar para Sistema Hidráulico
+879,1196,24,1,Uso estándar para Sistema Hidráulico
+880,1197,32,1,Uso estándar para Sistema de Refrigeración
+881,1198,38,1,Uso estándar para Sistema de Dirección
+882,1199,36,1,Uso estándar para Tren de Rodaje
+883,1199,14,1,Uso estándar para Tren de Rodaje
+884,1204,58,1,Uso estándar para Sistema de Lubricación
+885,1204,29,1,Uso estándar para Sistema de Lubricación
+886,1206,56,1,Uso estándar para Sistema Hidráulico
+887,1206,23,1,Uso estándar para Sistema Hidráulico
+888,1207,56,1,Uso estándar para Tren de Rodaje
+889,1207,40,1,Uso estándar para Tren de Rodaje
+890,1211,34,1,Uso estándar para Sistema de Dirección
+891,1211,27,1,Uso estándar para Sistema de Dirección
+892,1212,17,1,Uso estándar para Neumáticos
+893,1212,33,1,Uso estándar para Neumáticos
+894,1216,59,1,Uso estándar para Cuchara y Brazo
+895,1216,4,1,Uso estándar para Cuchara y Brazo
+896,1219,21,1,Uso estándar para Sistema Eléctrico
+897,1219,43,1,Uso estándar para Sistema Eléctrico
+898,1224,49,1,Uso estándar para Sistema de Dirección
+899,1225,50,1,Uso estándar para Sistema de Frenos
+900,1229,35,1,Uso estándar para Cuchara y Brazo
+901,1229,15,1,Uso estándar para Cuchara y Brazo
+902,1230,58,1,Uso estándar para Sistema Hidráulico
+903,1231,5,1,Uso estándar para Tren de Rodaje
+904,1231,35,1,Uso estándar para Tren de Rodaje
+905,1232,31,1,Uso estándar para Neumáticos
+906,1241,4,1,Uso estándar para Carrocería
+907,1242,15,1,Uso estándar para Sistema de Refrigeración
+908,1244,43,1,Uso estándar para Tren de Rodaje
+909,1244,18,1,Uso estándar para Tren de Rodaje
+910,1246,29,1,Uso estándar para Tren de Rodaje
+911,1246,57,1,Uso estándar para Tren de Rodaje
+912,1248,10,1,Uso estándar para Carrocería
+913,1248,49,1,Uso estándar para Carrocería
+914,1250,26,1,Uso estándar para Neumáticos
+915,1250,21,1,Uso estándar para Neumáticos
+916,1251,29,1,Uso estándar para Sistema de Dirección
+917,1253,18,1,Uso estándar para Sistema Hidráulico
+918,1258,35,1,Uso estándar para Cuchara y Brazo
+919,1264,20,1,Uso estándar para Motor
+920,1267,16,1,Uso estándar para Sistema de Frenos
+921,1268,27,1,Uso estándar para Sistema de Refrigeración
+922,1270,35,1,Uso estándar para Carrocería
+923,1272,17,1,Uso estándar para Cabina
+924,1272,41,1,Uso estándar para Cabina
+925,1273,36,1,Uso estándar para Sistema Hidráulico
+926,1274,55,1,Uso estándar para Sistema Eléctrico
+927,1274,21,1,Uso estándar para Sistema Eléctrico
+928,1276,48,1,Uso estándar para Neumáticos
+929,1276,50,1,Uso estándar para Neumáticos
+930,1280,16,1,Uso estándar para Sistema de Frenos
+931,1284,14,1,Uso estándar para Sistema de Transmisión
+932,1286,52,1,Uso estándar para Neumáticos
+933,1286,53,1,Uso estándar para Neumáticos
+934,1288,25,1,Uso estándar para Sistema de Escape
+935,1288,41,1,Uso estándar para Sistema de Escape
+936,1289,23,1,Uso estándar para Sistema Hidráulico
+937,1289,33,1,Uso estándar para Sistema Hidráulico
+938,1291,25,1,Uso estándar para Filtros
+939,1292,41,1,Uso estándar para Cabina
+940,1294,1,1,Uso estándar para Neumáticos
+941,1296,12,1,Uso estándar para Sistema Hidráulico
+942,1296,45,1,Uso estándar para Sistema Hidráulico
+943,1298,20,1,Uso estándar para Sistema de Lubricación
+944,1299,38,1,Uso estándar para Carrocería
+945,1299,45,1,Uso estándar para Carrocería
+946,1300,36,1,Uso estándar para Tren de Rodaje
+947,1300,41,1,Uso estándar para Tren de Rodaje
+948,1304,30,1,Uso estándar para Sistema de Refrigeración
+949,1304,9,1,Uso estándar para Sistema de Refrigeración
+950,1305,28,1,Uso estándar para Sistema Eléctrico
+951,1305,20,1,Uso estándar para Sistema Eléctrico
+952,1306,23,1,Uso estándar para Sistema de Frenos
+953,1310,17,1,Uso estándar para Cabina
+954,1312,52,1,Uso estándar para Sistema de Transmisión
+955,1312,4,1,Uso estándar para Sistema de Transmisión
+956,1313,24,1,Uso estándar para Tren de Rodaje
+957,1313,18,1,Uso estándar para Tren de Rodaje
+958,1315,57,1,Uso estándar para Sistema de Combustible
+959,1316,17,1,Uso estándar para Carrocería
+960,1316,51,1,Uso estándar para Carrocería
+961,1318,46,1,Uso estándar para Sistema de Lubricación
+962,1318,26,1,Uso estándar para Sistema de Lubricación
+963,1321,35,1,Uso estándar para Sistema de Transmisión
+964,1322,58,1,Uso estándar para Sistema de Refrigeración
+965,1322,38,1,Uso estándar para Sistema de Refrigeración
+966,1325,47,1,Uso estándar para Cuchara y Brazo
+967,1325,24,1,Uso estándar para Cuchara y Brazo
+968,1327,45,1,Uso estándar para Cuchara y Brazo
+969,1327,49,1,Uso estándar para Cuchara y Brazo
+970,1328,30,1,Uso estándar para Sistema de Dirección
+971,1329,33,1,Uso estándar para Carrocería
+972,1329,20,1,Uso estándar para Carrocería
+973,1331,27,1,Uso estándar para Cabina
+974,1331,10,1,Uso estándar para Cabina
+975,1332,18,1,Uso estándar para Sistema de Combustible
+976,1336,15,1,Uso estándar para Sistema de Dirección
+977,1337,50,1,Uso estándar para Sistema de Transmisión
+978,1337,37,1,Uso estándar para Sistema de Transmisión
+979,1339,11,1,Uso estándar para Tren de Rodaje
+980,1339,47,1,Uso estándar para Tren de Rodaje
+981,1340,7,1,Uso estándar para Sistema Eléctrico
+982,1340,47,1,Uso estándar para Sistema Eléctrico
+983,1342,14,1,Uso estándar para Cabina
+984,1342,60,1,Uso estándar para Cabina
+985,1345,59,1,Uso estándar para Cuchara y Brazo
+986,1345,25,1,Uso estándar para Cuchara y Brazo
+987,1348,51,1,Uso estándar para Neumáticos
+988,1350,22,1,Uso estándar para Motor
+989,1354,31,1,Uso estándar para Sistema de Lubricación
+990,1354,42,1,Uso estándar para Sistema de Lubricación
+991,1355,30,1,Uso estándar para Tren de Rodaje
+992,1355,17,1,Uso estándar para Tren de Rodaje
+993,1356,26,1,Uso estándar para Sistema de Transmisión
+994,1358,38,1,Uso estándar para Filtros
+995,1360,41,1,Uso estándar para Sistema de Escape
+996,1360,50,1,Uso estándar para Sistema de Escape
+997,1362,29,1,Uso estándar para Tren de Rodaje
+998,1362,58,1,Uso estándar para Tren de Rodaje
+999,1363,25,1,Uso estándar para Sistema de Frenos
+1000,1363,4,1,Uso estándar para Sistema de Frenos
+1001,1367,44,1,Uso estándar para Cuchara y Brazo
+1002,1369,9,1,Uso estándar para Carrocería
+1003,1369,37,1,Uso estándar para Carrocería
+1004,1374,17,1,Uso estándar para Sistema de Escape
+1005,1376,46,1,Uso estándar para Sistema Hidráulico
+1006,1377,13,1,Uso estándar para Cabina
+1007,1380,26,1,Uso estándar para Sistema de Dirección
+1008,1381,20,1,Uso estándar para Cabina
+1009,1382,14,1,Uso estándar para Cuchara y Brazo
+1010,1384,11,1,Uso estándar para Motor
+1011,1384,53,1,Uso estándar para Motor
+1012,1390,9,1,Uso estándar para Sistema Eléctrico
+1013,1390,51,1,Uso estándar para Sistema Eléctrico
+1014,1395,48,1,Uso estándar para Motor
+1015,1395,38,1,Uso estándar para Motor
+1016,1403,60,1,Uso estándar para Sistema de Refrigeración
+1017,1404,57,1,Uso estándar para Cabina
+1018,1405,53,1,Uso estándar para Sistema Eléctrico
+1019,1406,48,1,Uso estándar para Neumáticos
+1020,1408,48,1,Uso estándar para Motor
+1021,1408,37,1,Uso estándar para Motor
+1022,1411,9,1,Uso estándar para Sistema de Transmisión
+1023,1411,45,1,Uso estándar para Sistema de Transmisión
+1024,1413,55,1,Uso estándar para Motor
+1025,1413,27,1,Uso estándar para Motor
+1026,1414,41,1,Uso estándar para Neumáticos
+1027,1417,6,1,Uso estándar para Sistema de Lubricación
+1028,1417,25,1,Uso estándar para Sistema de Lubricación
+1029,1418,48,1,Uso estándar para Cuchara y Brazo
+1030,1420,37,1,Uso estándar para Motor
+1031,1420,9,1,Uso estándar para Motor
+1032,1421,60,1,Uso estándar para Sistema de Refrigeración
+1033,1422,24,1,Uso estándar para Sistema de Refrigeración
+1034,1422,38,1,Uso estándar para Sistema de Refrigeración
+1035,1424,4,1,Uso estándar para Sistema de Lubricación
+1036,1424,21,1,Uso estándar para Sistema de Lubricación
+1037,1425,41,1,Uso estándar para Sistema Eléctrico
+1038,1426,39,1,Uso estándar para Sistema Hidráulico
+1039,1428,31,1,Uso estándar para Sistema de Transmisión
+1040,1428,40,1,Uso estándar para Sistema de Transmisión
+1041,1429,48,1,Uso estándar para Sistema de Dirección
+1042,1432,44,1,Uso estándar para Motor
+1043,1432,21,1,Uso estándar para Motor
+1044,1433,22,1,Uso estándar para Cuchara y Brazo
+1045,1433,43,1,Uso estándar para Cuchara y Brazo
+1046,1434,4,1,Uso estándar para Sistema de Dirección
+1047,1436,13,1,Uso estándar para Motor
+1048,1438,18,1,Uso estándar para Sistema de Escape
+1049,1438,5,1,Uso estándar para Sistema de Escape
+1050,1441,1,1,Uso estándar para Sistema de Refrigeración
+1051,1442,42,1,Uso estándar para Filtros
+1052,1443,11,1,Uso estándar para Tren de Rodaje
+1053,1444,33,1,Uso estándar para Sistema Eléctrico
+1054,1444,56,1,Uso estándar para Sistema Eléctrico
+1055,1445,13,1,Uso estándar para Carrocería
+1056,1445,2,1,Uso estándar para Carrocería
+1057,1446,40,1,Uso estándar para Sistema de Combustible
+1058,1446,16,1,Uso estándar para Sistema de Combustible
+1059,1447,27,1,Uso estándar para Neumáticos
+1060,1447,14,1,Uso estándar para Neumáticos
+1061,1450,20,1,Uso estándar para Sistema de Lubricación
+1062,1450,35,1,Uso estándar para Sistema de Lubricación
+1063,1451,53,1,Uso estándar para Cuchara y Brazo
+1064,1451,52,1,Uso estándar para Cuchara y Brazo
+1065,1456,39,1,Uso estándar para Filtros
+1066,1457,55,1,Uso estándar para Sistema de Refrigeración
+1067,1457,28,1,Uso estándar para Sistema de Refrigeración
+1068,1459,32,1,Uso estándar para Sistema de Escape
+1069,1462,37,1,Uso estándar para Sistema de Combustible
+1070,1462,32,1,Uso estándar para Sistema de Combustible
+1071,1463,15,1,Uso estándar para Sistema de Frenos
+1072,1463,31,1,Uso estándar para Sistema de Frenos
+1073,1465,8,1,Uso estándar para Motor
+1074,1467,56,1,Uso estándar para Sistema Eléctrico
+1075,1469,44,1,Uso estándar para Sistema Hidráulico
+1076,1469,51,1,Uso estándar para Sistema Hidráulico
+1077,1470,39,1,Uso estándar para Sistema de Combustible
+1078,1471,46,1,Uso estándar para Filtros
+1079,1472,21,1,Uso estándar para Motor
+1080,1473,50,1,Uso estándar para Tren de Rodaje
+1081,1475,8,1,Uso estándar para Sistema de Lubricación
+1082,1475,40,1,Uso estándar para Sistema de Lubricación
+1083,1477,2,1,Uso estándar para Sistema de Transmisión
+1084,1477,8,1,Uso estándar para Sistema de Transmisión
+1085,1479,34,1,Uso estándar para Sistema Hidráulico
+1086,1482,25,1,Uso estándar para Neumáticos
+1087,1482,57,1,Uso estándar para Neumáticos
+1088,1483,30,1,Uso estándar para Cabina
+1089,1483,55,1,Uso estándar para Cabina
+1090,1484,7,1,Uso estándar para Sistema de Dirección
+1091,1484,33,1,Uso estándar para Sistema de Dirección
+1092,1491,39,1,Uso estándar para Sistema de Combustible
+1093,1492,12,1,Uso estándar para Sistema de Transmisión
+1094,1492,28,1,Uso estándar para Sistema de Transmisión
+1095,1493,11,1,Uso estándar para Sistema de Refrigeración
+1096,1495,23,1,Uso estándar para Filtros
+1097,1496,51,1,Uso estándar para Sistema de Escape
+1098,1497,15,1,Uso estándar para Sistema de Transmisión
+1099,1498,1,1,Uso estándar para Sistema de Lubricación
+1100,1499,14,1,Uso estándar para Tren de Rodaje
+1101,1499,42,1,Uso estándar para Tren de Rodaje
+1102,1500,48,1,Uso estándar para Sistema Eléctrico
+1103,1500,53,1,Uso estándar para Sistema Eléctrico
+1104,1502,26,1,Uso estándar para Filtros
+1105,1502,49,1,Uso estándar para Filtros
+1106,1504,37,1,Uso estándar para Sistema de Escape
+1107,1504,26,1,Uso estándar para Sistema de Escape
+1108,1507,30,1,Uso estándar para Cabina
+1109,1508,26,1,Uso estándar para Carrocería
+1110,1508,38,1,Uso estándar para Carrocería
+1111,1509,45,1,Uso estándar para Motor
+1112,1509,7,1,Uso estándar para Motor
+1113,1510,52,1,Uso estándar para Sistema de Combustible
+1114,1515,38,1,Uso estándar para Neumáticos
+1115,1516,45,1,Uso estándar para Sistema Eléctrico
+1116,1516,32,1,Uso estándar para Sistema Eléctrico
+1117,1519,51,1,Uso estándar para Cuchara y Brazo
+1118,1519,13,1,Uso estándar para Cuchara y Brazo
+1119,1520,22,1,Uso estándar para Sistema de Lubricación
+1120,1521,39,1,Uso estándar para Motor
+1121,1522,54,1,Uso estándar para Sistema de Refrigeración
+1122,1523,12,1,Uso estándar para Sistema de Transmisión
+1123,1523,19,1,Uso estándar para Sistema de Transmisión
+1124,1524,35,1,Uso estándar para Sistema de Escape
+1125,1525,29,1,Uso estándar para Sistema de Combustible
+1126,1525,42,1,Uso estándar para Sistema de Combustible
+1127,1526,19,1,Uso estándar para Cabina
+1128,1527,41,1,Uso estándar para Cuchara y Brazo
+1129,1527,54,1,Uso estándar para Cuchara y Brazo
+1130,1533,15,1,Uso estándar para Sistema de Lubricación
+1131,1533,13,1,Uso estándar para Sistema de Lubricación
+1132,1534,35,1,Uso estándar para Sistema Eléctrico
+1133,1537,12,1,Uso estándar para Sistema de Refrigeración
+1134,1539,3,1,Uso estándar para Cabina
+1135,1540,4,1,Uso estándar para Sistema de Transmisión
+1136,1541,19,1,Uso estándar para Filtros
+1137,1543,18,1,Uso estándar para Cuchara y Brazo
+1138,1543,10,1,Uso estándar para Cuchara y Brazo
+1139,1545,47,1,Uso estándar para Sistema de Frenos
+1140,1545,52,1,Uso estándar para Sistema de Frenos
+1141,1546,54,1,Uso estándar para Cabina
+1142,1546,52,1,Uso estándar para Cabina
+1143,1547,9,1,Uso estándar para Sistema Eléctrico
+1144,1548,35,1,Uso estándar para Sistema de Escape
+1145,1549,50,1,Uso estándar para Sistema de Dirección
+1146,1549,7,1,Uso estándar para Sistema de Dirección
+1147,1551,23,1,Uso estándar para Motor
+1148,1551,20,1,Uso estándar para Motor
+1149,1554,53,1,Uso estándar para Sistema Eléctrico
+1150,1554,51,1,Uso estándar para Sistema Eléctrico
+1151,1556,8,1,Uso estándar para Sistema de Frenos
+1152,1557,52,1,Uso estándar para Carrocería
+1153,1558,52,1,Uso estándar para Filtros
+1154,1558,40,1,Uso estándar para Filtros
+1155,1559,16,1,Uso estándar para Cabina
+1156,1559,10,1,Uso estándar para Cabina
+1157,1560,45,1,Uso estándar para Sistema de Dirección
+1158,1560,13,1,Uso estándar para Sistema de Dirección
+1159,1562,1,1,Uso estándar para Sistema de Combustible
+1160,1562,50,1,Uso estándar para Sistema de Combustible
+1161,1564,59,1,Uso estándar para Motor
+1162,1564,9,1,Uso estándar para Motor
+1163,1566,58,1,Uso estándar para Cuchara y Brazo
+1164,1566,2,1,Uso estándar para Cuchara y Brazo
+1165,1567,1,1,Uso estándar para Sistema de Escape
+1166,1567,21,1,Uso estándar para Sistema de Escape
+1167,1571,59,1,Uso estándar para Carrocería
+1168,1571,23,1,Uso estándar para Carrocería
+1169,1572,47,1,Uso estándar para Sistema de Transmisión
+1170,1572,18,1,Uso estándar para Sistema de Transmisión
+1171,1573,20,1,Uso estándar para Neumáticos
+1172,1573,39,1,Uso estándar para Neumáticos
+1173,1576,44,1,Uso estándar para Sistema de Combustible
+1174,1576,56,1,Uso estándar para Sistema de Combustible
+1175,1577,26,1,Uso estándar para Cabina
+1176,1577,11,1,Uso estándar para Cabina
+1177,1584,25,1,Uso estándar para Tren de Rodaje
+1178,1584,5,1,Uso estándar para Tren de Rodaje
+1179,1585,42,1,Uso estándar para Neumáticos
+1180,1586,11,1,Uso estándar para Sistema Eléctrico
+1181,1586,33,1,Uso estándar para Sistema Eléctrico
+1182,1587,7,1,Uso estándar para Carrocería
+1183,1587,21,1,Uso estándar para Carrocería
+1184,1588,6,1,Uso estándar para Sistema de Refrigeración
+1185,1589,23,1,Uso estándar para Cuchara y Brazo
+1186,1592,30,1,Uso estándar para Neumáticos
+1187,1592,6,1,Uso estándar para Neumáticos
+1188,1593,38,1,Uso estándar para Sistema de Transmisión
+1189,1594,29,1,Uso estándar para Sistema Hidráulico
+1190,1594,10,1,Uso estándar para Sistema Hidráulico
+1191,1595,13,1,Uso estándar para Motor
+1192,1596,23,1,Uso estándar para Sistema de Frenos
+1193,1596,57,1,Uso estándar para Sistema de Frenos
+1194,1597,1,1,Uso estándar para Carrocería
+1195,1602,48,1,Uso estándar para Sistema de Lubricación
+1196,1602,43,1,Uso estándar para Sistema de Lubricación
+1197,1607,30,1,Uso estándar para Sistema de Frenos
+1198,1607,43,1,Uso estándar para Sistema de Frenos
+1199,1611,1,1,Uso estándar para Motor
+1200,1611,35,1,Uso estándar para Motor
+1201,1612,42,1,Uso estándar para Sistema de Escape
+1202,1612,44,1,Uso estándar para Sistema de Escape
+1203,1615,26,1,Uso estándar para Sistema de Combustible
+1204,1616,57,1,Uso estándar para Sistema Hidráulico
+1205,1618,49,1,Uso estándar para Carrocería
+1206,1622,44,1,Uso estándar para Cabina
+1207,1622,28,1,Uso estándar para Cabina
+1208,1626,14,1,Uso estándar para Neumáticos
+1209,1629,43,1,Uso estándar para Cuchara y Brazo
+1210,1629,18,1,Uso estándar para Cuchara y Brazo
+1211,1630,40,1,Uso estándar para Sistema Hidráulico
+1212,1630,60,1,Uso estándar para Sistema Hidráulico
+1213,1631,18,1,Uso estándar para Filtros
+1214,1633,29,1,Uso estándar para Sistema de Combustible
+1215,1633,9,1,Uso estándar para Sistema de Combustible
+1216,1634,27,1,Uso estándar para Filtros
+1217,1634,20,1,Uso estándar para Filtros
+1218,1635,10,1,Uso estándar para Sistema de Lubricación
+1219,1637,51,1,Uso estándar para Carrocería
+1220,1638,6,1,Uso estándar para Sistema de Transmisión
+1221,1638,45,1,Uso estándar para Sistema de Transmisión
+1222,1642,56,1,Uso estándar para Sistema Eléctrico
+1223,1642,5,1,Uso estándar para Sistema Eléctrico
+1224,1645,26,1,Uso estándar para Tren de Rodaje
+1225,1645,4,1,Uso estándar para Tren de Rodaje
+1226,1646,40,1,Uso estándar para Sistema de Frenos
+1227,1646,35,1,Uso estándar para Sistema de Frenos
+1228,1647,18,1,Uso estándar para Motor
+1229,1648,48,1,Uso estándar para Neumáticos
+1230,1648,13,1,Uso estándar para Neumáticos
+1231,1649,59,1,Uso estándar para Sistema de Lubricación
+1232,1650,13,1,Uso estándar para Sistema de Escape
+1233,1650,36,1,Uso estándar para Sistema de Escape
+1234,1653,59,1,Uso estándar para Cabina
+1235,1653,29,1,Uso estándar para Cabina
+1236,1654,57,1,Uso estándar para Sistema de Dirección
+1237,1655,45,1,Uso estándar para Filtros
+1238,1656,37,1,Uso estándar para Neumáticos
+1239,1656,41,1,Uso estándar para Neumáticos
+1240,1657,59,1,Uso estándar para Sistema de Combustible
+1241,1658,35,1,Uso estándar para Motor
+1242,1661,52,1,Uso estándar para Carrocería
+1243,1662,43,1,Uso estándar para Cabina
+1244,1662,35,1,Uso estándar para Cabina
+1245,1663,15,1,Uso estándar para Sistema de Frenos
+1246,1665,52,1,Uso estándar para Sistema de Escape
+1247,1668,54,1,Uso estándar para Tren de Rodaje
+1248,1671,44,1,Uso estándar para Sistema de Dirección
+1249,1671,59,1,Uso estándar para Sistema de Dirección
+1250,1673,1,1,Uso estándar para Sistema Hidráulico
+1251,1675,9,1,Uso estándar para Cuchara y Brazo
+1252,1675,58,1,Uso estándar para Cuchara y Brazo
+1253,1676,39,1,Uso estándar para Sistema de Transmisión
+1254,1676,46,1,Uso estándar para Sistema de Transmisión
+1255,1677,30,1,Uso estándar para Cabina
+1256,1681,5,1,Uso estándar para Sistema Eléctrico
+1257,1683,29,1,Uso estándar para Carrocería
+1258,1684,23,1,Uso estándar para Sistema de Frenos
+1259,1686,44,1,Uso estándar para Filtros
+1260,1686,45,1,Uso estándar para Filtros
+1261,1687,30,1,Uso estándar para Cabina
+1262,1687,46,1,Uso estándar para Cabina
+1263,1690,40,1,Uso estándar para Sistema de Lubricación
+1264,1693,22,1,Uso estándar para Motor
+1265,1693,37,1,Uso estándar para Motor
+1266,1694,46,1,Uso estándar para Sistema de Dirección
+1267,1694,59,1,Uso estándar para Sistema de Dirección
+1268,1700,55,1,Uso estándar para Sistema de Escape
+1269,1700,26,1,Uso estándar para Sistema de Escape
+1270,1701,44,1,Uso estándar para Carrocería
+1271,1702,21,1,Uso estándar para Cabina
+1272,1707,14,1,Uso estándar para Sistema de Lubricación
+1273,1707,4,1,Uso estándar para Sistema de Lubricación
+1274,1708,45,1,Uso estándar para Sistema de Transmisión
+1275,1708,24,1,Uso estándar para Sistema de Transmisión
+1276,1709,3,1,Uso estándar para Sistema de Refrigeración
+1277,1716,58,1,Uso estándar para Sistema de Combustible
+1278,1718,50,1,Uso estándar para Sistema de Lubricación
+1279,1720,43,1,Uso estándar para Sistema de Frenos
+1280,1721,41,1,Uso estándar para Sistema de Dirección
+1281,1721,58,1,Uso estándar para Sistema de Dirección
+1282,1722,12,1,Uso estándar para Sistema de Lubricación
+1283,1722,35,1,Uso estándar para Sistema de Lubricación
+1284,1723,11,1,Uso estándar para Motor
+1285,1723,43,1,Uso estándar para Motor
+1286,1725,43,1,Uso estándar para Filtros
+1287,1725,32,1,Uso estándar para Filtros
+1288,1726,38,1,Uso estándar para Sistema de Transmisión
+1289,1726,10,1,Uso estándar para Sistema de Transmisión
+1290,1727,42,1,Uso estándar para Sistema de Dirección
+1291,1728,12,1,Uso estándar para Sistema de Refrigeración
+1292,1728,2,1,Uso estándar para Sistema de Refrigeración
+1293,1729,26,1,Uso estándar para Sistema Eléctrico
+1294,1731,26,1,Uso estándar para Motor
+1295,1731,31,1,Uso estándar para Motor
+1296,1733,31,1,Uso estándar para Neumáticos
+1297,1734,29,1,Uso estándar para Sistema de Escape
+1298,1734,10,1,Uso estándar para Sistema de Escape
+1299,1736,52,1,Uso estándar para Sistema de Combustible
+1300,1737,54,1,Uso estándar para Sistema Hidráulico
+1301,1738,53,1,Uso estándar para Filtros
+1302,1740,20,1,Uso estándar para Carrocería
+1303,1742,24,1,Uso estándar para Sistema de Dirección
+1304,1745,51,1,Uso estándar para Sistema de Frenos
+1305,1746,39,1,Uso estándar para Sistema de Escape
+1306,1746,29,1,Uso estándar para Sistema de Escape
+1307,1750,5,1,Uso estándar para Sistema de Transmisión
+1308,1750,9,1,Uso estándar para Sistema de Transmisión
+1309,1752,1,1,Uso estándar para Filtros
+1310,1752,13,1,Uso estándar para Filtros
+1311,1753,42,1,Uso estándar para Sistema Hidráulico
+1312,1757,57,1,Uso estándar para Motor
+1313,1758,15,1,Uso estándar para Cabina
+1314,1759,28,1,Uso estándar para Sistema de Dirección
+1315,1759,17,1,Uso estándar para Sistema de Dirección
+1316,1763,56,1,Uso estándar para Sistema de Combustible
+1317,1765,1,1,Uso estándar para Filtros
+1318,1765,21,1,Uso estándar para Filtros
+1319,1766,44,1,Uso estándar para Sistema de Dirección
+1320,1768,38,1,Uso estándar para Motor
+1321,1769,18,1,Uso estándar para Sistema de Refrigeración
+1322,1769,31,1,Uso estándar para Sistema de Refrigeración
+1323,1770,53,1,Uso estándar para Tren de Rodaje
+1324,1771,17,1,Uso estándar para Neumáticos
+1325,1773,51,1,Uso estándar para Cabina
+1326,1774,48,1,Uso estándar para Sistema Hidráulico
+1327,1778,58,1,Uso estándar para Cabina
+1328,1780,39,1,Uso estándar para Carrocería
+1329,1782,41,1,Uso estándar para Sistema de Refrigeración
+1330,1782,15,1,Uso estándar para Sistema de Refrigeración
+1331,1785,5,1,Uso estándar para Neumáticos
+1332,1786,15,1,Uso estándar para Cabina
+1333,1787,11,1,Uso estándar para Sistema de Combustible
+1334,1789,46,1,Uso estándar para Sistema de Dirección
+1335,1789,21,1,Uso estándar para Sistema de Dirección
+1336,1792,21,1,Uso estándar para Tren de Rodaje
+1337,1795,41,1,Uso estándar para Sistema de Refrigeración
+1338,1795,30,1,Uso estándar para Sistema de Refrigeración
+1339,1796,42,1,Uso estándar para Sistema de Frenos
+1340,1797,49,1,Uso estándar para Sistema de Escape
+1341,1797,37,1,Uso estándar para Sistema de Escape
+1342,1800,54,1,Uso estándar para Carrocería
+1343,1801,40,1,Uso estándar para Sistema Hidráulico
+1344,1801,54,1,Uso estándar para Sistema Hidráulico
+1345,1804,3,1,Uso estándar para Cuchara y Brazo
+1346,1804,7,1,Uso estándar para Cuchara y Brazo
+1347,1809,25,1,Uso estándar para Sistema de Refrigeración
+1348,1813,8,1,Uso estándar para Sistema de Frenos
+1349,1813,31,1,Uso estándar para Sistema de Frenos
+1350,1818,42,1,Uso estándar para Tren de Rodaje
+1351,1822,50,1,Uso estándar para Sistema de Transmisión
+1352,1823,42,1,Uso estándar para Sistema Hidráulico
+1353,1824,54,1,Uso estándar para Cabina
+1354,1826,11,1,Uso estándar para Motor
+1355,1827,11,1,Uso estándar para Carrocería
+1356,1827,4,1,Uso estándar para Carrocería
+1357,1829,43,1,Uso estándar para Sistema de Frenos
+1358,1832,12,1,Uso estándar para Neumáticos
+1359,1832,55,1,Uso estándar para Neumáticos
+1360,1834,38,1,Uso estándar para Sistema de Escape
+1361,1835,52,1,Uso estándar para Filtros
+1362,1835,23,1,Uso estándar para Filtros
+1363,1838,15,1,Uso estándar para Tren de Rodaje
+1364,1839,17,1,Uso estándar para Motor
+1365,1839,21,1,Uso estándar para Motor
+1366,1841,41,1,Uso estándar para Sistema de Combustible
+1367,1842,34,1,Uso estándar para Sistema Eléctrico
+1368,1844,12,1,Uso estándar para Carrocería
+1369,1845,50,1,Uso estándar para Sistema de Escape
+1370,1845,2,1,Uso estándar para Sistema de Escape
+1371,1846,35,1,Uso estándar para Sistema Eléctrico
+1372,1846,60,1,Uso estándar para Sistema Eléctrico
+1373,1847,24,1,Uso estándar para Motor
+1374,1847,57,1,Uso estándar para Motor
+1375,1849,31,1,Uso estándar para Sistema de Combustible
+1376,1850,30,1,Uso estándar para Sistema de Dirección
+1377,1851,44,1,Uso estándar para Sistema Hidráulico
+1378,1851,42,1,Uso estándar para Sistema Hidráulico
+1379,1852,18,1,Uso estándar para Carrocería
+1380,1852,32,1,Uso estándar para Carrocería
+1381,1853,50,1,Uso estándar para Sistema de Lubricación
+1382,1857,20,1,Uso estándar para Sistema Hidráulico
+1383,1859,17,1,Uso estándar para Sistema de Lubricación
+1384,1859,18,1,Uso estándar para Sistema de Lubricación
+1385,1863,30,1,Uso estándar para Cabina
+1386,1864,2,1,Uso estándar para Tren de Rodaje
+1387,1866,14,1,Uso estándar para Carrocería
+1388,1866,19,1,Uso estándar para Carrocería
+1389,1867,52,1,Uso estándar para Sistema de Transmisión
+1390,1867,33,1,Uso estándar para Sistema de Transmisión
+1391,1872,35,1,Uso estándar para Cuchara y Brazo
+1392,1873,29,1,Uso estándar para Sistema de Combustible
+1393,1877,39,1,Uso estándar para Neumáticos
+1394,1879,6,1,Uso estándar para Sistema de Dirección
+1395,1879,50,1,Uso estándar para Sistema de Dirección
+1396,1880,31,1,Uso estándar para Sistema de Frenos
+1397,1880,43,1,Uso estándar para Sistema de Frenos
+1398,1881,48,1,Uso estándar para Filtros
+1399,1882,39,1,Uso estándar para Sistema de Refrigeración
+1400,1883,31,1,Uso estándar para Carrocería
+1401,1886,59,1,Uso estándar para Sistema de Escape
+1402,1887,55,1,Uso estándar para Tren de Rodaje
+1403,1888,47,1,Uso estándar para Motor
+1404,1889,51,1,Uso estándar para Sistema de Escape
+1405,1890,34,1,Uso estándar para Sistema de Frenos
+1406,1890,57,1,Uso estándar para Sistema de Frenos
+1407,1896,5,1,Uso estándar para Motor
+1408,1898,22,1,Uso estándar para Sistema de Combustible
+1409,1898,33,1,Uso estándar para Sistema de Combustible
+1410,1900,47,1,Uso estándar para Sistema de Lubricación
+1411,1903,51,1,Uso estándar para Sistema Eléctrico
+1412,1905,24,1,Uso estándar para Carrocería
+1413,1906,18,1,Uso estándar para Carrocería
+1414,1907,4,1,Uso estándar para Cabina
+1415,1907,28,1,Uso estándar para Cabina
+1416,1915,34,1,Uso estándar para Cuchara y Brazo
+1417,1916,33,1,Uso estándar para Sistema de Refrigeración
+1418,1917,21,1,Uso estándar para Tren de Rodaje
+1419,1917,24,1,Uso estándar para Tren de Rodaje
+1420,1918,46,1,Uso estándar para Cabina
+1421,1926,50,1,Uso estándar para Sistema de Escape
+1422,1926,6,1,Uso estándar para Sistema de Escape
+1423,1928,11,1,Uso estándar para Sistema de Lubricación
+1424,1931,12,1,Uso estándar para Neumáticos
+1425,1931,50,1,Uso estándar para Neumáticos
+1426,1934,35,1,Uso estándar para Sistema de Escape
+1427,1936,28,1,Uso estándar para Sistema de Lubricación
+1428,1936,57,1,Uso estándar para Sistema de Lubricación
+1429,1937,3,1,Uso estándar para Sistema de Lubricación
+1430,1937,44,1,Uso estándar para Sistema de Lubricación
+1431,1938,58,1,Uso estándar para Sistema de Escape
+1432,1939,40,1,Uso estándar para Cuchara y Brazo
+1433,1939,46,1,Uso estándar para Cuchara y Brazo
+1434,1940,42,1,Uso estándar para Sistema de Refrigeración
+1435,1942,31,1,Uso estándar para Filtros
+1436,1943,22,1,Uso estándar para Sistema de Frenos
+1437,1943,30,1,Uso estándar para Sistema de Frenos
+1438,1945,57,1,Uso estándar para Neumáticos
+1439,1945,55,1,Uso estándar para Neumáticos
+1440,1946,11,1,Uso estándar para Cuchara y Brazo
+1441,1947,49,1,Uso estándar para Sistema de Refrigeración
+1442,1949,4,1,Uso estándar para Motor
+1443,1949,46,1,Uso estándar para Motor
+1444,1952,40,1,Uso estándar para Sistema de Transmisión
+1445,1952,2,1,Uso estándar para Sistema de Transmisión
+1446,1953,58,1,Uso estándar para Sistema de Refrigeración
+1447,1953,47,1,Uso estándar para Sistema de Refrigeración
+1448,1957,2,1,Uso estándar para Motor
+1449,1958,14,1,Uso estándar para Tren de Rodaje
+1450,1958,47,1,Uso estándar para Tren de Rodaje
+1451,1960,55,1,Uso estándar para Sistema de Lubricación
+1452,1960,58,1,Uso estándar para Sistema de Lubricación
+1453,1961,51,1,Uso estándar para Sistema de Dirección
+1454,1961,33,1,Uso estándar para Sistema de Dirección
+1455,1965,21,1,Uso estándar para Filtros
+1456,1967,4,1,Uso estándar para Sistema de Lubricación
+1457,1969,8,1,Uso estándar para Motor
+1458,1971,35,1,Uso estándar para Sistema Hidráulico
+1459,1975,38,1,Uso estándar para Sistema de Transmisión
+1460,1976,29,1,Uso estándar para Sistema Eléctrico
+1461,1976,8,1,Uso estándar para Sistema Eléctrico
+1462,1984,22,1,Uso estándar para Sistema de Frenos
+1463,1984,32,1,Uso estándar para Sistema de Frenos
+1464,1985,47,1,Uso estándar para Tren de Rodaje
+1465,1990,59,1,Uso estándar para Sistema de Escape
+1466,1990,27,1,Uso estándar para Sistema de Escape
+1467,1991,33,1,Uso estándar para Sistema de Refrigeración
+1468,1991,38,1,Uso estándar para Sistema de Refrigeración
+1469,1992,25,1,Uso estándar para Sistema de Frenos
+1470,1992,16,1,Uso estándar para Sistema de Frenos
+1471,2000,21,1,Uso estándar para Neumáticos
+1472,2000,5,1,Uso estándar para Neumáticos
+1473,2005,26,1,Uso estándar para Sistema de Lubricación
+1474,2005,31,1,Uso estándar para Sistema de Lubricación
+1475,2008,8,1,Uso estándar para Cuchara y Brazo
+1476,2009,33,1,Uso estándar para Tren de Rodaje
+1477,2009,45,1,Uso estándar para Tren de Rodaje
+1478,2013,39,1,Uso estándar para Filtros
+1479,2014,8,1,Uso estándar para Carrocería
+1480,2014,19,1,Uso estándar para Carrocería
+1481,2018,37,1,Uso estándar para Sistema de Escape
+1482,2018,50,1,Uso estándar para Sistema de Escape
+1483,2020,51,1,Uso estándar para Sistema de Refrigeración
+1484,2027,53,1,Uso estándar para Sistema Hidráulico
+1485,2029,22,1,Uso estándar para Filtros
+1486,2030,54,1,Uso estándar para Sistema Eléctrico
+1487,2030,9,1,Uso estándar para Sistema Eléctrico
+1488,2035,20,1,Uso estándar para Filtros
+1489,2036,53,1,Uso estándar para Tren de Rodaje
+1490,2037,14,1,Uso estándar para Cabina
+1491,2037,1,1,Uso estándar para Cabina
+1492,2039,28,1,Uso estándar para Filtros
+1493,2045,44,1,Uso estándar para Sistema de Escape
+1494,2045,18,1,Uso estándar para Sistema de Escape
+1495,2047,1,1,Uso estándar para Cabina
+1496,2049,21,1,Uso estándar para Sistema de Dirección
+1497,2049,50,1,Uso estándar para Sistema de Dirección
+1498,2050,7,1,Uso estándar para Sistema Eléctrico
+1499,2051,29,1,Uso estándar para Sistema de Combustible
+1500,2051,46,1,Uso estándar para Sistema de Combustible
+1501,2052,60,1,Uso estándar para Tren de Rodaje
+1502,2053,33,1,Uso estándar para Sistema de Frenos
+1503,2054,34,1,Uso estándar para Sistema de Refrigeración
+1504,2055,27,1,Uso estándar para Carrocería
+1505,2060,28,1,Uso estándar para Sistema de Transmisión
+1506,2061,13,1,Uso estándar para Filtros
+1507,2061,2,1,Uso estándar para Filtros
+1508,2063,9,1,Uso estándar para Sistema Hidráulico
+1509,2063,28,1,Uso estándar para Sistema Hidráulico
+1510,2069,46,1,Uso estándar para Sistema de Combustible
+1511,2069,2,1,Uso estándar para Sistema de Combustible
+1512,2070,18,1,Uso estándar para Cabina
+1513,2070,36,1,Uso estándar para Cabina
+1514,2071,19,1,Uso estándar para Sistema Eléctrico
+1515,2073,24,1,Uso estándar para Cuchara y Brazo
+1516,2074,19,1,Uso estándar para Sistema de Escape
+1517,2074,60,1,Uso estándar para Sistema de Escape
+1518,2075,32,1,Uso estándar para Filtros
+1519,2075,6,1,Uso estándar para Filtros
+1520,2077,3,1,Uso estándar para Cabina
+1521,2077,6,1,Uso estándar para Cabina
+1522,2080,52,1,Uso estándar para Sistema de Frenos
+1523,2080,25,1,Uso estándar para Sistema de Frenos
+1524,2082,27,1,Uso estándar para Sistema de Transmisión
+1525,2082,28,1,Uso estándar para Sistema de Transmisión
+1526,2083,34,1,Uso estándar para Sistema Eléctrico
+1527,2083,12,1,Uso estándar para Sistema Eléctrico
+1528,2085,13,1,Uso estándar para Tren de Rodaje
+1529,2085,17,1,Uso estándar para Tren de Rodaje
+1530,2086,14,1,Uso estándar para Sistema de Combustible
+1531,2086,45,1,Uso estándar para Sistema de Combustible
+1532,2088,2,1,Uso estándar para Sistema de Frenos
+1533,2088,4,1,Uso estándar para Sistema de Frenos
+1534,2089,54,1,Uso estándar para Sistema Hidráulico
+1535,2090,49,1,Uso estándar para Cuchara y Brazo
+1536,2091,18,1,Uso estándar para Sistema de Escape
+1537,2092,20,1,Uso estándar para Motor
+1538,2093,32,1,Uso estándar para Sistema de Dirección
+1539,2094,31,1,Uso estándar para Sistema de Lubricación
+1540,2094,45,1,Uso estándar para Sistema de Lubricación
+1541,2100,47,1,Uso estándar para Sistema Eléctrico
+1542,2100,60,1,Uso estándar para Sistema Eléctrico
+1543,2103,4,1,Uso estándar para Motor
+1544,2104,2,1,Uso estándar para Sistema de Frenos
+1545,2107,37,1,Uso estándar para Filtros
+1546,2112,21,1,Uso estándar para Sistema de Escape
+1547,2112,33,1,Uso estándar para Sistema de Escape
+1548,2113,17,1,Uso estándar para Sistema de Refrigeración
+1549,2113,3,1,Uso estándar para Sistema de Refrigeración
+1550,2114,25,1,Uso estándar para Cuchara y Brazo
+1551,2114,13,1,Uso estándar para Cuchara y Brazo
+1552,2119,35,1,Uso estándar para Motor
+1553,2122,37,1,Uso estándar para Cabina
+1554,2124,11,1,Uso estándar para Sistema de Dirección
+1555,2126,56,1,Uso estándar para Cuchara y Brazo
+1556,2126,60,1,Uso estándar para Cuchara y Brazo
+1557,2128,48,1,Uso estándar para Sistema Hidráulico
+1558,2129,38,1,Uso estándar para Tren de Rodaje
+1559,2137,50,1,Uso estándar para Sistema de Escape
+1560,2137,38,1,Uso estándar para Sistema de Escape
+1561,2139,3,1,Uso estándar para Sistema Eléctrico
+1562,2140,56,1,Uso estándar para Cabina
+1563,2140,32,1,Uso estándar para Cabina
+1564,2141,12,1,Uso estándar para Sistema de Escape
+1565,2141,33,1,Uso estándar para Sistema de Escape
+1566,2143,43,1,Uso estándar para Sistema de Dirección
+1567,2143,11,1,Uso estándar para Sistema de Dirección
+1568,2150,39,1,Uso estándar para Motor
+1569,2150,57,1,Uso estándar para Motor
+1570,2155,55,1,Uso estándar para Filtros
+1571,2156,40,1,Uso estándar para Sistema de Dirección
+1572,2156,7,1,Uso estándar para Sistema de Dirección
+1573,2159,6,1,Uso estándar para Carrocería
+1574,2159,14,1,Uso estándar para Carrocería
+1575,2160,46,1,Uso estándar para Motor
+1576,2162,27,1,Uso estándar para Sistema de Transmisión
+1577,2164,4,1,Uso estándar para Carrocería
+1578,2169,56,1,Uso estándar para Neumáticos
+1579,2170,46,1,Uso estándar para Sistema de Escape
+1580,2170,3,1,Uso estándar para Sistema de Escape
+1581,2173,44,1,Uso estándar para Sistema Eléctrico
+1582,2173,4,1,Uso estándar para Sistema Eléctrico
+1583,2176,15,1,Uso estándar para Sistema de Dirección
+1584,2177,55,1,Uso estándar para Filtros
+1585,2177,8,1,Uso estándar para Filtros
+1586,2178,10,1,Uso estándar para Sistema de Combustible
+1587,2178,36,1,Uso estándar para Sistema de Combustible
+1588,2180,26,1,Uso estándar para Sistema de Frenos
+1589,2181,15,1,Uso estándar para Sistema Hidráulico
+1590,2182,12,1,Uso estándar para Sistema de Transmisión
+1591,2186,43,1,Uso estándar para Sistema de Combustible
+1592,2186,51,1,Uso estándar para Sistema de Combustible
+1593,2189,58,1,Uso estándar para Sistema de Escape
+1594,2189,16,1,Uso estándar para Sistema de Escape
+1595,2193,21,1,Uso estándar para Sistema Eléctrico
+1596,2193,56,1,Uso estándar para Sistema Eléctrico
+1597,2197,28,1,Uso estándar para Cuchara y Brazo
+1598,2200,59,1,Uso estándar para Sistema de Lubricación
+1599,2200,9,1,Uso estándar para Sistema de Lubricación

@@ -1,0 +1,2 @@
+﻿id,username,password,nombre_completo,email,rol,estado,two_factor_secret,two_factor_enabled,created_at
+1,admin,$2b$10$EZdVG0RFaLlnq.CnQdfsV.pekkPCx54Fh5B.wFWkfqBDz4EZSxv4C,Administrador del Sistema,admin@mttopro.com,ADMIN,1,,0,Wed Dec 03 2025 08:01:36 GMT-0400 (Bolivia Time)

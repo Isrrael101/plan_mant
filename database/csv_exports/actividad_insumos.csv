@@ -1,0 +1,1691 @@
+﻿id,actividad_id,insumo_id,cantidad,unidad,especificaciones,costo_unitario,costo_total
+1,4,51,1.58,Unidad,Requerido para Cambiar filtro de combustible,45.82,72.40
+2,4,69,4.06,Litro,Requerido para Cambiar filtro de combustible,26.98,109.54
+3,4,8,4.67,Unidad,Requerido para Cambiar filtro de combustible,41.64,194.46
+4,7,68,1.05,Unidad,Requerido para Revisar dientes,323.88,340.07
+5,7,9,2.34,Unidad,Requerido para Revisar dientes,119.93,280.64
+6,8,77,2.43,Metro,Requerido para Verificar alternador,71.69,174.21
+7,14,54,1.24,Kg,Requerido para Limpiar filtros de aire acondicionado,13.04,16.17
+8,14,28,4.45,Unidad,Requerido para Limpiar filtros de aire acondicionado,1222.27,5439.10
+9,14,5,2.75,Kg,Requerido para Limpiar filtros de aire acondicionado,13.83,38.03
+10,18,8,3.96,Unidad,Requerido para Revisar tensión de cadena,41.64,164.89
+11,18,30,3.81,Kg,Requerido para Revisar tensión de cadena,7.86,29.95
+12,18,12,4.55,Unidad,Requerido para Revisar tensión de cadena,96.61,439.58
+13,19,44,2.26,Unidad,Requerido para Purgar sistema de frenos,88.15,199.22
+14,19,50,4.56,Kg,Requerido para Purgar sistema de frenos,18.78,85.64
+15,19,69,3.26,Litro,Requerido para Purgar sistema de frenos,26.98,87.95
+16,21,48,4.25,Pliego,Requerido para Revisar mangueras,1.57,6.67
+17,25,9,3.57,Unidad,Requerido para Revisar mangueras,119.93,428.15
+18,25,18,1.64,Unidad,Requerido para Revisar mangueras,176.73,289.84
+19,26,68,2.17,Unidad,Requerido para Verificar termostato,323.88,702.82
+20,29,65,1.80,Unidad,Requerido para Revisar discos,1.94,3.49
+21,30,4,2.76,Litro,Requerido para Cambiar empaques,27.70,76.45
+22,30,40,2.71,Unidad,Requerido para Cambiar empaques,23.36,63.31
+23,30,29,1.35,Unidad,Requerido para Cambiar empaques,2414.37,3259.40
+24,31,19,3.99,Unidad,Requerido para Cambiar aceite de motor,895.75,3574.04
+25,31,27,3.23,Unidad,Requerido para Cambiar aceite de motor,35.91,115.99
+26,31,7,4.82,Unidad,Requerido para Cambiar aceite de motor,40.85,196.90
+27,37,30,1.60,Kg,Requerido para Inspeccionar desgaste,7.86,12.58
+28,37,76,1.01,Unidad,Requerido para Inspeccionar desgaste,1.67,1.69
+29,37,62,2.72,Unidad,Requerido para Inspeccionar desgaste,99.38,270.31
+30,38,63,3.58,Unidad,Requerido para Verificar cardanes,6.08,21.77
+31,39,9,2.58,Unidad,Requerido para Revisar vidrios,119.93,309.42
+32,40,30,3.84,Kg,Requerido para Verificar funcionamiento de motor,7.86,30.18
+33,40,65,1.65,Unidad,Requerido para Verificar funcionamiento de motor,1.94,3.20
+34,42,54,3.65,Kg,Requerido para Revisar batería,13.04,47.60
+35,42,30,4.70,Kg,Requerido para Revisar batería,7.86,36.94
+36,42,66,4.72,Litro,Requerido para Revisar batería,34.56,163.12
+37,43,71,2.90,Unidad,Requerido para Inspeccionar DPF,100.49,291.42
+38,43,54,2.79,Kg,Requerido para Inspeccionar DPF,13.04,36.38
+39,44,33,1.74,Spray,Requerido para Inspeccionar rodillos,16.08,27.98
+40,44,40,1.36,Unidad,Requerido para Inspeccionar rodillos,23.36,31.77
+41,45,25,1.53,Unidad,Requerido para Inspeccionar rodillos,269.56,412.43
+42,46,46,3.44,Litro,Requerido para Revisar mangueras,27.33,94.02
+43,46,37,3.59,Unidad,Requerido para Revisar mangueras,1.38,4.95
+44,50,28,4.62,Unidad,Requerido para Verificar tablero,1222.27,5646.89
+45,53,29,5.00,Unidad,Requerido para Verificar presión,2414.37,12071.85
+46,53,74,2.19,Unidad,Requerido para Verificar presión,217.94,477.29
+47,53,49,2.13,Unidad,Requerido para Verificar presión,4.68,9.97
+48,55,76,4.01,Unidad,Requerido para Cambiar aceite de transmisión,1.67,6.70
+49,56,6,1.37,Kg,Requerido para Ajustar válvulas,11.87,16.26
+50,58,27,3.69,Unidad,Requerido para Revisar dientes,35.91,132.51
+51,58,10,3.28,Unidad,Requerido para Revisar dientes,79.32,260.17
+52,58,29,4.84,Unidad,Requerido para Revisar dientes,2414.37,11685.55
+53,60,75,1.36,Rollo,Requerido para Limpiar filtros de aire acondicionado,15.57,21.18
+54,60,79,4.15,Unidad,Requerido para Limpiar filtros de aire acondicionado,0.54,2.24
+55,60,18,4.51,Unidad,Requerido para Limpiar filtros de aire acondicionado,176.73,797.05
+56,61,18,3.79,Unidad,Requerido para Revisar pastillas,176.73,669.81
+57,61,30,4.06,Kg,Requerido para Revisar pastillas,7.86,31.91
+58,63,57,4.14,Unidad,Requerido para Inspeccionar correas,133.39,552.23
+59,64,33,3.53,Spray,Requerido para Ajustar embrague,16.08,56.76
+60,64,63,4.55,Unidad,Requerido para Ajustar embrague,6.08,27.66
+61,65,72,4.36,Unidad,Requerido para Inspeccionar desgaste,5.86,25.55
+62,65,42,3.74,Unidad,Requerido para Inspeccionar desgaste,14.16,52.96
+63,72,44,2.71,Unidad,Requerido para Inspeccionar rodillos,88.15,238.89
+64,72,78,2.09,Unidad,Requerido para Inspeccionar rodillos,3.29,6.88
+65,72,13,3.86,Litro,Requerido para Inspeccionar rodillos,21.90,84.53
+66,76,22,4.59,Unidad,Requerido para Revisar nivel de refrigerante,33.32,152.94
+67,76,7,4.01,Unidad,Requerido para Revisar nivel de refrigerante,40.85,163.81
+68,76,59,2.34,Unidad,Requerido para Revisar nivel de refrigerante,0.59,1.38
+69,78,64,1.16,Unidad,Requerido para Revisar mangueras,56.35,65.37
+70,78,65,2.14,Unidad,Requerido para Revisar mangueras,1.94,4.15
+71,78,42,2.86,Unidad,Requerido para Revisar mangueras,14.16,40.50
+72,79,22,3.86,Unidad,Requerido para Inspeccionar conexiones,33.32,128.62
+73,81,42,3.98,Unidad,Requerido para Pintar partes oxidadas,14.16,56.36
+74,83,48,4.14,Pliego,Requerido para Revisar bomba de agua,1.57,6.50
+75,84,28,3.99,Unidad,Requerido para Limpiar filtros de aire acondicionado,1222.27,4876.86
+76,91,62,3.30,Unidad,Requerido para Cambiar sellos de cilindro,99.38,327.95
+77,91,67,1.65,Unidad,Requerido para Cambiar sellos de cilindro,3.52,5.81
+78,92,4,4.26,Litro,Requerido para Lavar equipo completo,27.70,118.00
+79,94,2,2.82,Litro,Requerido para Revisar turbo,17.88,50.42
+80,94,14,4.02,Litro,Requerido para Revisar turbo,32.61,131.09
+81,98,38,2.78,Unidad,Requerido para Engrasar articulaciones,0.47,1.31
+82,98,78,1.20,Unidad,Requerido para Engrasar articulaciones,3.29,3.95
+83,98,8,3.80,Unidad,Requerido para Engrasar articulaciones,41.64,158.23
+84,105,44,4.49,Unidad,Requerido para Revisar nivel de refrigerante,88.15,395.79
+85,105,11,4.20,Unidad,Requerido para Revisar nivel de refrigerante,146.31,614.50
+86,107,61,4.43,Pliego,Requerido para Verificar nivel de aceite,1.73,7.66
+87,107,77,4.53,Metro,Requerido para Verificar nivel de aceite,71.69,324.76
+88,112,70,4.58,Unidad,Requerido para Cambiar filtro de combustible,48.52,222.22
+89,112,29,2.31,Unidad,Requerido para Cambiar filtro de combustible,2414.37,5577.19
+90,113,25,2.74,Unidad,Requerido para Inspección visual,269.56,738.59
+91,113,19,2.17,Unidad,Requerido para Inspección visual,895.75,1943.78
+92,113,47,1.83,Kg,Requerido para Inspección visual,9.44,17.28
+93,114,68,3.90,Unidad,Requerido para Revisar discos,323.88,1263.13
+94,116,47,1.48,Kg,Requerido para Inspeccionar DPF,9.44,13.97
+95,116,43,1.25,Unidad,Requerido para Inspeccionar DPF,112.47,140.59
+96,116,68,1.17,Unidad,Requerido para Inspeccionar DPF,323.88,378.94
+97,117,55,1.87,Kg,Requerido para Ajustar tensión,10.52,19.67
+98,117,25,4.55,Unidad,Requerido para Ajustar tensión,269.56,1226.50
+99,119,51,4.08,Unidad,Requerido para Verificar cardanes,45.82,186.95
+100,119,42,3.28,Unidad,Requerido para Verificar cardanes,14.16,46.44
+101,119,41,1.58,Unidad,Requerido para Verificar cardanes,0.48,0.76
+102,120,45,4.47,Unidad,Requerido para Engrasar articulaciones,58.60,261.94
+103,120,37,4.45,Unidad,Requerido para Engrasar articulaciones,1.38,6.14
+104,120,32,3.13,Rollo,Requerido para Engrasar articulaciones,12.22,38.25
+105,122,20,1.84,Metro,Requerido para Inspeccionar desgaste,23.31,42.89
+106,124,58,3.91,Unidad,Requerido para Cambiar filtro de aire,3.64,14.23
+107,124,32,3.34,Rollo,Requerido para Cambiar filtro de aire,12.22,40.81
+108,124,56,3.43,Unidad,Requerido para Cambiar filtro de aire,17.23,59.10
+109,125,8,2.52,Unidad,Requerido para Inspeccionar correas,41.64,104.93
+110,127,66,1.34,Litro,Requerido para Verificar controles,34.56,46.31
+111,127,17,2.80,Unidad,Requerido para Verificar controles,3202.55,8967.14
+112,129,20,1.30,Metro,Requerido para Verificar cardanes,23.31,30.30
+113,129,54,1.33,Kg,Requerido para Verificar cardanes,13.04,17.34
+114,129,28,4.84,Unidad,Requerido para Verificar cardanes,1222.27,5915.79
+115,134,53,3.73,Unidad,Requerido para Revisar pastillas,1053.50,3929.56
+116,137,15,2.95,Litro,Requerido para Cambiar bocinas,18.94,55.87
+117,141,15,1.92,Litro,Requerido para Rotar neumáticos,18.94,36.36
+118,141,17,2.95,Unidad,Requerido para Rotar neumáticos,3202.55,9447.52
+119,141,35,1.70,Unidad,Requerido para Rotar neumáticos,2.72,4.62
+120,143,36,4.88,Unidad,Requerido para Revisar vidrios,2.74,13.37
+121,143,14,1.69,Litro,Requerido para Revisar vidrios,32.61,55.11
+122,149,13,1.55,Litro,Requerido para Rotar neumáticos,21.90,33.95
+123,149,35,2.07,Unidad,Requerido para Rotar neumáticos,2.72,5.63
+124,152,59,3.57,Unidad,Requerido para Revisar asiento,0.59,2.11
+125,153,21,3.33,Unidad,Requerido para Verificar cardanes,5.01,16.68
+126,153,8,2.55,Unidad,Requerido para Verificar cardanes,41.64,106.18
+127,156,18,1.37,Unidad,Requerido para Verificar cilindros,176.73,242.12
+128,156,22,3.93,Unidad,Requerido para Verificar cilindros,33.32,130.95
+129,156,15,2.99,Litro,Requerido para Verificar cilindros,18.94,56.63
+130,157,17,3.67,Unidad,Requerido para Revisar dientes,3202.55,11753.36
+131,158,64,1.72,Unidad,Requerido para Revisar terminales,56.35,96.92
+132,160,66,4.89,Litro,Requerido para Verificar cilindros,34.56,169.00
+133,160,30,1.22,Kg,Requerido para Verificar cilindros,7.86,9.59
+134,160,80,2.88,Unidad,Requerido para Verificar cilindros,172.31,496.25
+135,163,43,1.89,Unidad,Requerido para Revisar soportes de motor,112.47,212.57
+136,164,56,2.33,Unidad,Requerido para Reparar abolladuras,17.23,40.15
+137,165,30,4.83,Kg,Requerido para Verificar presión,7.86,37.96
+138,168,72,1.50,Unidad,Requerido para Verificar termostato,5.86,8.79
+139,171,7,3.89,Unidad,Requerido para Inspeccionar conexiones,40.85,158.91
+140,177,75,2.29,Rollo,Requerido para Limpiar pre-filtro,15.57,35.66
+141,177,12,2.44,Unidad,Requerido para Limpiar pre-filtro,96.61,235.73
+142,178,77,4.38,Metro,Requerido para Revisar mangueras,71.69,314.00
+143,178,57,4.36,Unidad,Requerido para Revisar mangueras,133.39,581.58
+144,178,75,1.02,Rollo,Requerido para Revisar mangueras,15.57,15.88
+145,182,70,1.47,Unidad,Requerido para Verificar motor de arranque,48.52,71.32
+146,182,46,1.56,Litro,Requerido para Verificar motor de arranque,27.33,42.63
+147,183,21,2.74,Unidad,Requerido para Revisar discos,5.01,13.73
+148,183,64,4.32,Unidad,Requerido para Revisar discos,56.35,243.43
+149,183,69,2.46,Litro,Requerido para Revisar discos,26.98,66.37
+150,189,33,1.40,Spray,Requerido para Verificar cilindros,16.08,22.51
+151,190,3,3.23,Litro,Requerido para Inspección visual,36.87,119.09
+152,190,30,1.83,Kg,Requerido para Inspección visual,7.86,14.38
+153,190,33,3.35,Spray,Requerido para Inspección visual,16.08,53.87
+154,191,34,4.84,Spray,Requerido para Ajustar tensión,12.09,58.52
+155,191,52,4.08,Unidad,Requerido para Ajustar tensión,218.84,892.87
+156,191,17,2.57,Unidad,Requerido para Ajustar tensión,3202.55,8230.55
+157,194,76,2.87,Unidad,Requerido para Cambiar aceite de transmisión,1.67,4.79
+158,194,5,1.09,Kg,Requerido para Cambiar aceite de transmisión,13.83,15.07
+159,195,18,2.36,Unidad,Requerido para Engrasar articulaciones,176.73,417.08
+160,197,47,1.16,Kg,Requerido para Cambiar aceite hidráulico,9.44,10.95
+161,197,25,1.67,Unidad,Requerido para Cambiar aceite hidráulico,269.56,450.17
+162,200,4,2.41,Litro,Requerido para Reparar pinchazo,27.70,66.76
+163,200,39,4.51,Kit,Requerido para Reparar pinchazo,47.51,214.27
+164,200,73,2.03,Litro,Requerido para Reparar pinchazo,24.39,49.51
+165,204,75,3.12,Rollo,Requerido para Cambiar filtro de aceite,15.57,48.58
+166,204,29,4.92,Unidad,Requerido para Cambiar filtro de aceite,2414.37,11878.70
+167,205,65,2.84,Unidad,Requerido para Inspeccionar correas,1.94,5.51
+168,205,16,2.07,Unidad,Requerido para Inspeccionar correas,4290.92,8882.20
+169,205,58,4.44,Unidad,Requerido para Inspeccionar correas,3.64,16.16
+170,206,26,1.43,Metro,Requerido para Inspeccionar rodillos,70.24,100.44
+171,206,25,1.30,Unidad,Requerido para Inspeccionar rodillos,269.56,350.43
+172,208,13,4.02,Litro,Requerido para Verificar juego,21.90,88.04
+173,208,55,4.64,Kg,Requerido para Verificar juego,10.52,48.81
+174,210,50,4.35,Kg,Requerido para Verificar termostato,18.78,81.69
+175,210,60,3.44,Unidad,Requerido para Verificar termostato,3.00,10.32
+176,210,76,4.89,Unidad,Requerido para Verificar termostato,1.67,8.17
+177,212,57,2.99,Unidad,Requerido para Revisar mangueras,133.39,398.84
+178,213,60,4.27,Unidad,Requerido para Cambiar aceite de transmisión,3.00,12.81
+179,213,38,1.59,Unidad,Requerido para Cambiar aceite de transmisión,0.47,0.75
+180,213,57,1.67,Unidad,Requerido para Cambiar aceite de transmisión,133.39,222.76
+181,216,3,4.98,Litro,Requerido para Soldar refuerzos,36.87,183.61
+182,216,20,4.45,Metro,Requerido para Soldar refuerzos,23.31,103.73
+183,224,66,1.74,Litro,Requerido para Ajustar válvulas,34.56,60.13
+184,224,19,2.16,Unidad,Requerido para Ajustar válvulas,895.75,1934.82
+185,227,74,1.34,Unidad,Requerido para Ajustar tensión,217.94,292.04
+186,227,66,1.86,Litro,Requerido para Ajustar tensión,34.56,64.28
+187,227,30,4.72,Kg,Requerido para Ajustar tensión,7.86,37.10
+188,231,4,3.42,Litro,Requerido para Verificar alternador,27.70,94.73
+189,231,60,1.28,Unidad,Requerido para Verificar alternador,3.00,3.84
+190,231,26,4.21,Metro,Requerido para Verificar alternador,70.24,295.71
+191,235,61,4.87,Pliego,Requerido para Verificar cardanes,1.73,8.43
+192,238,80,1.01,Unidad,Requerido para Revisar turbo,172.31,174.03
+193,238,41,4.40,Unidad,Requerido para Revisar turbo,0.48,2.11
+194,242,40,3.26,Unidad,Requerido para Pintar partes oxidadas,23.36,76.15
+195,242,41,2.51,Unidad,Requerido para Pintar partes oxidadas,0.48,1.20
+196,242,32,4.92,Rollo,Requerido para Pintar partes oxidadas,12.22,60.12
+197,243,7,3.16,Unidad,Requerido para Cambiar bocinas,40.85,129.09
+198,243,52,1.18,Unidad,Requerido para Cambiar bocinas,218.84,258.23
+199,243,12,1.85,Unidad,Requerido para Cambiar bocinas,96.61,178.73
+200,244,78,3.50,Unidad,Requerido para Medir presiones de bomba,3.29,11.52
+201,244,69,3.92,Litro,Requerido para Medir presiones de bomba,26.98,105.76
+202,245,76,2.38,Unidad,Requerido para Revisar batería,1.67,3.97
+203,248,70,2.72,Unidad,Requerido para Revisar asiento,48.52,131.97
+204,253,42,3.67,Unidad,Requerido para Cambiar sellos de cilindro,14.16,51.97
+205,253,7,4.85,Unidad,Requerido para Cambiar sellos de cilindro,40.85,198.12
+206,253,48,2.04,Pliego,Requerido para Cambiar sellos de cilindro,1.57,3.20
+207,255,52,4.13,Unidad,Requerido para Ajustar tensión,218.84,903.81
+208,255,45,4.77,Unidad,Requerido para Ajustar tensión,58.60,279.52
+209,255,13,3.01,Litro,Requerido para Ajustar tensión,21.90,65.92
+210,263,77,3.66,Metro,Requerido para Verificar nivel de aceite,71.69,262.39
+211,268,64,3.75,Unidad,Requerido para Engrasar puntos de lubricación,56.35,211.31
+212,268,38,4.36,Unidad,Requerido para Engrasar puntos de lubricación,0.47,2.05
+213,273,43,1.83,Unidad,Requerido para Engrasar crucetas,112.47,205.82
+214,273,79,4.81,Unidad,Requerido para Engrasar crucetas,0.54,2.60
+215,273,3,3.16,Litro,Requerido para Engrasar crucetas,36.87,116.51
+216,276,76,2.69,Unidad,Requerido para Inspeccionar rodillos,1.67,4.49
+217,276,77,3.79,Metro,Requerido para Inspeccionar rodillos,71.69,271.71
+218,279,50,4.69,Kg,Requerido para Soldar refuerzos,18.78,88.08
+219,279,11,4.59,Unidad,Requerido para Soldar refuerzos,146.31,671.56
+220,281,32,3.09,Rollo,Requerido para Inspeccionar DPF,12.22,37.76
+221,283,35,3.31,Unidad,Requerido para Reparar abolladuras,2.72,9.00
+222,283,74,2.14,Unidad,Requerido para Reparar abolladuras,217.94,466.39
+223,283,10,2.52,Unidad,Requerido para Reparar abolladuras,79.32,199.89
+224,285,79,5.00,Unidad,Requerido para Ajustar embrague,0.54,2.70
+225,287,50,1.76,Kg,Requerido para Medir desgaste de zapatas,18.78,33.05
+226,287,72,4.40,Unidad,Requerido para Medir desgaste de zapatas,5.86,25.78
+227,287,53,3.06,Unidad,Requerido para Medir desgaste de zapatas,1053.50,3223.71
+228,293,47,1.13,Kg,Requerido para Inspeccionar conexiones,9.44,10.67
+229,296,21,1.57,Unidad,Requerido para Cambiar filtro de cabina,5.01,7.87
+230,298,51,2.10,Unidad,Requerido para Cambiar aceite hidráulico,45.82,96.22
+231,299,65,1.16,Unidad,Requerido para Revisar vidrios,1.94,2.25
+232,299,20,1.46,Metro,Requerido para Revisar vidrios,23.31,34.03
+233,299,53,1.51,Unidad,Requerido para Revisar vidrios,1053.50,1590.79
+234,301,38,1.38,Unidad,Requerido para Ajustar embrague,0.47,0.65
+235,303,78,2.96,Unidad,Requerido para Alinear dirección,3.29,9.74
+236,303,39,1.10,Kit,Requerido para Alinear dirección,47.51,52.26
+237,309,1,4.30,Litro,Requerido para Cambiar filtro de cabina,26.81,115.28
+238,309,68,2.55,Unidad,Requerido para Cambiar filtro de cabina,323.88,825.89
+239,309,51,2.16,Unidad,Requerido para Cambiar filtro de cabina,45.82,98.97
+240,312,30,4.59,Kg,Requerido para Revisar tensión de cadena,7.86,36.08
+241,312,39,4.61,Kit,Requerido para Revisar tensión de cadena,47.51,219.02
+242,316,77,4.01,Metro,Requerido para Engrasar articulaciones,71.69,287.48
+243,316,5,4.17,Kg,Requerido para Engrasar articulaciones,13.83,57.67
+244,317,47,1.67,Kg,Requerido para Revisar asiento,9.44,15.76
+245,319,71,4.88,Unidad,Requerido para Inspeccionar rodillos,100.49,490.39
+246,319,80,3.32,Unidad,Requerido para Inspeccionar rodillos,172.31,572.07
+247,323,10,1.65,Unidad,Requerido para Cambiar filtro de combustible,79.32,130.88
+248,326,54,2.31,Kg,Requerido para Ajustar válvulas,13.04,30.12
+249,331,15,2.94,Litro,Requerido para Rotar neumáticos,18.94,55.68
+250,332,41,1.44,Unidad,Requerido para Inspeccionar rodillos,0.48,0.69
+251,332,5,3.11,Kg,Requerido para Inspeccionar rodillos,13.83,43.01
+252,335,19,1.99,Unidad,Requerido para Engrasar articulaciones,895.75,1782.54
+253,335,35,4.72,Unidad,Requerido para Engrasar articulaciones,2.72,12.84
+254,336,1,2.62,Litro,Requerido para Revisar luces de trabajo,26.81,70.24
+255,339,62,4.42,Unidad,Requerido para Medir presiones de bomba,99.38,439.26
+256,340,2,1.48,Litro,Requerido para Revisar pastillas,17.88,26.46
+257,340,57,1.31,Unidad,Requerido para Revisar pastillas,133.39,174.74
+258,340,60,2.41,Unidad,Requerido para Revisar pastillas,3.00,7.23
+259,342,35,3.10,Unidad,Requerido para Cambiar aceite de transmisión,2.72,8.43
+260,342,69,1.48,Litro,Requerido para Cambiar aceite de transmisión,26.98,39.93
+261,342,34,3.42,Spray,Requerido para Cambiar aceite de transmisión,12.09,41.35
+262,343,41,1.54,Unidad,Requerido para Revisar cinturón de seguridad,0.48,0.74
+263,343,7,4.01,Unidad,Requerido para Revisar cinturón de seguridad,40.85,163.81
+264,343,65,1.91,Unidad,Requerido para Revisar cinturón de seguridad,1.94,3.71
+265,344,36,2.44,Unidad,Requerido para Soldar refuerzos,2.74,6.69
+266,344,2,4.37,Litro,Requerido para Soldar refuerzos,17.88,78.14
+267,352,75,4.67,Rollo,Requerido para Verificar controles,15.57,72.71
+268,352,38,4.42,Unidad,Requerido para Verificar controles,0.47,2.08
+269,352,14,3.36,Litro,Requerido para Verificar controles,32.61,109.57
+270,357,38,3.83,Unidad,Requerido para Verificar cardanes,0.47,1.80
+271,357,1,1.72,Litro,Requerido para Verificar cardanes,26.81,46.11
+272,357,51,2.49,Unidad,Requerido para Verificar cardanes,45.82,114.09
+273,361,4,1.12,Litro,Requerido para Revisar bomba de agua,27.70,31.02
+274,362,57,4.73,Unidad,Requerido para Reparar abolladuras,133.39,630.93
+275,365,40,4.16,Unidad,Requerido para Verificar pasadores,23.36,97.18
+276,371,45,4.57,Unidad,Requerido para Engrasar crucetas,58.60,267.80
+277,376,4,4.23,Litro,Requerido para Revisar mangueras,27.70,117.17
+278,376,46,2.05,Litro,Requerido para Revisar mangueras,27.33,56.03
+279,376,71,2.30,Unidad,Requerido para Revisar mangueras,100.49,231.13
+280,380,50,3.93,Kg,Requerido para Verificar juego,18.78,73.81
+281,380,60,4.51,Unidad,Requerido para Verificar juego,3.00,13.53
+282,380,36,1.14,Unidad,Requerido para Verificar juego,2.74,3.12
+283,382,38,2.53,Unidad,Requerido para Engrasar puntos de lubricación,0.47,1.19
+284,382,28,3.19,Unidad,Requerido para Engrasar puntos de lubricación,1222.27,3899.04
+285,383,31,2.01,Unidad,Requerido para Cambiar aceite de transmisión,25.38,51.01
+286,383,63,1.16,Unidad,Requerido para Cambiar aceite de transmisión,6.08,7.05
+287,386,69,2.06,Litro,Requerido para Verificar líquido de frenos,26.98,55.58
+288,386,78,1.58,Unidad,Requerido para Verificar líquido de frenos,3.29,5.20
+289,388,18,3.21,Unidad,Requerido para Verificar sprockets,176.73,567.30
+290,388,48,4.79,Pliego,Requerido para Verificar sprockets,1.57,7.52
+291,390,44,2.01,Unidad,Requerido para Limpiar radiador,88.15,177.18
+292,393,11,1.93,Unidad,Requerido para Ajustar válvulas,146.31,282.38
+293,399,40,1.73,Unidad,Requerido para Reparar abolladuras,23.36,40.41
+294,403,12,4.03,Unidad,Requerido para Reparar abolladuras,96.61,389.34
+295,403,34,1.32,Spray,Requerido para Reparar abolladuras,12.09,15.96
+296,403,28,2.37,Unidad,Requerido para Reparar abolladuras,1222.27,2896.78
+297,411,62,2.56,Unidad,Requerido para Revisar tubo de escape,99.38,254.41
+298,411,28,1.47,Unidad,Requerido para Revisar tubo de escape,1222.27,1796.74
+299,411,5,3.21,Kg,Requerido para Revisar tubo de escape,13.83,44.39
+300,412,70,2.78,Unidad,Requerido para Revisar inyectores,48.52,134.89
+301,412,20,3.91,Metro,Requerido para Revisar inyectores,23.31,91.14
+302,414,39,1.18,Kit,Requerido para Inspección visual,47.51,56.06
+303,414,23,3.28,Unidad,Requerido para Inspección visual,76.86,252.10
+304,416,54,2.87,Kg,Requerido para Cambiar refrigerante,13.04,37.42
+305,418,20,2.71,Metro,Requerido para Cambiar aceite de motor,23.31,63.17
+306,419,13,1.55,Litro,Requerido para Revisar dientes,21.90,33.95
+307,421,36,4.57,Unidad,Requerido para Alinear dirección,2.74,12.52
+308,421,32,2.92,Rollo,Requerido para Alinear dirección,12.22,35.68
+309,423,4,4.00,Litro,Requerido para Cambiar filtro de cabina,27.70,110.80
+310,423,54,1.52,Kg,Requerido para Cambiar filtro de cabina,13.04,19.82
+311,423,36,2.25,Unidad,Requerido para Cambiar filtro de cabina,2.74,6.17
+312,427,57,1.71,Unidad,Requerido para Ajustar pernos de rueda,133.39,228.10
+313,427,17,3.30,Unidad,Requerido para Ajustar pernos de rueda,3202.55,10568.42
+314,429,19,4.32,Unidad,Requerido para Alinear dirección,895.75,3869.64
+315,432,13,2.93,Litro,Requerido para Purgar sistema de frenos,21.90,64.17
+316,432,39,2.79,Kit,Requerido para Purgar sistema de frenos,47.51,132.55
+317,432,64,4.45,Unidad,Requerido para Purgar sistema de frenos,56.35,250.76
+318,436,44,4.04,Unidad,Requerido para Cambiar refrigerante,88.15,356.13
+319,436,11,4.18,Unidad,Requerido para Cambiar refrigerante,146.31,611.58
+320,436,20,3.94,Metro,Requerido para Cambiar refrigerante,23.31,91.84
+321,438,17,2.09,Unidad,Requerido para Revisar inyectores,3202.55,6693.33
+322,445,76,2.22,Unidad,Requerido para Inspeccionar conexiones,1.67,3.71
+323,445,62,4.26,Unidad,Requerido para Inspeccionar conexiones,99.38,423.36
+324,446,78,2.34,Unidad,Requerido para Verificar nivel de aceite,3.29,7.70
+325,449,22,1.44,Unidad,Requerido para Engrasar crucetas,33.32,47.98
+326,449,24,4.25,Unidad,Requerido para Engrasar crucetas,42.98,182.67
+327,452,16,1.42,Unidad,Requerido para Cambiar filtro de cabina,4290.92,6093.11
+328,453,43,1.15,Unidad,Requerido para Revisar batería,112.47,129.34
+329,453,13,4.92,Litro,Requerido para Revisar batería,21.90,107.75
+330,454,43,2.92,Unidad,Requerido para Ajustar embrague,112.47,328.41
+331,454,61,3.27,Pliego,Requerido para Ajustar embrague,1.73,5.66
+332,454,69,2.18,Litro,Requerido para Ajustar embrague,26.98,58.82
+333,455,2,3.05,Litro,Requerido para Revisar vidrios,17.88,54.53
+334,455,36,2.28,Unidad,Requerido para Revisar vidrios,2.74,6.25
+335,462,51,1.47,Unidad,Requerido para Medir desgaste de zapatas,45.82,67.36
+336,469,79,3.69,Unidad,Requerido para Cambiar refrigerante,0.54,1.99
+337,476,15,4.36,Litro,Requerido para Inspeccionar conexiones,18.94,82.58
+338,477,66,3.18,Litro,Requerido para Verificar controles,34.56,109.90
+339,477,39,3.77,Kit,Requerido para Verificar controles,47.51,179.11
+340,477,3,1.73,Litro,Requerido para Verificar controles,36.87,63.79
+341,481,34,1.31,Spray,Requerido para Limpiar pre-filtro,12.09,15.84
+342,481,72,4.91,Unidad,Requerido para Limpiar pre-filtro,5.86,28.77
+343,481,61,3.23,Pliego,Requerido para Limpiar pre-filtro,1.73,5.59
+344,482,66,3.16,Litro,Requerido para Medir desgaste de zapatas,34.56,109.21
+345,482,40,2.28,Unidad,Requerido para Medir desgaste de zapatas,23.36,53.26
+346,483,40,3.47,Unidad,Requerido para Revisar cinturón de seguridad,23.36,81.06
+347,483,30,4.86,Kg,Requerido para Revisar cinturón de seguridad,7.86,38.20
+348,483,63,4.22,Unidad,Requerido para Revisar cinturón de seguridad,6.08,25.66
+349,484,38,3.57,Unidad,Requerido para Revisar luces de trabajo,0.47,1.68
+350,491,66,3.44,Litro,Requerido para Limpiar radiador,34.56,118.89
+351,491,10,1.05,Unidad,Requerido para Limpiar radiador,79.32,83.29
+352,491,12,3.77,Unidad,Requerido para Limpiar radiador,96.61,364.22
+353,493,54,3.38,Kg,Requerido para Inspeccionar conexiones,13.04,44.08
+354,500,20,1.08,Metro,Requerido para Revisar pastillas,23.31,25.17
+355,500,55,3.42,Kg,Requerido para Revisar pastillas,10.52,35.98
+356,501,27,1.07,Unidad,Requerido para Drenar tanque,35.91,38.42
+357,501,18,1.53,Unidad,Requerido para Drenar tanque,176.73,270.40
+358,501,70,4.74,Unidad,Requerido para Drenar tanque,48.52,229.98
+359,502,63,2.32,Unidad,Requerido para Verificar tablero,6.08,14.11
+360,502,32,1.61,Rollo,Requerido para Verificar tablero,12.22,19.67
+361,503,29,3.05,Unidad,Requerido para Medir presiones de bomba,2414.37,7363.83
+362,503,55,3.05,Kg,Requerido para Medir presiones de bomba,10.52,32.09
+363,508,41,4.40,Unidad,Requerido para Verificar sprockets,0.48,2.11
+364,508,61,2.43,Pliego,Requerido para Verificar sprockets,1.73,4.20
+365,508,18,3.81,Unidad,Requerido para Verificar sprockets,176.73,673.34
+366,510,76,3.63,Unidad,Requerido para Revisar convertidor,1.67,6.06
+367,512,77,4.07,Metro,Requerido para Pintar partes oxidadas,71.69,291.78
+368,512,78,2.45,Unidad,Requerido para Pintar partes oxidadas,3.29,8.06
+369,512,30,1.25,Kg,Requerido para Pintar partes oxidadas,7.86,9.83
+370,517,13,4.60,Litro,Requerido para Verificar termostato,21.90,100.74
+371,517,22,2.01,Unidad,Requerido para Verificar termostato,33.32,66.97
+372,518,78,3.43,Unidad,Requerido para Cambiar bocinas,3.29,11.28
+373,521,60,3.18,Unidad,Requerido para Revisar nivel de refrigerante,3.00,9.54
+374,521,1,2.77,Litro,Requerido para Revisar nivel de refrigerante,26.81,74.26
+375,521,2,4.83,Litro,Requerido para Revisar nivel de refrigerante,17.88,86.36
+376,524,1,4.94,Litro,Requerido para Limpiar trampa de agua,26.81,132.44
+377,524,67,3.57,Unidad,Requerido para Limpiar trampa de agua,3.52,12.57
+378,524,7,4.41,Unidad,Requerido para Limpiar trampa de agua,40.85,180.15
+379,525,3,3.74,Litro,Requerido para Engrasar articulaciones,36.87,137.89
+380,527,48,3.40,Pliego,Requerido para Cambiar filtro de cabina,1.57,5.34
+381,527,2,2.34,Litro,Requerido para Cambiar filtro de cabina,17.88,41.84
+382,527,69,3.07,Litro,Requerido para Cambiar filtro de cabina,26.98,82.83
+383,528,16,1.74,Unidad,Requerido para Revisar asiento,4290.92,7466.20
+384,528,32,2.08,Rollo,Requerido para Revisar asiento,12.22,25.42
+385,528,47,3.40,Kg,Requerido para Revisar asiento,9.44,32.10
+386,530,62,3.97,Unidad,Requerido para Limpiar trampa de agua,99.38,394.54
+387,531,80,1.70,Unidad,Requerido para Cambiar bocinas,172.31,292.93
+388,531,15,4.77,Litro,Requerido para Cambiar bocinas,18.94,90.34
+389,533,53,3.54,Unidad,Requerido para Verificar tablero,1053.50,3729.39
+390,537,59,1.42,Unidad,Requerido para Verificar cardanes,0.59,0.84
+391,538,19,1.36,Unidad,Requerido para Revisar terminales,895.75,1218.22
+392,538,46,2.46,Litro,Requerido para Revisar terminales,27.33,67.23
+393,539,3,4.71,Litro,Requerido para Engrasar puntos de lubricación,36.87,173.66
+394,539,42,4.31,Unidad,Requerido para Engrasar puntos de lubricación,14.16,61.03
+395,542,30,3.81,Kg,Requerido para Limpiar radiador,7.86,29.95
+396,543,44,1.74,Unidad,Requerido para Revisar mangueras,88.15,153.38
+397,543,12,4.12,Unidad,Requerido para Revisar mangueras,96.61,398.03
+398,543,23,4.85,Unidad,Requerido para Revisar mangueras,76.86,372.77
+399,546,46,2.54,Litro,Requerido para Revisar tensión de cadena,27.33,69.42
+400,549,2,2.88,Litro,Requerido para Revisar asiento,17.88,51.49
+401,549,6,4.58,Kg,Requerido para Revisar asiento,11.87,54.36
+402,553,5,4.86,Kg,Requerido para Cambiar aceite de motor,13.83,67.21
+403,553,13,2.09,Litro,Requerido para Cambiar aceite de motor,21.90,45.77
+404,559,37,4.82,Unidad,Requerido para Revisar turbo,1.38,6.65
+405,559,62,4.87,Unidad,Requerido para Revisar turbo,99.38,483.98
+406,559,80,4.05,Unidad,Requerido para Revisar turbo,172.31,697.86
+407,561,59,4.08,Unidad,Requerido para Revisar cinturón de seguridad,0.59,2.41
+408,561,45,4.40,Unidad,Requerido para Revisar cinturón de seguridad,58.60,257.84
+409,562,75,2.95,Rollo,Requerido para Verificar cardanes,15.57,45.93
+410,562,53,2.63,Unidad,Requerido para Verificar cardanes,1053.50,2770.71
+411,563,80,3.12,Unidad,Requerido para Cambiar sellos de cilindro,172.31,537.61
+412,566,9,4.86,Unidad,Requerido para Revisar batería,119.93,582.86
+413,566,53,2.86,Unidad,Requerido para Revisar batería,1053.50,3013.01
+414,566,21,4.70,Unidad,Requerido para Revisar batería,5.01,23.55
+415,568,43,3.34,Unidad,Requerido para Rotar neumáticos,112.47,375.65
+416,568,1,2.69,Litro,Requerido para Rotar neumáticos,26.81,72.12
+417,568,13,3.52,Litro,Requerido para Rotar neumáticos,21.90,77.09
+418,569,7,1.01,Unidad,Requerido para Verificar silenciador,40.85,41.26
+419,569,52,3.08,Unidad,Requerido para Verificar silenciador,218.84,674.03
+420,573,53,2.67,Unidad,Requerido para Reparar abolladuras,1053.50,2812.85
+421,574,36,4.23,Unidad,Requerido para Cambiar filtro de combustible,2.74,11.59
+422,574,61,1.52,Pliego,Requerido para Cambiar filtro de combustible,1.73,2.63
+423,574,53,4.36,Unidad,Requerido para Cambiar filtro de combustible,1053.50,4593.26
+424,577,56,3.12,Unidad,Requerido para Verificar cilindros,17.23,53.76
+425,577,67,1.67,Unidad,Requerido para Verificar cilindros,3.52,5.88
+426,577,24,4.34,Unidad,Requerido para Verificar cilindros,42.98,186.53
+427,589,70,1.68,Unidad,Requerido para Lavar equipo completo,48.52,81.51
+428,589,33,1.67,Spray,Requerido para Lavar equipo completo,16.08,26.85
+429,589,41,3.90,Unidad,Requerido para Lavar equipo completo,0.48,1.87
+430,593,74,4.72,Unidad,Requerido para Verificar cardanes,217.94,1028.68
+431,597,57,3.87,Unidad,Requerido para Limpiar filtros de aire acondicionado,133.39,516.22
+432,597,69,4.00,Litro,Requerido para Limpiar filtros de aire acondicionado,26.98,107.92
+433,598,40,2.60,Unidad,Requerido para Cambiar refrigerante,23.36,60.74
+434,598,39,1.83,Kit,Requerido para Cambiar refrigerante,47.51,86.94
+435,599,4,3.58,Litro,Requerido para Revisar batería,27.70,99.17
+436,599,29,2.18,Unidad,Requerido para Revisar batería,2414.37,5263.33
+437,600,52,2.62,Unidad,Requerido para Cambiar filtro de cabina,218.84,573.36
+438,600,32,1.04,Rollo,Requerido para Cambiar filtro de cabina,12.22,12.71
+439,602,32,3.09,Rollo,Requerido para Cambiar cañerías,12.22,37.76
+440,602,55,3.79,Kg,Requerido para Cambiar cañerías,10.52,39.87
+441,602,64,2.28,Unidad,Requerido para Cambiar cañerías,56.35,128.48
+442,605,25,3.16,Unidad,Requerido para Revisar nivel de refrigerante,269.56,851.81
+443,606,6,2.72,Kg,Requerido para Limpiar filtros de aire acondicionado,11.87,32.29
+444,607,31,1.95,Unidad,Requerido para Revisar pastillas,25.38,49.49
+445,607,7,1.99,Unidad,Requerido para Revisar pastillas,40.85,81.29
+446,610,1,4.44,Litro,Requerido para Pintar partes oxidadas,26.81,119.04
+447,611,4,1.58,Litro,Requerido para Revisar convertidor,27.70,43.77
+448,611,58,2.05,Unidad,Requerido para Revisar convertidor,3.64,7.46
+449,617,45,3.91,Unidad,Requerido para Revisar bomba de dirección,58.60,229.13
+450,617,23,2.07,Unidad,Requerido para Revisar bomba de dirección,76.86,159.10
+451,620,43,1.58,Unidad,Requerido para Reparar pinchazo,112.47,177.70
+452,625,27,2.52,Unidad,Requerido para Cambiar refrigerante,35.91,90.49
+453,625,60,4.27,Unidad,Requerido para Cambiar refrigerante,3.00,12.81
+454,627,53,1.21,Unidad,Requerido para Inspeccionar rodillos,1053.50,1274.74
+455,627,1,2.83,Litro,Requerido para Inspeccionar rodillos,26.81,75.87
+456,627,34,4.09,Spray,Requerido para Inspeccionar rodillos,12.09,49.45
+457,630,63,2.79,Unidad,Requerido para Revisar tubo de escape,6.08,16.96
+458,630,33,2.56,Spray,Requerido para Revisar tubo de escape,16.08,41.16
+459,630,36,1.26,Unidad,Requerido para Revisar tubo de escape,2.74,3.45
+460,634,52,2.11,Unidad,Requerido para Verificar termostato,218.84,461.75
+461,634,55,4.51,Kg,Requerido para Verificar termostato,10.52,47.45
+462,643,80,3.30,Unidad,Requerido para Verificar líquido de frenos,172.31,568.62
+463,644,62,2.36,Unidad,Requerido para Verificar sprockets,99.38,234.54
+464,644,76,1.82,Unidad,Requerido para Verificar sprockets,1.67,3.04
+465,648,49,1.04,Unidad,Requerido para Limpiar trampa de agua,4.68,4.87
+466,650,74,2.04,Unidad,Requerido para Reparar pinchazo,217.94,444.60
+467,650,11,4.85,Unidad,Requerido para Reparar pinchazo,146.31,709.60
+468,650,54,1.08,Kg,Requerido para Reparar pinchazo,13.04,14.08
+469,654,51,4.73,Unidad,Requerido para Engrasar crucetas,45.82,216.73
+470,657,45,2.13,Unidad,Requerido para Revisar inyectores,58.60,124.82
+471,658,12,2.53,Unidad,Requerido para Revisar cinturón de seguridad,96.61,244.42
+472,658,30,3.52,Kg,Requerido para Revisar cinturón de seguridad,7.86,27.67
+473,659,8,4.55,Unidad,Requerido para Revisar vidrios,41.64,189.46
+474,659,56,4.26,Unidad,Requerido para Revisar vidrios,17.23,73.40
+475,660,27,2.06,Unidad,Requerido para Revisar tubo de escape,35.91,73.97
+476,660,53,4.36,Unidad,Requerido para Revisar tubo de escape,1053.50,4593.26
+477,661,67,1.11,Unidad,Requerido para Medir desgaste de zapatas,3.52,3.91
+478,661,43,4.46,Unidad,Requerido para Medir desgaste de zapatas,112.47,501.62
+479,663,45,2.60,Unidad,Requerido para Revisar discos,58.60,152.36
+480,663,6,1.28,Kg,Requerido para Revisar discos,11.87,15.19
+481,664,2,4.42,Litro,Requerido para Revisar bomba de agua,17.88,79.03
+482,664,79,3.95,Unidad,Requerido para Revisar bomba de agua,0.54,2.13
+483,664,60,3.29,Unidad,Requerido para Revisar bomba de agua,3.00,9.87
+484,665,66,3.67,Litro,Requerido para Cambiar bocinas,34.56,126.84
+485,666,38,2.57,Unidad,Requerido para Verificar bomba de combustible,0.47,1.21
+486,666,17,4.76,Unidad,Requerido para Verificar bomba de combustible,3202.55,15244.14
+487,667,69,3.94,Litro,Requerido para Inspeccionar rodillos,26.98,106.30
+488,676,4,4.96,Litro,Requerido para Lavar equipo completo,27.70,137.39
+489,676,28,2.30,Unidad,Requerido para Lavar equipo completo,1222.27,2811.22
+490,681,46,1.44,Litro,Requerido para Drenar tanque,27.33,39.36
+491,681,40,2.28,Unidad,Requerido para Drenar tanque,23.36,53.26
+492,682,21,2.01,Unidad,Requerido para Reparar pinchazo,5.01,10.07
+493,686,60,2.94,Unidad,Requerido para Revisar asiento,3.00,8.82
+494,686,55,3.33,Kg,Requerido para Revisar asiento,10.52,35.03
+495,686,8,2.90,Unidad,Requerido para Revisar asiento,41.64,120.76
+496,689,58,4.22,Unidad,Requerido para Verificar funcionamiento de motor,3.64,15.36
+497,692,68,1.12,Unidad,Requerido para Soldar refuerzos,323.88,362.75
+498,692,14,1.58,Litro,Requerido para Soldar refuerzos,32.61,51.52
+499,699,58,1.74,Unidad,Requerido para Cambiar filtro de cabina,3.64,6.33
+500,699,67,2.15,Unidad,Requerido para Cambiar filtro de cabina,3.52,7.57
+501,699,77,3.32,Metro,Requerido para Cambiar filtro de cabina,71.69,238.01
+502,700,51,1.99,Unidad,Requerido para Ajustar embrague,45.82,91.18
+503,700,73,3.55,Litro,Requerido para Ajustar embrague,24.39,86.58
+504,700,33,1.56,Spray,Requerido para Ajustar embrague,16.08,25.08
+505,704,39,4.39,Kit,Requerido para Revisar tubo de escape,47.51,208.57
+506,707,65,2.53,Unidad,Requerido para Cambiar aceite de transmisión,1.94,4.91
+507,709,4,1.20,Litro,Requerido para Verificar cilindros,27.70,33.24
+508,714,3,1.83,Litro,Requerido para Revisar convertidor,36.87,67.47
+509,714,65,2.14,Unidad,Requerido para Revisar convertidor,1.94,4.15
+510,714,18,4.90,Unidad,Requerido para Revisar convertidor,176.73,865.98
+511,717,41,2.74,Unidad,Requerido para Inspeccionar desgaste,0.48,1.32
+512,717,28,3.54,Unidad,Requerido para Inspeccionar desgaste,1222.27,4326.84
+513,721,80,1.38,Unidad,Requerido para Verificar sprockets,172.31,237.79
+514,721,26,4.22,Metro,Requerido para Verificar sprockets,70.24,296.41
+515,721,14,2.83,Litro,Requerido para Verificar sprockets,32.61,92.29
+516,725,19,2.82,Unidad,Requerido para Engrasar puntos de lubricación,895.75,2526.02
+517,725,69,2.75,Litro,Requerido para Engrasar puntos de lubricación,26.98,74.20
+518,733,32,1.31,Rollo,Requerido para Ajustar pernos de rueda,12.22,16.01
+519,737,61,1.11,Pliego,Requerido para Ajustar embrague,1.73,1.92
+520,737,79,4.94,Unidad,Requerido para Ajustar embrague,0.54,2.67
+521,737,30,3.01,Kg,Requerido para Ajustar embrague,7.86,23.66
+522,739,46,4.95,Litro,Requerido para Limpiar radiador,27.33,135.28
+523,739,64,3.68,Unidad,Requerido para Limpiar radiador,56.35,207.37
+524,740,41,1.37,Unidad,Requerido para Cambiar filtro de combustible,0.48,0.66
+525,740,43,2.41,Unidad,Requerido para Cambiar filtro de combustible,112.47,271.05
+526,740,17,1.79,Unidad,Requerido para Cambiar filtro de combustible,3202.55,5732.56
+527,742,54,4.99,Kg,Requerido para Cambiar sellos de cilindro,13.04,65.07
+528,742,78,1.76,Unidad,Requerido para Cambiar sellos de cilindro,3.29,5.79
+529,742,14,3.25,Litro,Requerido para Cambiar sellos de cilindro,32.61,105.98
+530,743,24,1.26,Unidad,Requerido para Ajustar frenos,42.98,54.15
+531,745,61,1.20,Pliego,Requerido para Inspeccionar DPF,1.73,2.08
+532,745,42,4.71,Unidad,Requerido para Inspeccionar DPF,14.16,66.69
+533,745,21,3.67,Unidad,Requerido para Inspeccionar DPF,5.01,18.39
+534,754,68,4.54,Unidad,Requerido para Verificar alternador,323.88,1470.42
+535,757,51,3.20,Unidad,Requerido para Revisar inyectores,45.82,146.62
+536,757,22,3.91,Unidad,Requerido para Revisar inyectores,33.32,130.28
+537,763,10,1.99,Unidad,Requerido para Cambiar bocinas,79.32,157.85
+538,771,20,4.20,Metro,Requerido para Purgar sistema de frenos,23.31,97.90
+539,771,67,2.64,Unidad,Requerido para Purgar sistema de frenos,3.52,9.29
+540,772,17,2.89,Unidad,Requerido para Cambiar cañerías,3202.55,9255.37
+541,776,55,4.10,Kg,Requerido para Revisar tensión de cadena,10.52,43.13
+542,777,12,4.39,Unidad,Requerido para Drenar tanque,96.61,424.12
+543,777,40,2.35,Unidad,Requerido para Drenar tanque,23.36,54.90
+544,777,73,3.99,Litro,Requerido para Drenar tanque,24.39,97.32
+545,781,25,1.43,Unidad,Requerido para Revisar bomba de dirección,269.56,385.47
+546,781,23,4.33,Unidad,Requerido para Revisar bomba de dirección,76.86,332.80
+547,785,66,4.03,Litro,Requerido para Revisar bomba de agua,34.56,139.28
+548,785,2,2.42,Litro,Requerido para Revisar bomba de agua,17.88,43.27
+549,790,29,2.00,Unidad,Requerido para Verificar presión,2414.37,4828.74
+550,790,50,4.89,Kg,Requerido para Verificar presión,18.78,91.83
+551,791,56,2.51,Unidad,Requerido para Ajustar válvulas,17.23,43.25
+552,791,64,3.30,Unidad,Requerido para Ajustar válvulas,56.35,185.96
+553,791,35,1.08,Unidad,Requerido para Ajustar válvulas,2.72,2.94
+554,797,34,1.78,Spray,Requerido para Cambiar filtro de combustible,12.09,21.52
+555,797,30,2.83,Kg,Requerido para Cambiar filtro de combustible,7.86,22.24
+556,799,12,3.06,Unidad,Requerido para Revisar bomba de agua,96.61,295.63
+557,799,76,2.96,Unidad,Requerido para Revisar bomba de agua,1.67,4.94
+558,799,19,1.75,Unidad,Requerido para Revisar bomba de agua,895.75,1567.56
+559,801,38,3.18,Unidad,Requerido para Verificar silenciador,0.47,1.49
+560,801,40,2.03,Unidad,Requerido para Verificar silenciador,23.36,47.42
+561,802,25,1.78,Unidad,Requerido para Engrasar crucetas,269.56,479.82
+562,802,29,3.09,Unidad,Requerido para Engrasar crucetas,2414.37,7460.40
+563,806,15,4.80,Litro,Requerido para Verificar tablero,18.94,90.91
+564,807,28,2.63,Unidad,Requerido para Revisar turbo,1222.27,3214.57
+565,807,50,1.13,Kg,Requerido para Revisar turbo,18.78,21.22
+566,808,8,3.01,Unidad,Requerido para Reparar pinchazo,41.64,125.34
+567,815,16,3.86,Unidad,Requerido para Revisar nivel de refrigerante,4290.92,16562.95
+568,822,78,1.90,Unidad,Requerido para Pintar partes oxidadas,3.29,6.25
+569,822,32,1.63,Rollo,Requerido para Pintar partes oxidadas,12.22,19.92
+570,822,79,1.73,Unidad,Requerido para Pintar partes oxidadas,0.54,0.93
+571,824,9,1.41,Unidad,Requerido para Revisar mangueras,119.93,169.10
+572,824,69,4.06,Litro,Requerido para Revisar mangueras,26.98,109.54
+573,824,62,1.94,Unidad,Requerido para Revisar mangueras,99.38,192.80
+574,825,80,4.75,Unidad,Requerido para Revisar inyectores,172.31,818.47
+575,825,5,2.40,Kg,Requerido para Revisar inyectores,13.83,33.19
+576,825,29,3.33,Unidad,Requerido para Revisar inyectores,2414.37,8039.85
+577,831,50,1.69,Kg,Requerido para Revisar tubo de escape,18.78,31.74
+578,831,62,3.66,Unidad,Requerido para Revisar tubo de escape,99.38,363.73
+579,831,75,1.18,Rollo,Requerido para Revisar tubo de escape,15.57,18.37
+580,834,59,3.12,Unidad,Requerido para Limpiar radiador,0.59,1.84
+581,835,6,1.45,Kg,Requerido para Verificar silenciador,11.87,17.21
+582,835,77,2.32,Metro,Requerido para Verificar silenciador,71.69,166.32
+583,835,65,1.92,Unidad,Requerido para Verificar silenciador,1.94,3.72
+584,836,76,1.52,Unidad,Requerido para Drenar tanque,1.67,2.54
+585,836,19,2.05,Unidad,Requerido para Drenar tanque,895.75,1836.29
+586,836,68,2.01,Unidad,Requerido para Drenar tanque,323.88,651.00
+587,837,39,3.19,Kit,Requerido para Cambiar cañerías,47.51,151.56
+588,837,13,4.70,Litro,Requerido para Cambiar cañerías,21.90,102.93
+589,838,74,1.13,Unidad,Requerido para Revisar tensión de cadena,217.94,246.27
+590,838,40,1.27,Unidad,Requerido para Revisar tensión de cadena,23.36,29.67
+591,838,14,3.87,Litro,Requerido para Revisar tensión de cadena,32.61,126.20
+592,839,72,1.81,Unidad,Requerido para Cambiar filtro de combustible,5.86,10.61
+593,840,72,2.96,Unidad,Requerido para Cambiar aceite hidráulico,5.86,17.35
+594,840,28,3.08,Unidad,Requerido para Cambiar aceite hidráulico,1222.27,3764.59
+595,840,12,3.81,Unidad,Requerido para Cambiar aceite hidráulico,96.61,368.08
+596,841,7,1.77,Unidad,Requerido para Revisar discos,40.85,72.30
+597,841,39,3.65,Kit,Requerido para Revisar discos,47.51,173.41
+598,848,77,2.31,Metro,Requerido para Inspeccionar correas,71.69,165.60
+599,848,31,4.82,Unidad,Requerido para Inspeccionar correas,25.38,122.33
+600,850,73,1.24,Litro,Requerido para Ajustar pernos de rueda,24.39,30.24
+601,850,56,4.40,Unidad,Requerido para Ajustar pernos de rueda,17.23,75.81
+602,852,30,3.90,Kg,Requerido para Revisar soportes de motor,7.86,30.65
+603,852,68,3.03,Unidad,Requerido para Revisar soportes de motor,323.88,981.36
+604,859,45,1.98,Unidad,Requerido para Verificar pasadores,58.60,116.03
+605,859,23,3.83,Unidad,Requerido para Verificar pasadores,76.86,294.37
+606,860,34,1.32,Spray,Requerido para Revisar terminales,12.09,15.96
+607,860,14,2.27,Litro,Requerido para Revisar terminales,32.61,74.02
+608,860,18,4.25,Unidad,Requerido para Revisar terminales,176.73,751.10
+609,861,11,1.69,Unidad,Requerido para Engrasar puntos de lubricación,146.31,247.26
+610,861,18,4.93,Unidad,Requerido para Engrasar puntos de lubricación,176.73,871.28
+611,861,12,2.32,Unidad,Requerido para Engrasar puntos de lubricación,96.61,224.14
+612,862,15,3.99,Litro,Requerido para Engrasar articulaciones,18.94,75.57
+613,863,17,2.78,Unidad,Requerido para Reparar abolladuras,3202.55,8903.09
+614,863,29,3.44,Unidad,Requerido para Reparar abolladuras,2414.37,8305.43
+615,863,76,1.73,Unidad,Requerido para Reparar abolladuras,1.67,2.89
+616,866,10,1.57,Unidad,Requerido para Verificar controles,79.32,124.53
+617,871,21,4.10,Unidad,Requerido para Verificar líquido de frenos,5.01,20.54
+618,876,47,3.73,Kg,Requerido para Revisar nivel de refrigerante,9.44,35.21
+619,876,8,4.86,Unidad,Requerido para Revisar nivel de refrigerante,41.64,202.37
+620,876,45,1.12,Unidad,Requerido para Revisar nivel de refrigerante,58.60,65.63
+621,881,72,2.82,Unidad,Requerido para Purgar sistema de frenos,5.86,16.53
+622,882,20,4.18,Metro,Requerido para Limpiar filtros de aire acondicionado,23.31,97.44
+623,882,66,4.72,Litro,Requerido para Limpiar filtros de aire acondicionado,34.56,163.12
+624,883,5,4.83,Kg,Requerido para Revisar dientes,13.83,66.80
+625,884,17,4.67,Unidad,Requerido para Cambiar filtro de aceite,3202.55,14955.91
+626,884,5,1.77,Kg,Requerido para Cambiar filtro de aceite,13.83,24.48
+627,884,12,2.71,Unidad,Requerido para Cambiar filtro de aceite,96.61,261.81
+628,886,24,1.83,Unidad,Requerido para Revisar terminales,42.98,78.65
+629,887,38,4.01,Unidad,Requerido para Medir desgaste de zapatas,0.47,1.88
+630,887,26,3.02,Metro,Requerido para Medir desgaste de zapatas,70.24,212.12
+631,887,33,2.77,Spray,Requerido para Medir desgaste de zapatas,16.08,44.54
+632,889,21,1.47,Unidad,Requerido para Revisar turbo,5.01,7.36
+633,889,31,1.86,Unidad,Requerido para Revisar turbo,25.38,47.21
+634,891,13,1.31,Litro,Requerido para Verificar controles,21.90,28.69
+635,894,60,1.70,Unidad,Requerido para Inspeccionar desgaste,3.00,5.10
+636,894,25,3.73,Unidad,Requerido para Inspeccionar desgaste,269.56,1005.46
+637,894,20,1.86,Metro,Requerido para Inspeccionar desgaste,23.31,43.36
+638,895,66,1.22,Litro,Requerido para Verificar líquido de frenos,34.56,42.16
+639,895,71,1.44,Unidad,Requerido para Verificar líquido de frenos,100.49,144.71
+640,895,74,4.38,Unidad,Requerido para Verificar líquido de frenos,217.94,954.58
+641,896,20,1.66,Metro,Requerido para Reparar abolladuras,23.31,38.69
+642,897,26,4.68,Metro,Requerido para Medir presiones de bomba,70.24,328.72
+643,902,36,2.83,Unidad,Requerido para Inspeccionar conexiones,2.74,7.75
+644,902,73,2.27,Litro,Requerido para Inspeccionar conexiones,24.39,55.37
+645,907,43,3.22,Unidad,Requerido para Cambiar refrigerante,112.47,362.15
+646,907,2,1.71,Litro,Requerido para Cambiar refrigerante,17.88,30.57
+647,907,72,2.28,Unidad,Requerido para Cambiar refrigerante,5.86,13.36
+648,910,6,3.92,Kg,Requerido para Engrasar crucetas,11.87,46.53
+649,910,42,3.51,Unidad,Requerido para Engrasar crucetas,14.16,49.70
+650,912,51,2.19,Unidad,Requerido para Limpiar trampa de agua,45.82,100.35
+651,918,39,2.35,Kit,Requerido para Reparar abolladuras,47.51,111.65
+652,918,43,3.74,Unidad,Requerido para Reparar abolladuras,112.47,420.64
+653,918,35,2.24,Unidad,Requerido para Reparar abolladuras,2.72,6.09
+654,921,20,3.28,Metro,Requerido para Verificar presión,23.31,76.46
+655,921,39,2.05,Kit,Requerido para Verificar presión,47.51,97.40
+656,921,55,3.00,Kg,Requerido para Verificar presión,10.52,31.56
+657,922,28,3.02,Unidad,Requerido para Verificar termostato,1222.27,3691.26
+658,922,69,1.79,Litro,Requerido para Verificar termostato,26.98,48.29
+659,922,13,2.66,Litro,Requerido para Verificar termostato,21.90,58.25
+660,925,61,2.27,Pliego,Requerido para Revisar terminales,1.73,3.93
+661,928,78,3.62,Unidad,Requerido para Verificar motor de arranque,3.29,11.91
+662,928,18,1.29,Unidad,Requerido para Verificar motor de arranque,176.73,227.98
+663,928,11,2.32,Unidad,Requerido para Verificar motor de arranque,146.31,339.44
+664,930,42,4.55,Unidad,Requerido para Verificar controles,14.16,64.43
+665,930,60,2.12,Unidad,Requerido para Verificar controles,3.00,6.36
+666,930,61,2.91,Pliego,Requerido para Verificar controles,1.73,5.03
+667,932,39,4.53,Kit,Requerido para Revisar vidrios,47.51,215.22
+668,932,78,2.17,Unidad,Requerido para Revisar vidrios,3.29,7.14
+669,932,32,2.00,Rollo,Requerido para Revisar vidrios,12.22,24.44
+670,936,64,2.29,Unidad,Requerido para Inspeccionar DPF,56.35,129.04
+671,936,11,2.69,Unidad,Requerido para Inspeccionar DPF,146.31,393.57
+672,937,78,4.19,Unidad,Requerido para Revisar luces de trabajo,3.29,13.79
+673,937,57,3.28,Unidad,Requerido para Revisar luces de trabajo,133.39,437.52
+674,942,60,4.64,Unidad,Requerido para Lavar equipo completo,3.00,13.92
+675,942,42,2.61,Unidad,Requerido para Lavar equipo completo,14.16,36.96
+676,943,74,4.56,Unidad,Requerido para Engrasar puntos de lubricación,217.94,993.81
+677,943,8,2.88,Unidad,Requerido para Engrasar puntos de lubricación,41.64,119.92
+678,943,48,1.51,Pliego,Requerido para Engrasar puntos de lubricación,1.57,2.37
+679,944,39,3.41,Kit,Requerido para Revisar bomba de dirección,47.51,162.01
+680,944,34,4.21,Spray,Requerido para Revisar bomba de dirección,12.09,50.90
+681,944,11,4.63,Unidad,Requerido para Revisar bomba de dirección,146.31,677.42
+682,947,29,3.85,Unidad,Requerido para Verificar tablero,2414.37,9295.32
+683,947,35,4.96,Unidad,Requerido para Verificar tablero,2.72,13.49
+684,947,55,2.51,Kg,Requerido para Verificar tablero,10.52,26.41
+685,948,58,3.12,Unidad,Requerido para Verificar termostato,3.64,11.36
+686,948,19,4.12,Unidad,Requerido para Verificar termostato,895.75,3690.49
+687,956,21,2.16,Unidad,Requerido para Cambiar filtro de aceite,5.01,10.82
+688,958,24,3.12,Unidad,Requerido para Revisar inyectores,42.98,134.10
+689,958,5,3.67,Kg,Requerido para Revisar inyectores,13.83,50.76
+690,960,64,4.35,Unidad,Requerido para Verificar tablero,56.35,245.12
+691,962,5,2.50,Kg,Requerido para Ajustar válvulas,13.83,34.58
+692,965,61,1.68,Pliego,Requerido para Alinear dirección,1.73,2.91
+693,970,64,4.10,Unidad,Requerido para Inspeccionar conexiones,56.35,231.04
+694,970,7,3.20,Unidad,Requerido para Inspeccionar conexiones,40.85,130.72
+695,973,36,1.10,Unidad,Requerido para Verificar termostato,2.74,3.01
+696,976,55,2.03,Kg,Requerido para Limpiar trampa de agua,10.52,21.36
+697,976,9,3.12,Unidad,Requerido para Limpiar trampa de agua,119.93,374.18
+698,977,45,2.34,Unidad,Requerido para Revisar cinturón de seguridad,58.60,137.12
+699,984,27,2.11,Unidad,Requerido para Cambiar aceite hidráulico,35.91,75.77
+700,984,55,1.15,Kg,Requerido para Cambiar aceite hidráulico,10.52,12.10
+701,984,21,4.04,Unidad,Requerido para Cambiar aceite hidráulico,5.01,20.24
+702,986,51,2.92,Unidad,Requerido para Reparar abolladuras,45.82,133.79
+703,986,76,1.09,Unidad,Requerido para Reparar abolladuras,1.67,1.82
+704,986,11,3.49,Unidad,Requerido para Reparar abolladuras,146.31,510.62
+705,988,74,1.17,Unidad,Requerido para Revisar mangueras,217.94,254.99
+706,988,31,2.01,Unidad,Requerido para Revisar mangueras,25.38,51.01
+707,989,53,4.00,Unidad,Requerido para Verificar sprockets,1053.50,4214.00
+708,989,26,3.40,Metro,Requerido para Verificar sprockets,70.24,238.82
+709,989,59,1.53,Unidad,Requerido para Verificar sprockets,0.59,0.90
+710,992,7,1.54,Unidad,Requerido para Verificar funcionamiento de motor,40.85,62.91
+711,996,14,1.90,Litro,Requerido para Rotar neumáticos,32.61,61.96
+712,996,64,4.03,Unidad,Requerido para Rotar neumáticos,56.35,227.09
+713,996,57,2.21,Unidad,Requerido para Rotar neumáticos,133.39,294.79
+714,999,54,4.33,Kg,Requerido para Revisar batería,13.04,56.46
+715,999,67,1.26,Unidad,Requerido para Revisar batería,3.52,4.44
+716,999,1,3.43,Litro,Requerido para Revisar batería,26.81,91.96
+717,1000,12,2.45,Unidad,Requerido para Verificar sprockets,96.61,236.69
+718,1000,45,1.81,Unidad,Requerido para Verificar sprockets,58.60,106.07
+719,1003,33,4.60,Spray,Requerido para Limpiar radiador,16.08,73.97
+720,1003,55,1.88,Kg,Requerido para Limpiar radiador,10.52,19.78
+721,1004,18,2.18,Unidad,Requerido para Verificar silenciador,176.73,385.27
+722,1005,41,1.65,Unidad,Requerido para Cambiar aceite de transmisión,0.48,0.79
+723,1007,22,3.78,Unidad,Requerido para Cambiar filtro de aire,33.32,125.95
+724,1007,77,4.35,Metro,Requerido para Cambiar filtro de aire,71.69,311.85
+725,1011,33,3.26,Spray,Requerido para Revisar terminales,16.08,52.42
+726,1017,27,1.22,Unidad,Requerido para Revisar nivel de refrigerante,35.91,43.81
+727,1017,29,2.20,Unidad,Requerido para Revisar nivel de refrigerante,2414.37,5311.61
+728,1017,58,4.80,Unidad,Requerido para Revisar nivel de refrigerante,3.64,17.47
+729,1018,55,1.27,Kg,Requerido para Revisar mangueras,10.52,13.36
+730,1019,67,1.29,Unidad,Requerido para Reparar abolladuras,3.52,4.54
+731,1019,32,1.92,Rollo,Requerido para Reparar abolladuras,12.22,23.46
+732,1019,6,2.28,Kg,Requerido para Reparar abolladuras,11.87,27.06
+733,1020,4,1.09,Litro,Requerido para Inspeccionar correas,27.70,30.19
+734,1020,5,1.17,Kg,Requerido para Inspeccionar correas,13.83,16.18
+735,1021,5,4.24,Kg,Requerido para Inspeccionar conexiones,13.83,58.64
+736,1024,67,3.52,Unidad,Requerido para Revisar convertidor,3.52,12.39
+737,1024,26,4.60,Metro,Requerido para Revisar convertidor,70.24,323.10
+738,1026,39,1.64,Kit,Requerido para Reparar pinchazo,47.51,77.92
+739,1027,78,2.81,Unidad,Requerido para Reparar abolladuras,3.29,9.24
+740,1027,38,1.41,Unidad,Requerido para Reparar abolladuras,0.47,0.66
+741,1027,62,1.04,Unidad,Requerido para Reparar abolladuras,99.38,103.36
+742,1028,45,2.11,Unidad,Requerido para Tomar muestra de aceite,58.60,123.65
+743,1028,38,1.47,Unidad,Requerido para Tomar muestra de aceite,0.47,0.69
+744,1030,25,2.55,Unidad,Requerido para Ajustar embrague,269.56,687.38
+745,1030,40,2.90,Unidad,Requerido para Ajustar embrague,23.36,67.74
+746,1032,54,2.02,Kg,Requerido para Limpiar pre-filtro,13.04,26.34
+747,1032,68,4.57,Unidad,Requerido para Limpiar pre-filtro,323.88,1480.13
+748,1034,5,3.27,Kg,Requerido para Revisar terminales,13.83,45.22
+749,1034,28,4.80,Unidad,Requerido para Revisar terminales,1222.27,5866.90
+750,1036,4,3.11,Litro,Requerido para Verificar termostato,27.70,86.15
+751,1037,76,1.79,Unidad,Requerido para Limpiar trampa de agua,1.67,2.99
+752,1037,49,1.35,Unidad,Requerido para Limpiar trampa de agua,4.68,6.32
+753,1038,77,1.99,Metro,Requerido para Verificar controles,71.69,142.66
+754,1038,24,3.59,Unidad,Requerido para Verificar controles,42.98,154.30
+755,1040,76,4.48,Unidad,Requerido para Revisar tensión de cadena,1.67,7.48
+756,1040,42,4.21,Unidad,Requerido para Revisar tensión de cadena,14.16,59.61
+757,1043,21,2.08,Unidad,Requerido para Rotar neumáticos,5.01,10.42
+758,1043,60,1.17,Unidad,Requerido para Rotar neumáticos,3.00,3.51
+759,1044,6,4.05,Kg,Requerido para Ajustar válvulas,11.87,48.07
+760,1046,23,4.34,Unidad,Requerido para Cambiar aceite de motor,76.86,333.57
+761,1046,64,4.45,Unidad,Requerido para Cambiar aceite de motor,56.35,250.76
+762,1048,25,4.80,Unidad,Requerido para Cambiar refrigerante,269.56,1293.89
+763,1048,47,3.53,Kg,Requerido para Cambiar refrigerante,9.44,33.32
+764,1054,17,1.63,Unidad,Requerido para Revisar soportes de motor,3202.55,5220.16
+765,1055,50,2.96,Kg,Requerido para Limpiar pre-filtro,18.78,55.59
+766,1055,37,3.06,Unidad,Requerido para Limpiar pre-filtro,1.38,4.22
+767,1055,40,2.70,Unidad,Requerido para Limpiar pre-filtro,23.36,63.07
+768,1057,33,4.70,Spray,Requerido para Verificar alternador,16.08,75.58
+769,1060,20,4.71,Metro,Requerido para Revisar cinturón de seguridad,23.31,109.79
+770,1062,61,1.50,Pliego,Requerido para Verificar líquido de frenos,1.73,2.60
+771,1062,52,4.34,Unidad,Requerido para Verificar líquido de frenos,218.84,949.77
+772,1064,35,4.98,Unidad,Requerido para Inspeccionar conexiones,2.72,13.55
+773,1064,53,3.39,Unidad,Requerido para Inspeccionar conexiones,1053.50,3571.37
+774,1064,41,2.13,Unidad,Requerido para Inspeccionar conexiones,0.48,1.02
+775,1073,68,1.42,Unidad,Requerido para Verificar presión,323.88,459.91
+776,1075,6,2.47,Kg,Requerido para Revisar discos,11.87,29.32
+777,1076,67,4.54,Unidad,Requerido para Verificar alternador,3.52,15.98
+778,1078,69,1.47,Litro,Requerido para Cambiar sellos de cilindro,26.98,39.66
+779,1078,27,3.97,Unidad,Requerido para Cambiar sellos de cilindro,35.91,142.56
+780,1078,9,3.10,Unidad,Requerido para Cambiar sellos de cilindro,119.93,371.78
+781,1080,66,1.61,Litro,Requerido para Engrasar crucetas,34.56,55.64
+782,1080,54,3.64,Kg,Requerido para Engrasar crucetas,13.04,47.47
+783,1083,45,4.30,Unidad,Requerido para Revisar inyectores,58.60,251.98
+784,1089,19,2.64,Unidad,Requerido para Cambiar aceite de motor,895.75,2364.78
+785,1098,32,4.63,Rollo,Requerido para Verificar alternador,12.22,56.58
+786,1099,56,2.41,Unidad,Requerido para Verificar juego,17.23,41.52
+787,1099,18,1.11,Unidad,Requerido para Verificar juego,176.73,196.17
+788,1099,79,2.32,Unidad,Requerido para Verificar juego,0.54,1.25
+789,1100,56,1.84,Unidad,Requerido para Verificar funcionamiento de motor,17.23,31.70
+790,1100,8,2.11,Unidad,Requerido para Verificar funcionamiento de motor,41.64,87.86
+791,1101,50,2.44,Kg,Requerido para Drenar tanque,18.78,45.82
+792,1101,27,3.66,Unidad,Requerido para Drenar tanque,35.91,131.43
+793,1101,56,3.87,Unidad,Requerido para Drenar tanque,17.23,66.68
+794,1102,76,4.63,Unidad,Requerido para Ajustar válvulas,1.67,7.73
+795,1102,68,2.17,Unidad,Requerido para Ajustar válvulas,323.88,702.82
+796,1102,26,3.75,Metro,Requerido para Ajustar válvulas,70.24,263.40
+797,1103,7,3.31,Unidad,Requerido para Verificar nivel de aceite,40.85,135.21
+798,1103,54,2.89,Kg,Requerido para Verificar nivel de aceite,13.04,37.69
+799,1103,29,2.13,Unidad,Requerido para Verificar nivel de aceite,2414.37,5142.61
+800,1109,62,2.78,Unidad,Requerido para Ajustar pernos de rueda,99.38,276.28
+801,1109,29,1.07,Unidad,Requerido para Ajustar pernos de rueda,2414.37,2583.38
+802,1109,66,4.87,Litro,Requerido para Ajustar pernos de rueda,34.56,168.31
+803,1110,14,1.89,Litro,Requerido para Cambiar aceite de transmisión,32.61,61.63
+804,1112,61,4.49,Pliego,Requerido para Revisar terminales,1.73,7.77
+805,1112,27,1.64,Unidad,Requerido para Revisar terminales,35.91,58.89
+806,1113,6,3.35,Kg,Requerido para Revisar inyectores,11.87,39.76
+807,1113,31,1.29,Unidad,Requerido para Revisar inyectores,25.38,32.74
+808,1113,54,2.63,Kg,Requerido para Revisar inyectores,13.04,34.30
+809,1115,70,1.14,Unidad,Requerido para Verificar sprockets,48.52,55.31
+810,1115,23,1.39,Unidad,Requerido para Verificar sprockets,76.86,106.84
+811,1120,5,2.70,Kg,Requerido para Verificar cardanes,13.83,37.34
+812,1120,38,2.32,Unidad,Requerido para Verificar cardanes,0.47,1.09
+813,1120,60,2.53,Unidad,Requerido para Verificar cardanes,3.00,7.59
+814,1121,40,4.58,Unidad,Requerido para Cambiar filtro de cabina,23.36,106.99
+815,1122,6,4.07,Kg,Requerido para Pintar partes oxidadas,11.87,48.31
+816,1122,33,3.76,Spray,Requerido para Pintar partes oxidadas,16.08,60.46
+817,1125,60,2.86,Unidad,Requerido para Verificar alternador,3.00,8.58
+818,1125,55,1.06,Kg,Requerido para Verificar alternador,10.52,11.15
+819,1125,56,4.47,Unidad,Requerido para Verificar alternador,17.23,77.02
+820,1127,10,4.16,Unidad,Requerido para Verificar alternador,79.32,329.97
+821,1129,75,2.59,Rollo,Requerido para Verificar funcionamiento de motor,15.57,40.33
+822,1129,2,3.92,Litro,Requerido para Verificar funcionamiento de motor,17.88,70.09
+823,1129,7,3.84,Unidad,Requerido para Verificar funcionamiento de motor,40.85,156.86
+824,1135,65,3.85,Unidad,Requerido para Inspeccionar DPF,1.94,7.47
+825,1144,76,3.27,Unidad,Requerido para Verificar bomba de combustible,1.67,5.46
+826,1144,79,2.53,Unidad,Requerido para Verificar bomba de combustible,0.54,1.37
+827,1147,32,2.94,Rollo,Requerido para Inspeccionar correas,12.22,35.93
+828,1148,32,4.88,Rollo,Requerido para Engrasar puntos de lubricación,12.22,59.63
+829,1150,37,3.25,Unidad,Requerido para Verificar pasadores,1.38,4.49
+830,1155,80,2.58,Unidad,Requerido para Revisar convertidor,172.31,444.56
+831,1155,7,4.11,Unidad,Requerido para Revisar convertidor,40.85,167.89
+832,1155,8,2.39,Unidad,Requerido para Revisar convertidor,41.64,99.52
+833,1157,48,2.00,Pliego,Requerido para Medir desgaste de zapatas,1.57,3.14
+834,1159,58,4.99,Unidad,Requerido para Limpiar radiador,3.64,18.16
+835,1159,23,4.61,Unidad,Requerido para Limpiar radiador,76.86,354.32
+836,1159,6,3.57,Kg,Requerido para Limpiar radiador,11.87,42.38
+837,1164,42,2.38,Unidad,Requerido para Revisar asiento,14.16,33.70
+838,1166,50,4.32,Kg,Requerido para Cambiar aceite hidráulico,18.78,81.13
+839,1167,60,1.85,Unidad,Requerido para Reparar abolladuras,3.00,5.55
+840,1167,70,1.55,Unidad,Requerido para Reparar abolladuras,48.52,75.21
+841,1167,19,1.79,Unidad,Requerido para Reparar abolladuras,895.75,1603.39
+842,1168,78,1.88,Unidad,Requerido para Verificar nivel de aceite,3.29,6.19
+843,1168,66,4.24,Litro,Requerido para Verificar nivel de aceite,34.56,146.53
+844,1168,56,2.92,Unidad,Requerido para Verificar nivel de aceite,17.23,50.31
+845,1172,75,4.40,Rollo,Requerido para Verificar controles,15.57,68.51
+846,1179,43,1.11,Unidad,Requerido para Cambiar sellos de cilindro,112.47,124.84
+847,1179,64,3.23,Unidad,Requerido para Cambiar sellos de cilindro,56.35,182.01
+848,1179,71,2.08,Unidad,Requerido para Cambiar sellos de cilindro,100.49,209.02
+849,1181,29,2.73,Unidad,Requerido para Engrasar articulaciones,2414.37,6591.23
+850,1183,12,4.05,Unidad,Requerido para Medir desgaste de zapatas,96.61,391.27
+851,1183,58,1.10,Unidad,Requerido para Medir desgaste de zapatas,3.64,4.00
+852,1183,19,4.76,Unidad,Requerido para Medir desgaste de zapatas,895.75,4263.77
+853,1185,28,1.50,Unidad,Requerido para Pintar partes oxidadas,1222.27,1833.41
+854,1188,71,1.98,Unidad,Requerido para Verificar líquido de frenos,100.49,198.97
+855,1188,27,3.17,Unidad,Requerido para Verificar líquido de frenos,35.91,113.83
+856,1188,61,4.75,Pliego,Requerido para Verificar líquido de frenos,1.73,8.22
+857,1189,69,4.77,Litro,Requerido para Revisar soportes de motor,26.98,128.69
+858,1190,62,2.43,Unidad,Requerido para Verificar alternador,99.38,241.49
+859,1190,33,2.53,Spray,Requerido para Verificar alternador,16.08,40.68
+860,1191,70,1.58,Unidad,Requerido para Reparar abolladuras,48.52,76.66
+861,1192,66,1.29,Litro,Requerido para Revisar bomba de agua,34.56,44.58
+862,1193,15,1.26,Litro,Requerido para Ajustar tensión,18.94,23.86
+863,1193,16,3.55,Unidad,Requerido para Ajustar tensión,4290.92,15232.77
+864,1201,77,2.45,Metro,Requerido para Pintar partes oxidadas,71.69,175.64
+865,1201,46,1.93,Litro,Requerido para Pintar partes oxidadas,27.33,52.75
+866,1201,70,2.55,Unidad,Requerido para Pintar partes oxidadas,48.52,123.73
+867,1205,18,3.22,Unidad,Requerido para Revisar tubo de escape,176.73,569.07
+868,1205,37,3.12,Unidad,Requerido para Revisar tubo de escape,1.38,4.31
+869,1205,34,4.23,Spray,Requerido para Revisar tubo de escape,12.09,51.14
+870,1208,2,4.68,Litro,Requerido para Cambiar aceite de transmisión,17.88,83.68
+871,1208,60,2.66,Unidad,Requerido para Cambiar aceite de transmisión,3.00,7.98
+872,1208,11,1.09,Unidad,Requerido para Cambiar aceite de transmisión,146.31,159.48
+873,1210,18,2.37,Unidad,Requerido para Pintar partes oxidadas,176.73,418.85
+874,1210,40,1.29,Unidad,Requerido para Pintar partes oxidadas,23.36,30.13
+875,1211,35,3.40,Unidad,Requerido para Verificar juego,2.72,9.25
+876,1211,4,3.87,Litro,Requerido para Verificar juego,27.70,107.20
+877,1211,75,1.25,Rollo,Requerido para Verificar juego,15.57,19.46
+878,1213,33,1.82,Spray,Requerido para Cambiar filtro de combustible,16.08,29.27
+879,1213,15,3.36,Litro,Requerido para Cambiar filtro de combustible,18.94,63.64
+880,1213,14,3.97,Litro,Requerido para Cambiar filtro de combustible,32.61,129.46
+881,1218,44,3.08,Unidad,Requerido para Ajustar válvulas,88.15,271.50
+882,1222,5,2.22,Kg,Requerido para Cambiar aceite de motor,13.83,30.70
+883,1222,51,3.95,Unidad,Requerido para Cambiar aceite de motor,45.82,180.99
+884,1224,63,3.77,Unidad,Requerido para Verificar juego,6.08,22.92
+885,1224,2,1.16,Litro,Requerido para Verificar juego,17.88,20.74
+886,1230,4,2.64,Litro,Requerido para Medir presiones de bomba,27.70,73.13
+887,1230,10,4.65,Unidad,Requerido para Medir presiones de bomba,79.32,368.84
+888,1231,6,2.85,Kg,Requerido para Revisar tensión de cadena,11.87,33.83
+889,1238,58,1.24,Unidad,Requerido para Verificar funcionamiento de motor,3.64,4.51
+890,1240,40,2.97,Unidad,Requerido para Purgar sistema de frenos,23.36,69.38
+891,1240,58,4.76,Unidad,Requerido para Purgar sistema de frenos,3.64,17.33
+892,1240,14,1.15,Litro,Requerido para Purgar sistema de frenos,32.61,37.50
+893,1244,71,2.44,Unidad,Requerido para Inspeccionar rodillos,100.49,245.20
+894,1244,40,4.15,Unidad,Requerido para Inspeccionar rodillos,23.36,96.94
+895,1251,27,3.41,Unidad,Requerido para Revisar terminales,35.91,122.45
+896,1252,19,4.04,Unidad,Requerido para Cambiar empaques,895.75,3618.83
+897,1252,43,4.81,Unidad,Requerido para Cambiar empaques,112.47,540.98
+898,1252,18,3.32,Unidad,Requerido para Cambiar empaques,176.73,586.74
+899,1253,57,4.53,Unidad,Requerido para Medir presiones de bomba,133.39,604.26
+900,1253,61,2.09,Pliego,Requerido para Medir presiones de bomba,1.73,3.62
+901,1253,8,4.68,Unidad,Requerido para Medir presiones de bomba,41.64,194.88
+902,1254,24,1.92,Unidad,Requerido para Cambiar filtro de aire,42.98,82.52
+903,1254,3,3.22,Litro,Requerido para Cambiar filtro de aire,36.87,118.72
+904,1254,21,4.11,Unidad,Requerido para Cambiar filtro de aire,5.01,20.59
+905,1256,41,1.98,Unidad,Requerido para Limpiar trampa de agua,0.48,0.95
+906,1260,62,1.70,Unidad,Requerido para Limpiar trampa de agua,99.38,168.95
+907,1261,9,1.34,Unidad,Requerido para Engrasar puntos de lubricación,119.93,160.71
+908,1265,38,4.56,Unidad,Requerido para Verificar juego,0.47,2.14
+909,1265,25,3.10,Unidad,Requerido para Verificar juego,269.56,835.64
+910,1266,53,2.97,Unidad,Requerido para Cambiar filtro de aire,1053.50,3128.90
+911,1267,52,1.01,Unidad,Requerido para Purgar sistema de frenos,218.84,221.03
+912,1267,38,4.59,Unidad,Requerido para Purgar sistema de frenos,0.47,2.16
+913,1268,70,1.42,Unidad,Requerido para Revisar bomba de agua,48.52,68.90
+914,1268,30,2.62,Kg,Requerido para Revisar bomba de agua,7.86,20.59
+915,1269,53,4.81,Unidad,Requerido para Cambiar aceite de transmisión,1053.50,5067.34
+916,1270,54,1.07,Kg,Requerido para Lavar equipo completo,13.04,13.95
+917,1270,16,3.64,Unidad,Requerido para Lavar equipo completo,4290.92,15618.95
+918,1270,20,2.02,Metro,Requerido para Lavar equipo completo,23.31,47.09
+919,1272,61,4.40,Pliego,Requerido para Verificar tablero,1.73,7.61
+920,1273,59,4.88,Unidad,Requerido para Cambiar aceite hidráulico,0.59,2.88
+921,1273,60,1.60,Unidad,Requerido para Cambiar aceite hidráulico,3.00,4.80
+922,1273,39,1.71,Kit,Requerido para Cambiar aceite hidráulico,47.51,81.24
+923,1277,74,4.48,Unidad,Requerido para Cambiar sellos de cilindro,217.94,976.37
+924,1277,34,4.57,Spray,Requerido para Cambiar sellos de cilindro,12.09,55.25
+925,1279,18,4.85,Unidad,Requerido para Ajustar embrague,176.73,857.14
+926,1279,57,4.09,Unidad,Requerido para Ajustar embrague,133.39,545.57
+927,1279,62,1.35,Unidad,Requerido para Ajustar embrague,99.38,134.16
+928,1283,30,4.40,Kg,Requerido para Verificar bomba de combustible,7.86,34.58
+929,1283,4,4.17,Litro,Requerido para Verificar bomba de combustible,27.70,115.51
+930,1283,14,3.58,Litro,Requerido para Verificar bomba de combustible,32.61,116.74
+931,1284,56,2.72,Unidad,Requerido para Revisar convertidor,17.23,46.87
+932,1288,9,4.67,Unidad,Requerido para Inspeccionar DPF,119.93,560.07
+933,1291,8,1.81,Unidad,Requerido para Limpiar pre-filtro,41.64,75.37
+934,1291,33,2.77,Spray,Requerido para Limpiar pre-filtro,16.08,44.54
+935,1291,54,3.84,Kg,Requerido para Limpiar pre-filtro,13.04,50.07
+936,1292,70,4.90,Unidad,Requerido para Limpiar filtros de aire acondicionado,48.52,237.75
+937,1293,13,4.04,Litro,Requerido para Verificar pasadores,21.90,88.48
+938,1294,12,1.67,Unidad,Requerido para Verificar presión,96.61,161.34
+939,1294,19,2.53,Unidad,Requerido para Verificar presión,895.75,2266.25
+940,1294,75,2.52,Rollo,Requerido para Verificar presión,15.57,39.24
+941,1295,40,1.03,Unidad,Requerido para Ajustar embrague,23.36,24.06
+942,1297,18,2.31,Unidad,Requerido para Verificar motor de arranque,176.73,408.25
+943,1298,64,3.82,Unidad,Requerido para Tomar muestra de aceite,56.35,215.26
+944,1298,71,1.78,Unidad,Requerido para Tomar muestra de aceite,100.49,178.87
+945,1299,7,1.13,Unidad,Requerido para Inspección visual,40.85,46.16
+946,1299,55,3.72,Kg,Requerido para Inspección visual,10.52,39.13
+947,1299,16,4.67,Unidad,Requerido para Inspección visual,4290.92,20038.60
+948,1300,60,3.07,Unidad,Requerido para Verificar sprockets,3.00,9.21
+949,1300,17,4.51,Unidad,Requerido para Verificar sprockets,3202.55,14443.50
+950,1300,71,3.38,Unidad,Requerido para Verificar sprockets,100.49,339.66
+951,1301,57,4.65,Unidad,Requerido para Ajustar válvulas,133.39,620.26
+952,1301,25,3.43,Unidad,Requerido para Ajustar válvulas,269.56,924.59
+953,1301,74,3.36,Unidad,Requerido para Ajustar válvulas,217.94,732.28
+954,1304,57,4.93,Unidad,Requerido para Cambiar refrigerante,133.39,657.61
+955,1307,74,4.61,Unidad,Requerido para Inspeccionar DPF,217.94,1004.70
+956,1307,24,4.32,Unidad,Requerido para Inspeccionar DPF,42.98,185.67
+957,1311,74,1.43,Unidad,Requerido para Verificar presión,217.94,311.65
+958,1311,35,1.13,Unidad,Requerido para Verificar presión,2.72,3.07
+959,1312,25,4.51,Unidad,Requerido para Cambiar aceite de transmisión,269.56,1215.72
+960,1312,64,1.21,Unidad,Requerido para Cambiar aceite de transmisión,56.35,68.18
+961,1314,77,1.19,Metro,Requerido para Revisar terminales,71.69,85.31
+962,1315,2,4.33,Litro,Requerido para Cambiar cañerías,17.88,77.42
+963,1315,51,1.65,Unidad,Requerido para Cambiar cañerías,45.82,75.60
+964,1315,58,2.69,Unidad,Requerido para Cambiar cañerías,3.64,9.79
+965,1316,2,2.32,Litro,Requerido para Pintar partes oxidadas,17.88,41.48
+966,1316,67,2.92,Unidad,Requerido para Pintar partes oxidadas,3.52,10.28
+967,1318,44,1.98,Unidad,Requerido para Engrasar puntos de lubricación,88.15,174.54
+968,1318,52,4.80,Unidad,Requerido para Engrasar puntos de lubricación,218.84,1050.43
+969,1319,54,3.56,Kg,Requerido para Cambiar empaques,13.04,46.42
+970,1319,13,2.60,Litro,Requerido para Cambiar empaques,21.90,56.94
+971,1319,78,1.09,Unidad,Requerido para Cambiar empaques,3.29,3.59
+972,1320,8,2.93,Unidad,Requerido para Revisar asiento,41.64,122.01
+973,1321,38,1.27,Unidad,Requerido para Revisar convertidor,0.47,0.60
+974,1321,11,4.05,Unidad,Requerido para Revisar convertidor,146.31,592.56
+975,1321,31,4.83,Unidad,Requerido para Revisar convertidor,25.38,122.59
+976,1322,35,2.63,Unidad,Requerido para Revisar bomba de agua,2.72,7.15
+977,1322,52,2.22,Unidad,Requerido para Revisar bomba de agua,218.84,485.82
+978,1322,16,1.59,Unidad,Requerido para Revisar bomba de agua,4290.92,6822.56
+979,1324,80,2.67,Unidad,Requerido para Verificar tablero,172.31,460.07
+980,1324,73,1.44,Litro,Requerido para Verificar tablero,24.39,35.12
+981,1324,53,4.54,Unidad,Requerido para Verificar tablero,1053.50,4782.89
+982,1325,19,4.60,Unidad,Requerido para Engrasar articulaciones,895.75,4120.45
+983,1326,36,1.77,Unidad,Requerido para Cambiar filtro de cabina,2.74,4.85
+984,1326,53,4.63,Unidad,Requerido para Cambiar filtro de cabina,1053.50,4877.71
+985,1326,56,2.73,Unidad,Requerido para Cambiar filtro de cabina,17.23,47.04
+986,1327,19,1.19,Unidad,Requerido para Engrasar articulaciones,895.75,1065.94
+987,1328,70,3.28,Unidad,Requerido para Verificar juego,48.52,159.15
+988,1328,66,3.26,Litro,Requerido para Verificar juego,34.56,112.67
+989,1328,59,3.90,Unidad,Requerido para Verificar juego,0.59,2.30
+990,1330,19,1.00,Unidad,Requerido para Ajustar frenos,895.75,895.75
+991,1333,62,4.85,Unidad,Requerido para Verificar nivel de aceite,99.38,481.99
+992,1333,26,2.00,Metro,Requerido para Verificar nivel de aceite,70.24,140.48
+993,1335,24,4.11,Unidad,Requerido para Tomar muestra de aceite,42.98,176.65
+994,1335,30,1.34,Kg,Requerido para Tomar muestra de aceite,7.86,10.53
+995,1336,69,1.20,Litro,Requerido para Verificar juego,26.98,32.38
+996,1336,62,3.99,Unidad,Requerido para Verificar juego,99.38,396.53
+997,1336,35,1.08,Unidad,Requerido para Verificar juego,2.72,2.94
+998,1340,50,1.89,Kg,Requerido para Inspeccionar conexiones,18.78,35.49
+999,1340,35,3.17,Unidad,Requerido para Inspeccionar conexiones,2.72,8.62
+1000,1340,33,3.33,Spray,Requerido para Inspeccionar conexiones,16.08,53.55
+1001,1342,2,1.93,Litro,Requerido para Verificar tablero,17.88,34.51
+1002,1343,37,2.86,Unidad,Requerido para Verificar funcionamiento de motor,1.38,3.95
+1003,1346,78,2.63,Unidad,Requerido para Verificar cilindros,3.29,8.65
+1004,1346,35,4.70,Unidad,Requerido para Verificar cilindros,2.72,12.78
+1005,1348,61,3.65,Pliego,Requerido para Verificar presión,1.73,6.31
+1006,1349,3,1.84,Litro,Requerido para Soldar refuerzos,36.87,67.84
+1007,1349,1,3.72,Litro,Requerido para Soldar refuerzos,26.81,99.73
+1008,1349,11,1.08,Unidad,Requerido para Soldar refuerzos,146.31,158.01
+1009,1352,26,3.63,Metro,Requerido para Ajustar frenos,70.24,254.97
+1010,1352,47,1.45,Kg,Requerido para Ajustar frenos,9.44,13.69
+1011,1355,75,1.12,Rollo,Requerido para Inspeccionar rodillos,15.57,17.44
+1012,1355,50,3.42,Kg,Requerido para Inspeccionar rodillos,18.78,64.23
+1013,1355,59,3.19,Unidad,Requerido para Inspeccionar rodillos,0.59,1.88
+1014,1356,61,1.62,Pliego,Requerido para Verificar cardanes,1.73,2.80
+1015,1356,80,1.32,Unidad,Requerido para Verificar cardanes,172.31,227.45
+1016,1357,67,1.10,Unidad,Requerido para Revisar bomba de agua,3.52,3.87
+1017,1357,7,2.37,Unidad,Requerido para Revisar bomba de agua,40.85,96.81
+1018,1367,64,2.10,Unidad,Requerido para Soldar refuerzos,56.35,118.34
+1019,1367,4,4.42,Litro,Requerido para Soldar refuerzos,27.70,122.43
+1020,1367,68,4.34,Unidad,Requerido para Soldar refuerzos,323.88,1405.64
+1021,1368,15,3.52,Litro,Requerido para Ajustar tensión,18.94,66.67
+1022,1369,48,2.97,Pliego,Requerido para Pintar partes oxidadas,1.57,4.66
+1023,1371,66,1.13,Litro,Requerido para Revisar discos,34.56,39.05
+1024,1371,25,3.01,Unidad,Requerido para Revisar discos,269.56,811.38
+1025,1373,22,4.39,Unidad,Requerido para Engrasar crucetas,33.32,146.27
+1026,1373,10,2.67,Unidad,Requerido para Engrasar crucetas,79.32,211.78
+1027,1373,50,3.75,Kg,Requerido para Engrasar crucetas,18.78,70.43
+1028,1378,19,1.34,Unidad,Requerido para Revisar bomba de agua,895.75,1200.31
+1029,1378,14,1.79,Litro,Requerido para Revisar bomba de agua,32.61,58.37
+1030,1385,73,4.01,Litro,Requerido para Verificar alternador,24.39,97.80
+1031,1385,11,4.41,Unidad,Requerido para Verificar alternador,146.31,645.23
+1032,1385,50,1.89,Kg,Requerido para Verificar alternador,18.78,35.49
+1033,1394,77,4.28,Metro,Requerido para Cambiar filtro de combustible,71.69,306.83
+1034,1394,16,4.61,Unidad,Requerido para Cambiar filtro de combustible,4290.92,19781.14
+1035,1394,72,1.23,Unidad,Requerido para Cambiar filtro de combustible,5.86,7.21
+1036,1401,28,4.13,Unidad,Requerido para Verificar líquido de frenos,1222.27,5047.98
+1037,1401,64,3.90,Unidad,Requerido para Verificar líquido de frenos,56.35,219.77
+1038,1403,73,2.12,Litro,Requerido para Revisar bomba de agua,24.39,51.71
+1039,1405,12,1.35,Unidad,Requerido para Revisar luces de trabajo,96.61,130.42
+1040,1405,58,2.08,Unidad,Requerido para Revisar luces de trabajo,3.64,7.57
+1041,1407,51,3.31,Unidad,Requerido para Cambiar filtro de cabina,45.82,151.66
+1042,1410,11,2.28,Unidad,Requerido para Ajustar pernos de rueda,146.31,333.59
+1043,1410,9,4.07,Unidad,Requerido para Ajustar pernos de rueda,119.93,488.12
+1044,1410,8,2.87,Unidad,Requerido para Ajustar pernos de rueda,41.64,119.51
+1045,1411,25,3.21,Unidad,Requerido para Cambiar aceite de transmisión,269.56,865.29
+1046,1411,60,2.51,Unidad,Requerido para Cambiar aceite de transmisión,3.00,7.53
+1047,1412,78,1.40,Unidad,Requerido para Revisar bomba de dirección,3.29,4.61
+1048,1413,18,4.73,Unidad,Requerido para Inspeccionar correas,176.73,835.93
+1049,1418,16,2.32,Unidad,Requerido para Engrasar articulaciones,4290.92,9954.93
+1050,1418,70,1.42,Unidad,Requerido para Engrasar articulaciones,48.52,68.90
+1051,1418,72,1.12,Unidad,Requerido para Engrasar articulaciones,5.86,6.56
+1052,1422,45,1.17,Unidad,Requerido para Limpiar radiador,58.60,68.56
+1053,1422,73,1.18,Litro,Requerido para Limpiar radiador,24.39,28.78
+1054,1425,57,3.59,Unidad,Requerido para Revisar batería,133.39,478.87
+1055,1426,20,1.15,Metro,Requerido para Verificar cilindros,23.31,26.81
+1056,1426,58,1.14,Unidad,Requerido para Verificar cilindros,3.64,4.15
+1057,1426,24,4.45,Unidad,Requerido para Verificar cilindros,42.98,191.26
+1058,1427,54,1.09,Kg,Requerido para Limpiar pre-filtro,13.04,14.21
+1059,1427,38,2.15,Unidad,Requerido para Limpiar pre-filtro,0.47,1.01
+1060,1427,57,4.92,Unidad,Requerido para Limpiar pre-filtro,133.39,656.28
+1061,1429,71,4.17,Unidad,Requerido para Engrasar articulaciones,100.49,419.04
+1062,1429,4,2.54,Litro,Requerido para Engrasar articulaciones,27.70,70.36
+1063,1429,9,2.93,Unidad,Requerido para Engrasar articulaciones,119.93,351.39
+1064,1430,15,3.43,Litro,Requerido para Revisar vidrios,18.94,64.96
+1065,1430,26,3.01,Metro,Requerido para Revisar vidrios,70.24,211.42
+1066,1430,11,4.87,Unidad,Requerido para Revisar vidrios,146.31,712.53
+1067,1436,42,3.61,Unidad,Requerido para Revisar nivel de refrigerante,14.16,51.12
+1068,1436,5,2.52,Kg,Requerido para Revisar nivel de refrigerante,13.83,34.85
+1069,1436,67,1.24,Unidad,Requerido para Revisar nivel de refrigerante,3.52,4.36
+1070,1440,48,4.19,Pliego,Requerido para Revisar pastillas,1.57,6.58
+1071,1440,71,4.39,Unidad,Requerido para Revisar pastillas,100.49,441.15
+1072,1440,43,1.69,Unidad,Requerido para Revisar pastillas,112.47,190.07
+1073,1443,30,2.30,Kg,Requerido para Verificar sprockets,7.86,18.08
+1074,1443,11,1.06,Unidad,Requerido para Verificar sprockets,146.31,155.09
+1075,1443,17,4.48,Unidad,Requerido para Verificar sprockets,3202.55,14347.42
+1076,1445,37,4.44,Unidad,Requerido para Revisar vidrios,1.38,6.13
+1077,1445,51,1.25,Unidad,Requerido para Revisar vidrios,45.82,57.28
+1078,1445,77,3.96,Metro,Requerido para Revisar vidrios,71.69,283.89
+1079,1446,21,4.84,Unidad,Requerido para Drenar tanque,5.01,24.25
+1080,1446,59,1.66,Unidad,Requerido para Drenar tanque,0.59,0.98
+1081,1457,18,4.77,Unidad,Requerido para Cambiar refrigerante,176.73,843.00
+1082,1461,23,4.80,Unidad,Requerido para Verificar cardanes,76.86,368.93
+1083,1461,58,1.06,Unidad,Requerido para Verificar cardanes,3.64,3.86
+1084,1461,46,3.24,Litro,Requerido para Verificar cardanes,27.33,88.55
+1085,1464,51,4.14,Unidad,Requerido para Verificar nivel de aceite,45.82,189.69
+1086,1464,59,4.61,Unidad,Requerido para Verificar nivel de aceite,0.59,2.72
+1087,1464,55,3.43,Kg,Requerido para Verificar nivel de aceite,10.52,36.08
+1088,1466,70,4.64,Unidad,Requerido para Inspección visual,48.52,225.13
+1089,1466,7,4.65,Unidad,Requerido para Inspección visual,40.85,189.95
+1090,1466,4,3.58,Litro,Requerido para Inspección visual,27.70,99.17
+1091,1467,10,2.09,Unidad,Requerido para Verificar motor de arranque,79.32,165.78
+1092,1467,18,4.66,Unidad,Requerido para Verificar motor de arranque,176.73,823.56
+1093,1467,38,3.24,Unidad,Requerido para Verificar motor de arranque,0.47,1.52
+1094,1468,26,3.68,Metro,Requerido para Ajustar pernos de rueda,70.24,258.48
+1095,1469,47,2.29,Kg,Requerido para Verificar cilindros,9.44,21.62
+1096,1469,42,2.07,Unidad,Requerido para Verificar cilindros,14.16,29.31
+1097,1469,54,1.60,Kg,Requerido para Verificar cilindros,13.04,20.86
+1098,1471,59,4.59,Unidad,Requerido para Cambiar filtro de aceite,0.59,2.71
+1099,1471,34,1.92,Spray,Requerido para Cambiar filtro de aceite,12.09,23.21
+1100,1471,68,2.12,Unidad,Requerido para Cambiar filtro de aceite,323.88,686.63
+1101,1473,28,1.44,Unidad,Requerido para Verificar sprockets,1222.27,1760.07
+1102,1474,13,3.39,Litro,Requerido para Verificar líquido de frenos,21.90,74.24
+1103,1474,20,4.57,Metro,Requerido para Verificar líquido de frenos,23.31,106.53
+1104,1474,37,4.11,Unidad,Requerido para Verificar líquido de frenos,1.38,5.67
+1105,1475,62,2.50,Unidad,Requerido para Cambiar aceite de motor,99.38,248.45
+1106,1476,53,3.03,Unidad,Requerido para Cambiar empaques,1053.50,3192.11
+1107,1476,62,1.47,Unidad,Requerido para Cambiar empaques,99.38,146.09
+1108,1476,49,4.89,Unidad,Requerido para Cambiar empaques,4.68,22.89
+1109,1478,52,1.90,Unidad,Requerido para Ajustar frenos,218.84,415.80
+1110,1479,21,1.30,Unidad,Requerido para Verificar cilindros,5.01,6.51
+1111,1480,51,2.76,Unidad,Requerido para Revisar luces de trabajo,45.82,126.46
+1112,1480,7,2.56,Unidad,Requerido para Revisar luces de trabajo,40.85,104.58
+1113,1480,18,3.23,Unidad,Requerido para Revisar luces de trabajo,176.73,570.84
+1114,1481,50,2.97,Kg,Requerido para Engrasar puntos de lubricación,18.78,55.78
+1115,1483,61,4.35,Pliego,Requerido para Limpiar filtros de aire acondicionado,1.73,7.53
+1116,1483,52,3.95,Unidad,Requerido para Limpiar filtros de aire acondicionado,218.84,864.42
+1117,1488,71,4.03,Unidad,Requerido para Inspeccionar correas,100.49,404.97
+1118,1488,31,4.49,Unidad,Requerido para Inspeccionar correas,25.38,113.96
+1119,1489,48,4.21,Pliego,Requerido para Cambiar bocinas,1.57,6.61
+1120,1489,59,2.28,Unidad,Requerido para Cambiar bocinas,0.59,1.35
+1121,1489,68,2.85,Unidad,Requerido para Cambiar bocinas,323.88,923.06
+1122,1491,5,1.22,Kg,Requerido para Revisar inyectores,13.83,16.87
+1123,1491,41,4.16,Unidad,Requerido para Revisar inyectores,0.48,2.00
+1124,1497,58,2.16,Unidad,Requerido para Cambiar aceite de transmisión,3.64,7.86
+1125,1500,74,1.03,Unidad,Requerido para Verificar alternador,217.94,224.48
+1126,1502,75,1.97,Rollo,Requerido para Cambiar filtro de aceite,15.57,30.67
+1127,1502,58,2.25,Unidad,Requerido para Cambiar filtro de aceite,3.64,8.19
+1128,1504,78,2.80,Unidad,Requerido para Inspeccionar DPF,3.29,9.21
+1129,1504,66,4.37,Litro,Requerido para Inspeccionar DPF,34.56,151.03
+1130,1504,52,4.05,Unidad,Requerido para Inspeccionar DPF,218.84,886.30
+1131,1505,79,2.10,Unidad,Requerido para Revisar inyectores,0.54,1.13
+1132,1505,64,4.93,Unidad,Requerido para Revisar inyectores,56.35,277.81
+1133,1506,35,3.31,Unidad,Requerido para Inspeccionar desgaste,2.72,9.00
+1134,1506,34,4.20,Spray,Requerido para Inspeccionar desgaste,12.09,50.78
+1135,1508,44,4.43,Unidad,Requerido para Lavar equipo completo,88.15,390.50
+1136,1510,46,1.45,Litro,Requerido para Verificar bomba de combustible,27.33,39.63
+1137,1510,17,2.25,Unidad,Requerido para Verificar bomba de combustible,3202.55,7205.74
+1138,1511,36,1.48,Unidad,Requerido para Ajustar tensión,2.74,4.06
+1139,1511,38,2.19,Unidad,Requerido para Ajustar tensión,0.47,1.03
+1140,1511,76,4.62,Unidad,Requerido para Ajustar tensión,1.67,7.72
+1141,1512,4,2.64,Litro,Requerido para Ajustar embrague,27.70,73.13
+1142,1512,33,3.75,Spray,Requerido para Ajustar embrague,16.08,60.30
+1143,1512,39,2.67,Kit,Requerido para Ajustar embrague,47.51,126.85
+1144,1513,2,3.31,Litro,Requerido para Cambiar empaques,17.88,59.18
+1145,1513,66,1.45,Litro,Requerido para Cambiar empaques,34.56,50.11
+1146,1514,68,3.37,Unidad,Requerido para Cambiar aceite hidráulico,323.88,1091.48
+1147,1518,1,1.67,Litro,Requerido para Revisar bomba de agua,26.81,44.77
+1148,1518,31,3.57,Unidad,Requerido para Revisar bomba de agua,25.38,90.61
+1149,1518,46,2.77,Litro,Requerido para Revisar bomba de agua,27.33,75.70
+1150,1519,67,2.86,Unidad,Requerido para Soldar refuerzos,3.52,10.07
+1151,1521,42,4.88,Unidad,Requerido para Revisar nivel de refrigerante,14.16,69.10
+1152,1521,34,2.55,Spray,Requerido para Revisar nivel de refrigerante,12.09,30.83
+1153,1521,45,2.77,Unidad,Requerido para Revisar nivel de refrigerante,58.60,162.32
+1154,1522,63,2.52,Unidad,Requerido para Revisar mangueras,6.08,15.32
+1155,1522,3,3.12,Litro,Requerido para Revisar mangueras,36.87,115.03
+1156,1522,30,1.08,Kg,Requerido para Revisar mangueras,7.86,8.49
+1157,1523,3,3.65,Litro,Requerido para Revisar convertidor,36.87,134.58
+1158,1524,67,1.91,Unidad,Requerido para Verificar silenciador,3.52,6.72
+1159,1524,45,1.61,Unidad,Requerido para Verificar silenciador,58.60,94.35
+1160,1525,55,3.85,Kg,Requerido para Cambiar cañerías,10.52,40.50
+1161,1528,63,3.68,Unidad,Requerido para Verificar líquido de frenos,6.08,22.37
+1162,1528,21,2.34,Unidad,Requerido para Verificar líquido de frenos,5.01,11.72
+1163,1528,74,4.90,Unidad,Requerido para Verificar líquido de frenos,217.94,1067.91
+1164,1529,14,3.90,Litro,Requerido para Verificar cilindros,32.61,127.18
+1165,1529,79,3.52,Unidad,Requerido para Verificar cilindros,0.54,1.90
+1166,1529,11,2.53,Unidad,Requerido para Verificar cilindros,146.31,370.16
+1167,1531,9,3.69,Unidad,Requerido para Pintar partes oxidadas,119.93,442.54
+1168,1532,29,4.01,Unidad,Requerido para Cambiar filtro de combustible,2414.37,9681.62
+1169,1535,61,3.32,Pliego,Requerido para Revisar terminales,1.73,5.74
+1170,1535,45,3.48,Unidad,Requerido para Revisar terminales,58.60,203.93
+1171,1537,32,2.05,Rollo,Requerido para Verificar termostato,12.22,25.05
+1172,1537,13,2.15,Litro,Requerido para Verificar termostato,21.90,47.09
+1173,1544,73,3.18,Litro,Requerido para Verificar cilindros,24.39,77.56
+1174,1544,38,4.32,Unidad,Requerido para Verificar cilindros,0.47,2.03
+1175,1544,26,2.06,Metro,Requerido para Verificar cilindros,70.24,144.69
+1176,1546,78,4.84,Unidad,Requerido para Limpiar filtros de aire acondicionado,3.29,15.92
+1177,1546,11,2.36,Unidad,Requerido para Limpiar filtros de aire acondicionado,146.31,345.29
+1178,1547,26,4.97,Metro,Requerido para Verificar alternador,70.24,349.09
+1179,1547,64,1.32,Unidad,Requerido para Verificar alternador,56.35,74.38
+1180,1547,7,2.42,Unidad,Requerido para Verificar alternador,40.85,98.86
+1181,1554,38,1.06,Unidad,Requerido para Revisar luces de trabajo,0.47,0.50
+1182,1554,35,1.74,Unidad,Requerido para Revisar luces de trabajo,2.72,4.73
+1183,1554,36,2.33,Unidad,Requerido para Revisar luces de trabajo,2.74,6.38
+1184,1558,49,2.06,Unidad,Requerido para Limpiar pre-filtro,4.68,9.64
+1185,1558,78,3.15,Unidad,Requerido para Limpiar pre-filtro,3.29,10.36
+1186,1558,27,4.74,Unidad,Requerido para Limpiar pre-filtro,35.91,170.21
+1187,1561,62,4.21,Unidad,Requerido para Limpiar radiador,99.38,418.39
+1188,1561,68,1.07,Unidad,Requerido para Limpiar radiador,323.88,346.55
+1189,1563,72,1.58,Unidad,Requerido para Cambiar empaques,5.86,9.26
+1190,1563,56,2.97,Unidad,Requerido para Cambiar empaques,17.23,51.17
+1191,1563,57,1.59,Unidad,Requerido para Cambiar empaques,133.39,212.09
+1192,1564,63,4.71,Unidad,Requerido para Revisar nivel de refrigerante,6.08,28.64
+1193,1564,57,2.83,Unidad,Requerido para Revisar nivel de refrigerante,133.39,377.49
+1194,1568,79,1.68,Unidad,Requerido para Verificar sprockets,0.54,0.91
+1195,1568,49,3.95,Unidad,Requerido para Verificar sprockets,4.68,18.49
+1196,1571,4,2.04,Litro,Requerido para Reparar abolladuras,27.70,56.51
+1197,1572,66,2.03,Litro,Requerido para Ajustar embrague,34.56,70.16
+1198,1572,50,2.73,Kg,Requerido para Ajustar embrague,18.78,51.27
+1199,1573,2,4.52,Litro,Requerido para Ajustar pernos de rueda,17.88,80.82
+1200,1573,75,4.68,Rollo,Requerido para Ajustar pernos de rueda,15.57,72.87
+1201,1573,36,3.88,Unidad,Requerido para Ajustar pernos de rueda,2.74,10.63
+1202,1574,67,2.86,Unidad,Requerido para Cambiar sellos de cilindro,3.52,10.07
+1203,1575,67,4.11,Unidad,Requerido para Cambiar filtro de aceite,3.52,14.47
+1204,1575,41,1.58,Unidad,Requerido para Cambiar filtro de aceite,0.48,0.76
+1205,1576,64,2.23,Unidad,Requerido para Verificar bomba de combustible,56.35,125.66
+1206,1586,34,1.47,Spray,Requerido para Revisar luces de trabajo,12.09,17.77
+1207,1588,79,2.66,Unidad,Requerido para Limpiar radiador,0.54,1.44
+1208,1591,25,3.48,Unidad,Requerido para Verificar motor de arranque,269.56,938.07
+1209,1593,65,2.51,Unidad,Requerido para Cambiar aceite de transmisión,1.94,4.87
+1210,1593,79,3.93,Unidad,Requerido para Cambiar aceite de transmisión,0.54,2.12
+1211,1595,74,2.13,Unidad,Requerido para Inspeccionar correas,217.94,464.21
+1212,1595,68,3.75,Unidad,Requerido para Inspeccionar correas,323.88,1214.55
+1213,1597,80,1.94,Unidad,Requerido para Pintar partes oxidadas,172.31,334.28
+1214,1597,31,2.10,Unidad,Requerido para Pintar partes oxidadas,25.38,53.30
+1215,1600,60,4.95,Unidad,Requerido para Revisar asiento,3.00,14.85
+1216,1603,71,4.47,Unidad,Requerido para Cambiar aceite de transmisión,100.49,449.19
+1217,1603,27,4.34,Unidad,Requerido para Cambiar aceite de transmisión,35.91,155.85
+1218,1604,37,1.53,Unidad,Requerido para Verificar motor de arranque,1.38,2.11
+1219,1604,64,2.53,Unidad,Requerido para Verificar motor de arranque,56.35,142.57
+1220,1604,63,2.15,Unidad,Requerido para Verificar motor de arranque,6.08,13.07
+1221,1606,45,4.01,Unidad,Requerido para Revisar vidrios,58.60,234.99
+1222,1608,9,1.50,Unidad,Requerido para Cambiar refrigerante,119.93,179.90
+1223,1608,36,3.78,Unidad,Requerido para Cambiar refrigerante,2.74,10.36
+1224,1609,26,3.44,Metro,Requerido para Verificar pasadores,70.24,241.63
+1225,1609,60,4.66,Unidad,Requerido para Verificar pasadores,3.00,13.98
+1226,1609,7,2.59,Unidad,Requerido para Verificar pasadores,40.85,105.80
+1227,1611,38,2.22,Unidad,Requerido para Verificar funcionamiento de motor,0.47,1.04
+1228,1611,49,2.93,Unidad,Requerido para Verificar funcionamiento de motor,4.68,13.71
+1229,1611,42,1.84,Unidad,Requerido para Verificar funcionamiento de motor,14.16,26.05
+1230,1615,14,3.16,Litro,Requerido para Verificar bomba de combustible,32.61,103.05
+1231,1628,57,2.38,Unidad,Requerido para Cambiar cañerías,133.39,317.47
+1232,1628,38,2.59,Unidad,Requerido para Cambiar cañerías,0.47,1.22
+1233,1628,50,2.97,Kg,Requerido para Cambiar cañerías,18.78,55.78
+1234,1629,42,2.91,Unidad,Requerido para Cambiar bocinas,14.16,41.21
+1235,1630,33,2.24,Spray,Requerido para Medir presiones de bomba,16.08,36.02
+1236,1630,79,4.35,Unidad,Requerido para Medir presiones de bomba,0.54,2.35
+1237,1630,34,4.37,Spray,Requerido para Medir presiones de bomba,12.09,52.83
+1238,1631,77,2.31,Metro,Requerido para Cambiar filtro de cabina,71.69,165.60
+1239,1632,19,2.31,Unidad,Requerido para Inspeccionar desgaste,895.75,2069.18
+1240,1634,39,4.13,Kit,Requerido para Cambiar filtro de aire,47.51,196.22
+1241,1634,27,2.75,Unidad,Requerido para Cambiar filtro de aire,35.91,98.75
+1242,1638,46,3.50,Litro,Requerido para Cambiar aceite de transmisión,27.33,95.66
+1243,1640,31,3.42,Unidad,Requerido para Revisar nivel de refrigerante,25.38,86.80
+1244,1640,56,4.41,Unidad,Requerido para Revisar nivel de refrigerante,17.23,75.98
+1245,1641,34,2.87,Spray,Requerido para Revisar luces de trabajo,12.09,34.70
+1246,1641,4,1.49,Litro,Requerido para Revisar luces de trabajo,27.70,41.27
+1247,1653,38,2.80,Unidad,Requerido para Limpiar filtros de aire acondicionado,0.47,1.32
+1248,1653,59,3.21,Unidad,Requerido para Limpiar filtros de aire acondicionado,0.59,1.89
+1249,1661,19,2.93,Unidad,Requerido para Revisar vidrios,895.75,2624.55
+1250,1661,64,4.38,Unidad,Requerido para Revisar vidrios,56.35,246.81
+1251,1661,48,4.91,Pliego,Requerido para Revisar vidrios,1.57,7.71
+1252,1665,65,4.78,Unidad,Requerido para Inspeccionar DPF,1.94,9.27
+1253,1665,72,1.03,Unidad,Requerido para Inspeccionar DPF,5.86,6.04
+1254,1666,7,1.79,Unidad,Requerido para Ajustar embrague,40.85,73.12
+1255,1666,61,2.28,Pliego,Requerido para Ajustar embrague,1.73,3.94
+1256,1666,76,3.46,Unidad,Requerido para Ajustar embrague,1.67,5.78
+1257,1668,62,1.98,Unidad,Requerido para Verificar sprockets,99.38,196.77
+1258,1668,38,4.76,Unidad,Requerido para Verificar sprockets,0.47,2.24
+1259,1668,66,1.99,Litro,Requerido para Verificar sprockets,34.56,68.77
+1260,1670,69,2.34,Litro,Requerido para Tomar muestra de aceite,26.98,63.13
+1261,1670,64,4.22,Unidad,Requerido para Tomar muestra de aceite,56.35,237.80
+1262,1674,9,3.13,Unidad,Requerido para Cambiar cañerías,119.93,375.38
+1263,1674,5,4.89,Kg,Requerido para Cambiar cañerías,13.83,67.63
+1264,1674,13,4.69,Litro,Requerido para Cambiar cañerías,21.90,102.71
+1265,1675,5,1.26,Kg,Requerido para Soldar refuerzos,13.83,17.43
+1266,1677,76,1.02,Unidad,Requerido para Verificar controles,1.67,1.70
+1267,1683,35,2.95,Unidad,Requerido para Lavar equipo completo,2.72,8.02
+1268,1683,63,1.18,Unidad,Requerido para Lavar equipo completo,6.08,7.17
+1269,1686,76,2.85,Unidad,Requerido para Cambiar filtro de aire,1.67,4.76
+1270,1686,5,4.60,Kg,Requerido para Cambiar filtro de aire,13.83,63.62
+1271,1686,12,3.30,Unidad,Requerido para Cambiar filtro de aire,96.61,318.81
+1272,1687,15,4.30,Litro,Requerido para Revisar asiento,18.94,81.44
+1273,1689,34,3.62,Spray,Requerido para Revisar tensión de cadena,12.09,43.77
+1274,1689,61,1.54,Pliego,Requerido para Revisar tensión de cadena,1.73,2.66
+1275,1692,37,4.07,Unidad,Requerido para Lavar equipo completo,1.38,5.62
+1276,1692,53,3.95,Unidad,Requerido para Lavar equipo completo,1053.50,4161.33
+1277,1696,2,3.24,Litro,Requerido para Reparar pinchazo,17.88,57.93
+1278,1696,78,4.04,Unidad,Requerido para Reparar pinchazo,3.29,13.29
+1279,1696,22,4.37,Unidad,Requerido para Reparar pinchazo,33.32,145.61
+1280,1697,17,4.94,Unidad,Requerido para Verificar pasadores,3202.55,15820.60
+1281,1697,56,3.78,Unidad,Requerido para Verificar pasadores,17.23,65.13
+1282,1697,9,3.90,Unidad,Requerido para Verificar pasadores,119.93,467.73
+1283,1701,2,1.14,Litro,Requerido para Lavar equipo completo,17.88,20.38
+1284,1702,11,1.35,Unidad,Requerido para Revisar asiento,146.31,197.52
+1285,1702,70,4.34,Unidad,Requerido para Revisar asiento,48.52,210.58
+1286,1703,37,4.24,Unidad,Requerido para Engrasar articulaciones,1.38,5.85
+1287,1703,19,4.27,Unidad,Requerido para Engrasar articulaciones,895.75,3824.85
+1288,1706,14,1.59,Litro,Requerido para Rotar neumáticos,32.61,51.85
+1289,1708,4,3.27,Litro,Requerido para Revisar convertidor,27.70,90.58
+1290,1712,22,4.42,Unidad,Requerido para Purgar sistema de frenos,33.32,147.27
+1291,1712,31,3.33,Unidad,Requerido para Purgar sistema de frenos,25.38,84.52
+1292,1713,70,4.18,Unidad,Requerido para Ajustar tensión,48.52,202.81
+1293,1714,79,1.76,Unidad,Requerido para Inspeccionar desgaste,0.54,0.95
+1294,1714,39,4.92,Kit,Requerido para Inspeccionar desgaste,47.51,233.75
+1295,1716,49,2.19,Unidad,Requerido para Cambiar cañerías,4.68,10.25
+1296,1718,73,4.44,Litro,Requerido para Tomar muestra de aceite,24.39,108.29
+1297,1718,4,3.41,Litro,Requerido para Tomar muestra de aceite,27.70,94.46
+1298,1718,60,1.26,Unidad,Requerido para Tomar muestra de aceite,3.00,3.78
+1299,1725,11,3.49,Unidad,Requerido para Cambiar filtro de cabina,146.31,510.62
+1300,1725,40,1.06,Unidad,Requerido para Cambiar filtro de cabina,23.36,24.76
+1301,1728,65,4.23,Unidad,Requerido para Cambiar refrigerante,1.94,8.21
+1302,1729,47,2.86,Kg,Requerido para Revisar batería,9.44,27.00
+1303,1729,38,4.40,Unidad,Requerido para Revisar batería,0.47,2.07
+1304,1729,64,1.43,Unidad,Requerido para Revisar batería,56.35,80.58
+1305,1730,22,1.46,Unidad,Requerido para Ajustar tensión,33.32,48.65
+1306,1730,36,3.91,Unidad,Requerido para Ajustar tensión,2.74,10.71
+1307,1733,28,4.53,Unidad,Requerido para Verificar presión,1222.27,5536.88
+1308,1733,38,4.09,Unidad,Requerido para Verificar presión,0.47,1.92
+1309,1733,60,2.95,Unidad,Requerido para Verificar presión,3.00,8.85
+1310,1738,49,2.67,Unidad,Requerido para Cambiar filtro de cabina,4.68,12.50
+1311,1738,80,3.32,Unidad,Requerido para Cambiar filtro de cabina,172.31,572.07
+1312,1739,60,1.15,Unidad,Requerido para Verificar controles,3.00,3.45
+1313,1739,49,2.59,Unidad,Requerido para Verificar controles,4.68,12.12
+1314,1740,62,1.04,Unidad,Requerido para Reparar abolladuras,99.38,103.36
+1315,1740,16,1.60,Unidad,Requerido para Reparar abolladuras,4290.92,6865.47
+1316,1744,80,2.37,Unidad,Requerido para Revisar bomba de agua,172.31,408.37
+1317,1745,56,2.81,Unidad,Requerido para Revisar pastillas,17.23,48.42
+1318,1745,59,2.14,Unidad,Requerido para Revisar pastillas,0.59,1.26
+1319,1747,54,2.70,Kg,Requerido para Inspeccionar conexiones,13.04,35.21
+1320,1749,8,3.22,Unidad,Requerido para Inspeccionar correas,41.64,134.08
+1321,1749,38,3.26,Unidad,Requerido para Inspeccionar correas,0.47,1.53
+1322,1749,50,3.08,Kg,Requerido para Inspeccionar correas,18.78,57.84
+1323,1750,63,1.98,Unidad,Requerido para Cambiar aceite de transmisión,6.08,12.04
+1324,1752,37,3.21,Unidad,Requerido para Cambiar filtro de aire,1.38,4.43
+1325,1752,2,2.74,Litro,Requerido para Cambiar filtro de aire,17.88,48.99
+1326,1753,56,4.27,Unidad,Requerido para Cambiar aceite hidráulico,17.23,73.57
+1327,1753,32,4.73,Rollo,Requerido para Cambiar aceite hidráulico,12.22,57.80
+1328,1756,17,4.44,Unidad,Requerido para Revisar asiento,3202.55,14219.32
+1329,1756,32,3.60,Rollo,Requerido para Revisar asiento,12.22,43.99
+1330,1757,17,2.31,Unidad,Requerido para Revisar nivel de refrigerante,3202.55,7397.89
+1331,1757,13,1.08,Litro,Requerido para Revisar nivel de refrigerante,21.90,23.65
+1332,1757,75,3.15,Rollo,Requerido para Revisar nivel de refrigerante,15.57,49.05
+1333,1758,48,1.80,Pliego,Requerido para Revisar asiento,1.57,2.83
+1334,1758,54,2.88,Kg,Requerido para Revisar asiento,13.04,37.56
+1335,1759,58,1.16,Unidad,Requerido para Alinear dirección,3.64,4.22
+1336,1762,20,1.42,Metro,Requerido para Reparar pinchazo,23.31,33.10
+1337,1763,24,4.31,Unidad,Requerido para Cambiar cañerías,42.98,185.24
+1338,1766,53,1.19,Unidad,Requerido para Revisar bomba de dirección,1053.50,1253.67
+1339,1766,66,2.02,Litro,Requerido para Revisar bomba de dirección,34.56,69.81
+1340,1767,22,4.24,Unidad,Requerido para Revisar dientes,33.32,141.28
+1341,1767,79,2.16,Unidad,Requerido para Revisar dientes,0.54,1.17
+1342,1769,52,4.44,Unidad,Requerido para Verificar termostato,218.84,971.65
+1343,1769,64,3.05,Unidad,Requerido para Verificar termostato,56.35,171.87
+1344,1772,58,1.54,Unidad,Requerido para Cambiar aceite hidráulico,3.64,5.61
+1345,1772,45,1.09,Unidad,Requerido para Cambiar aceite hidráulico,58.60,63.87
+1346,1774,58,4.13,Unidad,Requerido para Medir presiones de bomba,3.64,15.03
+1347,1775,69,1.56,Litro,Requerido para Revisar terminales,26.98,42.09
+1348,1775,49,1.79,Unidad,Requerido para Revisar terminales,4.68,8.38
+1349,1776,77,3.54,Metro,Requerido para Inspeccionar conexiones,71.69,253.78
+1350,1777,53,1.47,Unidad,Requerido para Cambiar aceite de transmisión,1053.50,1548.65
+1351,1779,34,2.23,Spray,Requerido para Limpiar trampa de agua,12.09,26.96
+1352,1779,26,3.13,Metro,Requerido para Limpiar trampa de agua,70.24,219.85
+1353,1779,6,3.03,Kg,Requerido para Limpiar trampa de agua,11.87,35.97
+1354,1780,10,3.63,Unidad,Requerido para Lavar equipo completo,79.32,287.93
+1355,1780,18,2.39,Unidad,Requerido para Lavar equipo completo,176.73,422.38
+1356,1781,56,1.15,Unidad,Requerido para Inspeccionar DPF,17.23,19.81
+1357,1782,80,4.55,Unidad,Requerido para Revisar bomba de agua,172.31,784.01
+1358,1782,40,1.08,Unidad,Requerido para Revisar bomba de agua,23.36,25.23
+1359,1782,58,3.45,Unidad,Requerido para Revisar bomba de agua,3.64,12.56
+1360,1783,65,3.34,Unidad,Requerido para Cambiar filtro de cabina,1.94,6.48
+1361,1787,62,4.03,Unidad,Requerido para Drenar tanque,99.38,400.50
+1362,1787,63,3.01,Unidad,Requerido para Drenar tanque,6.08,18.30
+1363,1787,32,1.44,Rollo,Requerido para Drenar tanque,12.22,17.60
+1364,1790,62,1.22,Unidad,Requerido para Engrasar articulaciones,99.38,121.24
+1365,1790,72,3.89,Unidad,Requerido para Engrasar articulaciones,5.86,22.80
+1366,1790,33,4.13,Spray,Requerido para Engrasar articulaciones,16.08,66.41
+1367,1791,36,4.26,Unidad,Requerido para Ajustar embrague,2.74,11.67
+1368,1791,60,3.19,Unidad,Requerido para Ajustar embrague,3.00,9.57
+1369,1792,66,4.52,Litro,Requerido para Medir desgaste de zapatas,34.56,156.21
+1370,1792,78,3.84,Unidad,Requerido para Medir desgaste de zapatas,3.29,12.63
+1371,1800,66,3.49,Litro,Requerido para Reparar abolladuras,34.56,120.61
+1372,1800,41,3.55,Unidad,Requerido para Reparar abolladuras,0.48,1.70
+1373,1800,48,1.45,Pliego,Requerido para Reparar abolladuras,1.57,2.28
+1374,1801,2,4.59,Litro,Requerido para Verificar cilindros,17.88,82.07
+1375,1802,77,4.63,Metro,Requerido para Pintar partes oxidadas,71.69,331.92
+1376,1802,51,4.01,Unidad,Requerido para Pintar partes oxidadas,45.82,183.74
+1377,1802,64,3.35,Unidad,Requerido para Pintar partes oxidadas,56.35,188.77
+1378,1804,12,4.42,Unidad,Requerido para Revisar dientes,96.61,427.02
+1379,1804,74,3.97,Unidad,Requerido para Revisar dientes,217.94,865.22
+1380,1804,45,3.66,Unidad,Requerido para Revisar dientes,58.60,214.48
+1381,1808,35,3.10,Unidad,Requerido para Verificar motor de arranque,2.72,8.43
+1382,1809,29,4.74,Unidad,Requerido para Limpiar radiador,2414.37,11444.11
+1383,1809,20,1.88,Metro,Requerido para Limpiar radiador,23.31,43.82
+1384,1810,68,1.55,Unidad,Requerido para Revisar cinturón de seguridad,323.88,502.01
+1385,1811,15,2.34,Litro,Requerido para Revisar turbo,18.94,44.32
+1386,1811,20,3.81,Metro,Requerido para Revisar turbo,23.31,88.81
+1387,1813,59,1.84,Unidad,Requerido para Ajustar frenos,0.59,1.09
+1388,1813,8,3.71,Unidad,Requerido para Ajustar frenos,41.64,154.48
+1389,1813,62,4.07,Unidad,Requerido para Ajustar frenos,99.38,404.48
+1390,1814,49,4.45,Unidad,Requerido para Revisar convertidor,4.68,20.83
+1391,1818,24,1.76,Unidad,Requerido para Inspeccionar rodillos,42.98,75.64
+1392,1818,9,4.85,Unidad,Requerido para Inspeccionar rodillos,119.93,581.66
+1393,1818,19,1.30,Unidad,Requerido para Inspeccionar rodillos,895.75,1164.48
+1394,1827,10,4.09,Unidad,Requerido para Pintar partes oxidadas,79.32,324.42
+1395,1827,28,1.86,Unidad,Requerido para Pintar partes oxidadas,1222.27,2273.42
+1396,1832,79,2.30,Unidad,Requerido para Reparar pinchazo,0.54,1.24
+1397,1833,65,1.57,Unidad,Requerido para Purgar sistema de frenos,1.94,3.05
+1398,1834,72,2.19,Unidad,Requerido para Inspeccionar DPF,5.86,12.83
+1399,1834,25,3.60,Unidad,Requerido para Inspeccionar DPF,269.56,970.42
+1400,1842,7,2.98,Unidad,Requerido para Inspeccionar conexiones,40.85,121.73
+1401,1842,6,3.06,Kg,Requerido para Inspeccionar conexiones,11.87,36.32
+1402,1847,40,1.62,Unidad,Requerido para Revisar soportes de motor,23.36,37.84
+1403,1847,68,4.68,Unidad,Requerido para Revisar soportes de motor,323.88,1515.76
+1404,1847,8,4.64,Unidad,Requerido para Revisar soportes de motor,41.64,193.21
+1405,1848,17,4.96,Unidad,Requerido para Cambiar filtro de combustible,3202.55,15884.65
+1406,1848,14,1.47,Litro,Requerido para Cambiar filtro de combustible,32.61,47.94
+1407,1848,7,4.31,Unidad,Requerido para Cambiar filtro de combustible,40.85,176.06
+1408,1849,59,3.45,Unidad,Requerido para Drenar tanque,0.59,2.04
+1409,1849,71,3.62,Unidad,Requerido para Drenar tanque,100.49,363.77
+1410,1850,42,1.74,Unidad,Requerido para Verificar juego,14.16,24.64
+1411,1850,60,2.90,Unidad,Requerido para Verificar juego,3.00,8.70
+1412,1850,32,3.97,Rollo,Requerido para Verificar juego,12.22,48.51
+1413,1853,71,2.44,Unidad,Requerido para Tomar muestra de aceite,100.49,245.20
+1414,1853,52,2.38,Unidad,Requerido para Tomar muestra de aceite,218.84,520.84
+1415,1854,17,4.20,Unidad,Requerido para Revisar turbo,3202.55,13450.71
+1416,1855,45,4.41,Unidad,Requerido para Cambiar filtro de cabina,58.60,258.43
+1417,1855,14,4.85,Litro,Requerido para Cambiar filtro de cabina,32.61,158.16
+1418,1857,14,3.74,Litro,Requerido para Cambiar sellos de cilindro,32.61,121.96
+1419,1857,8,1.44,Unidad,Requerido para Cambiar sellos de cilindro,41.64,59.96
+1420,1857,27,1.88,Unidad,Requerido para Cambiar sellos de cilindro,35.91,67.51
+1421,1861,7,1.99,Unidad,Requerido para Revisar cinturón de seguridad,40.85,81.29
+1422,1863,48,1.65,Pliego,Requerido para Verificar tablero,1.57,2.59
+1423,1863,72,2.23,Unidad,Requerido para Verificar tablero,5.86,13.07
+1424,1866,25,1.22,Unidad,Requerido para Inspección visual,269.56,328.86
+1425,1866,64,2.48,Unidad,Requerido para Inspección visual,56.35,139.75
+1426,1871,51,2.18,Unidad,Requerido para Revisar pastillas,45.82,99.89
+1427,1871,57,2.26,Unidad,Requerido para Revisar pastillas,133.39,301.46
+1428,1871,62,2.60,Unidad,Requerido para Revisar pastillas,99.38,258.39
+1429,1873,48,4.18,Pliego,Requerido para Drenar tanque,1.57,6.56
+1430,1873,7,1.17,Unidad,Requerido para Drenar tanque,40.85,47.79
+1431,1877,37,3.03,Unidad,Requerido para Rotar neumáticos,1.38,4.18
+1432,1877,4,4.51,Litro,Requerido para Rotar neumáticos,27.70,124.93
+1433,1880,19,1.56,Unidad,Requerido para Verificar líquido de frenos,895.75,1397.37
+1434,1884,33,2.53,Spray,Requerido para Revisar mangueras,16.08,40.68
+1435,1884,43,2.06,Unidad,Requerido para Revisar mangueras,112.47,231.69
+1436,1885,19,3.55,Unidad,Requerido para Cambiar bocinas,895.75,3179.91
+1437,1885,34,2.27,Spray,Requerido para Cambiar bocinas,12.09,27.44
+1438,1886,13,3.64,Litro,Requerido para Inspeccionar DPF,21.90,79.72
+1439,1886,69,4.14,Litro,Requerido para Inspeccionar DPF,26.98,111.70
+1440,1887,14,3.19,Litro,Requerido para Revisar tensión de cadena,32.61,104.03
+1441,1887,32,3.75,Rollo,Requerido para Revisar tensión de cadena,12.22,45.83
+1442,1892,54,4.49,Kg,Requerido para Ajustar válvulas,13.04,58.55
+1443,1892,36,1.42,Unidad,Requerido para Ajustar válvulas,2.74,3.89
+1444,1892,33,2.52,Spray,Requerido para Ajustar válvulas,16.08,40.52
+1445,1895,65,2.57,Unidad,Requerido para Rotar neumáticos,1.94,4.99
+1446,1895,66,3.00,Litro,Requerido para Rotar neumáticos,34.56,103.68
+1447,1895,5,2.45,Kg,Requerido para Rotar neumáticos,13.83,33.88
+1448,1896,55,2.62,Kg,Requerido para Revisar nivel de refrigerante,10.52,27.56
+1449,1896,76,2.55,Unidad,Requerido para Revisar nivel de refrigerante,1.67,4.26
+1450,1896,13,2.88,Litro,Requerido para Revisar nivel de refrigerante,21.90,63.07
+1451,1897,50,4.61,Kg,Requerido para Verificar pasadores,18.78,86.58
+1452,1897,39,1.92,Kit,Requerido para Verificar pasadores,47.51,91.22
+1453,1899,34,2.16,Spray,Requerido para Verificar controles,12.09,26.11
+1454,1901,24,2.43,Unidad,Requerido para Inspeccionar correas,42.98,104.44
+1455,1901,31,1.18,Unidad,Requerido para Inspeccionar correas,25.38,29.95
+1456,1905,13,2.53,Litro,Requerido para Revisar vidrios,21.90,55.41
+1457,1909,16,1.98,Unidad,Requerido para Verificar líquido de frenos,4290.92,8496.02
+1458,1910,76,3.60,Unidad,Requerido para Reparar pinchazo,1.67,6.01
+1459,1912,9,1.60,Unidad,Requerido para Inspeccionar DPF,119.93,191.89
+1460,1912,8,2.89,Unidad,Requerido para Inspeccionar DPF,41.64,120.34
+1461,1913,26,1.82,Metro,Requerido para Cambiar aceite de motor,70.24,127.84
+1462,1913,64,4.40,Unidad,Requerido para Cambiar aceite de motor,56.35,247.94
+1463,1913,5,2.82,Kg,Requerido para Cambiar aceite de motor,13.83,39.00
+1464,1914,44,3.71,Unidad,Requerido para Revisar luces de trabajo,88.15,327.04
+1465,1918,22,2.99,Unidad,Requerido para Revisar cinturón de seguridad,33.32,99.63
+1466,1918,49,3.48,Unidad,Requerido para Revisar cinturón de seguridad,4.68,16.29
+1467,1918,80,1.44,Unidad,Requerido para Revisar cinturón de seguridad,172.31,248.13
+1468,1920,68,4.87,Unidad,Requerido para Revisar convertidor,323.88,1577.30
+1469,1920,5,4.37,Kg,Requerido para Revisar convertidor,13.83,60.44
+1470,1920,2,1.00,Litro,Requerido para Revisar convertidor,17.88,17.88
+1471,1921,35,2.41,Unidad,Requerido para Pintar partes oxidadas,2.72,6.56
+1472,1921,72,1.48,Unidad,Requerido para Pintar partes oxidadas,5.86,8.67
+1473,1924,46,1.18,Litro,Requerido para Revisar soportes de motor,27.33,32.25
+1474,1926,32,4.47,Rollo,Requerido para Revisar tubo de escape,12.22,54.62
+1475,1926,74,1.55,Unidad,Requerido para Revisar tubo de escape,217.94,337.81
+1476,1926,21,3.77,Unidad,Requerido para Revisar tubo de escape,5.01,18.89
+1477,1929,50,4.21,Kg,Requerido para Verificar juego,18.78,79.06
+1478,1936,24,3.52,Unidad,Requerido para Verificar nivel de aceite,42.98,151.29
+1479,1936,74,4.71,Unidad,Requerido para Verificar nivel de aceite,217.94,1026.50
+1480,1936,78,2.68,Unidad,Requerido para Verificar nivel de aceite,3.29,8.82
+1481,1945,29,2.26,Unidad,Requerido para Verificar presión,2414.37,5456.48
+1482,1945,52,1.02,Unidad,Requerido para Verificar presión,218.84,223.22
+1483,1946,6,4.55,Kg,Requerido para Revisar dientes,11.87,54.01
+1484,1947,18,3.18,Unidad,Requerido para Verificar termostato,176.73,562.00
+1485,1947,60,2.03,Unidad,Requerido para Verificar termostato,3.00,6.09
+1486,1947,63,3.26,Unidad,Requerido para Verificar termostato,6.08,19.82
+1487,1948,46,4.30,Litro,Requerido para Revisar tubo de escape,27.33,117.52
+1488,1948,26,3.08,Metro,Requerido para Revisar tubo de escape,70.24,216.34
+1489,1948,42,2.65,Unidad,Requerido para Revisar tubo de escape,14.16,37.52
+1490,1950,60,4.86,Unidad,Requerido para Revisar inyectores,3.00,14.58
+1491,1950,65,1.96,Unidad,Requerido para Revisar inyectores,1.94,3.80
+1492,1951,16,2.99,Unidad,Requerido para Inspección visual,4290.92,12829.85
+1493,1952,21,3.09,Unidad,Requerido para Engrasar crucetas,5.01,15.48
+1494,1956,13,2.21,Litro,Requerido para Verificar presión,21.90,48.40
+1495,1956,61,1.55,Pliego,Requerido para Verificar presión,1.73,2.68
+1496,1958,41,2.44,Unidad,Requerido para Inspeccionar rodillos,0.48,1.17
+1497,1961,9,3.59,Unidad,Requerido para Revisar bomba de dirección,119.93,430.55
+1498,1961,46,4.87,Litro,Requerido para Revisar bomba de dirección,27.33,133.10
+1499,1965,38,1.71,Unidad,Requerido para Limpiar pre-filtro,0.47,0.80
+1500,1965,46,4.57,Litro,Requerido para Limpiar pre-filtro,27.33,124.90
+1501,1966,72,2.72,Unidad,Requerido para Reparar pinchazo,5.86,15.94
+1502,1966,40,2.94,Unidad,Requerido para Reparar pinchazo,23.36,68.68
+1503,1969,71,3.48,Unidad,Requerido para Verificar funcionamiento de motor,100.49,349.71
+1504,1969,48,1.17,Pliego,Requerido para Verificar funcionamiento de motor,1.57,1.84
+1505,1969,35,4.86,Unidad,Requerido para Verificar funcionamiento de motor,2.72,13.22
+1506,1970,15,2.98,Litro,Requerido para Engrasar articulaciones,18.94,56.44
+1507,1971,19,1.56,Unidad,Requerido para Revisar mangueras,895.75,1397.37
+1508,1971,38,2.92,Unidad,Requerido para Revisar mangueras,0.47,1.37
+1509,1972,45,2.43,Unidad,Requerido para Revisar inyectores,58.60,142.40
+1510,1972,51,4.39,Unidad,Requerido para Revisar inyectores,45.82,201.15
+1511,1972,63,2.79,Unidad,Requerido para Revisar inyectores,6.08,16.96
+1512,1974,20,3.47,Metro,Requerido para Engrasar articulaciones,23.31,80.89
+1513,1974,21,1.85,Unidad,Requerido para Engrasar articulaciones,5.01,9.27
+1514,1975,41,3.74,Unidad,Requerido para Revisar convertidor,0.48,1.80
+1515,1975,76,1.23,Unidad,Requerido para Revisar convertidor,1.67,2.05
+1516,1981,42,4.84,Unidad,Requerido para Revisar tubo de escape,14.16,68.53
+1517,1981,47,3.64,Kg,Requerido para Revisar tubo de escape,9.44,34.36
+1518,1981,51,4.22,Unidad,Requerido para Revisar tubo de escape,45.82,193.36
+1519,1983,10,3.89,Unidad,Requerido para Limpiar trampa de agua,79.32,308.55
+1520,1983,53,1.86,Unidad,Requerido para Limpiar trampa de agua,1053.50,1959.51
+1521,1983,1,2.64,Litro,Requerido para Limpiar trampa de agua,26.81,70.78
+1522,1984,60,2.33,Unidad,Requerido para Ajustar frenos,3.00,6.99
+1523,1986,59,3.67,Unidad,Requerido para Verificar cilindros,0.59,2.17
+1524,1986,44,2.70,Unidad,Requerido para Verificar cilindros,88.15,238.01
+1525,1988,29,3.24,Unidad,Requerido para Revisar terminales,2414.37,7822.56
+1526,1988,46,2.02,Litro,Requerido para Revisar terminales,27.33,55.21
+1527,1988,24,1.24,Unidad,Requerido para Revisar terminales,42.98,53.30
+1528,1990,26,2.47,Metro,Requerido para Cambiar empaques,70.24,173.49
+1529,1991,73,2.63,Litro,Requerido para Cambiar refrigerante,24.39,64.15
+1530,1991,67,3.38,Unidad,Requerido para Cambiar refrigerante,3.52,11.90
+1531,1991,47,4.70,Kg,Requerido para Cambiar refrigerante,9.44,44.37
+1532,1994,11,2.73,Unidad,Requerido para Revisar inyectores,146.31,399.43
+1533,1995,29,4.10,Unidad,Requerido para Cambiar aceite hidráulico,2414.37,9898.92
+1534,1995,33,2.97,Spray,Requerido para Cambiar aceite hidráulico,16.08,47.76
+1535,1995,69,4.17,Litro,Requerido para Cambiar aceite hidráulico,26.98,112.51
+1536,1996,54,4.97,Kg,Requerido para Verificar alternador,13.04,64.81
+1537,2004,47,3.31,Kg,Requerido para Cambiar filtro de cabina,9.44,31.25
+1538,2011,25,3.99,Unidad,Requerido para Cambiar cañerías,269.56,1075.54
+1539,2011,29,2.22,Unidad,Requerido para Cambiar cañerías,2414.37,5359.90
+1540,2011,26,1.93,Metro,Requerido para Cambiar cañerías,70.24,135.56
+1541,2013,14,1.16,Litro,Requerido para Cambiar filtro de cabina,32.61,37.83
+1542,2017,36,3.42,Unidad,Requerido para Verificar cilindros,2.74,9.37
+1543,2017,13,3.98,Litro,Requerido para Verificar cilindros,21.90,87.16
+1544,2017,26,2.10,Metro,Requerido para Verificar cilindros,70.24,147.50
+1545,2023,15,4.44,Litro,Requerido para Revisar asiento,18.94,84.09
+1546,2023,79,1.18,Unidad,Requerido para Revisar asiento,0.54,0.64
+1547,2024,43,2.37,Unidad,Requerido para Revisar bomba de dirección,112.47,266.55
+1548,2025,80,3.39,Unidad,Requerido para Revisar vidrios,172.31,584.13
+1549,2025,52,3.58,Unidad,Requerido para Revisar vidrios,218.84,783.45
+1550,2027,62,1.11,Unidad,Requerido para Revisar mangueras,99.38,110.31
+1551,2029,68,2.24,Unidad,Requerido para Cambiar filtro de cabina,323.88,725.49
+1552,2030,62,2.06,Unidad,Requerido para Revisar batería,99.38,204.72
+1553,2030,54,2.54,Kg,Requerido para Revisar batería,13.04,33.12
+1554,2030,31,2.64,Unidad,Requerido para Revisar batería,25.38,67.00
+1555,2033,4,3.35,Litro,Requerido para Engrasar articulaciones,27.70,92.80
+1556,2033,67,1.90,Unidad,Requerido para Engrasar articulaciones,3.52,6.69
+1557,2033,35,1.57,Unidad,Requerido para Engrasar articulaciones,2.72,4.27
+1558,2037,68,4.25,Unidad,Requerido para Revisar cinturón de seguridad,323.88,1376.49
+1559,2037,4,2.99,Litro,Requerido para Revisar cinturón de seguridad,27.70,82.82
+1560,2037,29,4.65,Unidad,Requerido para Revisar cinturón de seguridad,2414.37,11226.82
+1561,2040,61,3.88,Pliego,Requerido para Cambiar aceite de motor,1.73,6.71
+1562,2040,58,3.10,Unidad,Requerido para Cambiar aceite de motor,3.64,11.28
+1563,2042,48,2.04,Pliego,Requerido para Revisar tensión de cadena,1.57,3.20
+1564,2043,50,1.94,Kg,Requerido para Verificar cardanes,18.78,36.43
+1565,2044,17,1.30,Unidad,Requerido para Cambiar aceite hidráulico,3202.55,4163.32
+1566,2044,12,4.59,Unidad,Requerido para Cambiar aceite hidráulico,96.61,443.44
+1567,2046,34,2.80,Spray,Requerido para Drenar tanque,12.09,33.85
+1568,2046,10,4.21,Unidad,Requerido para Drenar tanque,79.32,333.94
+1569,2046,7,3.37,Unidad,Requerido para Drenar tanque,40.85,137.66
+1570,2047,75,2.55,Rollo,Requerido para Revisar asiento,15.57,39.70
+1571,2047,76,2.76,Unidad,Requerido para Revisar asiento,1.67,4.61
+1572,2048,51,3.57,Unidad,Requerido para Limpiar radiador,45.82,163.58
+1573,2048,40,1.74,Unidad,Requerido para Limpiar radiador,23.36,40.65
+1574,2050,14,1.57,Litro,Requerido para Verificar alternador,32.61,51.20
+1575,2050,46,4.87,Litro,Requerido para Verificar alternador,27.33,133.10
+1576,2051,5,1.62,Kg,Requerido para Verificar bomba de combustible,13.83,22.40
+1577,2051,41,4.85,Unidad,Requerido para Verificar bomba de combustible,0.48,2.33
+1578,2052,26,3.20,Metro,Requerido para Ajustar tensión,70.24,224.77
+1579,2052,50,4.11,Kg,Requerido para Ajustar tensión,18.78,77.19
+1580,2052,29,4.98,Unidad,Requerido para Ajustar tensión,2414.37,12023.56
+1581,2053,49,3.75,Unidad,Requerido para Purgar sistema de frenos,4.68,17.55
+1582,2053,75,1.82,Rollo,Requerido para Purgar sistema de frenos,15.57,28.34
+1583,2053,69,4.74,Litro,Requerido para Purgar sistema de frenos,26.98,127.89
+1584,2054,31,4.22,Unidad,Requerido para Verificar termostato,25.38,107.10
+1585,2054,71,3.34,Unidad,Requerido para Verificar termostato,100.49,335.64
+1586,2055,42,4.99,Unidad,Requerido para Lavar equipo completo,14.16,70.66
+1587,2055,64,4.35,Unidad,Requerido para Lavar equipo completo,56.35,245.12
+1588,2061,43,3.01,Unidad,Requerido para Cambiar filtro de combustible,112.47,338.53
+1589,2061,65,3.07,Unidad,Requerido para Cambiar filtro de combustible,1.94,5.96
+1590,2062,30,4.38,Kg,Requerido para Ajustar válvulas,7.86,34.43
+1591,2062,44,4.19,Unidad,Requerido para Ajustar válvulas,88.15,369.35
+1592,2062,69,1.32,Litro,Requerido para Ajustar válvulas,26.98,35.61
+1593,2063,4,4.18,Litro,Requerido para Medir presiones de bomba,27.70,115.79
+1594,2063,61,2.27,Pliego,Requerido para Medir presiones de bomba,1.73,3.93
+1595,2063,26,1.42,Metro,Requerido para Medir presiones de bomba,70.24,99.74
+1596,2065,25,4.82,Unidad,Requerido para Revisar tubo de escape,269.56,1299.28
+1597,2069,51,3.24,Unidad,Requerido para Limpiar trampa de agua,45.82,148.46
+1598,2069,50,4.42,Kg,Requerido para Limpiar trampa de agua,18.78,83.01
+1599,2069,45,1.91,Unidad,Requerido para Limpiar trampa de agua,58.60,111.93
+1600,2077,7,4.54,Unidad,Requerido para Limpiar filtros de aire acondicionado,40.85,185.46
+1601,2078,45,1.23,Unidad,Requerido para Verificar cardanes,58.60,72.08
+1602,2078,35,2.00,Unidad,Requerido para Verificar cardanes,2.72,5.44
+1603,2087,10,2.51,Unidad,Requerido para Limpiar radiador,79.32,199.09
+1604,2087,17,2.15,Unidad,Requerido para Limpiar radiador,3202.55,6885.48
+1605,2087,39,3.47,Kit,Requerido para Limpiar radiador,47.51,164.86
+1606,2091,13,3.16,Litro,Requerido para Verificar silenciador,21.90,69.20
+1607,2092,43,3.35,Unidad,Requerido para Inspeccionar correas,112.47,376.77
+1608,2092,49,1.77,Unidad,Requerido para Inspeccionar correas,4.68,8.28
+1609,2092,11,2.19,Unidad,Requerido para Inspeccionar correas,146.31,320.42
+1610,2098,22,2.15,Unidad,Requerido para Revisar turbo,33.32,71.64
+1611,2098,54,2.25,Kg,Requerido para Revisar turbo,13.04,29.34
+1612,2098,57,4.25,Unidad,Requerido para Revisar turbo,133.39,566.91
+1613,2099,63,4.51,Unidad,Requerido para Limpiar filtros de aire acondicionado,6.08,27.42
+1614,2099,75,2.25,Rollo,Requerido para Limpiar filtros de aire acondicionado,15.57,35.03
+1615,2099,16,3.28,Unidad,Requerido para Limpiar filtros de aire acondicionado,4290.92,14074.22
+1616,2104,76,3.59,Unidad,Requerido para Verificar líquido de frenos,1.67,6.00
+1617,2115,33,2.75,Spray,Requerido para Inspeccionar DPF,16.08,44.22
+1618,2117,5,2.00,Kg,Requerido para Ajustar embrague,13.83,27.66
+1619,2118,63,4.19,Unidad,Requerido para Drenar tanque,6.08,25.48
+1620,2118,7,3.37,Unidad,Requerido para Drenar tanque,40.85,137.66
+1621,2121,60,4.17,Unidad,Requerido para Revisar turbo,3.00,12.51
+1622,2121,30,4.75,Kg,Requerido para Revisar turbo,7.86,37.34
+1623,2121,71,3.97,Unidad,Requerido para Revisar turbo,100.49,398.95
+1624,2122,25,2.32,Unidad,Requerido para Verificar controles,269.56,625.38
+1625,2122,38,2.30,Unidad,Requerido para Verificar controles,0.47,1.08
+1626,2122,71,1.60,Unidad,Requerido para Verificar controles,100.49,160.78
+1627,2124,32,4.75,Rollo,Requerido para Verificar juego,12.22,58.05
+1628,2125,47,4.33,Kg,Requerido para Inspeccionar rodillos,9.44,40.88
+1629,2125,76,2.44,Unidad,Requerido para Inspeccionar rodillos,1.67,4.07
+1630,2126,38,4.49,Unidad,Requerido para Cambiar bocinas,0.47,2.11
+1631,2127,25,1.63,Unidad,Requerido para Purgar sistema de frenos,269.56,439.38
+1632,2127,77,3.82,Metro,Requerido para Purgar sistema de frenos,71.69,273.86
+1633,2127,65,1.39,Unidad,Requerido para Purgar sistema de frenos,1.94,2.70
+1634,2128,55,1.50,Kg,Requerido para Cambiar aceite hidráulico,10.52,15.78
+1635,2128,16,4.26,Unidad,Requerido para Cambiar aceite hidráulico,4290.92,18279.32
+1636,2128,43,3.98,Unidad,Requerido para Cambiar aceite hidráulico,112.47,447.63
+1637,2130,49,1.17,Unidad,Requerido para Ajustar embrague,4.68,5.48
+1638,2134,80,1.15,Unidad,Requerido para Verificar presión,172.31,198.16
+1639,2136,58,3.39,Unidad,Requerido para Tomar muestra de aceite,3.64,12.34
+1640,2137,73,4.37,Litro,Requerido para Cambiar empaques,24.39,106.58
+1641,2137,50,4.60,Kg,Requerido para Cambiar empaques,18.78,86.39
+1642,2138,64,1.75,Unidad,Requerido para Limpiar trampa de agua,56.35,98.61
+1643,2140,50,3.28,Kg,Requerido para Limpiar filtros de aire acondicionado,18.78,61.60
+1644,2140,66,1.79,Litro,Requerido para Limpiar filtros de aire acondicionado,34.56,61.86
+1645,2142,30,4.42,Kg,Requerido para Purgar sistema de frenos,7.86,34.74
+1646,2142,69,3.57,Litro,Requerido para Purgar sistema de frenos,26.98,96.32
+1647,2142,41,4.08,Unidad,Requerido para Purgar sistema de frenos,0.48,1.96
+1648,2144,57,1.49,Unidad,Requerido para Ajustar pernos de rueda,133.39,198.75
+1649,2144,37,2.47,Unidad,Requerido para Ajustar pernos de rueda,1.38,3.41
+1650,2144,11,4.04,Unidad,Requerido para Ajustar pernos de rueda,146.31,591.09
+1651,2147,17,4.50,Unidad,Requerido para Medir presiones de bomba,3202.55,14411.48
+1652,2147,78,3.62,Unidad,Requerido para Medir presiones de bomba,3.29,11.91
+1653,2148,5,3.51,Kg,Requerido para Revisar bomba de agua,13.83,48.54
+1654,2148,8,1.47,Unidad,Requerido para Revisar bomba de agua,41.64,61.21
+1655,2151,52,4.03,Unidad,Requerido para Cambiar aceite de motor,218.84,881.93
+1656,2151,17,4.28,Unidad,Requerido para Cambiar aceite de motor,3202.55,13706.91
+1657,2153,51,3.04,Unidad,Requerido para Medir desgaste de zapatas,45.82,139.29
+1658,2153,24,4.92,Unidad,Requerido para Medir desgaste de zapatas,42.98,211.46
+1659,2153,64,2.19,Unidad,Requerido para Medir desgaste de zapatas,56.35,123.41
+1660,2154,61,4.04,Pliego,Requerido para Cambiar aceite de transmisión,1.73,6.99
+1661,2154,30,2.43,Kg,Requerido para Cambiar aceite de transmisión,7.86,19.10
+1662,2154,77,2.85,Metro,Requerido para Cambiar aceite de transmisión,71.69,204.32
+1663,2157,23,2.86,Unidad,Requerido para Verificar cardanes,76.86,219.82
+1664,2161,23,2.28,Unidad,Requerido para Alinear dirección,76.86,175.24
+1665,2161,59,3.98,Unidad,Requerido para Alinear dirección,0.59,2.35
+1666,2161,29,2.87,Unidad,Requerido para Alinear dirección,2414.37,6929.24
+1667,2167,37,2.53,Unidad,Requerido para Ajustar frenos,1.38,3.49
+1668,2167,57,3.22,Unidad,Requerido para Ajustar frenos,133.39,429.52
+1669,2170,47,2.86,Kg,Requerido para Verificar silenciador,9.44,27.00
+1670,2170,5,4.25,Kg,Requerido para Verificar silenciador,13.83,58.78
+1671,2172,66,2.09,Litro,Requerido para Verificar funcionamiento de motor,34.56,72.23
+1672,2178,27,3.77,Unidad,Requerido para Cambiar cañerías,35.91,135.38
+1673,2178,50,3.71,Kg,Requerido para Cambiar cañerías,18.78,69.67
+1674,2180,14,3.88,Litro,Requerido para Purgar sistema de frenos,32.61,126.53
+1675,2183,30,1.79,Kg,Requerido para Verificar termostato,7.86,14.07
+1676,2184,47,1.12,Kg,Requerido para Cambiar bocinas,9.44,10.57
+1677,2184,9,3.93,Unidad,Requerido para Cambiar bocinas,119.93,471.32
+1678,2184,2,4.50,Litro,Requerido para Cambiar bocinas,17.88,80.46
+1679,2186,34,2.88,Spray,Requerido para Drenar tanque,12.09,34.82
+1680,2186,6,1.62,Kg,Requerido para Drenar tanque,11.87,19.23
+1681,2186,44,4.88,Unidad,Requerido para Drenar tanque,88.15,430.17
+1682,2187,37,4.09,Unidad,Requerido para Inspeccionar desgaste,1.38,5.64
+1683,2187,10,3.42,Unidad,Requerido para Inspeccionar desgaste,79.32,271.27
+1684,2187,71,2.80,Unidad,Requerido para Inspeccionar desgaste,100.49,281.37
+1685,2189,9,2.43,Unidad,Requerido para Revisar tubo de escape,119.93,291.43
+1686,2194,5,2.73,Kg,Requerido para Verificar cilindros,13.83,37.76
+1687,2194,35,3.07,Unidad,Requerido para Verificar cilindros,2.72,8.35
+1688,2196,49,1.90,Unidad,Requerido para Cambiar filtro de combustible,4.68,8.89
+1689,2196,56,4.29,Unidad,Requerido para Cambiar filtro de combustible,17.23,73.92
+1690,2200,11,1.06,Unidad,Requerido para Engrasar puntos de lubricación,146.31,155.09

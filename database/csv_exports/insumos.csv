@@ -1,0 +1,81 @@
+﻿id,codigo,nombre,unidad,precio_unitario,cantidad,stock_minimo,categoria,fecha_registro,fecha_actualizacion
+1,INS-001,Aceite de Motor 15W40,Litro,26.81,302,53,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+2,INS-002,Aceite Hidráulico ISO 46,Litro,17.88,555,44,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+3,INS-003,Aceite Transmisión,Litro,36.87,596,62,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+4,INS-004,Aceite de Reductor,Litro,27.70,633,11,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+5,INS-005,Grasa de Rodamientos,Kg,13.83,397,96,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+6,INS-006,Grasa EP2,Kg,11.87,528,60,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+7,INS-007,Filtro de Aceite Motor,Unidad,40.85,435,16,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+8,INS-008,Filtro de Combustible,Unidad,41.64,124,57,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+9,INS-009,Filtro de Aire Primario,Unidad,119.93,137,16,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+10,INS-010,Filtro de Aire Secundario,Unidad,79.32,741,30,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+11,INS-011,Filtro Hidráulico,Unidad,146.31,97,74,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+12,INS-012,Filtro de Transmisión,Unidad,96.61,646,27,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+13,INS-013,Refrigerante Anticongelante,Litro,21.90,619,71,Químicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+14,INS-014,Líquido de Frenos DOT4,Litro,32.61,545,93,Químicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+15,INS-015,Desengrasante Industrial,Litro,18.94,101,87,Químicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+16,INS-016,Neumático 23.5R25,Unidad,4290.92,536,55,Neumáticos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+17,INS-017,Neumático 17.5R25,Unidad,3202.55,481,51,Neumáticos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+18,INS-018,Cámara de Llanta,Unidad,176.73,413,52,Neumáticos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+19,INS-019,Batería 12V 150Ah,Unidad,895.75,736,84,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+20,INS-020,Cable de Batería,Metro,23.31,500,52,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+21,INS-021,Fusible 30A,Unidad,5.01,200,92,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+22,INS-022,Foco Halógeno 24V,Unidad,33.32,193,96,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+23,INS-023,Correa de Alternador,Unidad,76.86,194,89,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+24,INS-024,Rodamiento 6205,Unidad,42.98,471,78,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+25,INS-025,Empaque de Culata,Unidad,269.56,781,12,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+26,INS-026,"Manguera Hidráulica 1/2""",Metro,70.24,84,86,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+27,INS-027,Conexión Rápida,Unidad,35.91,433,54,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+28,INS-028,Cilindro Hidráulico,Unidad,1222.27,356,60,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+29,INS-029,Bomba Hidráulica,Unidad,2414.37,537,72,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+30,INS-030,Trapo Industrial,Kg,7.86,611,41,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+31,INS-031,Silicona Roja,Unidad,25.38,253,38,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+32,INS-032,Cinta Aislante,Rollo,12.22,496,77,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+33,INS-033,Limpiador de Contactos,Spray,16.08,284,81,Químicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+34,INS-034,Aflojatodo,Spray,12.09,379,64,Químicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+35,INS-035,Abrazadera Metálica,Unidad,2.72,615,76,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+36,INS-036,Tornillo Grado 8,Unidad,2.74,469,43,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+37,INS-037,Tuerca de Seguridad,Unidad,1.38,500,67,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+38,INS-038,Arandela de Presión,Unidad,0.47,147,54,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+39,INS-039,O-ring Kit,Kit,47.51,440,86,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+40,INS-040,Retén de Aceite,Unidad,23.36,702,76,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+41,INS-041,Terminal Eléctrico,Unidad,0.48,594,21,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+42,INS-042,Relé 24V,Unidad,14.16,429,52,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+43,INS-043,Sensor de Presión,Unidad,112.47,30,39,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+44,INS-044,Sensor de Temperatura,Unidad,88.15,90,42,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+45,INS-045,Filtro Separador Agua,Unidad,58.60,750,77,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+46,INS-046,Aceite Diferencial,Litro,27.33,460,84,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+47,INS-047,Grasa Chasis,Kg,9.44,572,90,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+48,INS-048,Lija de Agua,Pliego,1.57,341,19,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+49,INS-049,Disco de Corte,Unidad,4.68,304,28,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+50,INS-050,Electrodo 7018,Kg,18.78,62,80,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+51,INS-051,Conexión Rápida Premium,Unidad,45.82,192,26,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+52,INS-052,Cámara de Llanta Premium,Unidad,218.84,515,61,Neumáticos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+53,INS-053,Batería 12V 150Ah Premium,Unidad,1053.50,407,71,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+54,INS-054,Grasa Chasis Premium,Kg,13.04,305,58,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+55,INS-055,Trapo Industrial Premium,Kg,10.52,90,93,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+56,INS-056,Relé 24V Premium,Unidad,17.23,694,70,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+57,INS-057,Filtro de Aire Primario Premium,Unidad,133.39,477,39,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+58,INS-058,Tornillo Grado 8 Premium,Unidad,3.64,657,15,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+59,INS-059,Arandela de Presión Premium,Unidad,0.59,54,56,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+60,INS-060,Abrazadera Metálica Premium,Unidad,3.00,87,69,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+61,INS-061,Lija de Agua Premium,Pliego,1.73,749,21,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+62,INS-062,Filtro de Aire Secundario Premium,Unidad,99.38,560,100,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+63,INS-063,Disco de Corte Premium,Unidad,6.08,666,97,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+64,INS-064,Rodamiento 6205 Premium,Unidad,56.35,108,14,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+65,INS-065,Tuerca de Seguridad Premium,Unidad,1.94,327,59,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+66,INS-066,Aceite Diferencial Premium,Litro,34.56,514,83,Lubricantes,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+67,INS-067,Tornillo Grado 8 Premium,Unidad,3.52,641,46,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+68,INS-068,Empaque de Culata Premium,Unidad,323.88,294,13,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+69,INS-069,Refrigerante Anticongelante Premium,Litro,26.98,415,49,Químicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+70,INS-070,Filtro de Combustible Premium,Unidad,48.52,107,37,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+71,INS-071,Filtro de Aire Secundario Premium,Unidad,100.49,547,46,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+72,INS-072,Disco de Corte Premium,Unidad,5.86,458,57,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+73,INS-073,Refrigerante Anticongelante Premium,Litro,24.39,722,92,Químicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+74,INS-074,Cámara de Llanta Premium,Unidad,217.94,684,69,Neumáticos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+75,INS-075,Cinta Aislante Premium,Rollo,15.57,413,74,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+76,INS-076,Tuerca de Seguridad Premium,Unidad,1.67,559,55,Repuestos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+77,INS-077,"Manguera Hidráulica 1/2"" Premium",Metro,71.69,80,48,Hidráulicos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+78,INS-078,Abrazadera Metálica Premium,Unidad,3.29,116,88,Consumibles,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+79,INS-079,Terminal Eléctrico Premium,Unidad,0.54,511,95,Eléctricos,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)
+80,INS-080,Filtro Hidráulico Premium,Unidad,172.31,571,31,Filtros,Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time),Wed Dec 03 2025 12:03:21 GMT-0400 (Bolivia Time)

@@ -42,14 +42,14 @@ function Inventory() {
 
             if (toolsData.success && toolsData.data) {
                 const filtered = toolsData.data.filter(item =>
-                    (item.nombre || item['Unnamed: 3']) && (item.nombre || item['Unnamed: 3']) !== 'HERRAMIENTA'
+                    item.nombre && item.nombre !== 'HERRAMIENTA'
                 );
                 setTools(filtered);
             }
 
             if (suppliesData.success && suppliesData.data) {
                 const filtered = suppliesData.data.filter(item =>
-                    (item.nombre || item['Unnamed: 3']) && (item.nombre || item['Unnamed: 3']) !== 'INSUMOS'
+                    item.nombre && item.nombre !== 'INSUMOS'
                 );
                 setSupplies(filtered);
             }
@@ -68,8 +68,8 @@ function Inventory() {
         if (!searchTerm) return items;
         const term = searchTerm.toLowerCase();
         return items.filter(item => {
-            const name = ((item.nombre || item['Unnamed: 3']) || '').toLowerCase();
-            const code = ((item.codigo || item['Unnamed: 2']) || '').toLowerCase();
+            const name = (item.nombre || '').toLowerCase();
+            const code = (item.codigo || '').toLowerCase();
             return name.includes(term) || code.includes(term);
         });
     };
@@ -83,37 +83,44 @@ function Inventory() {
             nombre: '',
             marca: '',
             estado: 'OPERATIVO',
+            categoria: '',
             unidad: '',
             precio: '',
-            cantidad: ''
+            cantidad: '',
+            stock_minimo: '',
+            costo: ''
         });
         setShowModal(true);
     };
 
     const handleEdit = (item, index, type) => {
         setModalType(type);
-        setEditingItem(item.id || item['id'] || null);
+        setEditingItem(item.id || null);
         setEditingIndex(index);
         if (type === 'tool') {
             setFormData({
-                codigo: item.codigo || item['Unnamed: 2'] || '',
-                nombre: item.nombre || item['Unnamed: 3'] || '',
-                marca: item.marca || item['Unnamed: 4'] || '',
-                estado: item.estado || item['Unnamed: 5'] || 'OPERATIVO',
+                codigo: item.codigo || '',
+                nombre: item.nombre || '',
+                marca: item.marca || '',
+                estado: item.estado || 'OPERATIVO',
+                categoria: item.categoria || '',
                 unidad: '',
                 precio: '',
                 cantidad: '',
-                costo: item['costo'] || ''
+                stock_minimo: '',
+                costo: item.costo || ''
             });
         } else {
             setFormData({
-                codigo: item.codigo || item['Unnamed: 2'] || '',
-                nombre: item.nombre || item['Unnamed: 3'] || '',
+                codigo: item.codigo || '',
+                nombre: item.nombre || '',
                 marca: '',
                 estado: '',
-                unidad: item.unidad || item['Unnamed: 4'] || '',
-                precio: item.precio_unitario || item['Unnamed: 5'] || '',
-                cantidad: item.cantidad || item['Unnamed: 6'] || ''
+                categoria: item.categoria || '',
+                unidad: item.unidad || '',
+                precio: item.precio_unitario || '',
+                cantidad: item.cantidad || '',
+                stock_minimo: item.stock_minimo || ''
             });
         }
         setShowModal(true);
@@ -123,7 +130,7 @@ function Inventory() {
         const itemType = type === 'tool' ? 'herramienta' : 'insumo';
         if (window.confirm(`¿Estás seguro de que deseas eliminar este ${itemType}?`)) {
             try {
-                const itemId = item.id || item['id'];
+                const itemId = item.id;
                 if (!itemId) {
                     toast.error('Error: ID no encontrado');
                     return;
@@ -152,6 +159,7 @@ function Inventory() {
                     nombre: formData.nombre,
                     marca: formData.marca,
                     estado: formData.estado,
+                    categoria: formData.categoria || '',
                     costo: safeParseFloat(formData.costo)
                 };
             } else {
@@ -160,7 +168,9 @@ function Inventory() {
                     nombre: formData.nombre,
                     unidad: formData.unidad,
                     precio_unitario: safeParseFloat(formData.precio),
-                    cantidad: safeParseInt(formData.cantidad)
+                    cantidad: safeParseInt(formData.cantidad),
+                    stock_minimo: safeParseInt(formData.stock_minimo) || 0,
+                    categoria: formData.categoria || ''
                 };
             }
             
@@ -193,7 +203,7 @@ function Inventory() {
     const filteredSupplies = filterItems(supplies);
 
     const getToolStatusCount = (status) => {
-        return tools.filter(item => (item.estado || item['Unnamed: 5'] || 'OPERATIVO') === status).length;
+        return tools.filter(item => (item.estado || 'OPERATIVO') === status).length;
     };
 
     if (loading) return <Loading message="Cargando inventario" />;
@@ -326,25 +336,25 @@ function Inventory() {
                                     <tr key={index}>
                                         <td>{index + 1}</td>
                                         <td>
-                                            <span className="code-badge">{tool.codigo || tool['Unnamed: 2'] || 'N/A'}</span>
+                                            <span className="code-badge">{tool.codigo || 'N/A'}</span>
                                         </td>
-                                        <td className="item-name" title={tool.nombre || tool['Unnamed: 3']}>
-                                            {tool.nombre || tool['Unnamed: 3'] || 'N/A'}
+                                        <td className="item-name" title={tool.nombre}>
+                                            {tool.nombre || 'N/A'}
                                         </td>
-                                        <td>{tool.marca || tool['Unnamed: 4'] || 'N/A'}</td>
+                                        <td>{tool.marca || 'N/A'}</td>
                                         <td>
                                             <span className={`badge ${
-                                                (tool.estado || tool['Unnamed: 5']) === 'OPERATIVO' ? 'badge-success' : 
-                                                (tool.estado || tool['Unnamed: 5']) === 'MANTENIMIENTO' ? 'badge-warning' : 
+                                                tool.estado === 'OPERATIVO' ? 'badge-success' : 
+                                                tool.estado === 'MANTENIMIENTO' ? 'badge-warning' : 
                                                 'badge-error'
                                             }`}>
-                                                {tool.estado || tool['Unnamed: 5'] || 'N/A'}
+                                                {tool.estado || 'N/A'}
                                             </span>
                                         </td>
                                         <td className="cost-cell">
-                                            {safeFormatCurrency(tool['costo']) ? (
+                                            {safeFormatCurrency(tool.costo) ? (
                                                 <span className="cost-value">
-                                                    {safeFormatCurrency(tool['costo'])}
+                                                    {safeFormatCurrency(tool.costo)}
                                                 </span>
                                             ) : (
                                                 <span className="no-data">-</span>
@@ -406,23 +416,23 @@ function Inventory() {
                                     <tr key={index}>
                                         <td>{index + 1}</td>
                                         <td>
-                                            <span className="code-badge">{supply.codigo || supply['Unnamed: 2'] || 'N/A'}</span>
+                                            <span className="code-badge">{supply.codigo || 'N/A'}</span>
                                         </td>
-                                        <td className="item-name" title={supply.nombre || supply['Unnamed: 3']}>
-                                            {supply.nombre || supply['Unnamed: 3'] || 'N/A'}
+                                        <td className="item-name" title={supply.nombre}>
+                                            {supply.nombre || 'N/A'}
                                         </td>
-                                        <td>{supply.unidad || supply['Unnamed: 4'] || 'N/A'}</td>
+                                        <td>{supply.unidad || 'N/A'}</td>
                                         <td className="price-cell">
-                                            {safeFormatCurrency(supply.precio_unitario || supply['Unnamed: 5']) ? (
-                                                <span>{safeFormatCurrency(supply.precio_unitario || supply['Unnamed: 5'])}</span>
+                                            {safeFormatCurrency(supply.precio_unitario) ? (
+                                                <span>{safeFormatCurrency(supply.precio_unitario)}</span>
                                             ) : (
                                                 <span className="no-data">-</span>
                                             )}
                                         </td>
                                         <td>
-                                            {safeFormatInteger(supply.cantidad || supply['Unnamed: 6']) ? (
+                                            {safeFormatInteger(supply.cantidad) ? (
                                                 <span className="quantity-badge">
-                                                    {safeFormatInteger(supply.cantidad || supply['Unnamed: 6'])}
+                                                    {safeFormatInteger(supply.cantidad)}
                                                 </span>
                                             ) : (
                                                 <span className="no-data">-</span>
@@ -529,6 +539,16 @@ function Inventory() {
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group">
+                                            <label>Categoría</label>
+                                            <input
+                                                type="text"
+                                                value={formData.categoria}
+                                                onChange={(e) => setFormData({...formData, categoria: e.target.value})}
+                                                placeholder="Categoría de la herramienta"
+                                                disabled={isSubmitting}
+                                            />
+                                        </div>
+                                        <div className="form-group">
                                             <label>Costo (Bs.)</label>
                                             <input
                                                 type="number"
@@ -566,13 +586,35 @@ function Inventory() {
                                             />
                                         </div>
                                     </div>
+                                    <div className="form-row">
+                                        <div className="form-group">
+                                            <label>Cantidad</label>
+                                            <input
+                                                type="number"
+                                                value={formData.cantidad}
+                                                onChange={(e) => setFormData({...formData, cantidad: e.target.value})}
+                                                placeholder="Cantidad en stock"
+                                                disabled={isSubmitting}
+                                            />
+                                        </div>
+                                        <div className="form-group">
+                                            <label>Stock Mínimo</label>
+                                            <input
+                                                type="number"
+                                                value={formData.stock_minimo}
+                                                onChange={(e) => setFormData({...formData, stock_minimo: e.target.value})}
+                                                placeholder="0"
+                                                disabled={isSubmitting}
+                                            />
+                                        </div>
+                                    </div>
                                     <div className="form-group">
-                                        <label>Cantidad</label>
+                                        <label>Categoría</label>
                                         <input
-                                            type="number"
-                                            value={formData.cantidad}
-                                            onChange={(e) => setFormData({...formData, cantidad: e.target.value})}
-                                            placeholder="Cantidad en stock"
+                                            type="text"
+                                            value={formData.categoria}
+                                            onChange={(e) => setFormData({...formData, categoria: e.target.value})}
+                                            placeholder="Categoría del insumo"
                                             disabled={isSubmitting}
                                         />
                                     </div>
