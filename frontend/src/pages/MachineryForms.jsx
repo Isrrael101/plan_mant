@@ -354,7 +354,7 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
     const [formData, setFormData] = useState({
         tipo_checklist: 'GENERAL',
         observaciones: '',
-        fecha: '',
+        fecha: new Date().toISOString().split('T')[0], // Default to today's date
         codigo_checklist: '',
         realizado_por: user?.id || '',
         revisado_por: ''
@@ -382,10 +382,26 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
     }, [machineryId]);
 
     const createChecklist = async () => {
+        // Frontend validation
+        if (!formData.fecha || formData.fecha.trim() === '') {
+            toast.error('Por favor, selecciona una fecha');
+            return;
+        }
+        if (!machineryId) {
+            toast.error('Error: No se encontró la maquinaria');
+            return;
+        }
+        
+        // Validar que maquinaria_id sea un número válido
+        if (isNaN(machineryId) || parseInt(machineryId) <= 0) {
+            toast.error('Error: ID de maquinaria no válido');
+            return;
+        }
+
         try {
-            const data = await api.createChecklist({
-                maquinaria_id: machineryId,
-                fecha: formData.fecha,
+            const response = await api.createChecklist({
+                maquinaria_id: parseInt(machineryId),
+                fecha: formData.fecha.trim(),
                 tipo_checklist: formData.tipo_checklist,
                 codigo_checklist: formData.codigo_checklist || null,
                 realizado_por: formData.realizado_por || null,
@@ -393,15 +409,32 @@ function ChecklistView({ checklists, machineryId, onReload, loading }) {
                 observaciones: formData.observaciones || null
             });
 
-            if (data.success) {
+            if (response.success) {
                 toast.success('Checklist creado exitosamente');
                 setShowModal(false);
+                // Reset form to defaults
+                setFormData({
+                    tipo_checklist: 'GENERAL',
+                    observaciones: '',
+                    fecha: new Date().toISOString().split('T')[0],
+                    codigo_checklist: '',
+                    realizado_por: user?.id || '',
+                    revisado_por: ''
+                });
                 onReload();
             } else {
-                toast.error(data.error || 'Error al crear');
+                toast.error(response.error || 'Error al crear checklist');
             }
         } catch (error) {
-            toast.error('Error al crear checklist');
+            console.error('Error creating checklist:', error);
+            // Try to extract error message from response or error object
+            let errorMessage = 'Error al crear checklist';
+            if (error.response?.error) {
+                errorMessage = error.response.error;
+            } else if (error.message) {
+                errorMessage = error.message;
+            }
+            toast.error(errorMessage);
         }
     };
 
@@ -625,55 +658,7 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
                 <td className="checklist-num">{numero}</td>
                 <td className="checklist-elemento">{elemento}</td>
                 <td className={`checklist-condicion ${condicion.toLowerCase()}`}>
-                    {condicion}
-                </td>
-                <td className={`checklist-accion-tipo ${accionTipo.includes('CORRECTIVO') ? 'correctivo' : 'preventivo'}`}>
-                    {accionTipo}
-                </td>
-                <td className="checklist-quien">
                     {isEditing ? (
-                        <input
-                            type="text"
-                            className="checklist-input-small"
-                            value={checklistData[`${campoBase}_quien`] || ''}
-                            onChange={e => onChange(`${campoBase}_quien`, e.target.value)}
-                            placeholder="Quién"
-                        />
-                    ) : (
-                        checklistData[`${campoBase}_quien`] || ''
-                    )}
-                </td>
-                <td className="checklist-cuando">
-                    {isEditing ? (
-                        <input
-                            type="date"
-                            className="checklist-input-small"
-                            value={checklistData[`${campoBase}_cuando`] || ''}
-                            onChange={e => onChange(`${campoBase}_cuando`, e.target.value)}
-                            placeholder="Cuándo"
-                        />
-                    ) : (
-                        checklistData[`${campoBase}_cuando`] || ''
-                    )}
-                </td>
-                <td className="checklist-area">
-                    {isEditing ? (
-                        <select
-                            className="checklist-select-small"
-                            value={checklistData[`${campoBase}_area`] || ''}
-                            onChange={e => onChange(`${campoBase}_area`, e.target.value)}
-                        >
-                            <option value="">-</option>
-                            <option value="MANTENIMIENTO">Mantenimiento</option>
-                            <option value="OPERACIONES">Operaciones</option>
-                            <option value="TALLER">Taller</option>
-                        </select>
-                    ) : (
-                        checklistData[`${campoBase}_area`] || '-'
-                    )}
-                </td>
-                {isEditing && (
-                    <td className="checklist-edit-condicion">
                         <select
                             className="checklist-select-small"
                             value={condicion}
@@ -682,6 +667,33 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
                             <option value="BUENO">BUENO</option>
                             <option value="MALO">MALO</option>
                         </select>
+                    ) : (
+                        condicion
+                    )}
+                </td>
+                <td className={`checklist-accion-tipo ${accionTipo.includes('CORRECTIVO') ? 'correctivo' : 'preventivo'}`}>
+                    {isEditing ? (
+                        <input
+                            type="text"
+                            className="checklist-input"
+                            value={checklistData[campoAccion] || ''}
+                            onChange={e => onChange(campoAccion, e.target.value)}
+                            placeholder="Acción a realizar"
+                        />
+                    ) : (
+                        accionTipo
+                    )}
+                </td>
+                {isEditing && (
+                    <td className="checklist-edit-condicion">
+                        <button
+                            className="btn btn-sm btn-danger"
+                            onClick={() => {
+                                onChange(campoCondicion, condicion === 'BUENO' ? 'MALO' : 'BUENO');
+                            }}
+                        >
+                            {condicion === 'BUENO' ? '⚠️ Marcar MALO' : '✅ Marcar BUENO'}
+                        </button>
                     </td>
                 )}
             </tr>
@@ -732,16 +744,12 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
                             <span className="doc-value">{checklistData.codigo_checklist || machinery?.codigo || 'N/A'}</span>
                         </div>
                         <div className="doc-info-row">
-                            <span className="doc-label">ANEXO:</span>
-                            <span className="doc-value">{checklistData.anexo || ''}</span>
-                        </div>
-                        <div className="doc-info-row">
-                            <span className="doc-label">REVISIÓN:</span>
-                            <span className="doc-value">{checklistData.revision || '0'}</span>
-                        </div>
-                        <div className="doc-info-row">
                             <span className="doc-label">FECHA:</span>
                             <span className="doc-value">{fechaFormateada}</span>
+                        </div>
+                        <div className="doc-info-row">
+                            <span className="doc-label">TIPO:</span>
+                            <span className="doc-value">{checklistData.tipo_checklist || 'GENERAL'}</span>
                         </div>
                     </div>
                 </div>
@@ -751,23 +759,17 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
                     <table className="checklist-main-table">
                         <thead>
                             <tr>
-                                <th rowSpan="2" className="col-num">N°</th>
-                                <th rowSpan="2" className="col-elemento">ELEMENTOS A INSPECCIONAR</th>
-                                <th rowSpan="2" className="col-condicion">CONDICIÓN</th>
-                                <th rowSpan="2" className="col-accion-tipo">ACCIÓN A REALIZAR</th>
-                                <th colSpan="2" className="col-accion-header">ACCIÓN</th>
-                                <th rowSpan="2" className="col-area">ÁREA</th>
-                                {isEditing && <th rowSpan="2" className="col-edit">EDITAR</th>}
-                            </tr>
-                            <tr>
-                                <th className="col-quien">QUIÉN</th>
-                                <th className="col-cuando">CUÁNDO</th>
+                                <th className="col-num">N°</th>
+                                <th className="col-elemento">ELEMENTOS A INSPECCIONAR</th>
+                                <th className="col-condicion">CONDICIÓN</th>
+                                <th className="col-accion-tipo">ACCIÓN A REALIZAR</th>
+                                {isEditing && <th className="col-edit">EDITAR</th>}
                             </tr>
                         </thead>
                         <tbody>
                             {/* Sección 1: SONDA */}
                             <tr className="section-header-row">
-                                <td colSpan={isEditing ? 8 : 7} className="section-title">1. SONDA</td>
+                                <td colSpan={isEditing ? 5 : 4} className="section-title">1. SONDA</td>
                             </tr>
                             {renderChecklistRow('1.1', 'BOTELLA VIBRADORA', 'sonda_botella_vibradora', 'sonda_botella_vibradora_accion')}
                             {renderChecklistRow('1.2', 'FLEXIBLE', 'sonda_flexible', 'sonda_flexible_accion')}
@@ -775,7 +777,7 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
 
                             {/* Sección 2: UNIDAD MOTRIZ A ENERGÍA ELÉCTRICA */}
                             <tr className="section-header-row">
-                                <td colSpan={isEditing ? 8 : 7} className="section-title">2. UNIDAD MOTRIZ A ENERGÍA ELÉCTRICA</td>
+                                <td colSpan={isEditing ? 5 : 4} className="section-title">2. UNIDAD MOTRIZ A ENERGÍA ELÉCTRICA</td>
                             </tr>
                             {renderChecklistRow('2.1', 'PARTIDOR CON PROTECCIÓN ELÉCTRICA', 'ume_partidor_proteccion', 'ume_partidor_proteccion_accion')}
                             {renderChecklistRow('2.2', 'CONDUCTOR ELÉCTRICO PROTEGIDO', 'ume_conductor_electrodo', 'ume_conductor_electrodo_accion')}
@@ -785,7 +787,7 @@ function ChecklistDetailView({ checklist, editData, isEditing, machinery, onBack
 
                             {/* Sección 3: UNIDAD MOTRIZ ENERGÍA DE COMBUSTIBLE */}
                             <tr className="section-header-row">
-                                <td colSpan={isEditing ? 8 : 7} className="section-title">3. UNIDAD MOTRIZ ENERGÍA DE COMBUSTIBLE</td>
+                                <td colSpan={isEditing ? 5 : 4} className="section-title">3. UNIDAD MOTRIZ ENERGÍA DE COMBUSTIBLE</td>
                             </tr>
                             {renderChecklistRow('3.1', 'PARTES MÓVILES A LA VISTA, PROTEGIDOS', 'umc_partes_moviles', 'umc_partes_moviles_accion')}
                             {renderChecklistRow('3.2', 'SECTORES CALIENTES PROTEGIDOS', 'umc_sectores_calientes', 'umc_sectores_calientes_accion')}

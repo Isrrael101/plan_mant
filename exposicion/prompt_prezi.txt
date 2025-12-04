@@ -1,0 +1,83 @@
+Crea una presentación Prezi profesional sobre un Sistema de Gestión de Planes de Mantenimiento para Equipo Pesado desarrollado para una empresa minera.
+
+TÍTULO: "Sistema de Gestión de Planes de Mantenimiento - Aplicación de Planificación del Mantenimiento en la Industria Minera"
+
+ESTRUCTURA DE LA PRESENTACIÓN:
+
+1. PORTADA
+   - Título del sistema
+   - Subtítulo: "Aplicación de la Planificación del Mantenimiento"
+   - Facultad Técnica - Carrera de Mantenimiento de Equipo Pesado
+   - Subsede La Joya
+
+2. INTRODUCCIÓN
+   - Problemática: Documentación dispersa, falta de acceso rápido a planes de mantenimiento
+   - Solución: Sistema web integral para gestión de mantenimiento preventivo
+   - Objetivo: Optimizar la planificación y ejecución de mantenimientos
+
+3. CARACTERÍSTICAS PRINCIPALES
+   - Dashboard con estadísticas en tiempo real
+   - Gestión de maquinaria (inventario completo)
+   - Gestión de personal técnico (500 trabajadores)
+   - Planes de mantenimiento por horas (10, 50, 250, 500, 1000, 2000 horas)
+   - Cronogramas mensuales
+   - Check lists por tipo de equipo
+   - Reportes diarios
+   - Gestión de inventario (herramientas e insumos)
+   - Organigrama interactivo de la empresa
+
+4. MÓDULOS DEL SISTEMA
+   - Módulo de Maquinaria: Registro completo de equipos pesados
+   - Módulo de Personal: Directorio de 500 trabajadores con roles jerárquicos
+   - Módulo de Mantenimiento: Planes preventivos organizados por intervalos de horas
+   - Módulo de Inventario: Control de herramientas e insumos
+   - Módulo de Organigrama: Estructura organizacional de la empresa minera
+
+5. TIPOS DE MANTENIMIENTO
+   - Preventivo: Planificación por horas de operación
+   - Correctivo: Gestión de reparaciones no planificadas
+   - Proactivo: Mejoras continuas
+
+6. INTERVALOS DE MANTENIMIENTO
+   - 10 horas: Inspecciones diarias
+   - 50 horas: Lubricación y ajustes menores
+   - 250 horas: Cambio de filtros
+   - 500 horas: Revisión de sistemas principales
+   - 1000 horas: Overhaul parcial
+   - 2000 horas: Overhaul mayor
+
+7. BENEFICIOS
+   - Reducción de tiempo en búsqueda de información
+   - Organización sistemática de planes
+   - Mejora en disponibilidad de equipos
+   - Optimización de recursos
+   - Trazabilidad completa
+   - Accesibilidad desde cualquier lugar
+
+8. TECNOLOGÍAS UTILIZADAS
+   - Frontend: React 18, Vite
+   - Backend: Node.js, Express
+   - Base de datos: MySQL
+   - Diseño: Tema oscuro industrial con glassmorphism
+   - Contenedores: Docker
+
+9. DEMOSTRACIÓN
+   - Capturas de pantalla del sistema
+   - Flujo de trabajo de planificación
+   - Ejemplos de planes de mantenimiento
+
+10. CONCLUSIÓN
+    - Impacto en la gestión de mantenimiento
+    - Aplicación práctica de conceptos teóricos
+    - Valor para la industria minera
+
+ESTILO VISUAL:
+- Tema oscuro industrial (colores: negro, gris oscuro, amarillo Caterpillar)
+- Imágenes de maquinaria pesada y minería
+- Iconos técnicos y profesionales
+- Transiciones suaves y modernas
+- Diseño limpio y profesional
+
+DURACIÓN: 2 horas de exposición
+PÚBLICO: Estudiantes de Mantenimiento de Equipo Pesado
+

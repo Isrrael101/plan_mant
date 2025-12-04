@@ -67,32 +67,32 @@ export function createChecklist(pool) {
             if (!data.maquinaria_id) {
                 return res.status(400).json({ success: false, error: 'maquinaria_id es requerido' });
             }
-            if (!data.fecha) {
+            // Validar que fecha existe y no esté vacía
+            if (!data.fecha || (typeof data.fecha === 'string' && data.fecha.trim() === '')) {
                 return res.status(400).json({ success: false, error: 'fecha es requerido' });
             }
 
-            // Construir query dinámicamente con todos los campos
+            // Construir query dinámicamente con solo las columnas que existen en la tabla base
+            // Nota: Se pueden agregar más columnas ejecutando la migración add_checklist_fields.sql
             const fields = [
-                'maquinaria_id', 'fecha', 'tipo_checklist', 'codigo_checklist', 'anexo', 'revision',
+                'maquinaria_id', 'fecha', 'tipo_checklist', 'codigo_checklist',
                 'realizado_por', 'revisado_por',
-                'sonda_botella_vibradora', 'sonda_botella_vibradora_accion', 'sonda_botella_vibradora_quien', 'sonda_botella_vibradora_cuando', 'sonda_botella_vibradora_area',
-                'sonda_flexible', 'sonda_flexible_accion', 'sonda_flexible_quien', 'sonda_flexible_cuando', 'sonda_flexible_area',
-                'sonda_cuerpo_acople', 'sonda_cuerpo_acople_accion', 'sonda_cuerpo_acople_quien', 'sonda_cuerpo_acople_cuando', 'sonda_cuerpo_acople_area',
-                'ume_partidor_proteccion', 'ume_partidor_proteccion_accion', 'ume_partidor_proteccion_quien', 'ume_partidor_proteccion_cuando', 'ume_partidor_proteccion_area',
-                'ume_conductor_electrodo', 'ume_conductor_electrodo_accion', 'ume_conductor_electrodo_quien', 'ume_conductor_electrodo_cuando', 'ume_conductor_electrodo_area',
-                'ume_enchufe_macho', 'ume_enchufe_macho_accion', 'ume_enchufe_macho_quien', 'ume_enchufe_macho_cuando', 'ume_enchufe_macho_area',
-                'ume_ension_tierra', 'ume_ension_tierra_accion', 'ume_ension_tierra_quien', 'ume_ension_tierra_cuando', 'ume_ension_tierra_area',
-                'ume_fundamento_giro', 'ume_fundamento_giro_accion', 'ume_fundamento_giro_quien', 'ume_fundamento_giro_cuando', 'ume_fundamento_giro_area',
-                'umc_partes_moviles', 'umc_partes_moviles_accion', 'umc_partes_moviles_quien', 'umc_partes_moviles_cuando', 'umc_partes_moviles_area',
-                'umc_sectores_calientes', 'umc_sectores_calientes_accion', 'umc_sectores_calientes_quien', 'umc_sectores_calientes_cuando', 'umc_sectores_calientes_area',
-                'umc_tubo_escape', 'umc_tubo_escape_accion', 'umc_tubo_escape_quien', 'umc_tubo_escape_cuando', 'umc_tubo_escape_area',
-                'umc_motor', 'umc_motor_accion', 'umc_motor_quien', 'umc_motor_cuando', 'umc_motor_area',
-                'umc_soportes_motor', 'umc_soportes_motor_accion', 'umc_soportes_motor_quien', 'umc_soportes_motor_cuando', 'umc_soportes_motor_area',
-                'umc_estructura_aislada', 'umc_estructura_aislada_accion', 'umc_estructura_aislada_quien', 'umc_estructura_aislada_cuando', 'umc_estructura_aislada_area',
-                'umc_contacto_electrico', 'umc_contacto_electrico_accion', 'umc_contacto_electrico_quien', 'umc_contacto_electrico_cuando', 'umc_contacto_electrico_area',
-                'umc_otros', 'umc_otros_accion', 'umc_otros_quien', 'umc_otros_cuando', 'umc_otros_area',
-                'realizado_por_nombre', 'realizado_por_cargo', 'realizado_por_firma',
-                'revisado_por_nombre', 'revisado_por_cargo', 'revisado_por_firma',
+                'sonda_botella_vibradora', 'sonda_botella_vibradora_accion',
+                'sonda_flexible', 'sonda_flexible_accion',
+                'sonda_cuerpo_acople', 'sonda_cuerpo_acople_accion',
+                'ume_partidor_proteccion', 'ume_partidor_proteccion_accion',
+                'ume_conductor_electrodo', 'ume_conductor_electrodo_accion',
+                'ume_enchufe_macho', 'ume_enchufe_macho_accion',
+                'ume_ension_tierra', 'ume_ension_tierra_accion',
+                'ume_fundamento_giro', 'ume_fundamento_giro_accion',
+                'umc_partes_moviles', 'umc_partes_moviles_accion',
+                'umc_sectores_calientes', 'umc_sectores_calientes_accion',
+                'umc_tubo_escape', 'umc_tubo_escape_accion',
+                'umc_motor', 'umc_motor_accion',
+                'umc_soportes_motor', 'umc_soportes_motor_accion',
+                'umc_estructura_aislada', 'umc_estructura_aislada_accion',
+                'umc_contacto_electrico', 'umc_contacto_electrico_accion',
+                'umc_otros', 'umc_otros_accion',
                 'observaciones'
             ];
 
@@ -100,7 +100,12 @@ export function createChecklist(pool) {
             const values = fields.map(field => {
                 // Formatear fechas: fecha principal y campos _cuando
                 if (field === 'fecha' || field.endsWith('_cuando')) {
-                    return formatDateForMySQL(data[field]);
+                    const formattedDate = formatDateForMySQL(data[field]);
+                    // Validar que la fecha se formateó correctamente
+                    if (field === 'fecha' && !formattedDate) {
+                        throw new Error('La fecha no es válida o está vacía');
+                    }
+                    return formattedDate;
                 }
                 
                 if (field.includes('_condicion') || field.includes('sonda_') || field.includes('ume_') || field.includes('umc_')) {
@@ -124,9 +129,16 @@ export function createChecklist(pool) {
                 message: error.message,
                 code: error.code,
                 sqlState: error.sqlState,
-                sqlMessage: error.sqlMessage
+                sqlMessage: error.sqlMessage,
+                receivedData: req.body
             });
-            res.status(500).json({ success: false, error: error.message });
+            
+            // Si es un error de validación, devolver 400, si no 500
+            const statusCode = error.message.includes('requerido') || error.message.includes('válida') || error.message.includes('vacía') 
+                ? 400 
+                : 500;
+            
+            res.status(statusCode).json({ success: false, error: error.message });
         }
     };
 }

@@ -587,13 +587,13 @@ function Inventory() {
                                         </div>
                                     </div>
                                     <div className="form-row">
-                                        <div className="form-group">
-                                            <label>Cantidad</label>
-                                            <input
-                                                type="number"
-                                                value={formData.cantidad}
-                                                onChange={(e) => setFormData({...formData, cantidad: e.target.value})}
-                                                placeholder="Cantidad en stock"
+                                    <div className="form-group">
+                                        <label>Cantidad</label>
+                                        <input
+                                            type="number"
+                                            value={formData.cantidad}
+                                            onChange={(e) => setFormData({...formData, cantidad: e.target.value})}
+                                            placeholder="Cantidad en stock"
                                                 disabled={isSubmitting}
                                             />
                                         </div>

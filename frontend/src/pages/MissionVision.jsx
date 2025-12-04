@@ -3,23 +3,24 @@ import './MissionVision.css';
 function MissionVision() {
     const mision = {
         titulo: 'Misión',
-        contenido: 'Ser líderes en la gestión de mantenimiento de maquinaria pesada, proporcionando soluciones integrales que maximicen la eficiencia operativa, garanticen la seguridad de nuestros colaboradores y contribuyan al desarrollo sostenible de nuestros clientes, mediante la aplicación de tecnologías innovadoras y el compromiso con la excelencia en el servicio.',
-        icono: '🎯'
+        contenido: 'Ser una empresa minera de clase mundial, comprometida con la excelencia operativa, la seguridad integral y la sostenibilidad ambiental. Extraemos y procesamos recursos minerales de manera responsable, maximizando la eficiencia productiva, garantizando el bienestar de nuestros colaboradores y comunidades, y generando valor sostenible para nuestros accionistas mediante la aplicación de tecnologías de vanguardia, mejores prácticas internacionales y un compromiso inquebrantable con la responsabilidad social y ambiental.',
+        icono: '⛏️'
     };
 
     const vision = {
         titulo: 'Visión',
-        contenido: 'Ser reconocidos como la empresa de referencia en mantenimiento preventivo y correctivo de maquinaria pesada, caracterizándonos por nuestra innovación tecnológica, compromiso con la calidad, responsabilidad ambiental y el desarrollo continuo de nuestro capital humano, estableciendo relaciones de largo plazo basadas en la confianza y el valor agregado.',
-        icono: '👁️'
+        contenido: 'Ser reconocidos como una de las empresas mineras líderes a nivel mundial para el año 2030, destacándonos por nuestra excelencia operativa, innovación tecnológica, sostenibilidad ambiental y responsabilidad social. Aspiramos a establecer nuevos estándares en la industria minera mediante la implementación de procesos de clase mundial, el desarrollo de nuestro capital humano, la adopción de tecnologías de punta y el compromiso con la minería sostenible, posicionándonos como referente global en eficiencia, seguridad y responsabilidad corporativa.',
+        icono: '🌍'
     };
 
     const valores = [
-        { nombre: 'Excelencia', descripcion: 'Buscamos la perfección en cada tarea que realizamos', icono: '⭐' },
-        { nombre: 'Integridad', descripcion: 'Actuamos con honestidad y transparencia en todas nuestras acciones', icono: '🤝' },
-        { nombre: 'Innovación', descripcion: 'Aplicamos tecnologías y métodos modernos para mejorar continuamente', icono: '💡' },
-        { nombre: 'Seguridad', descripcion: 'Priorizamos el bienestar de nuestro personal y el cuidado del medio ambiente', icono: '🛡️' },
-        { nombre: 'Compromiso', descripcion: 'Cumplimos nuestros compromisos con dedicación y responsabilidad', icono: '💪' },
-        { nombre: 'Trabajo en Equipo', descripcion: 'Valoramos la colaboración y el esfuerzo conjunto', icono: '👥' }
+        { nombre: 'Excelencia Operativa', descripcion: 'Buscamos la perfección en cada proceso minero, desde la extracción hasta el procesamiento, estableciendo estándares de clase mundial', icono: '⭐' },
+        { nombre: 'Seguridad Integral', descripcion: 'Cero daño a las personas, cero daño al medio ambiente. La seguridad es nuestra prioridad absoluta en todas las operaciones', icono: '🛡️' },
+        { nombre: 'Sostenibilidad', descripcion: 'Comprometidos con la minería responsable, el cuidado del medio ambiente y el desarrollo sostenible de las comunidades', icono: '🌱' },
+        { nombre: 'Innovación Tecnológica', descripcion: 'Aplicamos tecnologías de vanguardia y mejores prácticas internacionales para optimizar procesos y resultados', icono: '💡' },
+        { nombre: 'Integridad y Transparencia', descripcion: 'Actuamos con honestidad, ética y transparencia en todas nuestras relaciones y operaciones', icono: '🤝' },
+        { nombre: 'Desarrollo del Capital Humano', descripcion: 'Invertimos en el crecimiento profesional y personal de nuestros colaboradores, reconociendo que son nuestro mayor activo', icono: '👥' },
+        { nombre: 'Responsabilidad Social', descripcion: 'Contribuimos al desarrollo de las comunidades donde operamos, generando valor compartido y relaciones de largo plazo', icono: '🌍' }
     ];
 
     return (

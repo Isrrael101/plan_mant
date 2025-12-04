@@ -435,15 +435,20 @@ class ApiService {
                 },
                 body: JSON.stringify(data),
             });
+            const responseData = await response.json();
             if (!response.ok) {
                 if (response.status === 401 || response.status === 403) {
                     localStorage.removeItem('token');
                     localStorage.removeItem('user');
                     window.location.href = '/login';
                 }
-                throw new Error(`HTTP error! status: ${response.status}`);
+                // Extract error message from response if available
+                const errorMessage = responseData.error || responseData.message || `HTTP error! status: ${response.status}`;
+                const error = new Error(errorMessage);
+                error.response = responseData;
+                throw error;
             }
-            return await response.json();
+            return responseData;
         } catch (error) {
             console.error('API Error:', error);
             throw error;

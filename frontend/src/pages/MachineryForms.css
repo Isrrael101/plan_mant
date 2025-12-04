@@ -428,6 +428,8 @@
     width: 100%;
     box-sizing: border-box;
     overflow-x: auto;
+    overflow-y: auto;
+    max-width: 100%;
 }
 
 /* Technical Sheet */
@@ -673,6 +675,8 @@
     border-radius: var(--radius-md);
     overflow: hidden;
     transition: all 0.2s;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .checklist-card:hover, .report-card:hover {
@@ -723,10 +727,25 @@
 
 .card-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-2);
     padding: var(--space-3) var(--space-4);
     background: var(--bg-card);
     border-top: 1px solid var(--border-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-actions .btn-sm {
+    flex: 1 1 calc(25% - var(--space-2));
+    min-width: 60px;
+    max-width: calc(25% - var(--space-2));
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
 }
 
 /* Reports List */
@@ -952,6 +971,29 @@
     .checklists-grid {
         grid-template-columns: 1fr;
     }
+    
+    .card-actions .btn-sm {
+        flex: 1 1 calc(50% - var(--space-2));
+        min-width: 60px;
+        font-size: 0.65rem;
+        padding: var(--space-1) var(--space-2);
+    }
+    
+    .checklist-actions {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+    
+    .checklist-actions .btn {
+        flex: 1 1 auto;
+        min-width: 100px;
+        font-size: 0.75rem;
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .checklist-detail-view {
+        padding: var(--space-4);
+    }
 }
 
 /* ============================================
@@ -961,14 +1003,33 @@
 .checklist-detail-view {
     background: white;
     padding: var(--space-6);
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: visible;
 }
 
 .checklist-actions {
     display: flex;
-    gap: var(--space-3);
+    flex-wrap: wrap;
+    gap: var(--space-2);
     margin-bottom: var(--space-4);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.checklist-actions .btn {
+    flex: 1 1 calc(25% - var(--space-2));
+    min-width: 0;
+    padding: var(--space-2) var(--space-2);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .checklist-document {

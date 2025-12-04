@@ -97,7 +97,7 @@ app.use((req, res, next) => {
     const originalSend = res.send;
     res.send = function(data) {
         if (!res.getHeader('Content-Type')) {
-            res.setHeader('Content-Type', 'application/json; charset=utf-8');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
         } else {
             const contentType = res.getHeader('Content-Type');
             if (typeof contentType === 'string' && !contentType.includes('charset')) {
@@ -1679,7 +1679,7 @@ function registerPoolRoutes() {
     app.post('/api/checklists', createChecklist(pool));
     app.put('/api/checklists/:id', updateChecklist(pool));
     app.delete('/api/checklists/:id', deleteChecklist(pool));
-    
+
     // Checklists - Rutas en español (alias) - COMPLETAS
     app.get('/api/maquinaria/:id/checklists', getChecklistsByMachinery(pool));
     app.post('/api/checklists', createChecklist(pool)); // POST usa /api/checklists (sin maquinaria)
@@ -1692,7 +1692,7 @@ function registerPoolRoutes() {
     app.post('/api/daily-reports', upsertDailyReport(pool));
     app.put('/api/daily-reports/:id', updateDailyReport(pool));
     app.delete('/api/daily-reports/:id', deleteDailyReport(pool));
-    
+
     // Reportes Diarios - Rutas en español (alias) - COMPLETAS
     app.get('/api/maquinaria/:id/daily-reports', getDailyReportsByMachinery(pool));
     // POST, PUT, DELETE usan /api/daily-reports (sin maquinaria) - ya están registradas arriba
